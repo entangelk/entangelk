@@ -26,4 +26,4 @@
 > "Memory is not a log. Memory is compacted meaning." 
 > 시스템은 비즈니스의 철학을 반영해야 하며, 코드는 그 철학을 강제하는 가장 우아한 통제 수단입니다.
 
-📫 **Contact:** [kdtyohan@gmail.com] | [[LinkedIn 주소 넣기](https://www.linkedin.com/in/%EC%9A%94%ED%95%9C-%EB%B0%95-b4a06a3b3/)]
+📫 **Contact:** [kdtyohan@gmail.com] | [[LinkedIn](https://www.linkedin.com/in/%EC%9A%94%ED%95%9C-%EB%B0%95-b4a06a3b3/)]
