@@ -1,4 +1,4 @@
-# Hi there! 👋 I'm a Full-cycle AI & Backend Engineer 🚀
+# Greethings!👋 I'm a Full-cycle AI & Backend Engineer 🚀
 
 데이터로 문제를 정의하고, 아키텍처와 알고리즘으로 한계를 돌파하는 엔지니어입니다. 
 단순한 API 호출을 넘어, **시스템의 바닥(Low-level)부터 모델 서빙, 보안 인프라까지** 직접 설계하고 구현하는 것을 즐깁니다.
