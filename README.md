@@ -23,10 +23,10 @@ Moving beyond simple API calls, I thrive on designing and implementing everythin
 </p>
 
 ### 🔥 Highlighted Projects
-* 🧠 **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public):** MCP-based long-term memory (SoT & Vector Cache) architecture server for persistent AI assistants.
-* 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc):** R&D on a geometry-based WFC pathfinding algorithm to overcome the limitations of the A* algorithm.
-* 👁️ **[T-WFC](https://github.com/entangelk/T-WFC):** Tensor Wave Function Collapse (T-WFC) is a research prototype that tests whether a tiny neural network can be trained without gradient descent by borrowing the superposition -> observation -> collapse -> propagation loop from Wave Function Collapse.
-* ⚡ **[HW-WFC v2.0](https://github.com/entangelk/hw-wfc):** (Research) Hardware-friendly AI compiler scheduler utilizing constraint-based collapse search.
+* 🧠 **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public):** MCP-based long-term memory architecture for AI assistants. Strictly separates SoT (MongoDB) and Vector Cache to maintain persistent, compacted meaning.
+* 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc):** R&D on a geometry-based WFC pathfinding algorithm, designed to overcome the topological limitations of traditional A* search.
+* 👁️ **[T-WFC](https://github.com/entangelk/T-WFC):** Gradient-free neural network training prototype. Successfully formed classification boundaries using discrete state collapse instead of backpropagation.
+* ⚡ **[HW-WFC v2.0](https://github.com/entangelk/hw-wfc):** Constraint-driven AI compiler auto-scheduler. Achieved ~2400x speedup and reduced search space by 98.5% compared to Grid Search.
 
 ### 💡 My Philosophy
 > "Memory is not a log. Memory is compacted meaning." 
