@@ -23,10 +23,10 @@
 </p>
 
 ### 🔥 Highlighted Projects
-* 🧠 **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public):** 지속형 AI 비서를 위한 MCP 기반 장기 기억(SoT & Vector Cache) 아키텍처 서버
-* 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc):** A* 알고리즘의 한계를 극복하기 위한 기하학 기반 WFC 경로 탐색 알고리즘 R&D
-* 👁️ **[T-WFC](https://github.com/entangelk/T-WFC):** TTensor Wave Function Collapse(T-WFC)는 Wave Function Collapse의 중첩 -> 관측 -> 붕괴 -> 전파 루프를 초소형 신경망 학습에 옮겨와, 경사하강법 없이도 학습이 가능한지 검증하는 연구용 프로토타입.
-* ⚡ **[HW-WFC v2.0](https://github.com/entangelk/hw-wfc):** (Research) 제약 기반 붕괴 탐색을 활용한 하드웨어 친화적 AI 컴파일러 스케줄러
+* 🧠 **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public):** 지속형 AI 비서를 위한 MCP 기반 장기 기억 아키텍처. MongoDB(SoT)와 Vector Cache를 엄격히 분리하여 '압축된 의미'를 영구적으로 유지합니다.
+* 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc):** 전통적인 A* 알고리즘의 위상학적 한계를 극복하기 위해 설계된 기하학 기반 WFC 경로 탐색 알고리즘 R&D.
+* 👁️ **[T-WFC](https://github.com/entangelk/T-WFC):** 경사하강법(Gradient Descent)이 없는 신경망 학습 프로토타입. 역전파 대신 이산 상태 붕괴(Discrete state collapse)만으로 분류 경계선을 형성하는 데 성공했습니다.
+* ⚡ **[HW-WFC v2.0](https://github.com/entangelk/hw-wfc):** 제약 기반 붕괴 탐색을 활용한 AI 컴파일러 자동 스케줄러. Grid Search 대비 탐색 공간을 98.5% 줄이고 연산 속도를 약 2400배(~2.5ms) 향상시켰습니다.
 
 ### 💡 My Philosophy
 > "Memory is not a log. Memory is compacted meaning." 
