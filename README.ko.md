@@ -25,7 +25,7 @@
 ### 🔥 Highlighted Projects
 * 🧠 **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public):** 지속형 AI 비서를 위한 MCP 기반 장기 기억(SoT & Vector Cache) 아키텍처 서버
 * 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc):** A* 알고리즘의 한계를 극복하기 위한 기하학 기반 WFC 경로 탐색 알고리즘 R&D
-* 👁️ **[Logo Image Processor](#):** SAM + Grounding DINO + LLM을 융합한 Zero-shot 컴퓨터 비전 파이프라인
+* 👁️ **[T-WFC](https://github.com/entangelk/T-WFC):** TTensor Wave Function Collapse(T-WFC)는 Wave Function Collapse의 중첩 -> 관측 -> 붕괴 -> 전파 루프를 초소형 신경망 학습에 옮겨와, 경사하강법 없이도 학습이 가능한지 검증하는 연구용 프로토타입.
 * ⚡ **[HW-WFC v2.0](https://github.com/entangelk/hw-wfc):** (Research) 제약 기반 붕괴 탐색을 활용한 하드웨어 친화적 AI 컴파일러 스케줄러
 
 ### 💡 My Philosophy
