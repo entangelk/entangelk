@@ -25,7 +25,7 @@ Moving beyond simple API calls, I thrive on designing and implementing everythin
 ### 🔥 Highlighted Projects
 * 🧠 **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public):** MCP-based long-term memory (SoT & Vector Cache) architecture server for persistent AI assistants.
 * 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc):** R&D on a geometry-based WFC pathfinding algorithm to overcome the limitations of the A* algorithm.
-* 👁️ **[Logo Image Processor](#):** Zero-shot computer vision pipeline integrating SAM + Grounding DINO + LLM.
+* 👁️ **[T-WFC](https://github.com/entangelk/T-WFC):** Tensor Wave Function Collapse (T-WFC) is a research prototype that tests whether a tiny neural network can be trained without gradient descent by borrowing the superposition -> observation -> collapse -> propagation loop from Wave Function Collapse.
 * ⚡ **[HW-WFC v2.0](https://github.com/entangelk/hw-wfc):** (Research) Hardware-friendly AI compiler scheduler utilizing constraint-based collapse search.
 
 ### 💡 My Philosophy
