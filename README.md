@@ -4,10 +4,10 @@
 </p>
 <p align="center"><sub>Switch language / 언어 전환</sub></p>
 
-# Greetings!👋 I'm a Full-cycle AI & Backend Engineer 🚀
+# Greetings!👋 I'm a Data & AI Engineer 🚀
 
-I am an engineer who defines problems through data and breaks through limitations with architecture and algorithms. 
-Moving beyond simple API calls, I thrive on designing and implementing everything from the **low-level systems to model serving and security infrastructure.**
+I am an engineer who starts by defining problems through data and solves them by building robust backend systems and implementing efficient logic. 
+Moving beyond simple API calls, my current focus is on bridging the gap between data and engineering—**experimenting with AI memory architectures, optimizing existing algorithms for better performance, and building reliable model serving pipelines.**
 
 ### 🛠️ Tech Stack & Arsenal
 <p>
