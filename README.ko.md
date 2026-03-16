@@ -4,10 +4,10 @@
 </p>
 <p align="center"><sub>Switch language / 언어 전환</sub></p>
 
-# Greetings!👋 I'm a Full-cycle AI & Backend Engineer 🚀
+# Greetings!👋 I'm a Data & AI Engineer 🚀
 
-데이터로 문제를 정의하고, 아키텍처와 알고리즘으로 한계를 돌파하는 엔지니어입니다. 
-단순한 API 호출을 넘어, **시스템의 바닥(Low-level)부터 모델 서빙, 보안 인프라까지** 직접 설계하고 구현하는 것을 즐깁니다.
+저는 데이터를 통해 문제를 정의하고, 탄탄한 백엔드 시스템과 효율적인 로직 구현으로 그 문제를 해결하는 엔지니어입니다.
+단순한 API 연동을 넘어, 데이터와 엔지니어링의 간극을 줄이는 데 집중하고 있습니다. **AI를 위한 메모리 아키텍처를 실험하고, 기존 알고리즘을 최적화하며, 안정적인 모델 서빙 파이프라인을 구축하는 작업**에 푹 빠져 있습니다.
 
 ### 🛠️ Tech Stack & Arsenal
 <p>
