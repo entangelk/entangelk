@@ -65,6 +65,11 @@
 * **Scaling Limits (한계 분석):** XOR이나 Spiral 같은 비선형 문제에 도입 시, 5개의 이산값 조합만으로는 결정 경계(Decision boundary)를 형성하는 표현력이 턱없이 부족함을 확인했습니다. 또한, 파라미터가 증가함에 따라 메모리와 탐색 시간이 기하급수적으로 폭발하여 신경망의 고차원적/비국소적 상호작용을 처리하는 데는 치명적인 한계가 있음을 입증했습니다.
 * **Conclusion:** WFC 기반 학습은 딥러닝 스케일업에는 부적합하지만, 극단적인 저전력 엣지 디바이스 환경에서의 **저비트 양자화(Low-bit quantization)** 대안이나 국소적 연결성을 가진 아키텍처(CNN 등)에서의 후속 연구 가능성을 남겼습니다.
 
+### ⚡ AI 컴파일러 자동 스케줄러 (HW-WFC v2.0)
+*하드웨어 최적화를 위한 제약 기반 자동 스케줄링 R&D. [🔗 GitHub Repo](https://github.com/entangelk/hw-wfc)*
+
+* **Constraint-driven Auto-Scheduling:** 무차별 대입 방식의 한계를 넘기 위해 제약 기반 탐색(Constraint-driven search) 알고리즘을 AI 컴파일러 스케줄러에 도입했습니다. 결과적으로 기존 Grid Search 대비 탐색 공간을 98.5% 축소하고 **약 2400배의 속도 향상**을 달성했습니다.
+
 ---
 <p align="center">
   <a href="./README.ko.md">⬅️ 메인 프로필로 돌아가기</a>
