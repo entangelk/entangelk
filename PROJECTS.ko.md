@@ -51,12 +51,20 @@
 
 * **Separation of Concerns:** "기억은 단순한 로그가 아니라 압축된 의미망이다"라는 철학을 시스템으로 구현했습니다. 진실의 공급원(State of Truth) 역할을 하는 **MongoDB**와, 문맥의 의미론적 검색을 담당하는 Vector Cache인 **ChromaDB**를 엄격하게 분리하여 영구적이고 논리적인 기억 아키텍처를 설계했습니다.
 
-### ⚡ WFC 알고리즘 최적화 및 AI 컴파일러 자동 스케줄러
-*WFC(Wave Function Collapse) 기반의 경로 탐색, 신경망 프로토타이핑, 그리고 컴파일러 스케줄러 최적화를 다룬 3개의 독립적인 R&D 프로젝트입니다.*
+### 🗺️ 기하학 기반 경로 탐색 알고리즘 (Circle-WFC)
+*전통적인 A* 탐색의 위상학적 한계를 극복하기 위한 경로 탐색 R&D. [🔗 GitHub Repo](https://github.com/entangelk/circle-wfc)*
 
-* **Geometry-based Pathfinding [🔗 Circle-WFC](https://github.com/entangelk/circle-wfc):** 전통적인 A* 탐색 알고리즘이 가지는 위상학적 한계를 극복하기 위해 기하학 기반의 WFC 알고리즘을 설계했습니다.
-* **Gradient-free Neural Network [🔗 T-WFC](https://github.com/entangelk/T-WFC):** PyTorch의 텐서 연산을 활용하여, 전통적인 역전파(Backpropagation) 방식이 아닌 이산 상태 붕괴(Discrete state collapse) 방식을 통해 분류 경계를 형성하는 신경망 프로토타입을 구현했습니다.
-* **AI Compiler Auto-Scheduler [🔗 HW-WFC v2.0](https://github.com/entangelk/hw-wfc):** 제약 기반(Constraint-driven) AI 컴파일러 자동 스케줄러를 개발하여, 기존 Grid Search 대비 탐색 공간을 98.5% 축소하고 **약 2400배의 속도 향상**을 달성했습니다.
+* **Geometry-based Pathfinding:** WFC(Wave Function Collapse) 알고리즘을 타일 그리드가 아닌 기하학적 위상에 적용할 수 있도록 구조를 재설계하여, 더 복잡하고 유연한 경로 탐색이 가능하도록 구현했습니다.
+
+### 👁️ Gradient-free 신경망 프로토타입 (T-WFC)
+*역전파 없는 새로운 형태의 신경망 학습 프로토타입 설계. [🔗 GitHub Repo](https://github.com/entangelk/T-WFC)*
+
+* **Discrete State Collapse:** PyTorch의 텐서 연산을 '수학적 도구'로 활용하여, 모델 학습의 정석인 역전파(Backpropagation)에 의존하지 않고 이산 상태 붕괴(Discrete state collapse) 방식을 통해 자체적인 데이터 분류 경계를 형성하는 구조를 증명했습니다.
+
+### ⚡ AI 컴파일러 자동 스케줄러 (HW-WFC v2.0)
+*하드웨어 최적화를 위한 제약 기반 자동 스케줄링 R&D. [🔗 GitHub Repo](https://github.com/entangelk/hw-wfc)*
+
+* **Constraint-driven Auto-Scheduling:** 무차별 대입 방식의 한계를 넘기 위해 제약 기반 탐색(Constraint-driven search) 알고리즘을 AI 컴파일러 스케줄러에 도입했습니다. 결과적으로 기존 Grid Search 대비 탐색 공간을 98.5% 축소하고 **약 2400배의 속도 향상**을 달성했습니다.
 
 ---
 <p align="center">
