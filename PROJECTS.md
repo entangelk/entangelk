@@ -50,12 +50,20 @@ This document contains the engineering context, troubleshooting processes, and a
 
 * **Separation of Concerns:** Memory is compacted meaning, not just a log. To enforce this, I strictly separated the system's architecture into two layers: **MongoDB** as the immutable State of Truth (SoT) and **ChromaDB** as the dynamic Vector Cache for semantic context retrieval.
 
-### ⚡ WFC Algorithm Optimization & AI Auto-Scheduler
-*R&D on Wave Function Collapse (WFC) algorithms, neural network prototypes, and compiler scheduling across three distinct repositories.*
+### 🗺️ Geometry-based Pathfinding Algorithm (Circle-WFC)
+*Pathfinding R&D to overcome the topological limits of traditional A* search. [🔗 GitHub Repo](https://github.com/entangelk/circle-wfc)*
 
-* **Geometry-based Pathfinding [🔗 Circle-WFC](https://github.com/entangelk/circle-wfc):** Designed a geometry-based WFC algorithm to overcome the topological limitations of traditional A* search.
-* **Gradient-free Neural Network [🔗 T-WFC](https://github.com/entangelk/T-WFC):** Prototyped a network using PyTorch tensor operations that forms classification boundaries via discrete state collapse instead of traditional backpropagation.
-* **AI Compiler Auto-Scheduler [🔗 HW-WFC v2.0](https://github.com/entangelk/hw-wfc):** Developed a constraint-driven AI compiler auto-scheduler, achieving **~2400x speedup** and reducing the search space by 98.5% compared to standard Grid Search.
+* **Geometry-based WFC:** Redesigned the Wave Function Collapse (WFC) algorithm to apply to geometric topologies rather than simple tile grids, enabling more complex and flexible pathfinding.
+
+### 👁️ Gradient-free Neural Network Prototype (T-WFC)
+*Designing a novel neural network training prototype without backpropagation. [🔗 GitHub Repo](https://github.com/entangelk/T-WFC)*
+
+* **Discrete State Collapse:** Utilized PyTorch tensor operations purely as a mathematical tool to prove that classification boundaries can be formed through discrete state collapse, bypassing the traditional reliance on backpropagation.
+
+### ⚡ AI Compiler Auto-Scheduler (HW-WFC v2.0)
+*Constraint-driven auto-scheduling R&D for hardware optimization. [🔗 GitHub Repo](https://github.com/entangelk/hw-wfc)*
+
+* **Constraint-driven Auto-Scheduling:** Introduced a constraint-driven search algorithm to the AI compiler scheduler to overcome the limits of brute-force methods. This drastically reduced the search space by 98.5% and achieved a **~2400x speedup** compared to conventional Grid Search.
 
 ---
 <p align="center">
