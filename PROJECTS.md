@@ -38,12 +38,15 @@ This document contains the engineering context, troubleshooting processes, and a
 
 ## 🔥 Personal & R&D Projects
 
-### 🎯 Automated Brand Logo Extraction Pipeline (Test Lab)
-*A zero-shot segmentation pipeline and R&D dashboard designed to automatically extract high-quality brand logos from physical signboard images.*
+🎯 Automated Brand Logo Extraction Pipeline (Test Lab)
 
-* **Automated Anchoring:** Eliminated manual prompting for **SAM (Segment Anything)** by combining **Grounding DINO** (Text-to-Bbox) with an OCR/Contour hybrid method to automatically generate foreground/background anchor points.
-* **Vision Post-processing:** Raw segmentation masks are rarely production-ready. I built a pixel-level quality tuning pipeline from scratch, implementing parameters for **Dehalo**, **Color Decontamination**, and **Edge Feathering** to ensure commercial-grade image outputs.
-* **R&D Test Lab (FastAPI):** Built a web interface to tune AutoMask parameters (IoU thresholds, point density) and visually evaluate pre/post-processing metrics (Sharpness, Noise level differences).
+A zero-shot segmentation pipeline and R&D dashboard designed to automatically extract high-quality brand logos from complex physical signboard images.
+
+Automated Hybrid Anchoring: Overcame the brittleness of blind SAM prompting. Combined Grounding DINO for ROI bounding with an OCR/Contour hybrid method to automatically generate precise, dense foreground anchor points, significantly reducing background hallucinations.
+
+Vision Post-Processing Engine: Separated extraction logic from quality refinement. Built a custom pixel-level tuning pipeline implementing Morphological Dehalo, LAB-space Color Decontamination, and distance-transform Edge Feathering to turn raw masks into commercial-grade assets.
+
+Decoupled R&D Dashboard (FastAPI): Engineered a lazy-loaded web interface that isolates each pipeline stage (Anchor, Detect, Segment, Quality) for independent debugging. Enables real-time parameter tuning and objective evaluation via Laplacian Sharpness and MAD Noise metrics.
 
 ### 🧠 Agent Memory System
 *MCP-based long-term memory architecture for AI assistants. [🔗 GitHub Repo](https://github.com/entangelk/agent-memory-system-public)*
