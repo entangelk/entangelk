@@ -30,7 +30,7 @@
 * 🔧 **경량 사내망 네트워크 유틸리티:** 단일 접속 VPN 병목을 우회하여 팀 생산성을 높인 파이썬 기반 포트 연결 스크립트.
 
 ### 🔥 Personal & R&D Projects
-* 🎯 **[자동화된 브랜드 로고 추출 파이프라인](https://github.com/entangelk/logo_image):** Grounding DINO, SAM 프롬프트 자동화 및 커스텀 퀄리티 후처리를 적용한 Zero-shot Segmentation 테스트랩.
+* 🎯 **[자동화된 브랜드 로고 추출 파이프라인](https://github.com/entangelk/logo_image):** 하이브리드 OCR 앵커링과 독자적인 픽셀 단위 후처리를 도입하여, SAM과 Grounding DINO의 한계를 극복하고 파이프라인을 구조적으로 분리(Decoupling)한 Zero-shot 세그멘테이션 프로젝트입니다.
 * 🧠 **[AI 에이전트 장기 기억 시스템](https://github.com/entangelk/agent-memory-system-public):** MongoDB(SoT)와 Vector Cache를 엄격히 분리한 MCP 기반 장기 기억 아키텍처.
 * 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc):** 기하학 기반 WFC를 도입한 경로 탐색 R&D. 국소적 제약 해결(WFC)과 전역적 연결성(Pathfinding) 간의 구조적 충돌 한계를 증명하고, 이를 '탐색 공간 축소기(Search Space Reducer)'로 활용하는 하이브리드 접근법을 도출.
 * 👁️ **[T-WFC](https://github.com/entangelk/T-WFC):** 역전파 없이 5개의 이산값(Discrete) 상태 붕괴만으로 신경망 학습을 시도한 Gradient-free 프로토타입. 선형 문제에서의 PoC 성공 및 비선형/고차원 문제에서의 스케일링 한계를 명확히 규명.
