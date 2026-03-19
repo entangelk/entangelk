@@ -54,7 +54,7 @@ This document contains the engineering context, troubleshooting processes, and a
 * **Separation of Concerns:** Memory is compacted meaning, not just a log. To enforce this, I strictly separated the system's architecture into two layers: **MongoDB** as the immutable State of Truth (SoT) and **ChromaDB** as the dynamic Vector Cache for semantic context retrieval.
 
 ### 🗺️ Limits of Geometry-Guided Pathfinding (Circle-WFC)
-*Pathfinding R&D and post-mortem aimed at replacing traditional A* search with geometry-guided WFC. [🔗 GitHub Repo](https://github.com/entangelk/circle-wfc)*
+*Pathfinding R&D and post-mortem aimed at replacing traditional 'A*' search with geometry-guided WFC. [🔗 GitHub Repo](https://github.com/entangelk/circle-wfc)*
 
 * **Hypothesis & Early Wins:** Attempted to apply the Wave Function Collapse (WFC) algorithm to geometric layers (circles/rays) rather than tile grids. In early tests on simple or empty maps, it significantly outperformed A* in both speed and memory efficiency.
 * **Root Cause Analysis:** Performance degraded sharply in complex mazes. Through rigorous debugging, I identified a fundamental structural contradiction: WFC is an engine for **'local consistency'**, whereas pathfinding requires **'global connectivity'**. WFC's tendency for "early commitment" (state collapse) proved fatal when long, topologically complex detours were required.
