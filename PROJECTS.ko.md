@@ -40,11 +40,11 @@
 ## 🔥 개인 R&D 프로젝트 (Personal & R&D Projects)
 
 ### 🎯 자동화된 브랜드 로고 추출 파이프라인 (Test Lab)
-*물리적인 간판 이미지에서 브랜드 로고와 타이틀을 고품질로 자동 추출하는 Zero-shot Segmentation 파이프라인 및 R&D 대시보드.[🔗 GitHub Repo](https://github.com/entangelk/logo_image)*
+*복잡한 실물 간판 이미지에서 고품질의 브랜드 로고를 자동으로 추출하기 위해 설계된 Zero-shot 세그멘테이션 파이프라인 및 R&D 대시보드. [🔗 GitHub Repo](https://github.com/entangelk/logo_image)*
 
-* **Automated Anchoring:** **SAM (Segment Anything)**의 수동 프롬프트 입력을 자동화하기 위해, **Grounding DINO** (Text-to-Bbox)와 OCR/Contour 하이브리드 방식을 결합하여 전경/배경(FG/BG) 앵커 포인트를 자동으로 생성하는 로직을 구현했습니다.
-* **Vision Post-processing:** AI가 분리한 원시 마스크(Raw Mask)는 상용으로 쓰기엔 한계가 있습니다. 이를 해결하기 위해 **Dehalo**(빛번짐 제거), **Color Decontamination**(색상 오염 제거), **Edge Feathering** 등 픽셀 단위의 퀄리티 튜닝 파이프라인을 직접 설계하고 구현했습니다.
-* **R&D Test Lab (FastAPI):** AutoMask 파라미터(IoU 컷오프, 포인트 밀도 등)를 직관적으로 튜닝하고, 처리 전/후의 Metrics(Sharpness, Noise Level)를 시각화하여 객관적으로 모델 성능을 평가할 수 있는 웹 기반 검증 인터페이스를 개발했습니다.
+* **자동화된 하이브리드 앵커링 (Automated Hybrid Anchoring):** 단순 SAM 프롬프팅의 불안정성을 극복했습니다. ROI 영역을 좁히는 **Grounding DINO**와 **OCR/Contour 하이브리드 기법**을 결합하여, 정밀하고 밀도 높은 전경(Foreground) 앵커 포인트를 자동으로 생성함으로써 배경을 잘못 추출하는 현상(Hallucination)을 대폭 감소시켰습니다.
+* **비전 후처리 엔진 (Vision Post-Processing Engine):** 객체 추출 로직과 이미지 품질 보정 로직을 구조적으로 분리(Decoupling)했습니다. 거친 형태의 원본 마스크를 상용화 수준의 에셋으로 끌어올리기 위해 형태학적(Morphological) **디헤일로(Dehalo)**, LAB 색공간 기반의 **색상 오염 제거(Color Decontamination)**, 거리 변환(Distance-transform)을 활용한 **경계선 페더링(Edge Feathering)**을 독자적인 픽셀 단위 후처리 파이프라인으로 직접 구현했습니다.
+* **독립적 R&D 대시보드 (FastAPI 기반):** 각 파이프라인 단계(Anchor, Detect, Segment, Quality)를 분리하여 개별 디버깅이 가능하도록 무거운 모델들의 지연 로딩(Lazy-loading)을 적용한 웹 인터페이스를 구축했습니다. 직관적인 실시간 파라미터 튜닝을 지원하며, 라플라시안 선명도(Laplacian Sharpness) 및 MAD 노이즈 지표를 통해 전/후처리 결과를 객관적으로 평가할 수 있습니다.
 
 ### 🧠 AI 에이전트 장기 기억(Memory) 시스템
 *AI 어시스턴트를 위한 MCP 기반의 장기 기억 아키텍처. [🔗 GitHub Repo](https://github.com/entangelk/agent-memory-system-public)*
@@ -52,7 +52,7 @@
 * **Separation of Concerns:** "기억은 단순한 로그가 아니라 압축된 의미망이다"라는 철학을 시스템으로 구현했습니다. 진실의 공급원(State of Truth) 역할을 하는 **MongoDB**와, 문맥의 의미론적 검색을 담당하는 Vector Cache인 **ChromaDB**를 엄격하게 분리하여 영구적이고 논리적인 기억 아키텍처를 설계했습니다.
 
 ### 🗺️ 기하학 기반 경로 탐색 알고리즘의 한계 규명 (Circle-WFC)
-*전통적인 'A*' 탐색을 대체하기 위한 기하학 기반 WFC 경로 탐색 R&D 및 포스트모텀. [🔗 GitHub Repo](https://github.com/entangelk/circle-wfc)*
+*전통적인 `A*` 탐색을 대체하기 위한 기하학 기반 WFC 경로 탐색 R&D 및 포스트모텀. [🔗 GitHub Repo](https://github.com/entangelk/circle-wfc)*
 
 * **Hypothesis & Early Wins:** WFC(Wave Function Collapse) 알고리즘을 타일이 아닌 기하학적 위상(Circle layers)에 적용하여 A*를 대체하고자 했습니다. 초기 단순 맵에서는 A*보다 압도적으로 빠르고 메모리 효율이 높음을 확인했습니다.
 * **Root Cause Analysis (한계 분석):** 복잡한 미로 환경에서 성능이 급감하는 현상을 디버깅한 결과, 근본적인 구조적 모순을 발견했습니다. WFC는 '국소적 일관성(Local consistency)'을 맞추는 데 최적화되어 있으나, 경로 탐색은 '전역적 연결성(Global connectivity)'이 필수적입니다. 즉, 조기 결정(Early commitment)을 내리는 WFC의 특성이 복잡한 위상학적 탐색과는 맞지 않음을 수치와 로그로 증명했습니다.
