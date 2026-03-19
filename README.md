@@ -4,9 +4,9 @@
 </p>
 <p align="center"><sub>Switch language / 언어 전환</sub></p>
 
-# Greetings!👋 I'm a Data & AI Engineer 🚀
+# Greetings! 👋 I'm a Data & AI Engineer 🚀
 
-Starting my journey as a Data Analyst (DA), I am now an engineer who bridges the gap between data flow and system architecture. Moving beyond simple API calls, my focus is on building robust, practical pipelines within strict business constraints (resources, time, cost). I strictly avoid over-engineering and treat AI models (LLMs, Vision) not as ultimate goals, but as powerful tools to solve real-world problems.
+Starting my journey as a Data Analyst (DA), I am now an engineer who bridges the gap between data flow and system architecture. I focus on building robust, practical pipelines within strict business constraints (resources, time, cost), actively avoiding over-engineering. I treat AI models (LLMs, Vision) not as ultimate goals, but as powerful tools to solve real-world problems.
 
 ### 💡 My Philosophy
 > "Memory is not a log. Memory is compacted meaning." 
@@ -16,84 +16,28 @@ Starting my journey as a Data Analyst (DA), I am now an engineer who bridges the
 
 ### 🛠️ Practical Arsenal
 
-* **Core Logic & Prototyping:** Python, Pandas, Jupyter Notebook
-* **AI Engineering (LLM & Vision):** * *Proprietary:* GPT-5.2, Claude 4.6, Gemini 3.1
-  * *Open-Source:* Qwen2.5, Llama 3 (llama.cpp Quantization), BGE-m3 (Embedding/Reranking), Flux, SAM, Grounding DINO
-* **Backend & System:** FastAPI (Swagger-based API Design), MongoDB, ChromaDB, Docker
+* **Core Logic & Data:** Python, Pandas, Jupyter Notebook
+* **AI Engineering:** GPT-5.2, Claude 4.6, Gemini 3.1, Qwen2.5, Llama 3, BGE-m3, Flux, SAM, Grounding DINO, etc
+* **Backend & System:** FastAPI, MongoDB, ChromaDB, Docker
 
 ---
 
-### 💼 Work Experience / Corporate Projects
-
-#### 🧠 Production-Ready NLP Categorization Microservice
-* **Description:** Developed and deployed an AI microservice module that matches natural language user inputs with internal DB categories for a live commercial service.
-<details>
-<summary><b>🛠️ View Engineering Details</b></summary>
-
-* **Embedding & Reranking:** Built a highly accurate semantic search pipeline utilizing `BGE-m3` embedding and reranking models.
-* **Frictionless Integration:** Containerized the module via **Docker** and provided comprehensive **Swagger API docs**, ensuring seamless communication and integration with the core backend development team.
-</details>
-
-#### 🖼️ Large-Scale Asset Generation & Review Pipeline
-* **Description:** Built a mass-generation and review pipeline for 22,000+ service image assets, optimized for a one-off project under strict hardware limits.
-<details>
-<summary><b>🛠️ View Engineering Details</b></summary>
-
-* **Resource-Aware Architecture:** Designed a synchronous pipeline for a constrained local environment (WSL). Intentionally excluded DB/MQ, naturally utilizing physical hardware I/O limits as an API rate limiter.
-* **CSR Load Optimization:** Overcame a 5+ minute rendering bottleneck for 22,000 metadata entries by implementing **Lazy Loading** and **Browser Caching**, drastically improving dashboard performance.
-* **Model Scaling:** Conducted prompt PoC with local **Flux** models before successfully migrating to **Gemini API (Flash Image)** for mass production.
-</details>
-
-#### ⚙️ Zero-Overhead Internal Automation Pipeline
-* **Description:** Developed an internal-only automation hub to collect scattered static data and send notifications, strictly adhering to corporate security policies.
-<details>
-<summary><b>🛠️ View Engineering Details</b></summary>
-
-* **Zero Core-Dev Intervention:** Overcame external Cloud DB access restrictions by reverse-engineering and crawling the internal CMS. Reused legacy APIs (e.g., email/SMS dispatch modules) to build the pipeline without requesting additional backend resources.
-* **Secure Closed-Network Execution:** Maintained strict security by executing scripts exclusively within the closed internal network without external port-forwarding, inheriting existing module authentications.
-</details>
-
-#### 🔧 Lightweight Internal Network Utility
-* **Description:** A simple Python-based port-connection script to resolve single-connection VPN bottlenecks.
-<details>
-<summary><b>🛠️ View Engineering Details</b></summary>
-
-* **Impact:** Eliminated workflow interruptions caused by strict corporate VPN policies, enabling team members to maintain multiple secure connections efficiently with minimal setup.
-</details>
-
----
+### 💼 Corporate Projects (Selected)
+* 🧠 **NLP Categorization Microservice:** Commercial semantic search module using `BGE-m3` with Docker/Swagger integration.
+* 🖼️ **Large-Scale Asset Generation Pipeline:** 22,000+ image generation/review dashboard optimizing WSL limits and CSR load.
+* ⚙️ **Zero-Overhead Automation:** Internal automation pipeline reusing legacy CMS APIs to ensure zero core-dev intervention.
+* 🔧 **Internal Network Utility:** Lightweight Python script to bypass single-connection VPN bottlenecks.
 
 ### 🔥 Personal & R&D Projects
+* 🎯 **Automated Brand Logo Extraction:** Zero-shot segmentation test lab combining Grounding DINO, SAM, and custom post-processing.
+* 🧠 **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public):** MCP-based long-term memory architecture separating State of Truth (MongoDB) and Vector Cache.
+* ⚡ **[WFC Algorithm R&D](https://github.com/entangelk/hw-wfc):** Geometry-based Wave Function Collapse and constraint-driven AI auto-scheduler achieving ~2400x speedup.
 
-#### 🎯 Automated Brand Logo Extraction Pipeline (Test Lab)
-* **Description:** A zero-shot segmentation pipeline and R&D dashboard designed to automatically extract high-quality brand logos from physical signboard images.
-<details>
-<summary><b>🛠️ View Engineering Details</b></summary>
+---
 
-* **Automated Anchoring:** Combined **Grounding DINO** with OCR/Contour hybrid methods to automate input prompts for **SAM (Segment Anything)**.
-* **Vision Post-processing:** Implemented pixel-level quality tuning pipelines (Dehalo, Color Decontamination, Edge Feathering) to ensure commercial-grade image outputs.
-* **R&D Test Lab (FastAPI):** Built a web interface to tune model parameters (IoU, stability) and visualize pre/post-processing metrics (Sharpness, Noise).
-</details>
-
-#### 🧠 Agent Memory System
-* **Link:** [GitHub Repository](https://github.com/entangelk/agent-memory-system-public)
-* **Description:** MCP-based long-term memory architecture for AI assistants. 
-<details>
-<summary><b>🛠️ View Engineering Details</b></summary>
-
-* **Key Engineering:** Strictly separates State of Truth (MongoDB) and Vector Cache (ChromaDB) to maintain persistent, compacted meaning.
-</details>
-
-#### ⚡ WFC Algorithm Optimization & AI Auto-Scheduler
-* **Links:** [Circle-WFC](https://github.com/entangelk/circle-wfc) | [T-WFC](https://github.com/entangelk/T-WFC) | [HW-WFC v2.0](https://github.com/entangelk/hw-wfc)
-* **Description:** R&D on Wave Function Collapse (WFC) algorithms and neural network prototypes.
-<details>
-<summary><b>🛠️ View Engineering Details</b></summary>
-
-* Designed geometry-based WFC to overcome the topological limitations of traditional A* search.
-* Prototyped a gradient-free neural network using PyTorch, forming classification boundaries via discrete state collapse instead of backpropagation.
-* Developed a constraint-driven AI compiler auto-scheduler, achieving **~2400x speedup** and reducing the search space by 98.5%.
-</details>
+> 💡 **Curious about the engineering details?**
+> Check out my troubleshooting process, parameter tuning, and architectural choices for these selected projects here:
+> 👉 **[Selected Project Details (PROJECTS.md) 🔗](./PROJECTS.md)**
 
 ---
 
