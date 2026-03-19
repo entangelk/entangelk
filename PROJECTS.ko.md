@@ -51,20 +51,19 @@
 
 * **Separation of Concerns:** "기억은 단순한 로그가 아니라 압축된 의미망이다"라는 철학을 시스템으로 구현했습니다. 진실의 공급원(State of Truth) 역할을 하는 **MongoDB**와, 문맥의 의미론적 검색을 담당하는 Vector Cache인 **ChromaDB**를 엄격하게 분리하여 영구적이고 논리적인 기억 아키텍처를 설계했습니다.
 
-### 🗺️ 기하학 기반 경로 탐색 알고리즘 (Circle-WFC)
-*전통적인 A* 탐색의 위상학적 한계를 극복하기 위한 경로 탐색 R&D. [🔗 GitHub Repo](https://github.com/entangelk/circle-wfc)*
+### 🗺️ 기하학 기반 경로 탐색 알고리즘의 한계 규명 (Circle-WFC)
+*전통적인 A* 탐색을 대체하기 위한 기하학 기반 WFC 경로 탐색 R&D 및 포스트모텀. [🔗 GitHub Repo](https://github.com/entangelk/circle-wfc)*
 
-* **Geometry-based Pathfinding:** WFC(Wave Function Collapse) 알고리즘을 타일 그리드가 아닌 기하학적 위상에 적용할 수 있도록 구조를 재설계하여, 더 복잡하고 유연한 경로 탐색이 가능하도록 구현했습니다.
+* **Hypothesis & Early Wins:** WFC(Wave Function Collapse) 알고리즘을 타일이 아닌 기하학적 위상(Circle layers)에 적용하여 A*를 대체하고자 했습니다. 초기 단순 맵에서는 A*보다 압도적으로 빠르고 메모리 효율이 높음을 확인했습니다.
+* **Root Cause Analysis (한계 분석):** 복잡한 미로 환경에서 성능이 급감하는 현상을 디버깅한 결과, 근본적인 구조적 모순을 발견했습니다. WFC는 '국소적 일관성(Local consistency)'을 맞추는 데 최적화되어 있으나, 경로 탐색은 '전역적 연결성(Global connectivity)'이 필수적입니다. 즉, 조기 결정(Early commitment)을 내리는 WFC의 특성이 복잡한 위상학적 탐색과는 맞지 않음을 수치와 로그로 증명했습니다.
+* **Conclusion:** Circle-WFC를 범용 경로 탐색기로 사용하는 것은 부적합하다는 명확한 결론을 내렸습니다. 대신, A*와 같은 전역 탐색기가 작동하기 전 후보 영역을 극단적으로 좁혀주는 **'탐색 공간 축소기(Search Space Reducer)'** 및 하이브리드 전처리 모듈로서의 새로운 활용 가치를 도출했습니다.
 
 ### 👁️ Gradient-free 신경망 프로토타입 (T-WFC)
-*역전파 없는 새로운 형태의 신경망 학습 프로토타입 설계. [🔗 GitHub Repo](https://github.com/entangelk/T-WFC)*
+*역전파 없는 이산값(Discrete) 기반의 신경망 학습 프로토타입 설계 및 한계 분석. [🔗 GitHub Repo](https://github.com/entangelk/T-WFC)*
 
-* **Discrete State Collapse:** PyTorch의 텐서 연산을 '수학적 도구'로 활용하여, 모델 학습의 정석인 역전파(Backpropagation)에 의존하지 않고 이산 상태 붕괴(Discrete state collapse) 방식을 통해 자체적인 데이터 분류 경계를 형성하는 구조를 증명했습니다.
-
-### ⚡ AI 컴파일러 자동 스케줄러 (HW-WFC v2.0)
-*하드웨어 최적화를 위한 제약 기반 자동 스케줄링 R&D. [🔗 GitHub Repo](https://github.com/entangelk/hw-wfc)*
-
-* **Constraint-driven Auto-Scheduling:** 무차별 대입 방식의 한계를 넘기 위해 제약 기반 탐색(Constraint-driven search) 알고리즘을 AI 컴파일러 스케줄러에 도입했습니다. 결과적으로 기존 Grid Search 대비 탐색 공간을 98.5% 축소하고 **약 2400배의 속도 향상**을 달성했습니다.
+* **Discrete State Collapse:** 모델 학습의 정석인 역전파(Backpropagation)에 의존하지 않고, 5개의 이산값(`{-1, -0.5, 0, 0.5, 1}`)에 대한 상태 붕괴(State collapse) 방식만으로 장난감 신경망(Toy MLP)을 학습시키는 데 성공하며 PoC(Proof of Concept)를 완료했습니다. 선형 분리 문제에서는 SGD와 동일한 100%의 정확도를 달성했습니다.
+* **Scaling Limits (한계 분석):** XOR이나 Spiral 같은 비선형 문제에 도입 시, 5개의 이산값 조합만으로는 결정 경계(Decision boundary)를 형성하는 표현력이 턱없이 부족함을 확인했습니다. 또한, 파라미터가 증가함에 따라 메모리와 탐색 시간이 기하급수적으로 폭발하여 신경망의 고차원적/비국소적 상호작용을 처리하는 데는 치명적인 한계가 있음을 입증했습니다.
+* **Conclusion:** WFC 기반 학습은 딥러닝 스케일업에는 부적합하지만, 극단적인 저전력 엣지 디바이스 환경에서의 **저비트 양자화(Low-bit quantization)** 대안이나 국소적 연결성을 가진 아키텍처(CNN 등)에서의 후속 연구 가능성을 남겼습니다.
 
 ---
 <p align="center">
