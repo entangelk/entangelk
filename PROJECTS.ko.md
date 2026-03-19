@@ -52,11 +52,11 @@
 * **Separation of Concerns:** "기억은 단순한 로그가 아니라 압축된 의미망이다"라는 철학을 시스템으로 구현했습니다. 진실의 공급원(State of Truth) 역할을 하는 **MongoDB**와, 문맥의 의미론적 검색을 담당하는 Vector Cache인 **ChromaDB**를 엄격하게 분리하여 영구적이고 논리적인 기억 아키텍처를 설계했습니다.
 
 ### ⚡ WFC 알고리즘 최적화 및 AI 컴파일러 자동 스케줄러
-*WFC(Wave Function Collapse) 기반의 경로 탐색 알고리즘 및 AI 컴파일러 자동 스케줄러 R&D. [🔗 GitHub Repo](https://github.com/entangelk/hw-wfc)*
+*WFC(Wave Function Collapse) 기반의 경로 탐색, 신경망 프로토타이핑, 그리고 컴파일러 스케줄러 최적화를 다룬 3개의 독립적인 R&D 프로젝트입니다.*
 
-* **Geometry-based Pathfinding:** 전통적인 A* 탐색 알고리즘이 가지는 위상학적 한계를 극복하기 위해 기하학 기반의 WFC 알고리즘을 설계했습니다.
-* **Gradient-free Neural Network:** PyTorch의 텐서 연산을 활용하여, 전통적인 역전파(Backpropagation) 방식이 아닌 이산 상태 붕괴(Discrete state collapse) 방식을 통해 분류 경계를 형성하는 신경망 프로토타입을 구현했습니다.
-* **Auto-Scheduler:** 제약 기반(Constraint-driven) AI 컴파일러 자동 스케줄러를 개발하여, 기존 Grid Search 대비 탐색 공간을 98.5% 축소하고 **약 2400배의 속도 향상**을 달성했습니다.
+* **Geometry-based Pathfinding [🔗 Circle-WFC](https://github.com/entangelk/circle-wfc):** 전통적인 A* 탐색 알고리즘이 가지는 위상학적 한계를 극복하기 위해 기하학 기반의 WFC 알고리즘을 설계했습니다.
+* **Gradient-free Neural Network [🔗 T-WFC](https://github.com/entangelk/T-WFC):** PyTorch의 텐서 연산을 활용하여, 전통적인 역전파(Backpropagation) 방식이 아닌 이산 상태 붕괴(Discrete state collapse) 방식을 통해 분류 경계를 형성하는 신경망 프로토타입을 구현했습니다.
+* **AI Compiler Auto-Scheduler [🔗 HW-WFC v2.0](https://github.com/entangelk/hw-wfc):** 제약 기반(Constraint-driven) AI 컴파일러 자동 스케줄러를 개발하여, 기존 Grid Search 대비 탐색 공간을 98.5% 축소하고 **약 2400배의 속도 향상**을 달성했습니다.
 
 ---
 <p align="center">
