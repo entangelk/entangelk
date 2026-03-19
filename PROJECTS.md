@@ -51,11 +51,11 @@ This document contains the engineering context, troubleshooting processes, and a
 * **Separation of Concerns:** Memory is compacted meaning, not just a log. To enforce this, I strictly separated the system's architecture into two layers: **MongoDB** as the immutable State of Truth (SoT) and **ChromaDB** as the dynamic Vector Cache for semantic context retrieval.
 
 ### ⚡ WFC Algorithm Optimization & AI Auto-Scheduler
-*R&D on Wave Function Collapse (WFC) algorithms and constraint-driven scheduling. [🔗 GitHub Repo](https://github.com/entangelk/hw-wfc)*
+*R&D on Wave Function Collapse (WFC) algorithms, neural network prototypes, and compiler scheduling across three distinct repositories.*
 
-* **Geometry-based Pathfinding:** Designed a geometry-based WFC algorithm to overcome the topological limitations of traditional A* search.
-* **Gradient-free Neural Network:** Prototyped a network using PyTorch tensor operations that forms classification boundaries via discrete state collapse instead of traditional backpropagation.
-* **Auto-Scheduler:** Developed a constraint-driven AI compiler auto-scheduler, achieving **~2400x speedup** and reducing the search space by 98.5% compared to standard Grid Search.
+* **Geometry-based Pathfinding [🔗 Circle-WFC](https://github.com/entangelk/circle-wfc):** Designed a geometry-based WFC algorithm to overcome the topological limitations of traditional A* search.
+* **Gradient-free Neural Network [🔗 T-WFC](https://github.com/entangelk/T-WFC):** Prototyped a network using PyTorch tensor operations that forms classification boundaries via discrete state collapse instead of traditional backpropagation.
+* **AI Compiler Auto-Scheduler [🔗 HW-WFC v2.0](https://github.com/entangelk/hw-wfc):** Developed a constraint-driven AI compiler auto-scheduler, achieving **~2400x speedup** and reducing the search space by 98.5% compared to standard Grid Search.
 
 ---
 <p align="center">
