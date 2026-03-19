@@ -31,7 +31,9 @@ Starting my journey as a Data Analyst (DA), I am now an engineer who bridges the
 ### 🔥 Personal & R&D Projects
 * 🎯 **Automated Brand Logo Extraction:** Zero-shot segmentation test lab combining Grounding DINO, SAM, and custom post-processing.
 * 🧠 **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public):** MCP-based long-term memory architecture separating State of Truth (MongoDB) and Vector Cache.
-* ⚡ **WFC Algorithm R&D ([Circle-WFC](https://github.com/entangelk/circle-wfc) | [T-WFC](https://github.com/entangelk/T-WFC) | [HW-WFC v2.0](https://github.com/entangelk/hw-wfc)):** Geometry-based Wave Function Collapse, gradient-free neural networks, and a constraint-driven AI auto-scheduler achieving ~2400x speedup.
+* 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc):** A geometry-based pathfinding algorithm designed to overcome the topological limitations of traditional A* search.
+* 👁️ **[T-WFC](https://github.com/entangelk/T-WFC):** A gradient-free neural network prototype that forms classification boundaries via discrete state collapse instead of backpropagation.
+* ⚡ **[HW-WFC v2.0](https://github.com/entangelk/hw-wfc):** A constraint-driven AI compiler auto-scheduler that achieves a ~2400x speedup and reduces the search space by 98.5% compared to Grid Search.
 
 ---
 
