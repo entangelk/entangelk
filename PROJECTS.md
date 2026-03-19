@@ -40,13 +40,13 @@ This document contains the engineering context, troubleshooting processes, and a
 
 🎯 Automated Brand Logo Extraction Pipeline (Test Lab)
 
-*A zero-shot segmentation pipeline and R&D dashboard designed to automatically extract high-quality brand logos from complex physical signboard images.
+*A zero-shot segmentation pipeline and R&D dashboard designed to automatically extract high-quality brand logos from complex physical signboard images. [🔗 GitHub Repo](https://github.com/entangelk/logo_image)*
 
-* **Automated Hybrid Anchoring: Overcame the brittleness of blind SAM prompting. Combined Grounding DINO for ROI bounding with an OCR/Contour hybrid method to automatically generate precise, dense foreground anchor points, significantly reducing background hallucinations.
+* **Automated Hybrid Anchoring:** Overcame the brittleness of blind SAM prompting. Combined Grounding DINO for ROI bounding with an OCR/Contour hybrid method to automatically generate precise, dense foreground anchor points, significantly reducing background hallucinations.
 
-* **Vision Post-Processing Engine: Separated extraction logic from quality refinement. Built a custom pixel-level tuning pipeline implementing Morphological Dehalo, LAB-space Color Decontamination, and distance-transform Edge Feathering to turn raw masks into commercial-grade assets.
+* **Vision Post-Processing Engine:** Separated extraction logic from quality refinement. Built a custom pixel-level tuning pipeline implementing Morphological Dehalo, LAB-space Color Decontamination, and distance-transform Edge Feathering to turn raw masks into commercial-grade assets.
 
-* **Decoupled R&D Dashboard (FastAPI): Engineered a lazy-loaded web interface that isolates each pipeline stage (Anchor, Detect, Segment, Quality) for independent debugging. Enables real-time parameter tuning and objective evaluation via Laplacian Sharpness and MAD Noise metrics.
+* **Decoupled R&D Dashboard (FastAPI):** Engineered a lazy-loaded web interface that isolates each pipeline stage (Anchor, Detect, Segment, Quality) for independent debugging. Enables real-time parameter tuning and objective evaluation via Laplacian Sharpness and MAD Noise metrics.
 
 ### 🧠 Agent Memory System
 *MCP-based long-term memory architecture for AI assistants. [🔗 GitHub Repo](https://github.com/entangelk/agent-memory-system-public)*
