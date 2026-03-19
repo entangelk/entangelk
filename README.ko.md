@@ -32,7 +32,9 @@
 ### 🔥 Personal & R&D Projects
 * 🎯 **자동화된 브랜드 로고 추출 파이프라인:** Grounding DINO, SAM 프롬프트 자동화 및 커스텀 퀄리티 후처리를 적용한 Zero-shot Segmentation 테스트랩.
 * 🧠 **[AI 에이전트 장기 기억 시스템](https://github.com/entangelk/agent-memory-system-public):** MongoDB(SoT)와 Vector Cache를 엄격히 분리한 MCP 기반 장기 기억 아키텍처.
-* ⚡ **WFC 알고리즘 R&D ([Circle-WFC](https://github.com/entangelk/circle-wfc) | [T-WFC](https://github.com/entangelk/T-WFC) | [HW-WFC v2.0](https://github.com/entangelk/hw-wfc)):** 기하학 기반 WFC, 역전파 없는 이산 상태 붕괴 신경망, 그리고 2400배 속도 향상을 이룬 AI 자동 스케줄러.
+* 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc):** 기존 A* 탐색의 위상학적 한계를 극복하기 위해 독자 설계한 기하학(Geometry) 기반 경로 탐색 알고리즘.
+* 👁️ **[T-WFC](https://github.com/entangelk/T-WFC):** 역전파(Backpropagation) 없이 이산 상태 붕괴만으로 분류 경계를 형성한 Gradient-free 신경망 프로토타입.
+* ⚡ **[HW-WFC v2.0](https://github.com/entangelk/hw-wfc):** 제약 기반(Constraint-driven) 탐색을 통해 Grid Search 대비 탐색 공간을 98.5% 축소하고 약 2400배 속도 향상을 이룬 AI 컴파일러 자동 스케줄러.
 
 ---
 
