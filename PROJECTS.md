@@ -50,20 +50,19 @@ This document contains the engineering context, troubleshooting processes, and a
 
 * **Separation of Concerns:** Memory is compacted meaning, not just a log. To enforce this, I strictly separated the system's architecture into two layers: **MongoDB** as the immutable State of Truth (SoT) and **ChromaDB** as the dynamic Vector Cache for semantic context retrieval.
 
-### 🗺️ Geometry-based Pathfinding Algorithm (Circle-WFC)
-*Pathfinding R&D to overcome the topological limits of traditional A* search. [🔗 GitHub Repo](https://github.com/entangelk/circle-wfc)*
+### 🗺️ Limits of Geometry-Guided Pathfinding (Circle-WFC)
+*Pathfinding R&D and post-mortem aimed at replacing traditional A* search with geometry-guided WFC. [🔗 GitHub Repo](https://github.com/entangelk/circle-wfc)*
 
-* **Geometry-based WFC:** Redesigned the Wave Function Collapse (WFC) algorithm to apply to geometric topologies rather than simple tile grids, enabling more complex and flexible pathfinding.
+* **Hypothesis & Early Wins:** Attempted to apply the Wave Function Collapse (WFC) algorithm to geometric layers (circles/rays) rather than tile grids. In early tests on simple or empty maps, it significantly outperformed A* in both speed and memory efficiency.
+* **Root Cause Analysis:** Performance degraded sharply in complex mazes. Through rigorous debugging, I identified a fundamental structural contradiction: WFC is an engine for **'local consistency'**, whereas pathfinding requires **'global connectivity'**. WFC's tendency for "early commitment" (state collapse) proved fatal when long, topologically complex detours were required.
+* **Conclusion:** Concluded that Circle-WFC is unsuitable as a standalone, general-purpose shortest-path solver. However, I successfully redefined its engineering value as a **'Search Space Reducer'** or 'Candidate Corridor Generator'—a highly efficient preprocessing module that drastically narrows the search area before a global solver (like A*) takes over.
 
 ### 👁️ Gradient-free Neural Network Prototype (T-WFC)
-*Designing a novel neural network training prototype without backpropagation. [🔗 GitHub Repo](https://github.com/entangelk/T-WFC)*
+*Designing a neural network training prototype without backpropagation and analyzing its scaling limits. [🔗 GitHub Repo](https://github.com/entangelk/T-WFC)*
 
-* **Discrete State Collapse:** Utilized PyTorch tensor operations purely as a mathematical tool to prove that classification boundaries can be formed through discrete state collapse, bypassing the traditional reliance on backpropagation.
-
-### ⚡ AI Compiler Auto-Scheduler (HW-WFC v2.0)
-*Constraint-driven auto-scheduling R&D for hardware optimization. [🔗 GitHub Repo](https://github.com/entangelk/hw-wfc)*
-
-* **Constraint-driven Auto-Scheduling:** Introduced a constraint-driven search algorithm to the AI compiler scheduler to overcome the limits of brute-force methods. This drastically reduced the search space by 98.5% and achieved a **~2400x speedup** compared to conventional Grid Search.
+* **Discrete State Collapse (PoC):** Successfully trained a toy MLP without utilizing autograd, backpropagation, or continuous optimizers. The model was trained purely through the WFC observe-collapse-propagate loop, restricting weights to only 5 discrete values (`{-1, -0.5, 0, 0.5, 1}`). It successfully matched the SGD baseline (100% accuracy) on linearly separable datasets.
+* **Scaling Limits Analysis:** When tested on moderate-to-strong non-linear problems (XOR, Spiral), performance dropped significantly. I proved that the combinatorial search capacity of 5 discrete values is fundamentally insufficient to form complex, non-linear decision boundaries. Furthermore, as parameter count increased, memory and time overhead scaled exponentially, proving it impractical for deep learning scale-up.
+* **Conclusion:** While not viable as a replacement for SGD in large models, this research validated the WFC-to-weight mapping concept. It leaves the door open for niche applications, such as alternative low-bit quantization for extreme edge devices or spatially local architectures (e.g., CNNs) where WFC's propagation model fits more naturally.
 
 ---
 <p align="center">
