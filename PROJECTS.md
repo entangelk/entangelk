@@ -64,6 +64,11 @@ This document contains the engineering context, troubleshooting processes, and a
 * **Scaling Limits Analysis:** When tested on moderate-to-strong non-linear problems (XOR, Spiral), performance dropped significantly. I proved that the combinatorial search capacity of 5 discrete values is fundamentally insufficient to form complex, non-linear decision boundaries. Furthermore, as parameter count increased, memory and time overhead scaled exponentially, proving it impractical for deep learning scale-up.
 * **Conclusion:** While not viable as a replacement for SGD in large models, this research validated the WFC-to-weight mapping concept. It leaves the door open for niche applications, such as alternative low-bit quantization for extreme edge devices or spatially local architectures (e.g., CNNs) where WFC's propagation model fits more naturally.
 
+### ⚡ AI Compiler Auto-Scheduler (HW-WFC v2.0)
+*Constraint-driven auto-scheduling R&D for hardware optimization. [🔗 GitHub Repo](https://github.com/entangelk/hw-wfc)*
+
+* **Constraint-driven Auto-Scheduling:** Introduced a constraint-driven search algorithm to the AI compiler scheduler to overcome the limits of brute-force methods. This drastically reduced the search space by 98.5% and achieved a **~2400x speedup** compared to conventional Grid Search.
+
 ---
 <p align="center">
   <a href="./README.md">⬅️ Back to Main Profile</a>
