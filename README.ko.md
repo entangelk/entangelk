@@ -18,7 +18,7 @@
 ### 🛠️ Practical Arsenal
 
 * **Core Logic & Data:** Python, Pandas, Jupyter Notebook
-* **AI Engineering:** GPT-5.2, Claude 4.6, Gemini 5.2, Qwen2.5, Llama 3, BGE-m3, Flux, SAM, Grounding DINO, etc
+* **AI Engineering:** GPT-5.4, Claude 4.6, Gemini 5.2, Qwen2.5, Llama 3, BGE-m3, Flux, SAM, Grounding DINO, etc
 * **Backend & System:** FastAPI, MongoDB, ChromaDB, Docker
 
 ---
