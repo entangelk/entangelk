@@ -33,7 +33,7 @@ Starting my journey as a Data Analyst (DA), I am now an engineer who bridges the
 * 🧠 **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public):** MCP-based long-term memory architecture separating State of Truth (MongoDB) and Vector Cache.
 * 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc):** Geometry-guided WFC pathfinding R&D. Proved the structural mismatch between local constraint satisfaction and global connectivity, successfully repositioning the algorithm as a hybrid "Search Space Reducer".
 * 👁️ **[T-WFC](https://github.com/entangelk/T-WFC):** A gradient-free neural network prototype trained solely on discrete state collapse. Validated the PoC on linear problems while clearly identifying its scaling limits in non-linear, high-dimensional spaces.
-* ⚡ **[HW-WFC v2.0](https://github.com/entangelk/hw-wfc):** A constraint-driven AI compiler auto-scheduler that achieves a ~2400x speedup and reduces the search space by 98.5% compared to Grid Search.
+* ⚡ **[HW-WFC v2.9](https://github.com/entangelk/hw-wfc):** Constraint-based auto-scheduling R&D and rigorous post-mortem. Matched Exact DP's optimum and proved GPU correlation, but objectively debunked earlier speedup claims, demonstrating no practical advantage over existing methods on modern unconstrained hardware.
 
 ---
 
