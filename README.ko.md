@@ -34,7 +34,7 @@
 * 🧠 **[AI 에이전트 장기 기억 시스템](https://github.com/entangelk/agent-memory-system-public):** MongoDB(SoT)와 Vector Cache를 엄격히 분리한 MCP 기반 장기 기억 아키텍처.
 * 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc):** 기하학 기반 WFC를 도입한 경로 탐색 R&D. 국소적 제약 해결(WFC)과 전역적 연결성(Pathfinding) 간의 구조적 충돌 한계를 증명하고, 이를 '탐색 공간 축소기(Search Space Reducer)'로 활용하는 하이브리드 접근법을 도출.
 * 👁️ **[T-WFC](https://github.com/entangelk/T-WFC):** 역전파 없이 5개의 이산값(Discrete) 상태 붕괴만으로 신경망 학습을 시도한 Gradient-free 프로토타입. 선형 문제에서의 PoC 성공 및 비선형/고차원 문제에서의 스케일링 한계를 명확히 규명.
-* ⚡ **[HW-WFC v2.0](https://github.com/entangelk/hw-wfc):** 제약 기반(Constraint-driven) 탐색을 통해 Grid Search 대비 탐색 공간을 98.5% 축소하고 약 2400배 속도 향상을 이룬 AI 컴파일러 자동 스케줄러.
+* ⚡ **[HW-WFC v2.9](https://github.com/entangelk/hw-wfc):** AI 컴파일러 스케줄링을 위한 제약 기반 탐색(WFC) R&D 및 포스트모텀. Exact DP와 100% 동일한 최적해를 도출하고 실제 GPU와의 상관관계를 입증했으나, 초기 벤치마크의 허점을 짚어내며 현대 하드웨어(충분한 SRAM)에서는 기존 알고리즘 대비 실질적 우위가 없음을 객관적으로 규명.
 
 ---
 
