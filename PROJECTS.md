@@ -67,14 +67,14 @@ This document contains the engineering context, troubleshooting processes, and a
 * **Scaling Limits Analysis:** When tested on moderate-to-strong non-linear problems (XOR, Spiral), performance dropped significantly. I proved that the combinatorial search capacity of 5 discrete values is fundamentally insufficient to form complex, non-linear decision boundaries. Furthermore, as parameter count increased, memory and time overhead scaled exponentially, proving it impractical for deep learning scale-up.
 * **Conclusion:** While not viable as a replacement for SGD in large models, this research validated the WFC-to-weight mapping concept. It leaves the door open for niche applications, such as alternative low-bit quantization for extreme edge devices or spatially local architectures (e.g., CNNs) where WFC's propagation model fits more naturally.
 
-### ⚡ AI Compiler Auto-Scheduler (HW-WFC v2.9)
-*Constraint-driven scheduling R&D and rigorous post-mortem analysis for AI hardware. [🔗 GitHub Repo](https://github.com/entangelk/hw-wfc)*
+### ⚡ AI Compiler Auto-Scheduler R&D & Feasibility Study (HW-WFC v2.9)
+*Constraint-driven scheduling R&D validating the practical potential of WFC in AI hardware compilation. [🔗 GitHub Repo](https://github.com/entangelk/hw-wfc)*
 
-* **Algorithm Validation & GPU Correlation:** Applied WFC to AI compiler scheduling, successfully matching the exact optimum found by Dynamic Programming (Exact DP). Proved that the custom cost model holds a positive directional correlation with actual RTX 3060 kernel execution times (Average Spearman ρ = +0.52, reaching a perfect 1.0 for Softmax).
+* **Algorithm Validation:** Applied WFC to AI compiler scheduling, successfully identifying the exact optimum matched by Dynamic Programming (Exact DP). The custom cost model accurately predicted the correct directional performance, showing a positive correlation with actual RTX 3060 kernel execution times (Average ρ = +0.52, Softmax up to 1.0).
 
-* **Rigorous Post-mortem:** Debunked earlier claims of "massive speedups" by identifying them as artifacts of unoptimized baselines. Through rigorous benchmarking, I objectively concluded that the WFC approach offers no practical advantage over Exact DP or the Triton Autotuner on this specific problem scope.
+* **Strategic Scope Management:** Proved the algorithm's search capability, while objectively identifying that true production value—such as outperforming existing Autotuners—requires calibrating the cost model with massive real-world GPU profiling data. Having fulfilled all software-level prototype objectives, the research was strategically concluded at the hardware-dependency boundary.
 
-* **Virtual Spec Dependency Insights:** Demonstrated that the strengths of constraint-driven search only shine under artificially tight memory constraints (e.g., 12KB SRAM). On modern hardware like the A100 (192KB), the constraints are too loose to justify the complex search overhead. Concluded that the true bottleneck for production is not the search algorithm itself, but the precise calibration of the cost model against real GPU profiling data.
+* **Path Forward & Potential:** This project highlighted the immense power of constraint-driven search under tight memory limits (e.g., 12KB SRAM). With future hardware-backed cost model calibration, this architecture has strong potential for zero-shot cross-compilation and acting as a powerful candidate-reducer to warm-start traditional autotuners.
 
 ---
 <p align="center">
