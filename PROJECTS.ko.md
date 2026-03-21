@@ -65,10 +65,14 @@
 * **Scaling Limits (한계 분석):** XOR이나 Spiral 같은 비선형 문제에 도입 시, 5개의 이산값 조합만으로는 결정 경계(Decision boundary)를 형성하는 표현력이 턱없이 부족함을 확인했습니다. 또한, 파라미터가 증가함에 따라 메모리와 탐색 시간이 기하급수적으로 폭발하여 신경망의 고차원적/비국소적 상호작용을 처리하는 데는 치명적인 한계가 있음을 입증했습니다.
 * **Conclusion:** WFC 기반 학습은 딥러닝 스케일업에는 부적합하지만, 극단적인 저전력 엣지 디바이스 환경에서의 **저비트 양자화(Low-bit quantization)** 대안이나 국소적 연결성을 가진 아키텍처(CNN 등)에서의 후속 연구 가능성을 남겼습니다.
 
-### ⚡ AI 컴파일러 자동 스케줄러 (HW-WFC v2.0)
-*하드웨어 최적화를 위한 제약 기반 자동 스케줄링 R&D. [🔗 GitHub Repo](https://github.com/entangelk/hw-wfc)*
+### ⚡ AI 컴파일러 자동 스케줄러 (HW-WFC v2.9)
+*하드웨어 최적화를 위한 제약 기반 자동 스케줄링 알고리즘 검증 및 객관적 한계 분석. [🔗 GitHub Repo](https://github.com/entangelk/hw-wfc)*
 
-* **Constraint-driven Auto-Scheduling:** 무차별 대입 방식의 한계를 넘기 위해 제약 기반 탐색(Constraint-driven search) 알고리즘을 AI 컴파일러 스케줄러에 도입했습니다. 결과적으로 기존 Grid Search 대비 탐색 공간을 98.5% 축소하고 **약 2400배의 속도 향상**을 달성했습니다.
+* **알고리즘 검증 및 GPU 상관관계 (Validation):** WFC 알고리즘을 AI 컴파일러 스케줄러에 도입하여 Exact DP(동적 계획법)와 100% 동일한 최적해를 도출하는 데 성공했습니다. 또한, 자체 설계한 비용 모델(Cost Model)이 실제 RTX 3060 GPU의 커널 실행 시간과 유의미한 방향적 상관관계(Average Spearman ρ = +0.52, Softmax 최대 1.0)를 가짐을 증명했습니다.
+
+* **객관적 한계 규명 (Rigorous Post-mortem):** 초기 프로토타입에서 관찰된 '수천 배의 속도 향상'이 최적화되지 않은 베이스라인(Unoptimized Python loop)으로 인한 착시임을 스스로 디버깅하여 바로잡았습니다. 엄밀한 벤치마크 결과, Exact DP나 Triton Autotuner 대비 속도나 품질 면에서 실질적인 성능 우위가 없음을 객관적인 수치로 결론 내렸습니다.
+
+* **하드웨어 스펙의 현실적 한계 (Hardware Dependency):** 제약 기반 탐색의 이점은 극단적으로 제한된 메모리(12KB SRAM) 환경에서만 발휘됨을 확인했습니다. A100(192KB)과 같은 현대 하드웨어에서는 메모리 제약이 느슨해져 스케줄링 탐색 공간 자체가 단순화됨(Virtual spec dependency)을 입증하며, 알고리즘 자체보다 '비용 모델의 정밀한 캘리브레이션'이 실제 프로덕션 도입의 핵심 병목이라는 엔지니어링 인사이트를 도출했습니다.
 
 ---
 <p align="center">
