@@ -4,43 +4,49 @@
 </p>
 <p align="center"><sub>Switch language / 언어 전환</sub></p>
 
-# Greetings! 👋 I'm a Data & AI Engineer 🚀
+# Hi, I'm entangelk
 
-Starting my journey as a Data Analyst (DA), I am now an engineer who bridges the gap between data flow and system architecture. I focus on building robust, practical pipelines within strict business constraints (resources, time, cost), actively avoiding over-engineering. I treat AI models (LLMs, Vision) not as ultimate goals, but as powerful tools to solve real-world problems.
+I build data and AI systems that have to survive real constraints: time, cost, memory, and messy integration boundaries.
 
-### 💡 My Philosophy
-> "Memory is not a log. Memory is compacted meaning." 
-> A system should reflect the philosophy of the business, and code is the most elegant means of control to enforce that philosophy.
+This profile is mostly a record of three things: projects I built, experiments I validated, and failures that were useful enough to turn into clear post-mortems.
 
----
+> "Memory is not a log. Memory is compacted meaning."
 
-### 🛠️ Practical Arsenal
+## What You'll Find Here
 
-* **Core Logic & Data:** Python, Pandas, Jupyter Notebook
-* **AI Engineering:** GPT-5.4, Claude 4.6, Gemini 3.1, Qwen2.5, Llama 3, BGE-m3, Flux, SAM, Grounding DINO, etc
-* **Backend & System:** FastAPI, MongoDB, ChromaDB, Docker
+* Production-minded data and AI engineering
+* MCP, vision, and automation projects that can stand as repositories on their own
+* R&D notes on memory, search, and constraint-driven systems
+* Failures, limits, and negative results documented as engineering post-mortems
 
----
+## Projects
 
-### 💼 Corporate Projects (Selected)
-* 🧠 **NLP Categorization Microservice:** Commercial semantic search module using `BGE-m3` with Docker/Swagger integration.
-* 🖼️ **Large-Scale Asset Generation Pipeline:** 22,000+ image generation/review dashboard optimizing WSL limits and CSR load.
-* ⚙️ **Zero-Overhead Automation:** Internal automation pipeline reusing legacy CMS APIs to ensure zero core-dev intervention.
-* 🔧 **Internal Network Utility:** Lightweight Python script to bypass single-connection VPN bottlenecks.
+* 🧠 **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public):** MCP-based long-term memory architecture separating MongoDB as the State of Truth from a vector cache for retrieval.
+* 🎯 **[Automated Brand Logo Extraction](https://github.com/entangelk/logo_image):** Zero-shot logo extraction pipeline combining Grounding DINO, SAM, OCR anchoring, and custom pixel-level post-processing.
 
-### 🔥 Personal & R&D Projects
-* 🎯 **[Automated Brand Logo Extraction](https://github.com/entangelk/logo_image):** A zero-shot segmentation pipeline that decouples SAM & Grounding DINO with hybrid OCR anchoring and custom pixel-level post-processing.
-* 🧠 **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public):** MCP-based long-term memory architecture separating State of Truth (MongoDB) and Vector Cache.
-* 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc):** Geometry-guided WFC pathfinding R&D. Proved the structural mismatch between local constraint satisfaction and global connectivity, successfully repositioning the algorithm as a hybrid "Search Space Reducer".
-* 👁️ **[T-WFC](https://github.com/entangelk/T-WFC):** A gradient-free neural network prototype trained solely on discrete state collapse. Validated the PoC on linear problems while clearly identifying its scaling limits in non-linear, high-dimensional spaces.
-* ⚡ **[HW-WFC v2.9](https://github.com/entangelk/hw-wfc):** Constraint-based auto-scheduling R&D for AI compilers. Successfully validated the algorithm by matching Exact DP's optimum. Concluded the software-level prototype by identifying hardware-profiled cost model calibration as the definitive critical path for unlocking cross-compilation and production-level autotuning.
+## Experiments
 
----
+* ⚡ **[HW-WFC v2.9](https://github.com/entangelk/hw-wfc):** Constraint-driven AI compiler scheduling R&D. `Result:` matched Exact DP's optimum and exposed hardware-backed cost-model calibration as the real production bottleneck.
 
-> 💡 **Curious about the engineering details?**
-> Check out my troubleshooting process, parameter tuning, and architectural choices for these selected projects here:
-> 👉 **[Selected Project Details (PROJECTS.md) 🔗](./PROJECTS.md)**
+## Failed Experiments & Post-Mortems
 
----
+* 🧪 **[Q-PSA](https://github.com/entangelk/Q-PSA_Pr):** Quantized perturbation sensitivity analysis for GGUF LLMs, testing whether discrete weight perturbations could rank layer importance without gradients. `Result:` failed; sensitivity did not predict pruning importance, and the method was about 1,300x slower than simple layer ablation.
+* 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc):** Geometry-guided WFC pathfinding experiment. `Result:` failed as a general shortest-path solver; useful as a search-space reducer before global search.
+* 👁️ **[T-WFC](https://github.com/entangelk/T-WFC):** Gradient-free neural network experiment based on discrete state collapse. `Result:` PoC worked on linear tasks, but scale-up failed on nonlinear problems.
 
-📫 **Contact:** [kdtyohan@gmail.com] | [[LinkedIn](https://www.linkedin.com/in/%EC%9A%94%ED%95%9C-%EB%B0%95-b4a06a3b3/)]
+## Selected Professional Work
+
+* NLP categorization microservice using `BGE-m3`, packaged with Docker and Swagger for low-friction integration
+* 22,000+ asset generation and review pipeline optimized for WSL limits and client-side rendering bottlenecks
+* Internal automation workflows built by reusing legacy CMS/API surfaces instead of requesting new platform work
+* Lightweight Python utility that eased a single-connection VPN bottleneck for the team
+
+## Engineering Notes
+
+For the longer write-ups on troubleshooting, architecture decisions, and project context:
+
+👉 **[Selected Project Details (PROJECTS.md)](./PROJECTS.md)**
+
+## Contact
+
+📫 **Contact:** [kdtyohan@gmail.com](mailto:kdtyohan@gmail.com) | [LinkedIn](https://www.linkedin.com/in/%EC%9A%94%ED%95%9C-%EB%B0%95-b4a06a3b3/)

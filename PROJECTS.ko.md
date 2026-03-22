@@ -37,42 +37,54 @@
 
 ---
 
-## 🔥 개인 R&D 프로젝트 (Personal & R&D Projects)
+## 🔥 개인 프로젝트, 실험, 그리고 포스트모텀
 
-### 🎯 자동화된 브랜드 로고 추출 파이프라인 (Test Lab)
+### 프로젝트
+
+#### 🎯 자동화된 브랜드 로고 추출 파이프라인 (Test Lab)
 *복잡한 실물 간판 이미지에서 고품질의 브랜드 로고를 자동으로 추출하기 위해 설계된 Zero-shot 세그멘테이션 파이프라인 및 R&D 대시보드. [🔗 GitHub Repo](https://github.com/entangelk/logo_image)*
 
 * **자동화된 하이브리드 앵커링 (Automated Hybrid Anchoring):** 단순 SAM 프롬프팅의 불안정성을 극복했습니다. ROI 영역을 좁히는 **Grounding DINO**와 **OCR/Contour 하이브리드 기법**을 결합하여, 정밀하고 밀도 높은 전경(Foreground) 앵커 포인트를 자동으로 생성함으로써 배경을 잘못 추출하는 현상(Hallucination)을 대폭 감소시켰습니다.
 * **비전 후처리 엔진 (Vision Post-Processing Engine):** 객체 추출 로직과 이미지 품질 보정 로직을 구조적으로 분리(Decoupling)했습니다. 거친 형태의 원본 마스크를 상용화 수준의 에셋으로 끌어올리기 위해 형태학적(Morphological) **디헤일로(Dehalo)**, LAB 색공간 기반의 **색상 오염 제거(Color Decontamination)**, 거리 변환(Distance-transform)을 활용한 **경계선 페더링(Edge Feathering)**을 독자적인 픽셀 단위 후처리 파이프라인으로 직접 구현했습니다.
 * **독립적 R&D 대시보드 (FastAPI 기반):** 각 파이프라인 단계(Anchor, Detect, Segment, Quality)를 분리하여 개별 디버깅이 가능하도록 무거운 모델들의 지연 로딩(Lazy-loading)을 적용한 웹 인터페이스를 구축했습니다. 직관적인 실시간 파라미터 튜닝을 지원하며, 라플라시안 선명도(Laplacian Sharpness) 및 MAD 노이즈 지표를 통해 전/후처리 결과를 객관적으로 평가할 수 있습니다.
 
-### 🧠 AI 에이전트 장기 기억(Memory) 시스템
+#### 🧠 AI 에이전트 장기 기억(Memory) 시스템
 *AI 어시스턴트를 위한 MCP 기반의 장기 기억 아키텍처. [🔗 GitHub Repo](https://github.com/entangelk/agent-memory-system-public)*
 
 * **Separation of Concerns:** "기억은 단순한 로그가 아니라 압축된 의미망이다"라는 철학을 시스템으로 구현했습니다. 진실의 공급원(State of Truth) 역할을 하는 **MongoDB**와, 문맥의 의미론적 검색을 담당하는 Vector Cache인 **ChromaDB**를 엄격하게 분리하여 영구적이고 논리적인 기억 아키텍처를 설계했습니다.
 
-### 🗺️ 기하학 기반 경로 탐색 알고리즘의 한계 규명 (Circle-WFC)
+### 실험
+
+#### ⚡ AI 컴파일러 스케줄링 R&D 및 도입 가능성 검증 (HW-WFC v2.9)
+*하드웨어 최적화를 위한 제약 기반 자동 스케줄링 알고리즘 설계 및 실효성 검증. [🔗 GitHub Repo](https://github.com/entangelk/hw-wfc)*
+
+* **알고리즘 유효성 입증 (Validation):** WFC 알고리즘을 AI 컴파일러 스케줄러에 적용하여 Exact DP(동적 계획법)와 100% 동일한 최적해를 도출해 냈습니다. 자체 설계한 비용 모델(Cost Model)은 실제 RTX 3060 GPU의 커널 실행 시간과 유의미한 상관관계(Average ρ = +0.52, Softmax 최대 1.0)를 보이며 방향성을 정확히 예측했습니다.
+* **소프트웨어 R&D의 전략적 마무리:** 알고리즘의 탐색 능력 자체는 입증되었으나, 이를 실제 서비스(Autotuner 대체 등)에 도입하기 위해서는 물리적인 GPU 프로파일링 데이터를 통한 비용 모델의 정교한 캘리브레이션이 필수적임을 확인했습니다. 소프트웨어 레벨에서의 검증 목표를 100% 달성한 후, 하드웨어 종속적인 다음 단계로 넘어가기 전 프로젝트를 성공적으로 갈무리했습니다.
+* **실무 도입 잠재력 (Path Forward):** 이 연구는 극한의 메모리 제약(예: 12KB SRAM) 상황에서 제약 기반 탐색이 얼마나 강력한지 증명했습니다. 향후 비용 모델이 하드웨어 데이터를 통해 고도화된다면, 타겟 하드웨어 없이도 최적의 타일링을 예측하는 크로스 컴파일링(Cross-compilation)이나 Autotuner의 탐색 공간을 극단적으로 줄여주는 전처리 모듈로서 높은 실용성을 가질 수 있습니다.
+
+### 실패한 실험과 포스트모텀
+
+#### 🧪 Q-PSA: 양자화 LLM 레이어 중요도 분석 실험
+*양자화 LLM에서 discrete perturbation 기반으로 layer importance를 추정할 수 있는지 검증한 실험. [🔗 GitHub Repo](https://github.com/entangelk/Q-PSA_Pr)*
+
+* **초기 가설:** 기존 레이어 중요도 측정법은 연속 가중치 모델을 전제로 설계되어 있어, 양자화된 GGUF 모델에서는 잘 맞지 않을 수 있다고 봤습니다. 그래서 양자화 격자 위에서 샘플링한 가중치를 `±1` 단계씩 직접 흔들고, 그때의 perplexity 변화량을 측정해 gradient 없이도 레이어 criticality를 추정하는 Q-PSA를 제안했습니다.
+* **Kill Criteria 검증:** `Qwen2.5-0.5B-Instruct (Q4_K_M)` 기준으로 순위 차별성 자체는 있었지만, pruning 검증에서 결정적으로 실패했습니다. Q-PSA가 가장 덜 중요하다고 본 레이어 하나를 제거하자 PPL이 **3.65x** 폭증했고, 훨씬 단순한 **Layer Ablation** baseline은 **1.05x**에 그쳤습니다. 속도 역시 `155분 vs 7초`로 약 **1,300배** 느려 Phase 1에서 객관적으로 폐기했습니다.
+* **Root Cause Analysis:** WFC의 "이산 공간 관측"에서 영감을 받았다고 설명했지만, 실제 구현은 collapse도 propagation도 없는 고전적인 perturbation sensitivity analysis였습니다. 더 근본적으로는 **국소 민감도(local sensitivity)** 와 **기능적 중요도(functional importance)** 가 다르다는 점을 확인했습니다. 작은 perturbation에는 둔감한 레이어도, 통째로 제거하면 필수적일 수 있었습니다.
+* **플랫폼 교훈과 남은 산출물:** **GGUF/llama.cpp** 선택은 layer looping 검증을 구조적으로 불가능하게 만들었고, 가중치 간 상호 제약을 다루는 분석도 막았습니다. 대신 llama.cpp 내부 tensor를 직접 읽고 수정하는 GGUF in-memory perturbation 파이프라인을 남겼고, 이 방향의 WFC 전이를 더 이상 붙들지 않아도 된다는 명확한 결론을 얻었습니다.
+
+#### 🗺️ 기하학 기반 경로 탐색 알고리즘의 한계 규명 (Circle-WFC)
 *전통적인 `A*` 탐색을 대체하기 위한 기하학 기반 WFC 경로 탐색 R&D 및 포스트모텀. [🔗 GitHub Repo](https://github.com/entangelk/circle-wfc)*
 
 * **Hypothesis & Early Wins:** WFC(Wave Function Collapse) 알고리즘을 타일이 아닌 기하학적 위상(Circle layers)에 적용하여 A*를 대체하고자 했습니다. 초기 단순 맵에서는 A*보다 압도적으로 빠르고 메모리 효율이 높음을 확인했습니다.
 * **Root Cause Analysis (한계 분석):** 복잡한 미로 환경에서 성능이 급감하는 현상을 디버깅한 결과, 근본적인 구조적 모순을 발견했습니다. WFC는 '국소적 일관성(Local consistency)'을 맞추는 데 최적화되어 있으나, 경로 탐색은 '전역적 연결성(Global connectivity)'이 필수적입니다. 즉, 조기 결정(Early commitment)을 내리는 WFC의 특성이 복잡한 위상학적 탐색과는 맞지 않음을 수치와 로그로 증명했습니다.
 * **Conclusion:** Circle-WFC를 범용 경로 탐색기로 사용하는 것은 부적합하다는 명확한 결론을 내렸습니다. 대신, A*와 같은 전역 탐색기가 작동하기 전 후보 영역을 극단적으로 좁혀주는 **'탐색 공간 축소기(Search Space Reducer)'** 및 하이브리드 전처리 모듈로서의 새로운 활용 가치를 도출했습니다.
 
-### 👁️ Gradient-free 신경망 프로토타입 (T-WFC)
+#### 👁️ Gradient-free 신경망 프로토타입 (T-WFC)
 *역전파 없는 이산값(Discrete) 기반의 신경망 학습 프로토타입 설계 및 한계 분석. [🔗 GitHub Repo](https://github.com/entangelk/T-WFC)*
 
 * **Discrete State Collapse:** 모델 학습의 정석인 역전파(Backpropagation)에 의존하지 않고, 5개의 이산값(`{-1, -0.5, 0, 0.5, 1}`)에 대한 상태 붕괴(State collapse) 방식만으로 장난감 신경망(Toy MLP)을 학습시키는 데 성공하며 PoC(Proof of Concept)를 완료했습니다. 선형 분리 문제에서는 SGD와 동일한 100%의 정확도를 달성했습니다.
 * **Scaling Limits (한계 분석):** XOR이나 Spiral 같은 비선형 문제에 도입 시, 5개의 이산값 조합만으로는 결정 경계(Decision boundary)를 형성하는 표현력이 턱없이 부족함을 확인했습니다. 또한, 파라미터가 증가함에 따라 메모리와 탐색 시간이 기하급수적으로 폭발하여 신경망의 고차원적/비국소적 상호작용을 처리하는 데는 치명적인 한계가 있음을 입증했습니다.
 * **Conclusion:** WFC 기반 학습은 딥러닝 스케일업에는 부적합하지만, 극단적인 저전력 엣지 디바이스 환경에서의 **저비트 양자화(Low-bit quantization)** 대안이나 국소적 연결성을 가진 아키텍처(CNN 등)에서의 후속 연구 가능성을 남겼습니다.
-
-### ⚡ AI 컴파일러 스케줄링 R&D 및 도입 가능성 검증 (HW-WFC v2.9)
-*하드웨어 최적화를 위한 제약 기반 자동 스케줄링 알고리즘 설계 및 실효성 검증. [🔗 GitHub Repo](https://github.com/entangelk/hw-wfc)*
-
-* **알고리즘 유효성 입증 (Validation):** WFC 알고리즘을 AI 컴파일러 스케줄러에 적용하여 Exact DP(동적 계획법)와 100% 동일한 최적해를 도출해 냈습니다. 자체 설계한 비용 모델(Cost Model)은 실제 RTX 3060 GPU의 커널 실행 시간과 유의미한 상관관계(Average ρ = +0.52, Softmax 최대 1.0)를 보이며 방향성을 정확히 예측했습니다.
-
-* **소프트웨어 R&D의 전략적 마무리:** 알고리즘의 탐색 능력 자체는 입증되었으나, 이를 실제 서비스(Autotuner 대체 등)에 도입하기 위해서는 물리적인 GPU 프로파일링 데이터를 통한 비용 모델의 정교한 캘리브레이션이 필수적임을 확인했습니다. 소프트웨어 레벨에서의 검증 목표를 100% 달성한 후, 하드웨어 종속적인 다음 단계로 넘어가기 전 프로젝트를 성공적으로 갈무리했습니다.
-
-* **실무 도입 잠재력 (Path Forward):** 이 연구는 극한의 메모리 제약(예: 12KB SRAM) 상황에서 제약 기반 탐색이 얼마나 강력한지 증명했습니다. 향후 비용 모델이 하드웨어 데이터를 통해 고도화된다면, 타겟 하드웨어 없이도 최적의 타일링을 예측하는 크로스 컴파일링(Cross-compilation)이나 Autotuner의 탐색 공간을 극단적으로 줄여주는 전처리 모듈로서 높은 실용성을 가질 수 있습니다.
 
 ---
 <p align="center">
