@@ -34,6 +34,12 @@
 * 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc):** 기하학 기반 WFC 경로탐색 실험입니다. `결과:` 범용 최단경로 탐색기로는 실패했고, 전역 탐색 이전의 탐색 공간 축소기로서 의미를 확인했습니다.
 * 👁️ **[T-WFC](https://github.com/entangelk/T-WFC):** 이산 상태 붕괴 기반의 gradient-free 신경망 실험입니다. `결과:` 선형 문제에서는 PoC가 성립했지만, 비선형 문제에서는 스케일업에 실패했습니다.
 
+### 🌱 [진행 중인 사이드 프로젝트 (Currently Building)]
+
+* **🎓 전국 대입 정보(ADIGA) AI 합격 분석 및 데이터 파이프라인:** 218개 대학의 복잡한 비정형 입시 HTML 데이터를 파싱하여 정규화(Normalization)하고, Groq LLM을 연동해 환각(Hallucination)이 통제된 구조화된 형태(Strict JSON)의 맞춤형 합격 분석 리포트를 제공하는 서비스 구축 중.
+* **🛡️ 멀티 에이전트 기반 웹 보안 점검 DevSecOps 플랫폼:** 단순 URL 스캐닝을 넘어 Playwright 기반 에이전트가 인증 이후(Authenticated)의 상태를 탐색하고, LLM 토큰 최적화를 위한 데이터 정제 및 인간 개입(HITL) 통제 엔진을 포함한 CI/CD 연동형 보안 플랫폼 설계 중.
+* **🎮 개인 인디 게임 개발 (On Hold):** html기반 embeding + sLM을 사용한 자연어 기반 게임. 잠시 홀딩 중이나, 복잡한 상태 관리와 시스템 최적화를 테스트해 보기 위해 기획 및 개발을 진행 중인 개인 힐링(?) 프로젝트.
+
 ## 실무 프로젝트 요약
 
 * `BGE-m3` 기반 NLP 카테고리 분류 마이크로서비스를 Docker와 Swagger로 패키징해 낮은 마찰로 연동

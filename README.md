@@ -34,6 +34,12 @@ This profile is mostly a record of three things: projects I built, experiments I
 * 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc):** Geometry-guided WFC pathfinding experiment. `Result:` failed as a general shortest-path solver; useful as a search-space reducer before global search.
 * 👁️ **[T-WFC](https://github.com/entangelk/T-WFC):** Gradient-free neural network experiment based on discrete state collapse. `Result:` PoC worked on linear tasks, but scale-up failed on nonlinear problems.
 
+### 🌱 [Currently Building & Exploring]
+
+* **🎓 ADIGA College Admission Data Pipeline & AI Analysis:** Building an ETL pipeline to parse and normalize complex, unstructured HTML admission data from 218 universities. Integrating Groq LLM to generate customized, hallucination-controlled admission analysis reports in a strictly structured JSON format.
+* **🛡️ Multi-Agent DevSecOps Web Vulnerability Scanner:** Designing a CI/CD-integrated security platform that moves beyond simple URL scanning. Utilizing Playwright-based agents to explore authenticated application states, featuring data minification for LLM token optimization and a Human-in-the-Loop (HITL) control engine.
+* **🎮 Indie Game Development (On Hold):** Developing a natural language-based game utilizing HTML embedding and sLM (Small Language Models). Currently on hold, but designed as a personal "healing" project to experiment with complex state management and system optimization.
+
 ## Selected Professional Work
 
 * NLP categorization microservice using `BGE-m3`, packaged with Docker and Swagger for low-friction integration
