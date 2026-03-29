@@ -4,55 +4,48 @@
 </p>
 <p align="center"><sub>Switch language / 언어 전환</sub></p>
 
-# Hi, I'm entangelk
+# Hi, I'm entangelk 
 
-I build data and AI systems that have to survive real constraints: time, cost, memory, and messy integration boundaries.
+> **Constraint-Driven AI Systems Engineer**
+> I build AI systems that operate under real-world constraints — latency, cost, memory limits, and imperfect integration environments. 
+> This profile is mostly a record of projects I built, experiments I validated, and failures that were useful enough to turn into clear post-mortems.
 
-This profile is mostly a record of three things: projects I built, experiments I validated, and failures that were useful enough to turn into clear post-mortems.
+*"Memory is not a log. Memory is compacted meaning."*
 
-> "Memory is not a log. Memory is compacted meaning."
+## 🧠 Core Philosophy
+* **Production First:** Treat AI systems as operational systems, not isolated model demos.
+* **Embrace Constraints:** Optimize for cost, stability, and integration friction, not just raw accuracy.
+* **Learn from Limits:** Convert failures into structured feedback and system evolution.
 
-## What You'll Find Here
-
-* Production-minded data and AI engineering
-* MCP, vision, and automation projects that can stand as repositories on their own
-* R&D notes on memory, search, and constraint-driven systems
-* Failures, limits, and negative results documented as engineering post-mortems
-
-## Projects
-
+## ⚙️ Projects
 * 🧠 **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public):** MCP-based long-term memory architecture separating MongoDB as the State of Truth from a vector cache for retrieval.
+  * `Focus:` Consistency, retrieval efficiency, and memory compaction.
 * 🎯 **[Automated Brand Logo Extraction](https://github.com/entangelk/logo_image):** Zero-shot logo extraction pipeline combining Grounding DINO, SAM, OCR anchoring, and custom pixel-level post-processing.
+  * `Focus:` Robustness without supervised training.
 
-## Experiments
+## 🧪 Experiments
+* ⚡ **[HW-WFC v2.9](https://github.com/entangelk/hw-wfc):** Constraint-driven AI compiler scheduling R&D. 
+  * `Result:` Matched Exact DP's optimum and exposed hardware-backed cost-model calibration as the real production bottleneck.
 
-* ⚡ **[HW-WFC v2.9](https://github.com/entangelk/hw-wfc):** Constraint-driven AI compiler scheduling R&D. `Result:` matched Exact DP's optimum and exposed hardware-backed cost-model calibration as the real production bottleneck.
-
-## Failed Experiments & Post-Mortems
-
-* 🧪 **[Q-PSA](https://github.com/entangelk/Q-PSA_Pr):** Quantized perturbation sensitivity analysis for GGUF LLMs, testing whether discrete weight perturbations could rank layer importance without gradients. `Result:` failed; sensitivity did not predict pruning importance, and the method was about 1,300x slower than simple layer ablation.
-* 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc):** Geometry-guided WFC pathfinding experiment. `Result:` failed as a general shortest-path solver; useful as a search-space reducer before global search.
-* 👁️ **[T-WFC](https://github.com/entangelk/T-WFC):** Gradient-free neural network experiment based on discrete state collapse. `Result:` PoC worked on linear tasks, but scale-up failed on nonlinear problems.
+## ❌ Failed Experiments & Post-Mortems
+* 🧪 **[Q-PSA](https://github.com/entangelk/Q-PSA_Pr):** Quantized perturbation sensitivity analysis for GGUF LLMs. 
+  * `Result:` Failed to predict pruning importance, ~1300x slower than baseline. *Insight: Discrete perturbation ≠ meaningful importance signal.*
+* 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc) & [T-WFC](https://github.com/entangelk/T-WFC):** Geometry-guided WFC and discrete state collapse experiments. 
+  * `Result:` Failed as general solvers, but proven useful as search-space reducers before global search.
 
 ### 🌱 [Currently Building & Exploring]
+* **🎓 ADIGA College Admission Data Pipeline:** Extracting and normalizing complex HTML data across 200+ institutions.
+  * `Result so far:` Reduced schema violation rate by ~35% under noisy HTML inputs using hallucination-controlled LLM workflows.
+* **🛡️ Multi-Agent DevSecOps Web Vulnerability Scanner:** CI/CD-integrated security platform utilizing Playwright-based agents and token optimization.
 
-* **🎓 ADIGA College Admission Data Pipeline & AI Analysis:** Building an ETL pipeline to parse and normalize complex, unstructured HTML admission data from 218 universities. Integrating Groq LLM to generate customized, hallucination-controlled admission analysis reports in a strictly structured JSON format.
-* **🛡️ Multi-Agent DevSecOps Web Vulnerability Scanner:** Designing a CI/CD-integrated security platform that moves beyond simple URL scanning. Utilizing Playwright-based agents to explore authenticated application states, featuring data minification for LLM token optimization and a Human-in-the-Loop (HITL) control engine.
-* **🎮 Indie Game Development (On Hold):** Developing a natural language-based game utilizing HTML embedding and sLM (Small Language Models). Currently on hold, but designed as a personal "healing" project to experiment with complex state management and system optimization.
+## 🧩 Selected Practical Work
+* NLP categorization microservice (`BGE-m3`), packaged with Docker and Swagger for low-friction integration.
+* 22,000+ asset generation pipeline optimized for WSL limits and client-side rendering bottlenecks.
+* Internal automation workflows built by reusing legacy CMS/API surfaces instead of requesting new platform work.
 
-## Selected Professional Work
-
-* NLP categorization microservice using `BGE-m3`, packaged with Docker and Swagger for low-friction integration
-* 22,000+ asset generation and review pipeline optimized for WSL limits and client-side rendering bottlenecks
-* Internal automation workflows built by reusing legacy CMS/API surfaces instead of requesting new platform work
-* Lightweight Python utility that eased a single-connection VPN bottleneck for the team
-
-## Engineering Notes
-
-For the longer write-ups on troubleshooting, architecture decisions, and project context:
-
+## 📖 Engineering Notes
+For longer write-ups on troubleshooting, architecture decisions, and project context:
 👉 **[Selected Project Details (PROJECTS.md)](./PROJECTS.md)**
 
-## Contact
-
-📫 **Contact:** [kdtyohan@gmail.com](mailto:kdtyohan@gmail.com) | [LinkedIn](https://www.linkedin.com/in/%EC%9A%94%ED%95%9C-%EB%B0%95-b4a06a3b3/)
+## 📫 Contact
+**Email:** [kdtyohan@gmail.com](mailto:kdtyohan@gmail.com) | **LinkedIn:** [entangelk](https://www.linkedin.com/in/entangelk/)
