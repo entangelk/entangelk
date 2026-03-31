@@ -4,7 +4,20 @@
 
 # 🛠️ Selected Project Details & Engineering Notes
 
-This document contains the engineering context, troubleshooting processes, and architectural decisions for my selected corporate and personal projects. My focus is always on **practical problem-solving, resource optimization, and avoiding over-engineering.**
+This document collects the engineering context, troubleshooting processes, architectural decisions, and post-mortems behind my selected corporate and personal projects.
+
+My background spans planning, operations, business planning, and data-driven problem solving in real production environments.  
+Over time, I moved closer to engineering by building the tools, workflows, and systems I needed to solve problems directly.
+
+As a result, my work sits at the intersection of **operations, data, automation, and AI systems**.  
+I care most about building practical solutions that reduce friction, work under real constraints, and avoid unnecessary complexity.
+
+## What this document focuses on
+
+- turning ambiguous operational or business problems into working systems
+- building practical automation and AI workflows instead of isolated demos
+- making architectural decisions under constraints such as limited resources, integration friction, or security boundaries
+- documenting failures honestly when they reveal important technical limits
 
 ---
 

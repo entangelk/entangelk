@@ -4,48 +4,89 @@
 </p>
 <p align="center"><sub>Switch language / 언어 전환</sub></p>
 
-# Hi, I'm entangelk 
+# Hi, I'm entangelk
 
-> **Constraint-Driven AI Systems Engineer**
-> I build AI systems that operate under real-world constraints — latency, cost, memory limits, and imperfect integration environments. 
-> This profile is mostly a record of projects I built, experiments I validated, and failures that were useful enough to turn into clear post-mortems.
+> **Constraint-Driven AI & Automation Engineer**  
+> I started from planning, operations, and data-driven problem solving in real production environments.  
+> Over time, I moved closer to engineering by building the tools and systems I needed myself.  
+> Today, I focus on practical AI systems, automation workflows, and data pipelines that solve real-world problems under constraints such as latency, cost, memory limits, and imperfect integration environments.
 
 *"Memory is not a log. Memory is compacted meaning."*
 
-## 🧠 Core Philosophy
-* **Production First:** Treat AI systems as operational systems, not isolated model demos.
-* **Embrace Constraints:** Optimize for cost, stability, and integration friction, not just raw accuracy.
-* **Learn from Limits:** Convert failures into structured feedback and system evolution.
+## Background → Current Focus
 
-## ⚙️ Projects
-* 🧠 **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public):** MCP-based long-term memory architecture separating MongoDB as the State of Truth from a vector cache for retrieval.
-  * `Focus:` Consistency, retrieval efficiency, and memory compaction.
-* 🎯 **[Automated Brand Logo Extraction](https://github.com/entangelk/logo_image):** Zero-shot logo extraction pipeline combining Grounding DINO, SAM, OCR anchoring, and custom pixel-level post-processing.
-  * `Focus:` Robustness without supervised training.
+**Background**  
+Planning, operations, business planning, and data analysis across real production environments.
 
-## 🧪 Experiments
-* ⚡ **[HW-WFC v2.9](https://github.com/entangelk/hw-wfc):** Constraint-driven AI compiler scheduling R&D. 
-  * `Result:` Matched Exact DP's optimum and exposed hardware-backed cost-model calibration as the real production bottleneck.
+**Current Focus**  
+Building practical AI systems, automation workflows, and data pipelines that directly reduce operational friction and turn ambiguous problems into working systems.
 
-## ❌ Failed Experiments & Post-Mortems
-* 🧪 **[Q-PSA](https://github.com/entangelk/Q-PSA_Pr):** Quantized perturbation sensitivity analysis for GGUF LLMs. 
-  * `Result:` Failed to predict pruning importance, ~1300x slower than baseline. *Insight: Discrete perturbation ≠ meaningful importance signal.*
-* 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc) & [T-WFC](https://github.com/entangelk/T-WFC):** Geometry-guided WFC and discrete state collapse experiments. 
-  * `Result:` Failed as general solvers, but proven useful as search-space reducers before global search.
+## Why Engineering
 
-### 🌱 [Currently Building & Exploring]
-* **🎓 ADIGA College Admission Data Pipeline:** Extracting and normalizing complex HTML data across 200+ institutions.
-  * `Result so far:` Reduced schema violation rate by ~35% under noisy HTML inputs using hallucination-controlled LLM workflows.
-* **🛡️ Multi-Agent DevSecOps Web Vulnerability Scanner:** CI/CD-integrated security platform utilizing Playwright-based agents and token optimization.
+I work best when I can take a vague operational or business problem and turn it into a working solution myself.  
+Rather than staying only at the coordination or planning layer, I prefer to directly build tools, automate workflows, and validate systems in practice.
 
-## 🧩 Selected Practical Work
-* NLP categorization microservice (`BGE-m3`), packaged with Docker and Swagger for low-friction integration.
-* 22,000+ asset generation pipeline optimized for WSL limits and client-side rendering bottlenecks.
-* Internal automation workflows built by reusing legacy CMS/API surfaces instead of requesting new platform work.
+My engineering approach is shaped by:
+- product and operations awareness from real business environments
+- data-driven thinking from analytics work
+- hands-on problem solving through automation, backend integration, and AI-assisted engineering
 
-## 📖 Engineering Notes
-For longer write-ups on troubleshooting, architecture decisions, and project context:
+## Core Philosophy
+
+- **Production First:** I treat AI systems as operational systems, not isolated model demos.
+- **Embrace Constraints:** I optimize for cost, stability, and integration friction, not just raw accuracy.
+- **Build What Works:** I prefer practical solutions that reduce real bottlenecks over impressive but fragile architectures.
+- **Learn from Limits:** I turn failures, trade-offs, and dead ends into structured post-mortems and better system design.
+
+## Selected Practical Work
+
+- Built internal automation workflows by reusing legacy CMS/API surfaces instead of requesting new platform work.
+- Developed NLP categorization microservices packaged with Docker and Swagger for low-friction integration.
+- Improved large-scale review workflows by addressing CSR bottlenecks with lazy loading and browser caching.
+- Worked across planning, operations, analytics, and implementation layers to close the gap between business needs and working systems.
+
+## Projects
+
+- 🧠 **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public)**  
+  MCP-based long-term memory architecture separating MongoDB as the State of Truth from a vector cache for retrieval.  
+  `Focus:` Consistency, retrieval efficiency, and memory compaction.
+
+- 🎯 **[Automated Brand Logo Extraction](https://github.com/entangelk/logo_image)**  
+  Zero-shot logo extraction pipeline combining Grounding DINO, SAM, OCR anchoring, and custom pixel-level post-processing.  
+  `Focus:` Robustness without supervised training.
+
+## Experiments
+
+- ⚡ **[HW-WFC v2.9](https://github.com/entangelk/hw-wfc)**  
+  Constraint-driven AI compiler scheduling R&D.  
+  `Result:` Matched Exact DP's optimum and revealed hardware-backed cost-model calibration as the real production bottleneck.
+
+## Failed Experiments & Post-Mortems
+
+- 🧪 **[Q-PSA](https://github.com/entangelk/Q-PSA_Pr)**  
+  Quantized perturbation sensitivity analysis for GGUF LLMs.  
+  `Result:` Failed to predict pruning importance and was ~1300x slower than baseline.  
+  `Insight:` Discrete perturbation is not the same as meaningful importance.
+
+- 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc)** / **[T-WFC](https://github.com/entangelk/T-WFC)**  
+  Geometry-guided WFC and discrete state collapse experiments.  
+  `Result:` Failed as general-purpose solvers, but proved useful as search-space reducers and research prototypes.
+
+## Currently Building & Exploring
+
+- **🎓 ADIGA College Admission Data Pipeline**  
+  Extracting and normalizing complex HTML data across 200+ institutions.  
+  `Result so far:` Reduced schema violation rates under noisy HTML inputs using hallucination-controlled LLM workflows.
+
+- **🛡️ Multi-Agent DevSecOps Web Vulnerability Scanner**  
+  CI/CD-integrated security platform utilizing Playwright-based agents and token optimization.
+
+## Engineering Notes
+
+For longer write-ups on troubleshooting, architectural decisions, trade-offs, and project context:  
 👉 **[Selected Project Details (PROJECTS.md)](./PROJECTS.md)**
 
-## 📫 Contact
-**Email:** [kdtyohan@gmail.com](mailto:kdtyohan@gmail.com) | **LinkedIn:** [entangelk](https://www.linkedin.com/in/entangelk/)
+## Contact
+
+**Email:** [kdtyohan@gmail.com](mailto:kdtyohan@gmail.com)  
+**LinkedIn:** [entangelk](https://www.linkedin.com/in/entangelk/)
