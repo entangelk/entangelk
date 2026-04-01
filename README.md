@@ -68,10 +68,16 @@ My engineering approach is shaped by:
   `Result:` Failed to predict pruning importance and was ~1300x slower than baseline.  
   `Insight:` Discrete perturbation is not the same as meaningful importance.
 
-- 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc)** / **[T-WFC](https://github.com/entangelk/T-WFC)**  
-  Geometry-guided WFC and discrete state collapse experiments.  
-  `Result:` Failed as general-purpose solvers, but proved useful as search-space reducers and research prototypes.
+- 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc)**
+  Geometry-guided WFC with a layered constraint architecture (MLMC). 
+  `Result:` Too expensive to replace A*, but successfully guaranteed valid path generation.
+  `Insight:` Layered constraints can enforce global correctness (e.g., path validity) in local tile-based systems.
 
+- 🧠 **[T-WFC](https://github.com/entangelk/T-WFC)**  
+  Reframing model training as a discrete state collapse process instead of gradient descent.  
+  `Result:` Inefficient for high-dimensional data, but effective as a search-space reduction and pattern synthesis tool.
+  `Insight:` Constraint-based approaches can form decision boundaries without gradients in structured environments.
+  
 ## Currently Building & Exploring
 
 - **🎓 ADIGA College Admission Data Pipeline**  

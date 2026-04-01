@@ -68,9 +68,15 @@
   `Result:` pruning 중요도를 예측하지 못했고, baseline 대비 약 1300배 느렸습니다.  
   `Insight:` 이산 perturbation은 의미 있는 중요도 지표와 같지 않았습니다.
 
-- 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc)** / **[T-WFC](https://github.com/entangelk/T-WFC)**  
-  기하 기반 WFC 및 이산 상태 붕괴 실험.  
-  `Result:` 범용 솔버로는 실패했지만, 탐색 공간 축소기 및 연구 프로토타입으로서의 가치는 확인했습니다.
+- 🗺️ **[Circle-WFC](https://github.com/entangelk/circle-wfc)**
+  다층 제약 구조(MLMC)를 활용한 geometry 기반 WFC 실험 
+  `Result:` A* 같은 일반적인 경로 탐색 알고리즘을 대체하기엔 비효율적이지만, 절차적 생성에서 유효한 경로 존재를 보장하는 데는 성공했습니다.
+  `Insight:` 계층적 제약 구조를 통해 로컬 타일 기반 시스템에서도 전역적인 논리적 일관성(예: 경로 존재)을 강제할 수 있었습니다.
+
+- 🧠 **[T-WFC](https://github.com/entangelk/T-WFC)**  
+  모델 학습을 gradient descent가 아닌 이산 상태 붕괴 과정(WFC)으로 재해석한 실험
+  `Result:` 고차원 데이터에서는 비효율적이지만, 탐색 공간 축소 및 패턴 생성 프로토타입으로는 유의미한 가능성 확인했습니다.
+  `Insight:` 제약 기반 접근은 gradient 없이도 구조화된 환경에서 의사결정 경계를 형성할 수 있는 새로운 패러다임을 확인하였습니다.
 
 ## 현재 만들고 있는 것들
 
