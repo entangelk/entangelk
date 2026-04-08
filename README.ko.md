@@ -6,55 +6,75 @@
 
 # 안녕하세요, entangelk입니다
 
-> **Technical AI Product Manager & Service Architect** > "저는 기획서만 쓰지 않습니다. 이를 증명하기 위해 직접 프로토타입을 만듭니다."  
-> 저는 운영, 사업 기획, 데이터를 다루며 커리어를 시작했습니다. 모호한 비즈니스 요구사항과 기술적 현실 사이의 간극이 답답해, 직접 AI 아키텍처와 자동화 워크플로우를 구축하기 시작했습니다.  
-> 지금은 AI 서비스를 기획하고, 실제 동작하는지 검증(PoC)하며, 데이터를 바탕으로 현실적인 제약 속에서 기술적인 "Go/Drop" 의사결정을 내리는 데 집중하고 있습니다.
+> **AI Product Builder**  
+> 저는 아이디어가 실제 비즈니스 환경에서도 작동하는지 검증하기 위해 AI 프로토타입, 자동화 워크플로우, 서비스 컨셉을 직접 만듭니다.  
+> 제 커리어는 운영, 사업기획, 데이터 분석에서 시작했습니다. 그 과정에서 모호한 비즈니스 요구와 기술적 현실 사이의 간극에 계속 부딪혔고, 그 간극을 직접 메우기 위해 시스템을 만들기 시작했습니다.  
+> 지금은 불분명한 요구사항을 검증 가능한 PoC, 구조화된 실험, 그리고 현실 제약에 기반한 명확한 Go / Drop 판단으로 바꾸는 일에 집중하고 있습니다.
 
 *"기억은 로그가 아니다. 기억은 압축된 의미다."*
 
-## Why I Build (직접 만들며 검증하는 이유)
+## Why I Build (만들면서 배우는 이유)
 
-저는 메모리를 최적화하거나 수학 공식을 밑바닥부터 유도하는 정통 AI 코어 엔지니어가 아닙니다. 제 무기는 **'실행력'과 '아키텍처 설계'**입니다. 비즈니스 병목에 직면하면, 저는 기존 모델, API, 알고리즘을 결합하여 이 아이디어가 제약이 많은 실제 환경에서 동작하는지(Feasibility) 테스트합니다. 구조적 한계를 찾기 위해 직접 코드를 짜고, 데이터를 통해 객관적으로 프로젝트의 피벗(Pivot), 스케일업, 또는 폐기(Kill)를 결정합니다.
+저는 저수준 최적화를 다루거나 수학적 원리를 처음부터 증명하는 핵심 AI 연구자는 아닙니다.  
+대신 저의 강점은 **실행력, 구조화된 실험, 그리고 제품 관점의 기술적 사고**에 있습니다.
+
+비즈니스 병목을 마주하면, 기존 모델·API·알고리즘을 조합해 아이디어가 실제 제약 조건 안에서 성립하는지 먼저 검증합니다.  
+저는 만들기 위해서만 만드는 것이 아니라, 구조적 한계를 드러내기 위해 만들고, 그 결과를 바탕으로 반복할지, 피벗할지, 확장할지, 멈출지를 판단합니다.
 
 ## Core Philosophy
 
-- **Production First:** AI 시스템을 단순 모델 데모가 아니라 실제 운영 시스템으로 다룹니다.
-- **Embrace Constraints:** 정확도만이 아니라 비용, 안정성, 연동 마찰까지 함께 최적화합니다.
-- **Data-Driven Decisions:** 속도, 성공률 등의 지표로 가치를 증명하지 못하는 시스템은 실패를 객관적으로 기록하고 과감히 폐기(Kill)합니다.
-- **Learn from Limits:** 실패, 트레이드오프, 한계를 구조화된 회고(Post-mortem)와 더 나은 시스템 설계로 바꿉니다.
+- **Build to Validate:** 아이디어가 실제 비즈니스 제약을 견딜 수 있는지 검증하기 위해 프로토타입과 워크플로우를 만듭니다.
+- **Production-Aware Thinking:** AI 시스템을 단순 데모가 아니라 비용, 안정성, 운영 마찰까지 고려해야 하는 서비스로 봅니다.
+- **Data-Driven Decisions:** 시스템이 측정 가능한 결과로 가치를 입증하지 못하면, 실패를 기록하고 다음 판단으로 넘어갑니다.
+- **Learn from Limits:** 실패한 실험, 트레이드오프, 막다른 길 역시 더 나은 시스템 설계를 위한 중요한 입력이라고 생각합니다.
 
-## 🏗️ Highlighted Architecture & PoC
+## What I Work With
 
-- 🧠 **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public)** MCP 기반 장기 기억(Memory) 아키텍처.  
-  `Architecture:` 진실의 공급원(MongoDB)과 의미론적 검색 계층(ChromaDB)을 엄격히 분리하여 기억의 일관성과 압축을 보장하도록 설계했습니다.
+- AI Proof-of-Concepts (PoCs)
+- Automation Workflows
+- LLM Application Prototyping
+- Data Pipelines
+- Technical Feasibility Validation
+- Product-Oriented Experiment Design
 
-- 🎯 **[Automated Brand Logo Extraction](https://github.com/entangelk/logo_image)** Grounding DINO, SAM, 그리고 자체 픽셀 후처리를 결합한 zero-shot 로고 추출 파이프라인.  
-  `Focus:` 지도학습(Supervised learning) 데이터 없이도 견고하게 동작하는 파이프라인 구축.
+## 🏗️ 주요 아키텍처 & PoC
 
-## 📊 R&D, Failed Experiments & Post-Mortems
-*저는 성공적인 배포만큼이나 실패한 실험에서 얻은 교훈을 소중하게 생각합니다. 아래는 아키텍처 가설을 테스트하고 데이터 기반으로 의사결정을 내렸던 R&D 프로젝트들입니다.*
+- 🧠 **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public)**  
+  MCP 기반 장기 메모리 아키텍처입니다.  
+  `Architecture:` 일관성과 메모리 압축을 위해 State of Truth(MongoDB)와 semantic retrieval layer(ChromaDB)를 분리했습니다.
 
-- 🧪 **[Q-PSA (Project Killed)](https://github.com/entangelk/Q-PSA_Pr)** 양자화 LLM의 레이어 중요도를 추정하기 위해 이산적(discrete) perturbation을 테스트한 실험.  
-  `Decision:` baseline 대비 약 1300배 느리고 pruning 검증에 실패했다는 데이터를 확인한 후, 객관적으로 프로젝트를 폐기(Kill)했습니다.
+- 🎯 **[Automated Brand Logo Extraction](https://github.com/entangelk/logo_image)**  
+  Grounding DINO, SAM, 그리고 커스텀 후처리를 결합한 zero-shot 로고 추출 파이프라인입니다.  
+  `Focus:` 지도 학습 데이터 없이도 동작하는 견고한 파이프라인 구축에 집중했습니다.
 
-- 🗺️ **[Circle-WFC (Architectural Pivot)](https://github.com/entangelk/circle-wfc)**
-  전통적인 `A*` 경로 탐색을 기하학 기반의 WFC로 대체하고자 했던 실험. 
-  `Insight:` 전역 탐색에서 '국소적 일관성'이 가지는 구조적 한계를 발견하고, 이를 고효율 '탐색 공간 축소기(Search Space Reducer)'로 피벗(Pivot)했습니다.
+## 📊 R&D, 실패한 실험, 그리고 포스트모템
 
-- ⚡ **[HW-WFC v2.9 (Feasibility Validated)](https://github.com/entangelk/hw-wfc)** 제약 조건 기반 AI 컴파일러 스케줄링 R&D.  
-  `Result:` Exact DP의 최적해를 재현하며 알고리즘의 유효성을 증명했으나, 실제 상용화의 병목이 '하드웨어 기반 비용 모델 보정'에 있음을 파악하고 연구를 전략적으로 마무리했습니다.
-  
+*저는 성공한 결과만큼이나 실패한 실험에서 얻은 교훈도 중요하게 생각합니다. 아래 프로젝트들은 아키텍처 가설을 검증하고, 실현 가능성을 판단하며, 데이터 기반으로 결정을 내린 사례들입니다.*
+
+- 🧪 **[Q-PSA (Project Killed)](https://github.com/entangelk/Q-PSA_Pr)**  
+  양자화된 LLM에서 레이어 중요도를 추정하기 위해 discrete perturbation 방식을 실험했습니다.  
+  `Decision:` 실험 결과, 베이스라인 대비 약 1300배 느리고 pruning validation에도 실패해 프로젝트를 종료했습니다.
+
+- 🗺️ **[Circle-WFC (Architectural Pivot)](https://github.com/entangelk/circle-wfc)**  
+  `A*` pathfinding을 geometry-guided Wave Function Collapse(WFC)로 대체하려는 시도였습니다.  
+  `Insight:` 전역 경로 탐색 문제에서 local consistency의 구조적 한계를 발견했고, 이후 이 개념의 가치를 효율적인 search space reducer로 재정의했습니다.
+
+- ⚡ **[HW-WFC v2.9 (Feasibility Validated)](https://github.com/entangelk/hw-wfc)**  
+  제약 기반 AI compiler scheduling R&D입니다.  
+  `Result:` Exact DP의 최적값과 일치해 알고리즘적 실현 가능성은 입증했지만, 실제 프로덕션 병목이 하드웨어 기반 cost-model calibration에 있다는 점을 확인하고 연구를 마무리했습니다.
+
 ## Currently Building & Exploring
 
-- **🎓 ADIGA College Admission Data Pipeline** 200개 이상의 기관에서 복잡한 HTML 데이터를 추출하고 정규화하는 파이프라인.  
-  `Result so far:` hallucination 제어형 LLM 워크플로우를 통해 noisy HTML 환경에서 schema violation rate를 낮추고 있습니다.
+- **🎓 ADIGA College Admission Data Pipeline**  
+  200개 이상의 기관에서 복잡한 HTML 데이터를 추출하고 정규화하는 작업입니다.  
+  `Result so far:` hallucination을 제어한 LLM 워크플로우를 통해 noisy HTML 입력 환경에서도 schema violation 비율을 낮추고 있습니다.
 
-## Engineering Notes
+## Notes
 
-트러블슈팅, 아키텍처 결정, 트레이드오프, 프로젝트 맥락에 대한 더 긴 기록은 아래에서 볼 수 있습니다.  
+트러블슈팅, 아키텍처 의사결정, 트레이드오프, 프로젝트 맥락에 대한 더 긴 글은 아래에서 볼 수 있습니다.  
 👉 **[Selected Project Details (PROJECTS.md)](./PROJECTS.md)**
 
-## 연락처
+## Contact
 
 **Email:** [kdtyohan@gmail.com](mailto:kdtyohan@gmail.com)  
 **LinkedIn:** [entangelk](https://www.linkedin.com/in/entangelk/)
