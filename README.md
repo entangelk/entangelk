@@ -5,7 +5,7 @@
 <p align="center"><sub>Switch language / 언어 전환</sub></p>
 
 <p align="center">
-  <a href="https://entangelk.github.io/"><img src="https://img.shields.io/badge/Portfolio-entangelk.github.io-3a4ee0?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live portfolio — entangelk.github.io"></a>
+  <a href="https://entangelk.github.io/entangelk/"><img src="https://img.shields.io/badge/Portfolio-Live_Site-3a4ee0?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live portfolio — entangelk.github.io/entangelk"></a>
 </p>
 <p align="center"><sub>Decision case studies, told as judgment / 의사결정 케이스 스터디</sub></p>
 
