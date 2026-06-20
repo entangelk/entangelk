@@ -286,6 +286,7 @@
     <div class="grid3">
       <div class="card">
         <img class="card-viz" src="assets/q-psa-pruning.png" alt="Pruning validation chart — Q-PSA perplexity explodes vs the Layer Ablation baseline as more layers are pruned" loading="lazy" />
+        <p class="viz-cap"><span class="en">Q-PSA (red) vs a simple baseline — perplexity explodes as more layers are pruned. Lower is better; the gap is why I killed it.</span><span class="ko">Q-PSA(빨강) vs 단순 베이스라인 — 레이어를 더 제거할수록 perplexity가 폭발. 낮을수록 좋으며, 이 격차가 프로젝트를 종료한 이유입니다.</span></p>
         <div class="meta tag-kill"><span class="en">Project killed</span><span class="ko">프로젝트 종료</span></div>
         <h3><a href="https://github.com/entangelk/Q-PSA_Pr" target="_blank" rel="noopener">Q-PSA</a></h3>
         <p><span class="en">Discrete perturbation to estimate layer importance in quantized LLMs.</span><span class="ko">양자화 LLM의 레이어 중요도를 discrete perturbation으로 추정.</span></p>
@@ -293,6 +294,7 @@
       </div>
       <div class="card">
         <img class="card-viz" src="assets/circle-wfc-path.png" alt="Geometry-guided WFC (ray variant) finding a 152-step path through a 100x100 maze" loading="lazy" />
+        <p class="viz-cap"><span class="en">The ray variant finds a full 152-step path where plain WFC stalls — the structural limit, reframed into a usable search-space reducer.</span><span class="ko">ray 변형이 plain WFC가 막히는 곳에서 152-스텝 경로를 찾아냅니다 — 구조적 한계를 쓸모 있는 search-space reducer로 재정의한 결과입니다.</span></p>
         <div class="meta"><span class="en">Architectural pivot</span><span class="ko">아키텍처 피벗</span></div>
         <h3><a href="https://github.com/entangelk/circle-wfc" target="_blank" rel="noopener">Circle-WFC</a></h3>
         <p><span class="en">Replacing A* pathfinding with geometry-guided Wave Function Collapse.</span><span class="ko">A* 경로탐색을 geometry-guided WFC로 대체 시도.</span></p>
@@ -300,6 +302,7 @@
       </div>
       <div class="card">
         <img class="card-viz" src="assets/hw-wfc-collapse.png" alt="HW-WFC final schedule — attention block layers collapsed to optimal tile/layout states under SRAM limits, 0 backtracks" loading="lazy" />
+        <p class="viz-cap"><span class="en">Final schedule for an attention block — WFC matches the exact-DP optimum with 0 backtracks under a 12KB SRAM limit.</span><span class="ko">어텐션 블록의 최종 스케줄 — 12KB SRAM 제약 아래 WFC가 exact-DP 최적값과 일치하고 backtrack은 0입니다.</span></p>
         <div class="meta tag-ok"><span class="en">Feasibility validated</span><span class="ko">실현성 검증</span></div>
         <h3><a href="https://github.com/entangelk/hw-wfc" target="_blank" rel="noopener">HW-WFC v2.9</a></h3>
         <p><span class="en">Constraint-driven AI compiler scheduling R&amp;D.</span><span class="ko">제약 기반 AI 컴파일러 스케줄링 R&amp;D.</span></p>

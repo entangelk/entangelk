@@ -125,7 +125,8 @@ section { padding: 52px 0; border-top: 1px solid var(--line); }
 .case .private-note::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--ok); display: inline-block; }
 .bridge { color: var(--ink-soft); font-size: 0.95rem; margin: 0 0 22px; padding-left: 14px; border-left: 3px solid var(--line); }
 .bridge.synth { border-left-color: var(--accent); color: var(--ink); font-weight: 600; font-size: 1.02rem; margin-top: 6px; }
-.card-viz { display: block; width: 100%; border-radius: 8px; border: 1px solid var(--line); margin-bottom: 12px; background: #fff; }
+.card-viz { display: block; width: 100%; border-radius: 8px; border: 1px solid var(--line); margin-bottom: 8px; background: #fff; }
+.viz-cap { font-size: 0.78rem; color: var(--ink-faint); line-height: 1.5; margin: 0 0 12px; }
 .case .tagline { color: var(--ink-soft); font-size: 1.02rem; margin: 4px 0 18px; }
 .case-links { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 22px; }
 .case-links a { font-size: 0.85rem; font-weight: 600; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-soft); }
@@ -208,6 +209,8 @@ footer { padding: 40px 0 60px; color: var(--ink-faint); font-size: 0.85rem; bord
   header.nav, .lang-toggle, .cta-row, .nav-links { display: none !important; }
   body { background: #fff; }
   section, .case, .card, details.dd, .xp { break-inside: avoid; border-color: #ccc; }
+  .decision, .principle, .sec-head, figure, .viz-cap { break-inside: avoid; }
+  .card-viz { break-after: avoid; }
   details.dd[open] .dd-body, details.dd .dd-body { display: block; }
   a { color: var(--ink); text-decoration: none; }
 }
