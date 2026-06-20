@@ -37,8 +37,8 @@
       <span class="ko">현업 결과물,<br /><span class="accent">그 뒤의 판단으로 정리합니다.</span></span>
     </h1>
     <p class="lede">
-      <span class="en">Work delivered in live commercial environments. These projects have no public repos, so each is described as the constraint I faced and the decision I made — resource-aware architecture, security boundaries, and avoiding unnecessary complexity.</span>
-      <span class="ko">실제 상용 환경에 납품한 작업들입니다. 공개 repo가 없는 작업이라, 각각을 '마주한 제약'과 '내린 판단'으로 풀었습니다 — 자원 인식 아키텍처, 보안 경계, 불필요한 복잡도 회피.</span>
+      <span class="en">From my current flagship — a verified Agentic-RAG assistant in active development — to work delivered in live commercial environments. None of it has public repos, so each is described as the constraint I faced and the decision I made — resource-aware architecture, security boundaries, and avoiding unnecessary complexity.</span>
+      <span class="ko">현재 진행 중인 플래그십 — 활발히 개발 중인 검증형 Agentic-RAG 어시스턴트 — 부터, 실제 상용 환경에 납품한 작업들까지. 모두 공개 repo가 없는 작업이라, 각각을 '마주한 제약'과 '내린 판단'으로 풀었습니다 — 자원 인식 아키텍처, 보안 경계, 불필요한 복잡도 회피.</span>
     </p>
     <div class="cta-row">
       <a class="btn" href="index.html"><span class="en">← Back to portfolio</span><span class="ko">← 포트폴리오로</span></a>
@@ -46,9 +46,79 @@
   </div>
 </div>
 
+<!-- ================= CURRENT WORK (company, private) ================= -->
+<section id="current">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag"><span class="en">★ Current work</span><span class="ko">★ 현재 실무</span></div>
+      <h2><span class="en">Verified Agentic-RAG — the synthesis</span><span class="ko">검증형 Agentic-RAG — 통합</span></h2>
+      <p>
+        <span class="en">My current flagship as an AI Solution Engineer, and the synthesis of the three public PoCs in my <a href="index.html#decisions">portfolio</a> — a memory layer, a provider-neutral execution contract, and a verification gate — brought together at production scale on a real legal-domain assistant.</span>
+        <span class="ko">현재 AI Solution Engineer로서 진행 중인 플래그십이자, <a href="index.html#decisions">포트폴리오</a>의 세 공개 PoC — 메모리 레이어, provider-neutral 실행 계약, 검증 게이트 — 를 실제 법률 도메인 어시스턴트에서 실무 규모로 통합한 작업입니다.</span>
+      </p>
+    </div>
+
+    <div class="case lead">
+      <div class="case-top">
+        <h3><span class="en">Verified Agentic-RAG System</span><span class="ko">검증형 Agentic-RAG 시스템</span></h3>
+        <span class="pill current"><span class="en">Current work</span><span class="ko">현재 실무</span></span>
+        <span class="pill private"><span class="en">Company · not public</span><span class="ko">회사 · 비공개</span></span>
+      </div>
+      <p class="tagline">
+        <span class="en">A working verified-RAG assistant for the legal domain. A live pipeline — hybrid retrieval over a Korean-law corpus, a multi-agent answer-research loop, and claim-by-claim grounding verification — turns a non-developer's vague question into a checkable task spec and lets no unverified text reach the user.</span>
+        <span class="ko">법률 도메인을 위한 <b>동작하는</b> 검증형 RAG 어시스턴트입니다. 한국 법령 코퍼스에 대한 하이브리드 검색, 멀티 에이전트 답변 연구 루프, claim 단위 grounding 검증이 실제로 도는 파이프라인으로, 비개발자의 모호한 질문을 검증 가능한 작업 명세로 바꾸고 검증되지 않은 텍스트는 사용자에게 내보내지 않습니다.</span>
+      </p>
+      <p class="private-note">
+        <span class="en">Active, working work-in-progress · company project, source not public. The retrieval-to-gate pipeline runs end-to-end on a live legal corpus; described here at the architecture / decision level only.</span>
+        <span class="ko">동작 중인 진행형 회사 프로젝트로 소스는 비공개입니다. 검색→게이트 파이프라인은 라이브 법령 코퍼스에서 end-to-end로 돌아갑니다. 여기서는 아키텍처·의사결정 수준으로만 서술합니다.</span>
+      </p>
+
+      <div class="decisions">
+        <div class="decision">
+          <p class="dh"><span class="num">01</span><span class="en">Contract-first, four independent layers</span><span class="ko">Contract-first, 네 개의 독립 레이어</span></p>
+          <p class="why"><span class="en">The problem isn't solved by one LLM call, so I split it into four layers — Intake, Knowledge, RAG Harness, Verification/Gate — and <b>fixed the contracts between them before building</b>. Each layer is developed independently against mocks; the boundary objects (Task Brief, Source Ref, Gate Decision) are the single source of truth.</span><span class="ko">이 문제는 LLM 한 번 호출로 풀리지 않습니다. 그래서 Intake / Knowledge / RAG Harness / Verification·Gate 네 레이어로 나누고, <b>구현보다 먼저 레이어 간 계약을 고정</b>했습니다. 각 레이어는 mock으로 독립 개발하고, 경계 객체(Task Brief·Source Ref·Gate Decision)가 단일 진실 공급원입니다.</span></p>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">02</span><span class="en">Build the trust foundation before the features</span><span class="ko">기능보다 신뢰 기반을 먼저</span></p>
+          <p class="why"><span class="en">I build Knowledge + Verification first — the trust foundation — before the RAG that feeds them. The core invariant: <b>unverified text never reaches the user</b>, and any answer mutation (e.g. redacting an unsupported claim) is re-verified before it ships.</span><span class="ko">RAG보다 Knowledge·Verification을 먼저 만듭니다 — 신뢰 기반부터. 핵심 불변식: <b>검증되지 않은 텍스트는 사용자에게 나가지 않는다</b>. 답변을 바꾸는 처리(예: 근거 없는 claim 제거)는 재검증을 거친 뒤에만 나갑니다.</span></p>
+          <blockquote class="pull"><span class="en">"Unverified text never reaches the user."</span><span class="ko">"검증되지 않은 텍스트는 사용자에게 나가지 않는다."</span></blockquote>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">03</span><span class="en">The vector DB is a cache, not the truth — retrieval is ontology-aware</span><span class="ko">VectorDB는 진실이 아니라 캐시다 — 검색은 ontology-aware</span></p>
+          <p class="why"><span class="en">A common RAG trap is treating the vector store as the source of truth. Here it's only a retrieval cache — final evidence is always reloaded from an <b>immutable source snapshot</b> via <code>source_ref</code>. Retrieval is ontology-aware: it returns the smallest unit plus its <b>path in the legal tree</b> (article / clause / item) and reloads the surrounding context on demand, so a citation stays reproducible even if the parser or policy changes.</span><span class="ko">흔한 RAG 함정은 vector store를 진실의 원천으로 다루는 것입니다. 여기서 그것은 검색 캐시일 뿐이고, 최종 근거는 항상 <b>불변 source snapshot</b>에서 <code>source_ref</code>로 재로드됩니다. 검색은 ontology-aware입니다 — <b>법령 트리(조/항/호/목)</b>에서 최소 단위 + 경로를 돌려주고 상위 맥락은 필요할 때 재조회하므로, parser·정책이 바뀌어도 인용은 재현됩니다.</span></p>
+          <blockquote class="pull"><span class="en">"The vector DB is a cache. The source snapshot is the truth."</span><span class="ko">"VectorDB는 캐시다. Source Snapshot이 진실이다."</span></blockquote>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">04</span><span class="en">Schema-guided intake: the schema drives the conversation</span><span class="ko">Schema-guided intake: 스키마가 대화를 주도한다</span></p>
+          <p class="why"><span class="en">A vague non-developer request ("is this contract risky?") isn't handed straight to the RAG. A task classifier picks the task type and an LLM refines the utterance into schema slots — it <b>refines, it doesn't reason</b>; unknown fields stay <code>null</code> rather than guessed; and it asks the user only for what's genuinely missing. The resulting Task Brief is itself a verified artifact, and when intake can't be grounded within budget it escalates to a <b>human-review queue</b> instead of guessing.</span><span class="ko">비개발자의 모호한 요청("이 계약서 위험해?")을 RAG에 바로 넘기지 않습니다. task classifier가 유형을 고르고 LLM이 발화를 스키마 슬롯으로 정제합니다 — <b>추론이 아니라 정제</b>. 모르는 필드는 추측하지 않고 <code>null</code>로 두며, 정말 빠진 것만 사용자에게 묻습니다. 그렇게 만든 Task Brief 자체도 검증 대상이고, 예산 안에서 intake가 grounding되지 않으면 추측 대신 <b>human review 큐</b>로 에스컬레이션합니다.</span></p>
+          <blockquote class="pull"><span class="en">"The LLM refines the request; it doesn't reason about it. If it doesn't know, the value is null."</span><span class="ko">"LLM은 요청을 정제할 뿐, 추론하지 않는다. 모르면 값은 null이다."</span></blockquote>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">05</span><span class="en">Agentic research — but the LLM only proposes</span><span class="ko">Agentic 연구 — 그러나 LLM은 제안만 한다</span></p>
+          <p class="why"><span class="en">Answer generation is a multi-agent research loop — query planning, claim extraction, evidence linking, semantic verification, revision — with a gate that can send work back (<code>retrieve_more</code> / <code>revise</code> / <code>ask_user</code>) or, when the grounding budget is exhausted, <b>park it for human review</b>. The division of labor is strict: the LLM proposes candidates, the verification layer confirms grounding claim-by-claim, and the gate decides what ships.</span><span class="ko">답변 생성은 멀티 에이전트 연구 루프입니다 — query planning, claim extraction, evidence linking, semantic verification, revision — 그리고 작업을 되돌리거나(<code>retrieve_more</code> / <code>revise</code> / <code>ask_user</code>), grounding 예산이 소진되면 <b>human review로 보류</b>하는 gate가 있습니다. 역할 분담은 엄격합니다: LLM은 후보를 제안하고, 검증 레이어가 claim 단위로 grounding을 확인하며, gate가 무엇을 내보낼지 결정합니다.</span></p>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">06</span><span class="en">Verified the same way I verify everything</span><span class="ko">내가 모든 걸 검증하는 방식 그대로</span></p>
+          <p class="why"><span class="en">I hold this private work to the same bar as my open PoCs: independent verification records with conditional verdicts and two-way regression guards, a single canonical contract file pinned by drift-lock tests, and a full suite in the hundreds of tests. AI does the work; the verification decides whether it is real.</span><span class="ko">이 비공개 작업도 공개 PoC와 같은 기준으로 검증합니다 — 조건부 verdict와 양방향 회귀 가드를 가진 독립 검증 기록, drift-lock 테스트로 고정한 단일 정본 계약 파일, 수백 개 규모의 전체 테스트 스위트. AI가 일하고, 검증이 그것이 진짜인지 결정합니다.</span></p>
+          <p class="ai"><b><span class="en">How it connects:</span><span class="ko">연결점:</span></b> <span class="en">This is the production-scale version of the same idea behind my public PoCs — AI proposes, deterministic verification confirms, a human-aware gate decides.</span><span class="ko">이것은 제 공개 PoC와 같은 사상의 실무 규모 버전입니다 — AI는 제안하고, 결정론적 검증이 확인하며, 사람을 고려한 gate가 결정합니다.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= EXPERIENCE ENTRIES ================= -->
 <section id="xp">
   <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag"><span class="en">Earlier production work</span><span class="ko">이전 상용 작업</span></div>
+      <h2><span class="en">Professional experience</span><span class="ko">실무 경력</span></h2>
+    </div>
 
     <div class="xp">
       <h3><span class="en">Production NLP Categorization Microservice</span><span class="ko">프로덕션 NLP 카테고리 매칭 마이크로서비스</span></h3>

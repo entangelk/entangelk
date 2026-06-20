@@ -92,74 +92,53 @@
       <div class="sec-tag"><span class="en">★ Featured</span><span class="ko">★ 핵심</span></div>
       <h2><span class="en">Decision case studies</span><span class="ko">의사결정 케이스 스터디</span></h2>
       <p>
-        <span class="en">My current professional work, plus two public PoCs that validate the same thinking — told as decisions rather than features. For each: what I decided, why, and what role AI played.</span>
-        <span class="ko">현재 진행 중인 실무 작업과, 같은 사고를 공개적으로 검증한 두 PoC를 — 기능이 아니라 <b>의사결정</b>으로 풀었습니다. 각 항목마다 무엇을 결정했고, 왜 그랬으며, AI가 어떤 역할을 했는지.</span>
+        <span class="en">Three public PoCs — each one piece of a verified Agentic-RAG: a memory layer, a provider-neutral execution contract, and a verification gate. I built and validated each in the open. Combined, they're the blueprint for the system I'm now building at production scale in my current role (<a href="experience.html#current">Current work →</a>). Told as decisions, not features: what I decided, why, and what role AI played.</span>
+        <span class="ko">세 개의 공개 PoC — 각각 <b>검증형 Agentic-RAG의 한 조각</b>입니다: 메모리 레이어, provider-neutral 실행 계약, 검증 게이트. 셋을 공개적으로 만들고 검증했습니다. 합치면 지금 실무에서 실무 규모로 구축 중인 시스템의 설계도가 됩니다(<a href="experience.html#current">현재 실무 →</a>). 기능이 아니라 <b>의사결정</b>으로 풀었습니다 — 무엇을 결정했고, 왜 그랬으며, AI가 어떤 역할을 했는지.</span>
       </p>
     </div>
 
-    <!-- CASE 0: TF AI Harness (current, private) -->
-    <div class="case lead">
+    <!-- CASE 1: Agent Memory System (the Memory piece) -->
+    <div class="case">
       <div class="case-top">
-        <h3><span class="en">Verified Agentic-RAG System</span><span class="ko">검증형 Agentic-RAG 시스템</span></h3>
-        <span class="pill current"><span class="en">Current work</span><span class="ko">현재 실무</span></span>
-        <span class="pill private"><span class="en">Company · not public</span><span class="ko">회사 · 비공개</span></span>
+        <h3>Agent Memory System</h3>
+        <span class="pill poc">PoC</span>
+        <span class="pill piece"><span class="en">Piece · Memory</span><span class="ko">조각 · 메모리</span></span>
       </div>
       <p class="tagline">
-        <span class="en">My current work as an AI Solution Engineer: a working verified-RAG assistant for the legal domain. A live pipeline — hybrid retrieval over a Korean-law corpus, a multi-agent answer-research loop, and claim-by-claim grounding verification — turns a non-developer's vague question into a checkable task spec and lets no unverified text reach the user.</span>
-        <span class="ko">현재 AI Solution Engineer로서 진행 중인 작업 — 법률 도메인을 위한 <b>동작하는</b> 검증형 RAG 어시스턴트입니다. 한국 법령 코퍼스에 대한 하이브리드 검색, 멀티 에이전트 답변 연구 루프, claim 단위 grounding 검증이 실제로 도는 파이프라인으로, 비개발자의 모호한 질문을 검증 가능한 작업 명세로 바꾸고 검증되지 않은 텍스트는 사용자에게 내보내지 않습니다.</span>
+        <span class="en">A dedicated long-term memory layer for AI assistants — not a log of conversations, but compacted meaning that survives across sessions, exposed over MCP so any client can share the same memory model.</span>
+        <span class="ko">AI 어시스턴트를 위한 전용 장기 메모리 레이어 — 대화 로그가 아니라 세션을 넘어 남는 '압축된 의미'를, 어떤 클라이언트든 같은 메모리 모델을 공유하도록 MCP로 노출합니다.</span>
       </p>
-      <p class="private-note">
-        <span class="en">Active, working work-in-progress · company project, source not public. The retrieval-to-gate pipeline runs end-to-end on a live legal corpus; described here at the architecture / decision level only.</span>
-        <span class="ko">동작 중인 진행형 회사 프로젝트로 소스는 비공개입니다. 검색→게이트 파이프라인은 라이브 법령 코퍼스에서 end-to-end로 돌아갑니다. 여기서는 아키텍처·의사결정 수준으로만 서술합니다.</span>
-      </p>
+      <div class="case-links">
+        <a class="repo" href="https://github.com/entangelk/agent-memory-system-public" target="_blank" rel="noopener">GitHub repo</a>
+      </div>
 
       <div class="decisions">
         <div class="decision">
-          <p class="dh"><span class="num">01</span><span class="en">Contract-first, four independent layers</span><span class="ko">Contract-first, 네 개의 독립 레이어</span></p>
-          <p class="why"><span class="en">The problem isn't solved by one LLM call, so I split it into four layers — Intake, Knowledge, RAG Harness, Verification/Gate — and <b>fixed the contracts between them before building</b>. Each layer is developed independently against mocks; the boundary objects (Task Brief, Source Ref, Gate Decision) are the single source of truth.</span><span class="ko">이 문제는 LLM 한 번 호출로 풀리지 않습니다. 그래서 Intake / Knowledge / RAG Harness / Verification·Gate 네 레이어로 나누고, <b>구현보다 먼저 레이어 간 계약을 고정</b>했습니다. 각 레이어는 mock으로 독립 개발하고, 경계 객체(Task Brief·Source Ref·Gate Decision)가 단일 진실 공급원입니다.</span></p>
+          <p class="dh"><span class="num">01</span><span class="en">Memory is compacted meaning, not a conversation log</span><span class="ko">기억은 대화 로그가 아니라 압축된 의미다</span></p>
+          <p class="why"><span class="en">Most "memory" is a vector DB wrapped around chat transcripts. I refused that: the system stores no raw logs. The assistant that <i>understood</i> the conversation distills it into a structured, time-aware unit at save time — because <b>memory quality is decided at the save stage</b>, not at retrieval. Compaction runs in tiers (day → week → month → year) so old meaning stays small but reachable.</span><span class="ko">대부분의 '메모리'는 대화 기록을 벡터 DB로 감싼 것입니다. 저는 그것을 거부했습니다 — 이 시스템은 raw 로그를 저장하지 않습니다. 대화를 <i>이해한</i> 어시스턴트가 저장 시점에 구조화된 time-aware 단위로 증류합니다. <b>메모리 품질은 검색이 아니라 저장 단계에서 결정</b>되기 때문입니다. 압축은 일→주→월→년 계층으로 돌아, 오래된 의미는 작아지되 닿을 수 있게 남습니다.</span></p>
+          <blockquote class="pull"><span class="en">"Memory is not a log. Memory is compacted meaning."</span><span class="ko">"기억은 로그가 아니다. 기억은 압축된 의미다."</span></blockquote>
         </div>
 
         <div class="decision">
-          <p class="dh"><span class="num">02</span><span class="en">Build the trust foundation before the features</span><span class="ko">기능보다 신뢰 기반을 먼저</span></p>
-          <p class="why"><span class="en">I build Knowledge + Verification first — the trust foundation — before the RAG that feeds them. The core invariant: <b>unverified text never reaches the user</b>, and any answer mutation (e.g. redacting an unsupported claim) is re-verified before it ships.</span><span class="ko">RAG보다 Knowledge·Verification을 먼저 만듭니다 — 신뢰 기반부터. 핵심 불변식: <b>검증되지 않은 텍스트는 사용자에게 나가지 않는다</b>. 답변을 바꾸는 처리(예: 근거 없는 claim 제거)는 재검증을 거친 뒤에만 나갑니다.</span></p>
-          <blockquote class="pull"><span class="en">"Unverified text never reaches the user."</span><span class="ko">"검증되지 않은 텍스트는 사용자에게 나가지 않는다."</span></blockquote>
+          <p class="dh"><span class="num">02</span><span class="en">MongoDB is the truth; the vector store is a rebuildable cache</span><span class="ko">MongoDB가 진실이고, 벡터 store는 재구성 가능한 캐시다</span></p>
+          <p class="why"><span class="en">I split the architecture in two: <b>MongoDB</b> as the immutable State of Truth, <b>ChromaDB</b> as a vector cache that can be rebuilt from Mongo without data loss. Treating the vector store as derivative — not authoritative — removes split-brain risk while keeping semantic search fast.</span><span class="ko">아키텍처를 둘로 나눴습니다: <b>MongoDB</b>는 불변 State of Truth, <b>ChromaDB</b>는 데이터 손실 없이 Mongo에서 재구성 가능한 벡터 캐시입니다. 벡터 store를 권위가 아니라 파생물로 다루면 split-brain 위험이 사라지고, semantic 검색 속도는 유지됩니다.</span></p>
+          <blockquote class="pull"><span class="en">"The vector DB is a cache. The source of truth is the durable store."</span><span class="ko">"벡터 DB는 캐시다. 진실은 영속 저장소에 있다."</span></blockquote>
         </div>
 
         <div class="decision">
-          <p class="dh"><span class="num">03</span><span class="en">The vector DB is a cache, not the truth — retrieval is ontology-aware</span><span class="ko">VectorDB는 진실이 아니라 캐시다 — 검색은 ontology-aware</span></p>
-          <p class="why"><span class="en">A common RAG trap is treating the vector store as the source of truth. Here it's only a retrieval cache — final evidence is always reloaded from an <b>immutable source snapshot</b> via <code>source_ref</code>. Retrieval is ontology-aware: it returns the smallest unit plus its <b>path in the legal tree</b> (article / clause / item) and reloads the surrounding context on demand, so a citation stays reproducible even if the parser or policy changes.</span><span class="ko">흔한 RAG 함정은 vector store를 진실의 원천으로 다루는 것입니다. 여기서 그것은 검색 캐시일 뿐이고, 최종 근거는 항상 <b>불변 source snapshot</b>에서 <code>source_ref</code>로 재로드됩니다. 검색은 ontology-aware입니다 — <b>법령 트리(조/항/호/목)</b>에서 최소 단위 + 경로를 돌려주고 상위 맥락은 필요할 때 재조회하므로, parser·정책이 바뀌어도 인용은 재현됩니다.</span></p>
-          <blockquote class="pull"><span class="en">"The vector DB is a cache. The source snapshot is the truth."</span><span class="ko">"VectorDB는 캐시다. Source Snapshot이 진실이다."</span></blockquote>
-        </div>
-
-        <div class="decision">
-          <p class="dh"><span class="num">04</span><span class="en">Schema-guided intake: the schema drives the conversation</span><span class="ko">Schema-guided intake: 스키마가 대화를 주도한다</span></p>
-          <p class="why"><span class="en">A vague non-developer request ("is this contract risky?") isn't handed straight to the RAG. A task classifier picks the task type and an LLM refines the utterance into schema slots — it <b>refines, it doesn't reason</b>; unknown fields stay <code>null</code> rather than guessed; and it asks the user only for what's genuinely missing. The resulting Task Brief is itself a verified artifact, and when intake can't be grounded within budget it escalates to a <b>human-review queue</b> instead of guessing.</span><span class="ko">비개발자의 모호한 요청("이 계약서 위험해?")을 RAG에 바로 넘기지 않습니다. task classifier가 유형을 고르고 LLM이 발화를 스키마 슬롯으로 정제합니다 — <b>추론이 아니라 정제</b>. 모르는 필드는 추측하지 않고 <code>null</code>로 두며, 정말 빠진 것만 사용자에게 묻습니다. 그렇게 만든 Task Brief 자체도 검증 대상이고, 예산 안에서 intake가 grounding되지 않으면 추측 대신 <b>human review 큐</b>로 에스컬레이션합니다.</span></p>
-          <blockquote class="pull"><span class="en">"The LLM refines the request; it doesn't reason about it. If it doesn't know, the value is null."</span><span class="ko">"LLM은 요청을 정제할 뿐, 추론하지 않는다. 모르면 값은 null이다."</span></blockquote>
-        </div>
-
-        <div class="decision">
-          <p class="dh"><span class="num">05</span><span class="en">Agentic research — but the LLM only proposes</span><span class="ko">Agentic 연구 — 그러나 LLM은 제안만 한다</span></p>
-          <p class="why"><span class="en">Answer generation is a multi-agent research loop — query planning, claim extraction, evidence linking, semantic verification, revision — with a gate that can send work back (<code>retrieve_more</code> / <code>revise</code> / <code>ask_user</code>) or, when the grounding budget is exhausted, <b>park it for human review</b>. The division of labor is strict: the LLM proposes candidates, the verification layer confirms grounding claim-by-claim, and the gate decides what ships.</span><span class="ko">답변 생성은 멀티 에이전트 연구 루프입니다 — query planning, claim extraction, evidence linking, semantic verification, revision — 그리고 작업을 되돌리거나(<code>retrieve_more</code> / <code>revise</code> / <code>ask_user</code>), grounding 예산이 소진되면 <b>human review로 보류</b>하는 gate가 있습니다. 역할 분담은 엄격합니다: LLM은 후보를 제안하고, 검증 레이어가 claim 단위로 grounding을 확인하며, gate가 무엇을 내보낼지 결정합니다.</span></p>
-        </div>
-
-        <div class="decision">
-          <p class="dh"><span class="num">06</span><span class="en">Verified the same way I verify everything</span><span class="ko">내가 모든 걸 검증하는 방식 그대로</span></p>
-          <p class="why"><span class="en">I hold this private work to the same bar as my open PoCs: independent verification records with conditional verdicts and two-way regression guards, a single canonical contract file pinned by drift-lock tests, and a full suite in the hundreds of tests. AI does the work; the verification decides whether it is real.</span><span class="ko">이 비공개 작업도 공개 PoC와 같은 기준으로 검증합니다 — 조건부 verdict와 양방향 회귀 가드를 가진 독립 검증 기록, drift-lock 테스트로 고정한 단일 정본 계약 파일, 수백 개 규모의 전체 테스트 스위트. AI가 일하고, 검증이 그것이 진짜인지 결정합니다.</span></p>
-          <p class="ai"><b><span class="en">How it connects:</span><span class="ko">연결점:</span></b> <span class="en">This is the production-scale version of the same idea behind my two public PoCs below — AI proposes, deterministic verification confirms, a human-aware gate decides.</span><span class="ko">이것은 아래 두 공개 PoC와 같은 사상의 실무 규모 버전입니다 — AI는 제안하고, 결정론적 검증이 확인하며, 사람을 고려한 gate가 결정합니다.</span></p>
+          <p class="dh"><span class="num">03</span><span class="en">The server coordinates; it never secretly summarizes</span><span class="ko">서버는 조율할 뿐, 몰래 요약하지 않는다</span></p>
+          <p class="why"><span class="en">The server stores, selects candidates, and coordinates lifecycle — but it performs <b>no hidden LLM summarization</b> and never auto-guesses sensitivity from keywords. The agent sets <code>sensitivity</code> explicitly; meaning extraction is done by the client that actually understood the text. The machine coordinates; the understanding party decides what a memory means.</span><span class="ko">서버는 저장·후보 선택·생명주기 조율을 맡지만, <b>숨은 LLM 요약을 하지 않고</b> 키워드로 민감도를 자동 추측하지 않습니다. agent가 <code>sensitivity</code>를 명시하고, 의미 추출은 텍스트를 실제로 이해한 클라이언트가 합니다. 기계는 조율하고, 이해한 주체가 기억의 의미를 결정합니다.</span></p>
+          <p class="ai"><b><span class="en">How it connects:</span><span class="ko">연결점:</span></b> <span class="en">This truth-vs-cache split is the seed of the verified RAG I now build at work ("the vector DB is a cache; the source snapshot is the truth"), and the same division of labor runs through everything: the deterministic layer coordinates, the understanding party decides.</span><span class="ko">이 진실/캐시 분리가 지금 회사에서 만드는 검증형 RAG의 씨앗입니다("vector DB는 캐시, source snapshot이 진실"). 그리고 같은 역할 분담이 제가 만드는 모든 것을 관통합니다 — 결정론적 레이어가 조율하고, 이해한 주체가 결정합니다.</span></p>
         </div>
       </div>
     </div>
-
-    <p class="bridge">
-      <span class="en">The two PoCs below are where I validated this thinking in the open — a verification harness and a provider-neutral contract layer, each built and documented publicly.</span>
-      <span class="ko">아래 두 PoC는 이 사고를 공개적으로 검증한 사례입니다 — 검증 하네스와 provider-neutral 계약 레이어를, 각각 공개적으로 만들고 문서화했습니다.</span>
-    </p>
 
     <!-- CASE 1: Assessment Spec Harness -->
     <div class="case">
       <div class="case-top">
         <h3>Assessment Spec Harness</h3>
         <span class="pill poc">PoC</span>
+        <span class="pill piece"><span class="en">Piece · Verification gate</span><span class="ko">조각 · 검증 게이트</span></span>
       </div>
       <p class="tagline">
         <span class="en">CI for hiring assessments — it doesn't evaluate the candidate, it evaluates the assessment design itself.</span>
@@ -216,6 +195,7 @@
       <div class="case-top">
         <h3>Harness IR</h3>
         <span class="pill mixed"><span class="en">Feasibility · Mixed result</span><span class="ko">실현성 · 혼재 결과</span></span>
+        <span class="pill piece"><span class="en">Piece · Execution contract</span><span class="ko">조각 · 실행 계약</span></span>
       </div>
       <p class="tagline">
         <span class="en">Does provider-neutral "Role IR" lowering beat hardcoded prompt templates for structured extraction? A POC built to test exactly that one hypothesis.</span>
@@ -248,6 +228,11 @@
         </div>
       </div>
     </div>
+
+    <p class="bridge synth">
+      <span class="en">Put the three together — memory, a provider-neutral execution contract, and a verification gate — and you have a verified Agentic-RAG. That synthesis is exactly what I build at production scale in my current role. <a href="experience.html#current">See the current work →</a></span>
+      <span class="ko">세 조각 — 메모리, provider-neutral 실행 계약, 검증 게이트 — 을 합치면 검증형 Agentic-RAG가 됩니다. 그 통합이 바로 지금 실무에서 실무 규모로 만들고 있는 것입니다. <a href="experience.html#current">현재 실무 보기 →</a></span>
+    </p>
   </div>
 </section>
 
@@ -287,17 +272,10 @@
       <div class="sec-tag"><span class="en">Highlighted</span><span class="ko">주요</span></div>
       <h2><span class="en">Other architecture &amp; PoCs</span><span class="ko">그 외 아키텍처 &amp; PoC</span></h2>
     </div>
-    <div class="grid2">
-      <div class="card">
-        <div class="meta">Architecture</div>
-        <h3><a href="https://github.com/entangelk/agent-memory-system-public" target="_blank" rel="noopener">Agent Memory System</a></h3>
-        <p><span class="en">MCP-based long-term memory. Separated the State of Truth (MongoDB) from the semantic retrieval layer (ChromaDB) for consistency and memory compaction.</span><span class="ko">MCP 기반 장기 메모리. 일관성과 메모리 압축을 위해 State of Truth(MongoDB)와 semantic retrieval layer(ChromaDB)를 분리했습니다.</span></p>
-      </div>
-      <div class="card">
-        <div class="meta">Pipeline</div>
-        <h3><a href="https://github.com/entangelk/logo_image" target="_blank" rel="noopener">Automated Brand Logo Extraction</a></h3>
-        <p><span class="en">Zero-shot logo extraction (Grounding DINO + SAM + custom vision post-processing). Hybrid foreground anchoring cuts background hallucination, and morphological cleanup reaches commercial-grade masks — no supervised training data.</span><span class="ko">Grounding DINO·SAM·커스텀 비전 후처리를 결합한 zero-shot 로고 추출. 하이브리드 전경 앵커링으로 배경 환각을 줄이고, 형태학적 정제로 상용 수준 마스크를 구현합니다 — 지도 학습 데이터 없이.</span></p>
-      </div>
+    <div class="card">
+      <div class="meta">Pipeline</div>
+      <h3><a href="https://github.com/entangelk/logo_image" target="_blank" rel="noopener">Automated Brand Logo Extraction</a></h3>
+      <p><span class="en">Zero-shot logo extraction (Grounding DINO + SAM + custom vision post-processing). Hybrid foreground anchoring cuts background hallucination, and morphological cleanup reaches commercial-grade masks — no supervised training data.</span><span class="ko">Grounding DINO·SAM·커스텀 비전 후처리를 결합한 zero-shot 로고 추출. 하이브리드 전경 앵커링으로 배경 환각을 줄이고, 형태학적 정제로 상용 수준 마스크를 구현합니다 — 지도 학습 데이터 없이.</span></p>
     </div>
 
     <div class="sec-head" style="margin-top:42px;">
@@ -307,18 +285,21 @@
     </div>
     <div class="grid3">
       <div class="card">
+        <img class="card-viz" src="assets/q-psa-pruning.png" alt="Pruning validation chart — Q-PSA perplexity explodes vs the Layer Ablation baseline as more layers are pruned" loading="lazy" />
         <div class="meta tag-kill"><span class="en">Project killed</span><span class="ko">프로젝트 종료</span></div>
         <h3><a href="https://github.com/entangelk/Q-PSA_Pr" target="_blank" rel="noopener">Q-PSA</a></h3>
         <p><span class="en">Discrete perturbation to estimate layer importance in quantized LLMs.</span><span class="ko">양자화 LLM의 레이어 중요도를 discrete perturbation으로 추정.</span></p>
         <p><span class="label">Decision:</span> <span class="en">Killed — ~1300× slower than baseline and failed pruning validation.</span><span class="ko">종료 — 베이스라인 대비 약 1300배 느렸고 pruning validation에 실패.</span></p>
       </div>
       <div class="card">
+        <img class="card-viz" src="assets/circle-wfc-path.png" alt="Geometry-guided WFC (ray variant) finding a 152-step path through a 100x100 maze" loading="lazy" />
         <div class="meta"><span class="en">Architectural pivot</span><span class="ko">아키텍처 피벗</span></div>
         <h3><a href="https://github.com/entangelk/circle-wfc" target="_blank" rel="noopener">Circle-WFC</a></h3>
         <p><span class="en">Replacing A* pathfinding with geometry-guided Wave Function Collapse.</span><span class="ko">A* 경로탐색을 geometry-guided WFC로 대체 시도.</span></p>
         <p><span class="label">Insight:</span> <span class="en">Found the structural limit of local consistency; reframed it as a search-space reducer.</span><span class="ko">local consistency의 구조적 한계를 발견, 효율적 search-space reducer로 재정의.</span></p>
       </div>
       <div class="card">
+        <img class="card-viz" src="assets/hw-wfc-collapse.png" alt="HW-WFC final schedule — attention block layers collapsed to optimal tile/layout states under SRAM limits, 0 backtracks" loading="lazy" />
         <div class="meta tag-ok"><span class="en">Feasibility validated</span><span class="ko">실현성 검증</span></div>
         <h3><a href="https://github.com/entangelk/hw-wfc" target="_blank" rel="noopener">HW-WFC v2.9</a></h3>
         <p><span class="en">Constraint-driven AI compiler scheduling R&amp;D.</span><span class="ko">제약 기반 AI 컴파일러 스케줄링 R&amp;D.</span></p>
