@@ -65,7 +65,23 @@ I care most about building practical solutions that reduce friction, work under 
 
 * **Separation of Concerns:** Memory is compacted meaning, not just a log. To enforce this, I strictly separated the system's architecture into two layers: **MongoDB** as the immutable State of Truth (SoT) and **ChromaDB** as the dynamic Vector Cache for semantic context retrieval.
 
+#### 🧪 Assessment Spec Harness — CI for Hiring Assessments
+*A deterministic harness that evaluates the assessment design itself—not the candidate—by detecting mismatches between a hiring assignment's public spec and its private grading rubric before candidates ever see them. [🔗 GitHub Repo](https://github.com/entangelk/assessment_poc)*
+
+* **Problem Reframing:** Most assessment tooling grades candidates. I targeted the upstream failure instead: specs and rubrics silently drift apart—optional items scored as core, must-have items covered by bonus only, double scoring—quietly making an assessment unfair. The harness treats spec/rubric consistency as something you can run CI against.
+* **Deterministic Core over Immutable Snapshots:** Anchored the entire pipeline to an immutable source snapshot (sha256 + line/span `source_ref`), so every finding is grounded in the original text without a DB or RAG layer. A deterministic validation core (Rule 0 reference integrity + Rule 1–3 + rubric lint rules) produces reproducible findings—both example assignments reproduced identical finding distributions across three repeated runs with zero reference-integrity violations.
+* **Agent-First CLI Contract:** Designed the primary caller to be an AI agent (Claude Code, Codex, Gemini), with a stable core output contract (`status` / `exit_code` / `command` / `next_actions`), schema introspection, and well-defined exit codes, so callers integrate safely without chasing docs. Humans participate only as final reviewers through an explicit review → gate verdict flow.
+* **Honest Scope Boundary:** The deterministic core and review/verdict flow are implemented and validated; the live LLM SDK runner is deliberately deferred. Current results validate the harness wiring and source grounding on a `deterministic_extraction` + mock semantic-verification path, and the docs state plainly that this is not yet a live-LLM quality validation.
+
 ### Experiments
+
+#### 🧩 Harness IR — Provider-Neutral Role IR for Structured Extraction (Feasibility Study)
+*A single-hypothesis POC asking whether IR-based lowering improves structured-extraction reliability over hardcoded prompt templates, benchmarked across multiple LLM backends. [🔗 GitHub Repo](https://github.com/entangelk/Harness_ir)*
+
+* **Single Falsifiable Hypothesis:** Built the smallest runnable slice (`role_ir.yaml -> lowering -> single backend call -> assurance`) specifically to test one claim under a shared, fair evaluation flow: does a provider-neutral Role IR beat a hardcoded baseline prompt? Kept the broader platform thesis in `docs/` so the experiment could be read against the direction it was meant to validate—without overclaiming what the code actually proves.
+* **Provider-Neutral Lowering + Assurance:** Designed a Role IR that lowers to per-backend artifacts (OpenAI `json_schema`; Groq/Gemma prompt + JSON extraction + schema validation; OpenRouter generic path), backed by an assurance layer that validates schema and evidence spans. New backends register through a single `backends.yaml` entry.
+* **Honest, Mixed Result:** On the contract eval-8 fair-mode runs, IR reached gold/near parity on some models, but on the hard distractor sets there was no clean IR win—`renewal`/`penalty` false positives became a shared failure family across both IR and baseline. I reported this directly rather than cherry-picking favorable runs.
+* **What the Failure Pointed To:** The inconclusive benchmark reframed the real lever: the next-phase value is not the lowering step alone but self-verification loops, critic roles, and convergence logic—explicitly kept out of current scope. The role compiler likewise stayed a deterministic draft generator rather than a full semantic compiler.
 
 #### ⚡ AI Compiler Auto-Scheduler R&D & Feasibility Study (HW-WFC v2.9)
 *Constraint-driven scheduling R&D validating the practical potential of WFC in AI hardware compilation. [🔗 GitHub Repo](https://github.com/entangelk/hw-wfc)*

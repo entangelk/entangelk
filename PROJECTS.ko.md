@@ -66,7 +66,23 @@
 
 * **Separation of Concerns:** "기억은 단순한 로그가 아니라 압축된 의미망이다"라는 철학을 시스템으로 구현했습니다. 진실의 공급원(State of Truth) 역할을 하는 **MongoDB**와, 문맥의 의미론적 검색을 담당하는 Vector Cache인 **ChromaDB**를 엄격하게 분리하여 영구적이고 논리적인 기억 아키텍처를 설계했습니다.
 
+#### 🧪 Assessment Spec Harness — 채용 과제를 위한 CI
+*응시자가 아니라 평가 설계 자체를 평가하는 결정론적 하네스입니다. 채용 과제의 공개 spec과 비공개 평가 rubric 사이의 불일치를, 응시자가 과제를 보기 전에 검출합니다. [🔗 GitHub Repo](https://github.com/entangelk/assessment_poc)*
+
+* **문제 재정의 (Problem Reframing):** 대부분의 평가 도구는 응시자를 채점합니다. 저는 그 위쪽 단계의 실패에 집중했습니다. spec과 rubric은 조용히 어긋나며(optional 항목이 core로 채점되거나, must 항목이 bonus로만 커버되거나, double scoring이 발생) 평가를 은밀하게 불공정하게 만듭니다. 이 하네스는 spec/rubric 정합성을 'CI로 돌릴 수 있는 대상'으로 다룹니다.
+* **불변 스냅샷 기반 결정론적 코어:** 전체 파이프라인을 불변 소스 스냅샷(sha256 + line/span `source_ref`)에 anchor해, DB나 RAG 레이어 없이도 모든 finding이 원문에 grounding되도록 했습니다. 결정론적 검증 코어(Rule 0 reference integrity + Rule 1~3 + rubric lint rules)가 재현 가능한 finding을 생성하며, 두 예제 과제 모두 3회 반복 실행에서 동일한 finding 분포를 재현했고 reference integrity 위반은 0건이었습니다.
+* **에이전트 우선 CLI 계약:** 1차 호출 주체를 AI 에이전트(Claude Code, Codex, Gemini)로 설계했습니다. 안정적인 core 출력 계약(`status` / `exit_code` / `command` / `next_actions`), schema introspection, 명확한 종료 코드를 제공해 호출 측이 문서를 일일이 따라가지 않아도 안전하게 통합할 수 있습니다. 사람은 review → gate 판정 흐름에서 최종 검토자로만 참여합니다.
+* **정직한 범위 경계:** 결정론적 코어와 review/verdict 흐름은 구현·검증 완료이고, live LLM SDK runner는 의도적으로 deferred 상태입니다. 현재 결과는 `deterministic_extraction` + mock semantic verification 경로에서 하네스 배선과 원문 grounding을 검증한 것이며, 문서에도 이것이 아직 live LLM 품질 검증은 아님을 분명히 밝혔습니다.
+
 ### 실험
+
+#### 🧩 Harness IR — Structured Extraction을 위한 Provider-Neutral Role IR (Feasibility Study)
+*IR 기반 lowering이 하드코딩 프롬프트 템플릿보다 structured extraction 신뢰도를 높이는가라는 단일 가설을 여러 LLM 백엔드에서 검증한 PoC. [🔗 GitHub Repo](https://github.com/entangelk/Harness_ir)*
+
+* **단일 반증 가능 가설:** 가장 작게 실행 가능한 슬라이스(`role_ir.yaml -> lowering -> single backend call -> assurance`)를 만들어, 공유된 공정한 평가 흐름 안에서 단 하나의 주장을 검증했습니다. provider-neutral Role IR이 하드코딩 baseline 프롬프트를 이기는가? 더 큰 플랫폼 thesis는 `docs/`에 분리해 두어, 코드가 실제로 증명한 범위를 과장하지 않으면서도 이 실험이 검증하려던 방향과 함께 읽힐 수 있게 했습니다.
+* **Provider-Neutral Lowering + Assurance:** Role IR이 백엔드별 artifact로 lowering되도록 설계했습니다(OpenAI `json_schema`; Groq/Gemma는 prompt + JSON extraction + schema validation; OpenRouter generic 경로). schema와 evidence span을 검증하는 assurance 레이어를 두었고, 새 백엔드는 `backends.yaml` 항목 하나로 등록됩니다.
+* **정직한 혼재 결과:** contract eval-8 fair-mode 실행에서 일부 모델은 IR이 gold/근접 parity에 도달했지만, 하드 distractor 셋에서는 깔끔한 IR 우위가 없었습니다. `renewal`/`penalty` false positive가 IR·baseline 양쪽 공통의 실패 패턴이 되었고, 유리한 회차만 골라내지 않고 이 결과를 그대로 보고했습니다.
+* **실패가 가리킨 방향:** inconclusive한 벤치마크가 진짜 레버를 재정의했습니다. 다음 단계의 가치는 lowering 단계 자체가 아니라 self-verification loop, critic role, convergence logic에 있으며, 이는 현재 범위에서 명시적으로 제외했습니다. role compiler 역시 완전한 semantic compiler가 아니라 결정론적 draft generator 수준에 머물렀습니다.
 
 #### ⚡ AI 컴파일러 스케줄링 R&D 및 도입 가능성 검증 (HW-WFC v2.9)
 *하드웨어 최적화를 위한 제약 기반 자동 스케줄링 알고리즘 설계 및 실효성 검증. [🔗 GitHub Repo](https://github.com/entangelk/hw-wfc)*

@@ -44,6 +44,10 @@ When I encounter a business bottleneck, I combine existing models, APIs, and alg
   Zero-shot logo extraction pipeline combining Grounding DINO, SAM, and custom post-processing.  
   `Focus:` Built a robust pipeline that operates without supervised training data.
 
+- 🧪 **[Assessment Spec Harness (PoC)](https://github.com/entangelk/assessment_poc)**  
+  CI for hiring assessments — it doesn't evaluate the candidate, it evaluates the assessment design itself, detecting mismatches between a public `spec.md` and a private `rubric.md` before candidates ever see them.  
+  `Architecture:` A deterministic validation core (reference-integrity + rubric lint rules over an immutable, hash-anchored source snapshot) separated from an agent-driven multi-run extraction layer, exposed through an agent-consumable CLI contract.
+
 ## 📊 R&D, Failed Experiments & Post-Mortems
 
 *I value the lessons learned from failed experiments as much as successful deployments. Below are projects where I tested architectural ideas, examined feasibility, and made data-driven decisions.*
@@ -60,11 +64,9 @@ When I encounter a business bottleneck, I combine existing models, APIs, and alg
   Constraint-driven AI compiler scheduling R&D.  
   `Result:` Matched Exact DP's optimum, validating algorithmic feasibility, but concluded the research after identifying hardware-backed cost-model calibration as the real production bottleneck.
 
-## Currently Building & Exploring
-
-- **🎓 ADIGA College Admission Data Pipeline**  
-  Extracting and normalizing complex HTML data across 200+ institutions.  
-  `Result so far:` Reduced schema violation rates under noisy HTML inputs using hallucination-controlled LLM workflows.
+- 🧩 **[Harness IR (Feasibility Study — Mixed)](https://github.com/entangelk/Harness_ir)**  
+  Tested whether provider-neutral Role IR lowering beats hardcoded prompt templates for structured extraction across multiple LLM backends.  
+  `Insight:` Found no clean IR win on hard distractor sets — `renewal`/`penalty` false positives became a shared failure family across both paths — and reframed the real next-phase lever as self-verification and critic loops rather than the lowering step alone.
 
 ## Notes
 

@@ -47,6 +47,10 @@
   Grounding DINO, SAM, 그리고 커스텀 후처리를 결합한 zero-shot 로고 추출 파이프라인입니다.  
   `Focus:` 지도 학습 데이터 없이도 동작하는 견고한 파이프라인 구축에 집중했습니다.
 
+- 🧪 **[Assessment Spec Harness (PoC)](https://github.com/entangelk/assessment_poc)**  
+  채용 과제를 위한 CI입니다. 응시자를 평가하지 않고 평가 설계 자체를 평가하며, 공개 `spec.md`와 비공개 `rubric.md` 사이의 설계 불일치를 응시자가 보기 전에 검출합니다.  
+  `Architecture:` 불변 해시 기반 소스 스냅샷 위에서 동작하는 결정론적 검증 코어(reference integrity + rubric lint rules)와 에이전트 기반 multi-run 추출 레이어를 분리하고, agent-consumable CLI 계약으로 노출했습니다.
+
 ## 📊 R&D, 실패한 실험, 그리고 포스트모템
 
 *저는 성공한 결과만큼이나 실패한 실험에서 얻은 교훈도 중요하게 생각합니다. 아래 프로젝트들은 아키텍처 가설을 검증하고, 실현 가능성을 판단하며, 데이터 기반으로 결정을 내린 사례들입니다.*
@@ -63,11 +67,9 @@
   제약 기반 AI compiler scheduling R&D입니다.  
   `Result:` Exact DP의 최적값과 일치해 알고리즘적 실현 가능성은 입증했지만, 실제 프로덕션 병목이 하드웨어 기반 cost-model calibration에 있다는 점을 확인하고 연구를 마무리했습니다.
 
-## Currently Building & Exploring
-
-- **🎓 ADIGA College Admission Data Pipeline**  
-  200개 이상의 기관에서 복잡한 HTML 데이터를 추출하고 정규화하는 작업입니다.  
-  `Result so far:` hallucination을 제어한 LLM 워크플로우를 통해 noisy HTML 입력 환경에서도 schema violation 비율을 낮추고 있습니다.
+- 🧩 **[Harness IR (Feasibility Study — Mixed)](https://github.com/entangelk/Harness_ir)**  
+  provider-neutral Role IR lowering이 하드코딩 프롬프트 템플릿보다 structured extraction 신뢰도를 높이는지를 여러 LLM 백엔드에서 검증한 PoC입니다.  
+  `Insight:` 하드 distractor 셋에서는 깔끔한 IR 우위가 없었고(`renewal`/`penalty` false positive가 IR·baseline 양쪽 공통의 실패 패턴이 됨), 진짜 다음 단계 레버는 lowering 단계 자체가 아니라 self-verification과 critic loop라는 점으로 방향을 재정의했습니다.
 
 ## Notes
 
