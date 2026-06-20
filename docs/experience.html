@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>entangelk — Professional Experience</title>
+<meta name="description" content="Production work in live commercial environments, told as the decisions behind each system — NLP services, large-scale generation pipelines, and constraint-driven automation." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="lang-en">
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand"><a href="index.html">entangelk<span>.</span></a></div>
+    <nav class="nav-links">
+      <a class="navlink" href="index.html#decisions"><span class="en">Decisions</span><span class="ko">의사결정</span></a>
+      <a class="navlink" href="index.html#work"><span class="en">Work</span><span class="ko">작업</span></a>
+      <a class="navlink" href="experience.html"><span class="en">Experience</span><span class="ko">경력</span></a>
+      <a class="navlink" href="index.html#contact"><span class="en">Contact</span><span class="ko">연락처</span></a>
+    </nav>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+      <button id="btn-ko" onclick="setLang('ko')">KO</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="en">Professional Experience</span><span class="ko">실무 경력</span></span>
+    <h1>
+      <span class="en">Production work,<br /><span class="accent">told as the decision behind it.</span></span>
+      <span class="ko">현업 결과물,<br /><span class="accent">그 뒤의 판단으로 정리합니다.</span></span>
+    </h1>
+    <p class="lede">
+      <span class="en">Work delivered in live commercial environments. These projects have no public repos, so each is described as the constraint I faced and the decision I made — resource-aware architecture, security boundaries, and avoiding unnecessary complexity.</span>
+      <span class="ko">실제 상용 환경에 납품한 작업들입니다. 공개 repo가 없는 작업이라, 각각을 '마주한 제약'과 '내린 판단'으로 풀었습니다 — 자원 인식 아키텍처, 보안 경계, 불필요한 복잡도 회피.</span>
+    </p>
+    <div class="cta-row">
+      <a class="btn" href="index.html"><span class="en">← Back to portfolio</span><span class="ko">← 포트폴리오로</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= EXPERIENCE ENTRIES ================= -->
+<section id="xp">
+  <div class="wrap">
+
+    <div class="xp">
+      <h3><span class="en">Production NLP Categorization Microservice</span><span class="ko">프로덕션 NLP 카테고리 매칭 마이크로서비스</span></h3>
+      <p class="sub"><span class="en">A live AI module matching natural-language user inputs to internal DB categories.</span><span class="ko">자연어 사용자 입력을 내부 DB 카테고리에 매칭하는 라이브 AI 모듈.</span></p>
+      <div class="row"><div class="k">Decision</div><p class="v"><span class="en">Implemented an <b>embedding + reranking pipeline (BGE-m3)</b> rather than keyword matching, to maximize accuracy of natural-language matching against static categorical data.</span><span class="ko">키워드 매칭이 아니라 <b>embedding + reranking 파이프라인(BGE-m3)</b>으로 구현해, 정적 카테고리 데이터 대비 자연어 매칭 정확도를 극대화했습니다.</span></p></div>
+      <div class="row"><div class="k">Why</div><p class="v"><span class="en">To make the core backend team able to adopt it with zero restructuring, I shipped it <b>containerized (Docker) with full Swagger docs</b> — a plug-and-play service, not a code dependency.</span><span class="ko">코어 백엔드 팀이 재구조화 없이 도입할 수 있도록, <b>Docker 컨테이너 + Swagger 문서</b>로 전달했습니다 — 코드 의존성이 아니라 plug-and-play 서비스로.</span></p></div>
+      <div class="row"><div class="k">Impact</div><p class="v"><span class="en">Plugged into the live commercial environment without backend restructuring.</span><span class="ko">백엔드 재구조화 없이 상용 환경에 그대로 투입.</span></p></div>
+    </div>
+
+    <div class="xp">
+      <h3><span class="en">Large-Scale Asset Generation &amp; Review Pipeline</span><span class="ko">대규모 에셋 생성·검수 파이프라인</span></h3>
+      <p class="sub"><span class="en">Mass-generation and review of 22,000+ service image assets, under strict hardware limits.</span><span class="ko">엄격한 하드웨어 제약 아래 22,000+ 서비스 이미지 에셋 대량 생성·검수.</span></p>
+      <div class="row"><div class="k">Decision</div><p class="v"><span class="en">For a one-off task I <b>intentionally excluded heavy DBs / message queues</b> to avoid over-engineering, and used the physical hardware I/O limit as a natural rate limiter for a stable synchronous flow.</span><span class="ko">일회성 작업이라 over-engineering을 피하려고 <b>무거운 DB·MQ를 의도적으로 배제</b>하고, 물리 하드웨어 I/O 한계를 자연스러운 rate limiter로 활용해 안정적인 동기 흐름을 유지했습니다.</span></p></div>
+      <div class="row"><div class="k">Why</div><p class="v"><span class="en">The review dashboard rendered 22,000+ entries in over 5 minutes (CSR bottleneck); I cut it to near-instant with <b>lazy loading and browser caching</b> instead of a heavier rebuild.</span><span class="ko">검수 대시보드가 22,000+ 항목을 5분 넘게 렌더(CSR 병목)했는데, 무거운 재구축 대신 <b>lazy loading·브라우저 캐싱</b>으로 거의 즉시로 단축했습니다.</span></p></div>
+      <div class="row"><div class="k">Scaling</div><p class="v"><span class="en">Ran PoC on local <b>Flux</b>, then migrated mass production to the <b>Gemini API</b> for stability and speed.</span><span class="ko">로컬 <b>Flux</b>로 PoC 후, 안정성·속도를 위해 대량 생산을 <b>Gemini API</b>로 이전했습니다.</span></p></div>
+    </div>
+
+    <div class="xp">
+      <h3><span class="en">Zero-Overhead Internal Automation Pipeline</span><span class="ko">제로 오버헤드 내부 자동화 파이프라인</span></h3>
+      <p class="sub"><span class="en">An internal-only automation hub collecting scattered static data and dispatching notifications.</span><span class="ko">흩어진 정적 데이터를 모아 알림을 발송하는 내부 전용 자동화 허브.</span></p>
+      <div class="row"><div class="k">Decision</div><p class="v"><span class="en">Security policy blocked external cloud-DB access. Instead of requesting new APIs from the core team, I <b>reverse-engineered the internal CMS and reused legacy APIs</b> (email/SMS dispatch) — zero additional backend resources.</span><span class="ko">보안 정책으로 외부 클라우드 DB 접근이 막혔습니다. 코어 팀에 새 API를 요청하는 대신 <b>내부 CMS를 리버스 엔지니어링해 레거시 API(이메일/SMS 발송)를 재사용</b>했습니다 — 추가 백엔드 자원 0.</span></p></div>
+      <div class="row"><div class="k">Why</div><p class="v"><span class="en">To stay compliant, scripts run <b>strictly inside the closed internal network</b> (no external port-forwarding), inheriting the existing modules' security authentication.</span><span class="ko">보안 준수를 위해 스크립트를 <b>폐쇄 내부망 안에서만</b> 실행(외부 포트포워딩 없음)하고, 기존 모듈의 보안 인증을 그대로 상속했습니다.</span></p></div>
+    </div>
+
+    <div class="xp">
+      <h3><span class="en">Lightweight Internal Network Utility</span><span class="ko">경량 내부망 유틸리티</span></h3>
+      <p class="sub"><span class="en">A small script to resolve a corporate VPN bottleneck.</span><span class="ko">사내 VPN 병목을 해소하는 작은 스크립트.</span></p>
+      <div class="row"><div class="k">Decision</div><p class="v"><span class="en">Security policy restricted simultaneous VPN connections, bottlenecking the team. I built and deployed a <b>lightweight Python port-connection script</b> enabling multiple secure connections with minimal setup.</span><span class="ko">보안 정책이 동시 VPN 연결을 제한해 팀 작업이 병목됐습니다. <b>경량 Python 포트 연결 스크립트</b>를 만들어 최소 설정으로 다중 보안 연결을 가능하게 배포했습니다.</span></p></div>
+      <div class="row"><div class="k">Impact</div><p class="v"><span class="en">Drastically improved team productivity with minimal setup.</span><span class="ko">최소 설정으로 팀 생산성을 크게 개선.</span></p></div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="en">© 2026 entangelk · AI Product Builder · <a href="index.html">Back to portfolio</a></span>
+    <span class="ko">© 2026 entangelk · AI Product Builder · <a href="index.html">포트폴리오로</a></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

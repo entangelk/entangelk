@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>entangelk — AI Product Builder · Decisions &amp; Judgment</title>
+<meta name="description" content="AI Product Builder. A portfolio about judgment — how I frame problems, direct AI agents, and own the decisions behind PoCs and experiments." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="lang-en">
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand"><a href="index.html">entangelk<span>.</span></a></div>
+    <nav class="nav-links">
+      <a class="navlink" href="#decisions"><span class="en">Decisions</span><span class="ko">의사결정</span></a>
+      <a class="navlink" href="#ai"><span class="en">Working with AI</span><span class="ko">AI 활용</span></a>
+      <a class="navlink" href="#work"><span class="en">Work</span><span class="ko">작업</span></a>
+      <a class="navlink" href="experience.html"><span class="en">Experience</span><span class="ko">경력</span></a>
+      <a class="navlink" href="#contact"><span class="en">Contact</span><span class="ko">연락처</span></a>
+    </nav>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+      <button id="btn-ko" onclick="setLang('ko')">KO</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="wrap">
+    <span class="eyebrow">AI Product Builder</span>
+    <h1>
+      <span class="en">I don't just build.<br />I <span class="accent">frame the problem, direct the AI, and own the decision.</span></span>
+      <span class="ko">개발만 하지 않습니다.<br /><span class="accent">문제를 정의하고, AI를 지휘하고, 판단을 책임집니다.</span></span>
+    </h1>
+    <p class="lede">
+      <span class="en">My background is in operations, business planning, and data analysis. I build AI prototypes and workflows to test whether an idea survives real constraints — and I treat the <b>decision of whether to iterate, pivot, scale, or stop</b> as the actual deliverable.</span>
+      <span class="ko">제 커리어는 운영·사업기획·데이터 분석에서 시작했습니다. 아이디어가 현실 제약을 견디는지 검증하기 위해 AI 프로토타입과 워크플로우를 만들고, <b>반복할지·피벗할지·확장할지·멈출지를 판단하는 것 자체를 결과물</b>로 봅니다.</span>
+    </p>
+    <p class="quote">
+      <span class="en">"Memory is not a log. Memory is compacted meaning."</span>
+      <span class="ko">"기억은 로그가 아니다. 기억은 압축된 의미다."</span>
+    </p>
+    <div class="cta-row">
+      <a class="btn primary" href="#decisions"><span class="en">See my decisions →</span><span class="ko">의사결정 보기 →</span></a>
+      <a class="btn" href="https://github.com/entangelk" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/entangelk/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PRINCIPLES ================= -->
+<section id="principles">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag"><span class="en">How I Work</span><span class="ko">일하는 방식</span></div>
+      <h2><span class="en">Operating principles</span><span class="ko">운영 원칙</span></h2>
+      <p>
+        <span class="en">I'm not a low-level AI researcher. My strength is execution, structured experimentation, and product-minded judgment under real constraints.</span>
+        <span class="ko">저수준을 파는 AI 연구자는 아닙니다. 저의 강점은 실행력, 구조화된 실험, 그리고 현실 제약 안에서의 제품 관점 판단입니다.</span>
+      </p>
+    </div>
+    <div class="principles">
+      <div class="principle highlight">
+        <h3><span class="en">AI is the executor; I am the decider.</span><span class="ko">AI는 실행자, 나는 결정자.</span></h3>
+        <p><span class="en">AI drafts code, generates candidates, and audits work. I frame the problem, direct the agents, and own the judgment about what is right.</span><span class="ko">AI는 초안·후보 생성·감사를 맡고, 저는 문제를 프레이밍하고 에이전트를 지휘하며 무엇이 옳은지 판단합니다.</span></p>
+      </div>
+      <div class="principle">
+        <h3><span class="en">Build to validate</span><span class="ko">검증을 위해 만든다</span></h3>
+        <p><span class="en">Prototypes exist to test whether an idea can survive cost, stability, and operational friction — not to demo.</span><span class="ko">프로토타입은 데모가 아니라, 아이디어가 비용·안정성·운영 마찰을 견디는지 검증하기 위해 존재합니다.</span></p>
+      </div>
+      <div class="principle">
+        <h3><span class="en">Data-driven decisions</span><span class="ko">데이터 기반 결정</span></h3>
+        <p><span class="en">If a system can't prove its value with measurable results, I document the failure and move on.</span><span class="ko">측정 가능한 결과로 가치를 입증하지 못하면, 실패를 기록하고 다음으로 넘어갑니다.</span></p>
+      </div>
+      <div class="principle">
+        <h3><span class="en">Learn from limits</span><span class="ko">한계에서 배운다</span></h3>
+        <p><span class="en">Failed experiments, trade-offs, and dead ends are often the most useful inputs for the next design.</span><span class="ko">실패한 실험·트레이드오프·막다른 길이 다음 설계의 가장 유용한 입력입니다.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURED DECISIONS ================= -->
+<section id="decisions">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag"><span class="en">★ Featured</span><span class="ko">★ 핵심</span></div>
+      <h2><span class="en">Decision case studies</span><span class="ko">의사결정 케이스 스터디</span></h2>
+      <p>
+        <span class="en">My current professional work, plus two public PoCs that validate the same thinking — told as decisions rather than features. For each: what I decided, why, and what role AI played.</span>
+        <span class="ko">현재 진행 중인 실무 작업과, 같은 사고를 공개적으로 검증한 두 PoC를 — 기능이 아니라 <b>의사결정</b>으로 풀었습니다. 각 항목마다 무엇을 결정했고, 왜 그랬으며, AI가 어떤 역할을 했는지.</span>
+      </p>
+    </div>
+
+    <!-- CASE 0: TF AI Harness (current, private) -->
+    <div class="case lead">
+      <div class="case-top">
+        <h3><span class="en">Verified Agentic-RAG System</span><span class="ko">검증형 Agentic-RAG 시스템</span></h3>
+        <span class="pill current"><span class="en">Current work</span><span class="ko">현재 실무</span></span>
+        <span class="pill private"><span class="en">Company · not public</span><span class="ko">회사 · 비공개</span></span>
+      </div>
+      <p class="tagline">
+        <span class="en">My current work as an AI Solution Engineer: a working verified-RAG assistant for the legal domain. A live pipeline — hybrid retrieval over a Korean-law corpus, a multi-agent answer-research loop, and claim-by-claim grounding verification — turns a non-developer's vague question into a checkable task spec and lets no unverified text reach the user.</span>
+        <span class="ko">현재 AI Solution Engineer로서 진행 중인 작업 — 법률 도메인을 위한 <b>동작하는</b> 검증형 RAG 어시스턴트입니다. 한국 법령 코퍼스에 대한 하이브리드 검색, 멀티 에이전트 답변 연구 루프, claim 단위 grounding 검증이 실제로 도는 파이프라인으로, 비개발자의 모호한 질문을 검증 가능한 작업 명세로 바꾸고 검증되지 않은 텍스트는 사용자에게 내보내지 않습니다.</span>
+      </p>
+      <p class="private-note">
+        <span class="en">Active, working work-in-progress · company project, source not public. The retrieval-to-gate pipeline runs end-to-end on a live legal corpus; described here at the architecture / decision level only.</span>
+        <span class="ko">동작 중인 진행형 회사 프로젝트로 소스는 비공개입니다. 검색→게이트 파이프라인은 라이브 법령 코퍼스에서 end-to-end로 돌아갑니다. 여기서는 아키텍처·의사결정 수준으로만 서술합니다.</span>
+      </p>
+
+      <div class="decisions">
+        <div class="decision">
+          <p class="dh"><span class="num">01</span><span class="en">Contract-first, four independent layers</span><span class="ko">Contract-first, 네 개의 독립 레이어</span></p>
+          <p class="why"><span class="en">The problem isn't solved by one LLM call, so I split it into four layers — Intake, Knowledge, RAG Harness, Verification/Gate — and <b>fixed the contracts between them before building</b>. Each layer is developed independently against mocks; the boundary objects (Task Brief, Source Ref, Gate Decision) are the single source of truth.</span><span class="ko">이 문제는 LLM 한 번 호출로 풀리지 않습니다. 그래서 Intake / Knowledge / RAG Harness / Verification·Gate 네 레이어로 나누고, <b>구현보다 먼저 레이어 간 계약을 고정</b>했습니다. 각 레이어는 mock으로 독립 개발하고, 경계 객체(Task Brief·Source Ref·Gate Decision)가 단일 진실 공급원입니다.</span></p>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">02</span><span class="en">Build the trust foundation before the features</span><span class="ko">기능보다 신뢰 기반을 먼저</span></p>
+          <p class="why"><span class="en">I build Knowledge + Verification first — the trust foundation — before the RAG that feeds them. The core invariant: <b>unverified text never reaches the user</b>, and any answer mutation (e.g. redacting an unsupported claim) is re-verified before it ships.</span><span class="ko">RAG보다 Knowledge·Verification을 먼저 만듭니다 — 신뢰 기반부터. 핵심 불변식: <b>검증되지 않은 텍스트는 사용자에게 나가지 않는다</b>. 답변을 바꾸는 처리(예: 근거 없는 claim 제거)는 재검증을 거친 뒤에만 나갑니다.</span></p>
+          <blockquote class="pull"><span class="en">"Unverified text never reaches the user."</span><span class="ko">"검증되지 않은 텍스트는 사용자에게 나가지 않는다."</span></blockquote>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">03</span><span class="en">The vector DB is a cache, not the truth — retrieval is ontology-aware</span><span class="ko">VectorDB는 진실이 아니라 캐시다 — 검색은 ontology-aware</span></p>
+          <p class="why"><span class="en">A common RAG trap is treating the vector store as the source of truth. Here it's only a retrieval cache — final evidence is always reloaded from an <b>immutable source snapshot</b> via <code>source_ref</code>. Retrieval is ontology-aware: it returns the smallest unit plus its <b>path in the legal tree</b> (article / clause / item) and reloads the surrounding context on demand, so a citation stays reproducible even if the parser or policy changes.</span><span class="ko">흔한 RAG 함정은 vector store를 진실의 원천으로 다루는 것입니다. 여기서 그것은 검색 캐시일 뿐이고, 최종 근거는 항상 <b>불변 source snapshot</b>에서 <code>source_ref</code>로 재로드됩니다. 검색은 ontology-aware입니다 — <b>법령 트리(조/항/호/목)</b>에서 최소 단위 + 경로를 돌려주고 상위 맥락은 필요할 때 재조회하므로, parser·정책이 바뀌어도 인용은 재현됩니다.</span></p>
+          <blockquote class="pull"><span class="en">"The vector DB is a cache. The source snapshot is the truth."</span><span class="ko">"VectorDB는 캐시다. Source Snapshot이 진실이다."</span></blockquote>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">04</span><span class="en">Schema-guided intake: the schema drives the conversation</span><span class="ko">Schema-guided intake: 스키마가 대화를 주도한다</span></p>
+          <p class="why"><span class="en">A vague non-developer request ("is this contract risky?") isn't handed straight to the RAG. A task classifier picks the task type and an LLM refines the utterance into schema slots — it <b>refines, it doesn't reason</b>; unknown fields stay <code>null</code> rather than guessed; and it asks the user only for what's genuinely missing. The resulting Task Brief is itself a verified artifact, and when intake can't be grounded within budget it escalates to a <b>human-review queue</b> instead of guessing.</span><span class="ko">비개발자의 모호한 요청("이 계약서 위험해?")을 RAG에 바로 넘기지 않습니다. task classifier가 유형을 고르고 LLM이 발화를 스키마 슬롯으로 정제합니다 — <b>추론이 아니라 정제</b>. 모르는 필드는 추측하지 않고 <code>null</code>로 두며, 정말 빠진 것만 사용자에게 묻습니다. 그렇게 만든 Task Brief 자체도 검증 대상이고, 예산 안에서 intake가 grounding되지 않으면 추측 대신 <b>human review 큐</b>로 에스컬레이션합니다.</span></p>
+          <blockquote class="pull"><span class="en">"The LLM refines the request; it doesn't reason about it. If it doesn't know, the value is null."</span><span class="ko">"LLM은 요청을 정제할 뿐, 추론하지 않는다. 모르면 값은 null이다."</span></blockquote>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">05</span><span class="en">Agentic research — but the LLM only proposes</span><span class="ko">Agentic 연구 — 그러나 LLM은 제안만 한다</span></p>
+          <p class="why"><span class="en">Answer generation is a multi-agent research loop — query planning, claim extraction, evidence linking, semantic verification, revision — with a gate that can send work back (<code>retrieve_more</code> / <code>revise</code> / <code>ask_user</code>) or, when the grounding budget is exhausted, <b>park it for human review</b>. The division of labor is strict: the LLM proposes candidates, the verification layer confirms grounding claim-by-claim, and the gate decides what ships.</span><span class="ko">답변 생성은 멀티 에이전트 연구 루프입니다 — query planning, claim extraction, evidence linking, semantic verification, revision — 그리고 작업을 되돌리거나(<code>retrieve_more</code> / <code>revise</code> / <code>ask_user</code>), grounding 예산이 소진되면 <b>human review로 보류</b>하는 gate가 있습니다. 역할 분담은 엄격합니다: LLM은 후보를 제안하고, 검증 레이어가 claim 단위로 grounding을 확인하며, gate가 무엇을 내보낼지 결정합니다.</span></p>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">06</span><span class="en">Verified the same way I verify everything</span><span class="ko">내가 모든 걸 검증하는 방식 그대로</span></p>
+          <p class="why"><span class="en">I hold this private work to the same bar as my open PoCs: independent verification records with conditional verdicts and two-way regression guards, a single canonical contract file pinned by drift-lock tests, and a full suite in the hundreds of tests. AI does the work; the verification decides whether it is real.</span><span class="ko">이 비공개 작업도 공개 PoC와 같은 기준으로 검증합니다 — 조건부 verdict와 양방향 회귀 가드를 가진 독립 검증 기록, drift-lock 테스트로 고정한 단일 정본 계약 파일, 수백 개 규모의 전체 테스트 스위트. AI가 일하고, 검증이 그것이 진짜인지 결정합니다.</span></p>
+          <p class="ai"><b><span class="en">How it connects:</span><span class="ko">연결점:</span></b> <span class="en">This is the production-scale version of the same idea behind my two public PoCs below — AI proposes, deterministic verification confirms, a human-aware gate decides.</span><span class="ko">이것은 아래 두 공개 PoC와 같은 사상의 실무 규모 버전입니다 — AI는 제안하고, 결정론적 검증이 확인하며, 사람을 고려한 gate가 결정합니다.</span></p>
+        </div>
+      </div>
+    </div>
+
+    <p class="bridge">
+      <span class="en">The two PoCs below are where I validated this thinking in the open — a verification harness and a provider-neutral contract layer, each built and documented publicly.</span>
+      <span class="ko">아래 두 PoC는 이 사고를 공개적으로 검증한 사례입니다 — 검증 하네스와 provider-neutral 계약 레이어를, 각각 공개적으로 만들고 문서화했습니다.</span>
+    </p>
+
+    <!-- CASE 1: Assessment Spec Harness -->
+    <div class="case">
+      <div class="case-top">
+        <h3>Assessment Spec Harness</h3>
+        <span class="pill poc">PoC</span>
+      </div>
+      <p class="tagline">
+        <span class="en">CI for hiring assessments — it doesn't evaluate the candidate, it evaluates the assessment design itself.</span>
+        <span class="ko">채용 과제를 위한 CI — 응시자가 아니라 평가 설계 자체를 평가합니다.</span>
+      </p>
+      <div class="case-links">
+        <a class="repo" href="https://github.com/entangelk/assessment_poc" target="_blank" rel="noopener">GitHub repo</a>
+        <span class="en"><a href="https://github.com/entangelk/assessment_poc/blob/main/docs/case_study.md" target="_blank" rel="noopener">Case study →</a></span>
+        <span class="en"><a href="https://github.com/entangelk/assessment_poc/blob/main/docs/decisions.md" target="_blank" rel="noopener">Decision vignettes →</a></span>
+        <span class="ko"><a href="https://github.com/entangelk/assessment_poc/blob/main/docs/case_study.ko.md" target="_blank" rel="noopener">케이스 스터디 →</a></span>
+        <span class="ko"><a href="https://github.com/entangelk/assessment_poc/blob/main/docs/decisions.ko.md" target="_blank" rel="noopener">결정 비네트 →</a></span>
+      </div>
+
+      <div class="decisions">
+        <div class="decision">
+          <p class="dh"><span class="num">01</span><span class="en">Reframed the problem: judge the design, not the candidate</span><span class="ko">문제 재정의: 응시자가 아니라 설계를 평가한다</span></p>
+          <p class="why"><span class="en">Reading one assessment round and its retrospective, I saw a <b>systemic gap in the assessment infrastructure</b> — recommended hours vs. real depth, "optional" items that were actually the deciding signal, grading criteria absent from the public brief. So I targeted the upstream failure, not the candidate.</span><span class="ko">한 라운드의 응시·회고 자료를 정독하니 개별 평가자의 실수가 아니라 <b>평가 인프라 자체의 시스템적 공백</b>이 보였습니다 — 권장 시간 vs 실제 작업 깊이, 사실상 결정적이던 "선택" 항목, 공개 명세에 없던 채점 기준. 그래서 응시자가 아니라 그 위쪽 단계의 실패를 겨눴습니다.</span></p>
+          <blockquote class="pull"><span class="en">"This tool does not evaluate the candidate. It evaluates the assessment design itself."</span><span class="ko">"이 도구는 응시자를 평가하지 않는다. 평가 설계 자체를 평가한다."</span></blockquote>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">02</span><span class="en">Drew the scope by what I refused to build</span><span class="ko">'거부'로 범위를 그었다</span></p>
+          <p class="why"><span class="en">I rejected three proposed rules on principle (L3/L8/L9): they would constrain an evaluator's legitimate <i>discretion</i> rather than catch the <i>undisclosed</i> criteria the tool exists for. A PoC's default failure mode is scope creep; each refusal keeps the tool explainable in one sentence.</span><span class="ko">제안된 세 규칙(L3/L8/L9)을 원칙적으로 거부했습니다. 그것들은 응시자가 볼 수 있는 평가자의 정당한 <i>재량</i>을 막을 뿐, 이 도구가 잡으려는 <i>공개되지 않은</i> 기준을 막지 못하기 때문입니다. PoC의 기본 실패 모드는 scope creep이고, 각 거부가 도구를 한 문장으로 설명 가능하게 유지합니다.</span></p>
+          <blockquote class="pull"><span class="en">"A tool is defined as much by what it refuses to do as by what it does."</span><span class="ko">"도구는 하기로 한 것만큼이나 하지 않기로 한 것으로 정의된다."</span></blockquote>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">03</span><span class="en">The machine analyzes; only the human judges</span><span class="ko">기계는 분석만, 판단은 사람만</span></p>
+          <p class="why"><span class="en">If the deterministic checker returned pass/fail, a <i>linter for assessment design</i> would quietly become an <i>automated judge</i>. So <code>check</code> only produces provisional findings; a separate <code>gate</code> reads the human's final review. A blocking verdict fires for only three design-invalidating types.</span><span class="ko">결정론적 checker가 pass/fail을 반환하면, <i>평가 설계의 linter</i>가 조용히 <i>자동 심판자</i>로 변질됩니다. 그래서 <code>check</code>는 provisional finding만 만들고, 별도의 <code>gate</code>가 사람의 최종 검토를 읽습니다. 차단 판정은 설계를 무효화하는 세 유형에만 발화합니다.</span></p>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">04</span><span class="en">Split a label that was quietly lying</span><span class="ko">조용히 거짓말하던 라벨을 쪼갰다</span></p>
+          <p class="why"><span class="en">A classifier returned <code>validated</code> after checking only schema + audit-trace — while strict reference grounding was still unimplemented. An AI audit caught it by feeding a run with a dangling reference and a fabricated quote; the classifier passed it with zero errors. I split the state into <code>structurally_validated</code> vs <code>validated</code>.</span><span class="ko">분류기가 schema와 audit-trace만 확인하고 <code>validated</code>를 반환하고 있었습니다 — 엄격한 reference grounding은 아직 미구현인데도요. AI 감사가 존재하지 않는 참조와 날조된 인용을 가진 run을 찔러 이를 잡아냈고, 분류기는 에러 0개로 통과시켰습니다. 그래서 상태를 <code>structurally_validated</code>와 <code>validated</code>로 분리했습니다.</span></p>
+          <blockquote class="pull"><span class="en">"A label that lies is worse than one more label."</span><span class="ko">"거짓말하는 라벨이 라벨 하나 더 있는 것보다 나쁘다."</span></blockquote>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">05</span><span class="en">Had AI audit my own work — and allowed verdicts to be withdrawn</span><span class="ko">AI에게 내 작업을 감사시키고, verdict 철회까지 허용했다</span></p>
+          <p class="why"><span class="en">A green test suite only proves the code matches the tests, not the spec. So I made independent verification a first-class artifact with two-way regression guards, and treated a missing guard as a blocker. When an early Rule 3 record found an incomplete boundary check, I <b>withdrew and reissued the verdict</b>.</span><span class="ko">green 테스트는 코드가 테스트대로 작동함만 증명할 뿐, 명세대로임을 보장하지 않습니다. 그래서 독립 검증을 1급 산출물로 삼고 양방향 회귀 가드를 적용했으며, 누락된 가드는 차단 사유로 다뤘습니다. 초기 Rule 3 기록이 불완전한 경계 검사를 발견했을 때는 <b>verdict를 철회하고 재발행</b>했습니다.</span></p>
+          <p class="ai"><b><span class="en">AI's role:</span><span class="ko">AI의 역할:</span></b> <span class="en">AI agents (Claude Code / Codex / Gemini) are the tool's primary callers and its independent auditors — designed in, with a stable CLI contract. I stayed the decider with commit authority.</span><span class="ko">AI 에이전트(Claude Code / Codex / Gemini)가 이 도구의 1차 호출자이자 독립 감사자입니다 — 안정적인 CLI 계약으로 설계에 내장. 저는 commit 권한을 가진 결정자로 남았습니다.</span></p>
+          <blockquote class="pull"><span class="en">"I'd rather record a withdrawn verdict than ship a green bar that lies."</span><span class="ko">"거짓말하는 green bar를 내보내느니 철회된 verdict를 기록하겠다."</span></blockquote>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">06</span><span class="en">Stated the limit honestly: this is still a PoC</span><span class="ko">한계를 정직하게: 아직 PoC다</span></p>
+          <p class="why"><span class="en">The deterministic core and review/verdict flow are implemented and validated; the live LLM SDK runner is deliberately deferred. The current results validate wiring and grounding on a deterministic + mock path — and the README's diagram and status table draw that boundary on purpose, instead of overclaiming.</span><span class="ko">결정론적 코어와 review/verdict 흐름은 구현·검증했지만, live LLM SDK runner는 의도적으로 보류했습니다. 현재 결과는 deterministic + mock 경로의 배선·grounding 검증이며, README의 다이어그램과 상태 표가 그 경계를 과장 없이 일부러 그려둡니다.</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 2: Harness IR -->
+    <div class="case">
+      <div class="case-top">
+        <h3>Harness IR</h3>
+        <span class="pill mixed"><span class="en">Feasibility · Mixed result</span><span class="ko">실현성 · 혼재 결과</span></span>
+      </div>
+      <p class="tagline">
+        <span class="en">Does provider-neutral "Role IR" lowering beat hardcoded prompt templates for structured extraction? A POC built to test exactly that one hypothesis.</span>
+        <span class="ko">provider-neutral "Role IR" lowering이 하드코딩 프롬프트보다 structured extraction에 나은가? 정확히 그 하나의 가설만 검증하려 만든 POC입니다.</span>
+      </p>
+      <div class="case-links">
+        <a class="repo" href="https://github.com/entangelk/Harness_ir" target="_blank" rel="noopener">GitHub repo</a>
+        <span class="en"><a href="https://github.com/entangelk/Harness_ir/blob/main/docs/results.md" target="_blank" rel="noopener">Results &amp; verdict →</a></span>
+        <span class="en"><a href="https://github.com/entangelk/Harness_ir/blob/main/docs/whitepaper_en.md" target="_blank" rel="noopener">Whitepaper →</a></span>
+        <span class="ko"><a href="https://github.com/entangelk/Harness_ir/blob/main/docs/results.ko.md" target="_blank" rel="noopener">결과 &amp; 판정 →</a></span>
+        <span class="ko"><a href="https://github.com/entangelk/Harness_ir/blob/main/docs/08_%EC%97%AD%ED%95%A0%EC%BB%B4%ED%8C%8C%EC%9D%BC%EB%9F%AC_MVP_%EB%B0%8F_%EC%8B%A4%ED%97%98%EA%B3%B5%EC%A0%95%EC%84%B1%EA%B2%80%ED%86%A0.md" target="_blank" rel="noopener">공정성 검토 →</a></span>
+      </div>
+
+      <div class="decisions">
+        <div class="decision">
+          <p class="dh"><span class="num">01</span><span class="en">Minimized scope to a single falsifiable hypothesis</span><span class="ko">단일 반증 가능 가설로 범위를 최소화했다</span></p>
+          <p class="why"><span class="en">I deliberately separated the large platform vision from the POC. The runnable slice is just <code>role_ir.yaml → lowering → one backend call → assurance</code>, testing one claim. Proving any one of its sub-questions gives the project independent value — no need to validate everything at once.</span><span class="ko">거대한 플랫폼 비전과 POC를 의도적으로 분리했습니다. 실행 슬라이스는 <code>role_ir.yaml → lowering → 단일 백엔드 호출 → assurance</code>뿐이고, 하나의 주장만 검증합니다. 하위 질문 중 하나만 증명돼도 프로젝트는 독립적 가치를 가지므로, 한 번에 전부 검증할 필요가 없습니다.</span></p>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">02</span><span class="en">Enforced experiment fairness against my own hypothesis</span><span class="ko">내 가설에 불리하게, 실험 공정성을 강제했다</span></p>
+          <p class="why"><span class="en">Initially only the POC had a retry budget. I gave the baseline the <i>same</i> retries (<code>match_poc</code>). That alone re-classified one model's apparent "slight edge" into a tie. I also split unconditional <code>success</code> from <code>strict quality</code> so operability couldn't be mistaken for quality.</span><span class="ko">처음엔 POC만 retry 예산을 가졌습니다. baseline에도 <i>동일한</i> retry를 부여했습니다(<code>match_poc</code>). 그것만으로 한 모델의 "근소 우세"가 동급으로 재판정됐습니다. 무조건부 <code>success</code>와 <code>strict quality</code>도 분리해, 운영성이 품질로 오인되지 않게 했습니다.</span></p>
+          <blockquote class="pull"><span class="en">"A fair engineering comparison: same model, same output contract, same assurance, same case set."</span><span class="ko">"공정한 engineering comparison — 같은 모델·출력 계약·assurance·케이스셋."</span></blockquote>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">03</span><span class="en">Refused to cherry-pick the favorable result</span><span class="ko">유리한 결과를 cherry-pick하지 않았다</span></p>
+          <p class="why"><span class="en">On the easy eval-8 set IR looked slightly ahead, but on hard distractor sets there was no clean IR win — false positives became a shared failure family across both paths. I published the uncomfortable hard-set results and reframed the conclusion: not "IR wins," but "the gain/loss splits by model, domain, and difficulty."</span><span class="ko">쉬운 eval-8에선 IR이 약간 앞서 보였지만, 하드 distractor 셋에선 깔끔한 IR 승리가 없었습니다 — false positive가 양쪽 공통의 실패 패턴이 됐습니다. 불편한 하드셋 결과를 그대로 공개하고 결론을 재정의했습니다: "IR 승리"가 아니라 "모델·도메인·난도에 따라 이득과 손해가 갈린다."</span></p>
+          <p class="ai"><b><span class="en">AI's role:</span><span class="ko">AI의 역할:</span></b> <span class="en">One provider-neutral Role IR lowers to many LLM backends (OpenAI / Groq / Gemma / OpenRouter), avoiding vendor lock-in; a 4-stage assurance layer (structure / evidence / policy / role) validates the model output rather than trusting it.</span><span class="ko">하나의 provider-neutral Role IR이 여러 LLM 백엔드(OpenAI / Groq / Gemma / OpenRouter)로 lowering되어 벤더 락인을 피하고, 4단계 assurance(구조 / 근거 / 정책 / 역할)가 모델 출력을 신뢰가 아니라 검증으로 다룹니다.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW I WORK WITH AI ================= -->
+<section id="ai">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag"><span class="en">Method</span><span class="ko">방법론</span></div>
+      <h2><span class="en">How I work with AI</span><span class="ko">AI를 다루는 방식</span></h2>
+      <p><span class="en">The pattern is consistent across both PoCs above.</span><span class="ko">위 두 PoC에서 공통으로 드러나는 패턴입니다.</span></p>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <h3><span class="en">Direct, don't delegate blindly</span><span class="ko">맡기지 않고 지휘한다</span></h3>
+        <p><span class="en">I frame the problem and the decision; the agent drafts, implements, and generates candidates. The judgment of "is this right?" stays with me.</span><span class="ko">문제와 결정은 제가 프레이밍하고, 에이전트는 초안·구현·후보 생성을 맡습니다. "이게 맞나?"라는 판단은 제가 가집니다.</span></p>
+      </div>
+      <div class="card">
+        <h3><span class="en">Audit AI output independently</span><span class="ko">AI 산출물을 독립 감사한다</span></h3>
+        <p><span class="en">Verification records are first-class artifacts. I have AI probe its own work with dangling references and fabricated evidence — and let it fail.</span><span class="ko">검증 기록을 1급 산출물로 둡니다. AI가 자기 작업물을 존재하지 않는 참조·날조된 근거로 찔러보게 하고, 실패하면 실패로 둡니다.</span></p>
+      </div>
+      <div class="card">
+        <h3><span class="en">Two-way regression guards</span><span class="ko">양방향 회귀 가드</span></h3>
+        <p><span class="en">Guard against both under-strict (the bug returns) and over-strict (valid cases get flagged). A missing guard blocks the verdict.</span><span class="ko">under-strict(버그 재발)와 over-strict(정상 케이스 오탐) 양쪽을 막습니다. 가드가 빠지면 verdict를 차단합니다.</span></p>
+      </div>
+      <div class="card">
+        <h3><span class="en">One source of truth</span><span class="ko">단일 진실 공급원</span></h3>
+        <p><span class="en">With multiple agents, specs silently fork. So any contract change — even small — pays the cost of editing the canonical plan, not a side note.</span><span class="ko">여러 에이전트가 일하면 명세가 조용히 갈라집니다. 그래서 작은 계약 변경도 곁가지 노트가 아니라 정본 계획서를 편집하는 비용을 치릅니다.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OTHER WORK ================= -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag"><span class="en">Highlighted</span><span class="ko">주요</span></div>
+      <h2><span class="en">Other architecture &amp; PoCs</span><span class="ko">그 외 아키텍처 &amp; PoC</span></h2>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <div class="meta">Architecture</div>
+        <h3><a href="https://github.com/entangelk/agent-memory-system-public" target="_blank" rel="noopener">Agent Memory System</a></h3>
+        <p><span class="en">MCP-based long-term memory. Separated the State of Truth (MongoDB) from the semantic retrieval layer (ChromaDB) for consistency and memory compaction.</span><span class="ko">MCP 기반 장기 메모리. 일관성과 메모리 압축을 위해 State of Truth(MongoDB)와 semantic retrieval layer(ChromaDB)를 분리했습니다.</span></p>
+      </div>
+      <div class="card">
+        <div class="meta">Pipeline</div>
+        <h3><a href="https://github.com/entangelk/logo_image" target="_blank" rel="noopener">Automated Brand Logo Extraction</a></h3>
+        <p><span class="en">Zero-shot logo extraction combining Grounding DINO, SAM, and custom post-processing — robust without supervised training data.</span><span class="ko">Grounding DINO·SAM·커스텀 후처리를 결합한 zero-shot 로고 추출 — 지도 학습 데이터 없이도 견고합니다.</span></p>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin-top:42px;">
+      <div class="sec-tag"><span class="en">R&amp;D · Post-Mortems</span><span class="ko">R&amp;D · 포스트모템</span></div>
+      <h2><span class="en">Experiments &amp; honest failures</span><span class="ko">실험과 정직한 실패</span></h2>
+      <p><span class="en">I value the decision to stop as much as the decision to ship.</span><span class="ko">출시 결정만큼이나 멈추는 결정도 중요하게 봅니다.</span></p>
+    </div>
+    <div class="grid3">
+      <div class="card">
+        <div class="meta tag-kill"><span class="en">Project killed</span><span class="ko">프로젝트 종료</span></div>
+        <h3><a href="https://github.com/entangelk/Q-PSA_Pr" target="_blank" rel="noopener">Q-PSA</a></h3>
+        <p><span class="en">Discrete perturbation to estimate layer importance in quantized LLMs.</span><span class="ko">양자화 LLM의 레이어 중요도를 discrete perturbation으로 추정.</span></p>
+        <p><span class="label">Decision:</span> <span class="en">Killed — ~1300× slower than baseline and failed pruning validation.</span><span class="ko">종료 — 베이스라인 대비 약 1300배 느렸고 pruning validation에 실패.</span></p>
+      </div>
+      <div class="card">
+        <div class="meta"><span class="en">Architectural pivot</span><span class="ko">아키텍처 피벗</span></div>
+        <h3><a href="https://github.com/entangelk/circle-wfc" target="_blank" rel="noopener">Circle-WFC</a></h3>
+        <p><span class="en">Replacing A* pathfinding with geometry-guided Wave Function Collapse.</span><span class="ko">A* 경로탐색을 geometry-guided WFC로 대체 시도.</span></p>
+        <p><span class="label">Insight:</span> <span class="en">Found the structural limit of local consistency; reframed it as a search-space reducer.</span><span class="ko">local consistency의 구조적 한계를 발견, 효율적 search-space reducer로 재정의.</span></p>
+      </div>
+      <div class="card">
+        <div class="meta tag-ok"><span class="en">Feasibility validated</span><span class="ko">실현성 검증</span></div>
+        <h3><a href="https://github.com/entangelk/hw-wfc" target="_blank" rel="noopener">HW-WFC v2.9</a></h3>
+        <p><span class="en">Constraint-driven AI compiler scheduling R&amp;D.</span><span class="ko">제약 기반 AI 컴파일러 스케줄링 R&amp;D.</span></p>
+        <p><span class="label">Result:</span> <span class="en">Matched Exact DP's optimum, then concluded at the hardware cost-model boundary.</span><span class="ko">Exact DP 최적값과 일치, 이후 하드웨어 cost-model 경계에서 마무리.</span></p>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin-top:42px;">
+      <div class="sec-tag"><span class="en">Deep dive</span><span class="ko">상세</span></div>
+      <h2><span class="en">Selected engineering notes</span><span class="ko">선별 엔지니어링 노트</span></h2>
+    </div>
+    <details class="dd">
+      <summary><span class="en">Personal projects &amp; experiments — engineering detail</span><span class="ko">개인 프로젝트 &amp; 실험 — 엔지니어링 상세</span></summary>
+      <div class="dd-body">
+        <h4><a href="https://github.com/entangelk/logo_image" target="_blank" rel="noopener">Automated Brand Logo Extraction</a></h4>
+        <ul>
+          <li><b><span class="en">Automated hybrid anchoring:</span><span class="ko">자동 하이브리드 앵커링:</span></b> <span class="en">combined Grounding DINO ROI bounding with an OCR/contour hybrid to auto-generate dense foreground anchors, cutting background hallucination.</span><span class="ko">Grounding DINO ROI 바운딩과 OCR/Contour 하이브리드를 결합해 밀도 높은 전경 앵커를 자동 생성, 배경 환각을 줄임.</span></li>
+          <li><b><span class="en">Vision post-processing engine:</span><span class="ko">비전 후처리 엔진:</span></b> <span class="en">morphological dehalo, LAB color decontamination, distance-transform edge feathering to reach commercial-grade masks.</span><span class="ko">형태학적 dehalo, LAB 색공간 색오염 제거, distance-transform 경계 페더링으로 상용 수준 마스크 구현.</span></li>
+        </ul>
+        <h4><a href="https://github.com/entangelk/T-WFC" target="_blank" rel="noopener">Gradient-free Neural Network Prototype (T-WFC)</a></h4>
+        <ul>
+          <li><b><span class="en">Discrete state collapse:</span><span class="ko">이산 상태 붕괴:</span></b> <span class="en">trained a toy MLP with no autograd/backprop — pure WFC observe-collapse-propagate, weights in 5 discrete values; matched the SGD baseline on linearly separable data.</span><span class="ko">autograd·역전파 없이 toy MLP 학습 — 순수 WFC observe-collapse-propagate, 가중치 5개 이산값; 선형 분리 데이터에서 SGD 베이스라인과 동률.</span></li>
+          <li><b><span class="en">Scaling limits:</span><span class="ko">스케일링 한계:</span></b> <span class="en">proved 5 discrete values can't form complex non-linear boundaries (XOR, spiral), with exponential overhead — impractical to scale up.</span><span class="ko">5개 이산값으론 복잡한 비선형 경계(XOR·나선)를 못 만들고 오버헤드가 지수적임을 입증 — 스케일업 비현실적.</span></li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE LINK ================= -->
+<section id="experience-link">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag"><span class="en">Professional experience</span><span class="ko">실무 경력</span></div>
+      <h2><span class="en">Production work, told as decisions</span><span class="ko">현업 결과물, 판단으로 정리</span></h2>
+      <p>
+        <span class="en">Corporate work in live production environments — NLP services, large-scale generation pipelines, and constraint-driven automation. No public repos, so I tell each as the decision behind it.</span>
+        <span class="ko">실제 프로덕션 환경의 현업 작업 — NLP 서비스, 대규모 생성 파이프라인, 제약 기반 자동화. 공개 repo가 없는 작업이라 각각을 '그 뒤의 판단'으로 풀어 정리했습니다.</span>
+      </p>
+    </div>
+    <div class="cta-row">
+      <a class="btn primary" href="experience.html"><span class="en">View professional experience →</span><span class="ko">실무 경력 보기 →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag"><span class="en">Contact</span><span class="ko">연락처</span></div>
+      <h2><span class="en">Let's talk</span><span class="ko">연락 주세요</span></h2>
+      <p><span class="en">Open to conversations about AI product work, PoCs, and feasibility validation.</span><span class="ko">AI 제품 작업, PoC, 실현 가능성 검증에 대한 대화는 언제든 환영합니다.</span></p>
+    </div>
+    <div class="contact-row">
+      <a class="btn primary" href="mailto:kdtyohan@gmail.com">kdtyohan@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/entangelk/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/entangelk" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="en">© 2026 entangelk · AI Product Builder. Built as a static page — judgment first.</span>
+    <span class="ko">© 2026 entangelk · AI Product Builder. 판단을 우선하는 정적 페이지로 제작.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
