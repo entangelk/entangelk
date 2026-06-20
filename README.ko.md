@@ -4,6 +4,11 @@
 </p>
 <p align="center"><sub>Switch language / 언어 전환</sub></p>
 
+<p align="center">
+  <a href="https://entangelk.github.io/"><img src="https://img.shields.io/badge/Portfolio-entangelk.github.io-3a4ee0?style=for-the-badge&logo=githubpages&logoColor=white" alt="포트폴리오 — entangelk.github.io"></a>
+</p>
+<p align="center"><sub>판단 중심 의사결정 케이스 스터디 / Decision case studies</sub></p>
+
 # 안녕하세요, entangelk입니다
 
 > **AI Product Builder**  
