@@ -296,7 +296,7 @@
       <div class="card">
         <div class="meta">Pipeline</div>
         <h3><a href="https://github.com/entangelk/logo_image" target="_blank" rel="noopener">Automated Brand Logo Extraction</a></h3>
-        <p><span class="en">Zero-shot logo extraction combining Grounding DINO, SAM, and custom post-processing — robust without supervised training data.</span><span class="ko">Grounding DINO·SAM·커스텀 후처리를 결합한 zero-shot 로고 추출 — 지도 학습 데이터 없이도 견고합니다.</span></p>
+        <p><span class="en">Zero-shot logo extraction (Grounding DINO + SAM + custom vision post-processing). Hybrid foreground anchoring cuts background hallucination, and morphological cleanup reaches commercial-grade masks — no supervised training data.</span><span class="ko">Grounding DINO·SAM·커스텀 비전 후처리를 결합한 zero-shot 로고 추출. 하이브리드 전경 앵커링으로 배경 환각을 줄이고, 형태학적 정제로 상용 수준 마스크를 구현합니다 — 지도 학습 데이터 없이.</span></p>
       </div>
     </div>
 
@@ -333,11 +333,6 @@
     <details class="dd">
       <summary><span class="en">Personal projects &amp; experiments — engineering detail</span><span class="ko">개인 프로젝트 &amp; 실험 — 엔지니어링 상세</span></summary>
       <div class="dd-body">
-        <h4><a href="https://github.com/entangelk/logo_image" target="_blank" rel="noopener">Automated Brand Logo Extraction</a></h4>
-        <ul>
-          <li><b><span class="en">Automated hybrid anchoring:</span><span class="ko">자동 하이브리드 앵커링:</span></b> <span class="en">combined Grounding DINO ROI bounding with an OCR/contour hybrid to auto-generate dense foreground anchors, cutting background hallucination.</span><span class="ko">Grounding DINO ROI 바운딩과 OCR/Contour 하이브리드를 결합해 밀도 높은 전경 앵커를 자동 생성, 배경 환각을 줄임.</span></li>
-          <li><b><span class="en">Vision post-processing engine:</span><span class="ko">비전 후처리 엔진:</span></b> <span class="en">morphological dehalo, LAB color decontamination, distance-transform edge feathering to reach commercial-grade masks.</span><span class="ko">형태학적 dehalo, LAB 색공간 색오염 제거, distance-transform 경계 페더링으로 상용 수준 마스크 구현.</span></li>
-        </ul>
         <h4><a href="https://github.com/entangelk/T-WFC" target="_blank" rel="noopener">Gradient-free Neural Network Prototype (T-WFC)</a></h4>
         <ul>
           <li><b><span class="en">Discrete state collapse:</span><span class="ko">이산 상태 붕괴:</span></b> <span class="en">trained a toy MLP with no autograd/backprop — pure WFC observe-collapse-propagate, weights in 5 discrete values; matched the SGD baseline on linearly separable data.</span><span class="ko">autograd·역전파 없이 toy MLP 학습 — 순수 WFC observe-collapse-propagate, 가중치 5개 이산값; 선형 분리 데이터에서 SGD 베이스라인과 동률.</span></li>
