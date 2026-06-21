@@ -51,7 +51,7 @@ When I encounter a business bottleneck, I combine existing models, APIs, and alg
 
 - 🧪 **[Assessment Spec Harness (PoC)](https://github.com/entangelk/assessment_poc)**  
   CI for hiring assessments — it doesn't evaluate the candidate, it evaluates the assessment design itself, detecting mismatches between a public `spec.md` and a private `rubric.md` before candidates ever see them.  
-  `Architecture:` A deterministic validation core (reference-integrity + rubric lint rules over an immutable, hash-anchored source snapshot) separated from an agent-driven multi-run extraction layer, exposed through an agent-consumable CLI contract.
+  `Architecture:` A deterministic validation core over an immutable, hash-anchored source snapshot, exposed through an agent-consumable CLI contract. The current multi-run proof uses offline `deterministic_extraction` plus mock semantic verification; live LLM SDK runners remain deferred.
 
 ## 📊 R&D, Failed Experiments & Post-Mortems
 

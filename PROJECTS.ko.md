@@ -72,7 +72,7 @@
 * **문제 재정의 (Problem Reframing):** 대부분의 평가 도구는 응시자를 채점합니다. 저는 그 위쪽 단계의 실패에 집중했습니다. spec과 rubric은 조용히 어긋나며(optional 항목이 core로 채점되거나, must 항목이 bonus로만 커버되거나, double scoring이 발생) 평가를 은밀하게 불공정하게 만듭니다. 이 하네스는 spec/rubric 정합성을 'CI로 돌릴 수 있는 대상'으로 다룹니다.
 * **불변 스냅샷 기반 결정론적 코어:** 전체 파이프라인을 불변 소스 스냅샷(sha256 + line/span `source_ref`)에 anchor해, DB나 RAG 레이어 없이도 모든 finding이 원문에 grounding되도록 했습니다. 결정론적 검증 코어(Rule 0 reference integrity + Rule 1~3 + rubric lint rules)가 재현 가능한 finding을 생성하며, 두 예제 과제 모두 3회 반복 실행에서 동일한 finding 분포를 재현했고 reference integrity 위반은 0건이었습니다.
 * **에이전트 우선 CLI 계약:** 1차 호출 주체를 AI 에이전트(Claude Code, Codex, Gemini)로 설계했습니다. 안정적인 core 출력 계약(`status` / `exit_code` / `command` / `next_actions`), schema introspection, 명확한 종료 코드를 제공해 호출 측이 문서를 일일이 따라가지 않아도 안전하게 통합할 수 있습니다. 사람은 review → gate 판정 흐름에서 최종 검토자로만 참여합니다.
-* **정직한 범위 경계:** 결정론적 코어와 review/verdict 흐름은 구현·검증 완료이고, live LLM SDK runner는 의도적으로 deferred 상태입니다. 현재 결과는 `deterministic_extraction` + mock semantic verification 경로에서 하네스 배선과 원문 grounding을 검증한 것이며, 문서에도 이것이 아직 live LLM 품질 검증은 아님을 분명히 밝혔습니다.
+* **정직한 범위 경계:** 결정론적 코어와 review/verdict 흐름은 구현됐지만 live LLM SDK runner는 보류 상태입니다. 두 합성 예제를 `deterministic_extraction` + mock semantic verification으로 각각 3회 end-to-end 실행해 동일한 finding 분포와 Rule 0 진단 0건을 재현했습니다. 이는 grounded artifact 위 결정론적 workflow의 재현성 검증이며, live LLM 추출 품질 검증은 아닙니다.
 
 ### 실험
 

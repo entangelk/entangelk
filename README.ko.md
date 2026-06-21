@@ -54,7 +54,7 @@
 
 - 🧪 **[Assessment Spec Harness (PoC)](https://github.com/entangelk/assessment_poc)**  
   채용 과제를 위한 CI입니다. 응시자를 평가하지 않고 평가 설계 자체를 평가하며, 공개 `spec.md`와 비공개 `rubric.md` 사이의 설계 불일치를 응시자가 보기 전에 검출합니다.  
-  `Architecture:` 불변 해시 기반 소스 스냅샷 위에서 동작하는 결정론적 검증 코어(reference integrity + rubric lint rules)와 에이전트 기반 multi-run 추출 레이어를 분리하고, agent-consumable CLI 계약으로 노출했습니다.
+  `Architecture:` 불변 해시 기반 소스 스냅샷 위의 결정론적 검증 코어를 agent-consumable CLI 계약으로 노출했습니다. 현재 multi-run 증거는 offline `deterministic_extraction` + mock semantic verification이며, live LLM SDK runner는 보류 상태입니다.
 
 ## 📊 R&D, 실패한 실험, 그리고 포스트모템
 
