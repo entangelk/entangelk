@@ -64,7 +64,7 @@
 #### 🧠 AI 에이전트 장기 기억(Memory) 시스템
 *AI 어시스턴트를 위한 MCP 기반의 장기 기억 아키텍처. [🔗 GitHub Repo](https://github.com/entangelk/agent-memory-system-public)*
 
-* **Separation of Concerns:** "기억은 단순한 로그가 아니라 압축된 의미망이다"라는 철학을 시스템으로 구현했습니다. 진실의 공급원(State of Truth) 역할을 하는 **MongoDB**와, 문맥의 의미론적 검색을 담당하는 Vector Cache인 **ChromaDB**를 엄격하게 분리하여 영구적이고 논리적인 기억 아키텍처를 설계했습니다.
+* **Separation of Concerns:** "기억은 단순한 로그가 아니라 압축된 의미다"라는 철학을 시스템으로 구현했습니다. **MongoDB**를 수정 가능한 영속·권위 저장소(State of Truth), **ChromaDB**를 Mongo에서 재구축 가능한 파생 Vector Cache로 분리했습니다. 현재 update/delete handler 이후 완전한 cache 정합성에는 명시적 reindex/rebuild가 필요합니다.
 
 #### 🧪 Assessment Spec Harness — 채용 과제를 위한 CI
 *응시자가 아니라 평가 설계 자체를 평가하는 결정론적 하네스입니다. 채용 과제의 공개 spec과 비공개 평가 rubric 사이의 불일치를, 응시자가 과제를 보기 전에 검출합니다. [🔗 GitHub Repo](https://github.com/entangelk/assessment_poc)*

@@ -63,7 +63,7 @@ I care most about building practical solutions that reduce friction, work under 
 #### 🧠 Agent Memory System
 *MCP-based long-term memory architecture for AI assistants. [🔗 GitHub Repo](https://github.com/entangelk/agent-memory-system-public)*
 
-* **Separation of Concerns:** Memory is compacted meaning, not just a log. To enforce this, I strictly separated the system's architecture into two layers: **MongoDB** as the immutable State of Truth (SoT) and **ChromaDB** as the dynamic Vector Cache for semantic context retrieval.
+* **Separation of Concerns:** Memory is compacted meaning, not just a log. **MongoDB** is the durable, authoritative State of Truth (SoT), while **ChromaDB** is a derived Vector Cache that can be rebuilt from it. Mongo is not immutable—the system supports memory update/delete—and the current handlers still require explicit reindex/rebuild operations for full cache consistency.
 
 #### 🧪 Assessment Spec Harness — CI for Hiring Assessments
 *A deterministic harness that evaluates the assessment design itself—not the candidate—by detecting mismatches between a hiring assignment's public spec and its private grading rubric before candidates ever see them. [🔗 GitHub Repo](https://github.com/entangelk/assessment_poc)*
