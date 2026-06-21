@@ -297,7 +297,7 @@
     <div class="card">
       <div class="meta">Pipeline</div>
       <h3><a href="https://github.com/entangelk/logo_image" target="_blank" rel="noopener">Automated Brand Logo Extraction</a></h3>
-      <p><span class="en">Zero-shot logo extraction (Grounding DINO + SAM + custom vision post-processing). Hybrid foreground anchoring cuts background hallucination, and morphological cleanup reaches commercial-grade masks — no supervised training data.</span><span class="ko">Grounding DINO·SAM·커스텀 비전 후처리를 결합한 zero-shot 로고 추출. 하이브리드 전경 앵커링으로 배경 환각을 줄이고, 형태학적 정제로 상용 수준 마스크를 구현합니다 — 지도 학습 데이터 없이.</span></p>
+      <p><span class="en">Zero-shot logo extraction (Grounding DINO + SAM + custom vision post-processing). Hybrid foreground anchoring cuts background hallucination, and morphological cleanup reaches commercial-grade masks — no supervised training data. The route was earned, not designed: a troubleshooting archive records why four SAM-prompt-automation attempts and a vision-LLM-for-coordinates approach all failed before hybrid OCR/contour anchoring stuck. <a href="https://github.com/entangelk/logo_image/blob/main/docs/TROUBLESHOOTING_ARCHIVE.md" target="_blank" rel="noopener">Troubleshooting archive →</a></span><span class="ko">Grounding DINO·SAM·커스텀 비전 후처리를 결합한 zero-shot 로고 추출. 하이브리드 전경 앵커링으로 배경 환각을 줄이고, 형태학적 정제로 상용 수준 마스크를 구현합니다 — 지도 학습 데이터 없이. 이 경로는 설계된 게 아니라 얻어낸 것입니다: 트러블슈팅 아카이브가 SAM 프롬프트 자동화 4회와 비전 LLM 좌표 접근이 모두 실패한 뒤에야 하이브리드 OCR·컨투어 앵커링이 자리잡은 과정을 기록합니다. <a href="https://github.com/entangelk/logo_image/blob/main/docs/TROUBLESHOOTING_ARCHIVE.ko.md" target="_blank" rel="noopener">트러블슈팅 아카이브 →</a></span></p>
     </div>
 
     <div class="sec-head" style="margin-top:42px;">
@@ -313,6 +313,7 @@
         <h3><a href="https://github.com/entangelk/Q-PSA_Pr" target="_blank" rel="noopener">Q-PSA</a></h3>
         <p><span class="en">Discrete perturbation to estimate layer importance in quantized LLMs.</span><span class="ko">양자화 LLM의 레이어 중요도를 discrete perturbation으로 추정.</span></p>
         <p><span class="label">Decision:</span> <span class="en">Killed — ~1300× slower than baseline and failed pruning validation.</span><span class="ko">종료 — 베이스라인 대비 약 1300배 느렸고 pruning validation에 실패.</span></p>
+        <p><span class="en">Why it failed: perturbation <i>sensitivity</i> ≠ layer <i>importance</i>, and a gradient-free platform (GGUF) ruled out real analysis — the "no gradients" selling point <i>was</i> the root constraint. What I kept: a transparent kill-criteria method and a reusable perturbation pipeline.</span><span class="ko">실패 이유: perturbation <i>민감도</i> ≠ 레이어 <i>중요도</i>, 그리고 gradient-free 플랫폼(GGUF)이 제대로 된 분석을 막았습니다 — "gradient 없이"라는 셀링포인트가 곧 근본 제약이었습니다. 남긴 것: 투명한 kill-criteria 방법론과 재사용 가능한 perturbation 파이프라인.</span></p>
       </div>
       <div class="card">
         <img class="card-viz" src="assets/circle-wfc-path.png" alt="Geometry-guided WFC (ray variant) finding a 163-step path through a 100x100 maze" loading="lazy" />
@@ -321,6 +322,7 @@
         <h3><a href="https://github.com/entangelk/circle-wfc" target="_blank" rel="noopener">Circle-WFC</a></h3>
         <p><span class="en">Replacing A* pathfinding with geometry-guided Wave Function Collapse.</span><span class="ko">A* 경로탐색을 geometry-guided WFC로 대체 시도.</span></p>
         <p><span class="label">Insight:</span> <span class="en">Found the structural limit of local consistency; reframed it as a search-space reducer.</span><span class="ko">local consistency의 구조적 한계를 발견, 효율적 search-space reducer로 재정의.</span></p>
+        <p><span class="en">Honestly: it couldn't guarantee global connectivity in complex mazes, so I stopped pitching it as an A* replacement and repositioned it as a corridor generator / preprocessing module. <a href="https://github.com/entangelk/circle-wfc/blob/main/result.en.md" target="_blank" rel="noopener">Full result →</a></span><span class="ko">솔직히: 복잡한 미로에선 전역 연결성을 보장하지 못해, A* 대체로 내세우길 멈추고 corridor generator·전처리 모듈로 재포지셔닝했습니다. <a href="https://github.com/entangelk/circle-wfc/blob/main/result.md" target="_blank" rel="noopener">전체 결과 →</a></span></p>
       </div>
       <div class="card">
         <img class="card-viz" src="assets/hw-wfc-collapse.png" alt="HW-WFC final schedule — attention block layers collapsed to optimal tile/layout states under SRAM limits, 0 backtracks" loading="lazy" />
@@ -329,6 +331,7 @@
         <h3><a href="https://github.com/entangelk/hw-wfc" target="_blank" rel="noopener">HW-WFC v2.9</a></h3>
         <p><span class="en">Constraint-driven AI compiler scheduling R&amp;D.</span><span class="ko">제약 기반 AI 컴파일러 스케줄링 R&amp;D.</span></p>
         <p><span class="label">Result:</span> <span class="en">Matched Exact DP's optimum, then concluded at the hardware cost-model boundary.</span><span class="ko">Exact DP 최적값과 일치, 이후 하드웨어 cost-model 경계에서 마무리.</span></p>
+        <p><span class="en">The honest caveat: no real advantage over exact DP, and the result holds only under a virtual 12KB-SRAM spec that doesn't exist on real GPUs. I validated the idea, named the limit, and stopped. <a href="https://github.com/entangelk/hw-wfc/blob/main/docs/result.md" target="_blank" rel="noopener">Full result →</a></span><span class="ko">솔직한 단서: exact DP 대비 실질적 이점이 없고, 결과는 실제 GPU엔 없는 가상 12KB SRAM 스펙에서만 성립합니다. 아이디어를 검증하고 한계를 명시한 뒤 멈췄습니다. <a href="https://github.com/entangelk/hw-wfc/blob/main/docs/result.md" target="_blank" rel="noopener">전체 결과 →</a></span></p>
       </div>
     </div>
   </div>
