@@ -80,7 +80,7 @@
 *IR 기반 lowering이 하드코딩 프롬프트 템플릿보다 structured extraction 신뢰도를 높이는가라는 단일 가설을 여러 LLM 백엔드에서 검증한 PoC. [🔗 GitHub Repo](https://github.com/entangelk/Harness_ir)*
 
 * **단일 반증 가능 가설:** 가장 작게 실행 가능한 슬라이스(`role_ir.yaml -> lowering -> single backend call -> assurance`)를 만들어, 공유된 공정한 평가 흐름 안에서 단 하나의 주장을 검증했습니다. provider-neutral Role IR이 하드코딩 baseline 프롬프트를 이기는가? 더 큰 플랫폼 thesis는 `docs/`에 분리해 두어, 코드가 실제로 증명한 범위를 과장하지 않으면서도 이 실험이 검증하려던 방향과 함께 읽힐 수 있게 했습니다.
-* **Provider-Neutral Lowering + Assurance:** Role IR이 백엔드별 artifact로 lowering되도록 설계했습니다(OpenAI `json_schema`; Groq/Gemma는 prompt + JSON extraction + schema validation; OpenRouter generic 경로). schema와 evidence span을 검증하는 assurance 레이어를 두었고, 새 백엔드는 `backends.yaml` 항목 하나로 등록됩니다.
+* **Provider-Neutral Lowering + Assurance:** Role IR이 백엔드별 artifact로 lowering되도록 설계했습니다(OpenAI `json_schema`; Groq와 Google GenAI/Gemma는 prompt + JSON extraction + schema validation; OpenRouter generic 경로). 현재 PoC assurance는 schema와 evidence span을 검증합니다. 이미 지원하는 provider 경로의 모델은 `backends.yaml`로 추가할 수 있지만, 새로운 provider 계열은 adapter와 registry 코드가 필요합니다.
 * **정직한 혼재 결과:** contract eval-8 fair-mode 실행에서 일부 모델은 IR이 gold/근접 parity에 도달했지만, 하드 distractor 셋에서는 깔끔한 IR 우위가 없었습니다. `renewal`/`penalty` false positive가 IR·baseline 양쪽 공통의 실패 패턴이 되었고, 유리한 회차만 골라내지 않고 이 결과를 그대로 보고했습니다.
 * **실패가 가리킨 방향:** inconclusive한 벤치마크가 진짜 레버를 재정의했습니다. 다음 단계의 가치는 lowering 단계 자체가 아니라 self-verification loop, critic role, convergence logic에 있으며, 이는 현재 범위에서 명시적으로 제외했습니다. role compiler 역시 완전한 semantic compiler가 아니라 결정론적 draft generator 수준에 머물렀습니다.
 
