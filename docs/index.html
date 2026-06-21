@@ -154,8 +154,10 @@
         <a class="repo" href="https://github.com/entangelk/assessment_poc" target="_blank" rel="noopener">GitHub repo</a>
         <span class="en"><a href="https://github.com/entangelk/assessment_poc/blob/main/docs/case_study.md" target="_blank" rel="noopener">Case study →</a></span>
         <span class="en"><a href="https://github.com/entangelk/assessment_poc/blob/main/docs/decisions.md" target="_blank" rel="noopener">Decision vignettes →</a></span>
+        <span class="en"><a href="https://github.com/entangelk/assessment_poc/tree/main/docs/planning" target="_blank" rel="noopener">Planning trail (ideation → spec) →</a></span>
         <span class="ko"><a href="https://github.com/entangelk/assessment_poc/blob/main/docs/case_study.ko.md" target="_blank" rel="noopener">케이스 스터디 →</a></span>
         <span class="ko"><a href="https://github.com/entangelk/assessment_poc/blob/main/docs/decisions.ko.md" target="_blank" rel="noopener">결정 비네트 →</a></span>
+        <span class="ko"><a href="https://github.com/entangelk/assessment_poc/tree/main/docs/planning" target="_blank" rel="noopener">기획 트레일 (ideation → spec) →</a></span>
       </div>
 
       <div class="decisions">
@@ -204,11 +206,13 @@
         <span class="pill piece"><span class="en">Piece · Execution contract</span><span class="ko">조각 · 실행 계약</span></span>
       </div>
       <p class="tagline">
-        <span class="en">Does provider-neutral "Role IR" lowering beat hardcoded prompt templates for structured extraction? A POC built to test exactly that one hypothesis.</span>
-        <span class="ko">provider-neutral "Role IR" lowering이 하드코딩 프롬프트보다 structured extraction에 나은가? 정확히 그 하나의 가설만 검증하려 만든 POC입니다.</span>
+        <span class="en">Does provider-neutral "Role IR" lowering beat hardcoded prompt templates for structured extraction? A POC built to test exactly that one hypothesis — carved out of a larger product thesis: that AI's next bottleneck isn't the model, it's giving it a <b>verifiable, portable role</b>.</span>
+        <span class="ko">provider-neutral "Role IR" lowering이 하드코딩 프롬프트보다 structured extraction에 나은가? 정확히 그 하나의 가설만 검증하려 만든 POC입니다 — 더 큰 제품 비전(AI의 다음 병목은 모델이 아니라 모델에게 <b>검증 가능하고 이식 가능한 역할</b>을 부여하는 능력)에서 떼어낸 조각입니다.</span>
       </p>
       <div class="case-links">
         <a class="repo" href="https://github.com/entangelk/Harness_ir" target="_blank" rel="noopener">GitHub repo</a>
+        <span class="en"><a href="https://github.com/entangelk/Harness_ir/blob/main/docs/service_vision/README.md" target="_blank" rel="noopener">Product vision →</a></span>
+        <span class="ko"><a href="https://github.com/entangelk/Harness_ir/blob/main/docs/service_vision/README.md" target="_blank" rel="noopener">제품 비전 →</a></span>
         <span class="en"><a href="https://github.com/entangelk/Harness_ir/blob/main/docs/results.md" target="_blank" rel="noopener">Results &amp; verdict →</a></span>
         <span class="en"><a href="https://github.com/entangelk/Harness_ir/blob/main/docs/whitepaper_en.md" target="_blank" rel="noopener">Whitepaper →</a></span>
         <span class="ko"><a href="https://github.com/entangelk/Harness_ir/blob/main/docs/results.ko.md" target="_blank" rel="noopener">결과 &amp; 판정 →</a></span>
@@ -248,7 +252,7 @@
     <div class="sec-head">
       <div class="sec-tag"><span class="en">Method</span><span class="ko">방법론</span></div>
       <h2><span class="en">How I work with AI</span><span class="ko">AI를 다루는 방식</span></h2>
-      <p><span class="en">This is what AI-augmented engineering looks like in practice: framing the problem, directing agents, auditing their output, and keeping one source of truth. The verification records and logs are the evidence — not the claim. The same pattern runs through all three PoCs above.</span><span class="ko">이것이 실제 AI 기반 엔지니어링의 모습입니다 — 문제를 프레이밍하고, 에이전트를 지휘하고, 산출물을 감사하고, 단일 진실 공급원을 유지합니다. 검증 기록과 로그가 주장이 아니라 증거입니다. 위 세 PoC에 공통으로 흐르는 패턴입니다.</span></p>
+      <p><span class="en">This is what AI-native engineering looks like in practice: framing the problem, directing agents, auditing their output, and keeping one source of truth. The verification records and the judgment behind each call are the evidence — not the claim. The same pattern runs through all three PoCs above.</span><span class="ko">이것이 실제 AI-native 엔지니어링의 모습입니다 — 문제를 프레이밍하고, 에이전트를 지휘하고, 산출물을 감사하고, 단일 진실 공급원을 유지합니다. 검증 기록과 그 뒤의 판단이 주장이 아니라 증거입니다. 위 세 PoC에 공통으로 흐르는 패턴입니다.</span></p>
     </div>
     <div class="grid2">
       <div class="card">
@@ -268,6 +272,10 @@
         <p><span class="en">With multiple agents, specs silently fork. So any contract change — even small — pays the cost of editing the canonical plan, not a side note.</span><span class="ko">여러 에이전트가 일하면 명세가 조용히 갈라집니다. 그래서 작은 계약 변경도 곁가지 노트가 아니라 정본 계획서를 편집하는 비용을 치릅니다.</span></p>
       </div>
     </div>
+    <p class="bridge">
+      <span class="en"><b>And it's logged, not claimed.</b> The judgment and verification trails are public — read the actual records: <a href="https://github.com/entangelk/assessment_poc/blob/main/docs/decisions.md" target="_blank" rel="noopener">decision vignettes</a>, <a href="https://github.com/entangelk/Harness_ir/blob/main/docs/results.md" target="_blank" rel="noopener">a results &amp; verdict log</a>, and <a href="https://github.com/entangelk/Harness_ir/blob/main/docs/08_%EC%97%AD%ED%95%A0%EC%BB%B4%ED%8C%8C%EC%9D%BC%EB%9F%AC_MVP_%EB%B0%8F_%EC%8B%A4%ED%97%98%EA%B3%B5%EC%A0%95%EC%84%B1%EA%B2%80%ED%86%A0.md" target="_blank" rel="noopener">a fairness/verification review</a>.</span>
+      <span class="ko"><b>주장이 아니라 기록입니다.</b> 판단과 검증의 자취가 공개돼 있습니다 — 실제 기록을 보세요: <a href="https://github.com/entangelk/assessment_poc/blob/main/docs/decisions.ko.md" target="_blank" rel="noopener">결정 비네트</a>, <a href="https://github.com/entangelk/Harness_ir/blob/main/docs/results.ko.md" target="_blank" rel="noopener">결과·판정 로그</a>, <a href="https://github.com/entangelk/Harness_ir/blob/main/docs/08_%EC%97%AD%ED%95%A0%EC%BB%B4%ED%8C%8C%EC%9D%BC%EB%9F%AC_MVP_%EB%B0%8F_%EC%8B%A4%ED%97%98%EA%B3%B5%EC%A0%95%EC%84%B1%EA%B2%80%ED%86%A0.md" target="_blank" rel="noopener">공정성·검증 리뷰</a>.</span>
+    </p>
   </div>
 </section>
 
@@ -308,28 +316,13 @@
       </div>
       <div class="card">
         <img class="card-viz" src="assets/hw-wfc-collapse.png" alt="HW-WFC final schedule — attention block layers collapsed to optimal tile/layout states under SRAM limits, 0 backtracks" loading="lazy" />
-        <p class="viz-cap"><span class="en">Final schedule for an attention block — WFC matches the exact-DP optimum with 0 backtracks under a 12KB SRAM limit.</span><span class="ko">어텐션 블록의 최종 스케줄 — 12KB SRAM 제약 아래 WFC가 exact-DP 최적값과 일치하고 backtrack은 0입니다.</span></p>
+        <p class="viz-cap"><span class="en">Final schedule for an attention block — under a tight memory limit, WFC reaches the same optimum as exact dynamic programming. Feasibility proven; I stopped there.</span><span class="ko">어텐션 블록의 최종 스케줄 — 빠듯한 메모리 제약 아래 WFC가 exact dynamic programming과 같은 최적값에 도달. 실현성 확인 후 거기서 멈췄습니다.</span></p>
         <div class="meta tag-ok"><span class="en">Feasibility validated</span><span class="ko">실현성 검증</span></div>
         <h3><a href="https://github.com/entangelk/hw-wfc" target="_blank" rel="noopener">HW-WFC v2.9</a></h3>
         <p><span class="en">Constraint-driven AI compiler scheduling R&amp;D.</span><span class="ko">제약 기반 AI 컴파일러 스케줄링 R&amp;D.</span></p>
         <p><span class="label">Result:</span> <span class="en">Matched Exact DP's optimum, then concluded at the hardware cost-model boundary.</span><span class="ko">Exact DP 최적값과 일치, 이후 하드웨어 cost-model 경계에서 마무리.</span></p>
       </div>
     </div>
-
-    <div class="sec-head" style="margin-top:42px;">
-      <div class="sec-tag"><span class="en">Deep dive</span><span class="ko">상세</span></div>
-      <h2><span class="en">Selected engineering notes</span><span class="ko">선별 엔지니어링 노트</span></h2>
-    </div>
-    <details class="dd">
-      <summary><span class="en">Personal projects &amp; experiments — engineering detail</span><span class="ko">개인 프로젝트 &amp; 실험 — 엔지니어링 상세</span></summary>
-      <div class="dd-body">
-        <h4><a href="https://github.com/entangelk/T-WFC" target="_blank" rel="noopener">Gradient-free Neural Network Prototype (T-WFC)</a></h4>
-        <ul>
-          <li><b><span class="en">Discrete state collapse:</span><span class="ko">이산 상태 붕괴:</span></b> <span class="en">trained a toy MLP with no autograd/backprop — pure WFC observe-collapse-propagate, weights in 5 discrete values; matched the SGD baseline on linearly separable data.</span><span class="ko">autograd·역전파 없이 toy MLP 학습 — 순수 WFC observe-collapse-propagate, 가중치 5개 이산값; 선형 분리 데이터에서 SGD 베이스라인과 동률.</span></li>
-          <li><b><span class="en">Scaling limits:</span><span class="ko">스케일링 한계:</span></b> <span class="en">proved 5 discrete values can't form complex non-linear boundaries (XOR, spiral), with exponential overhead — impractical to scale up.</span><span class="ko">5개 이산값으론 복잡한 비선형 경계(XOR·나선)를 못 만들고 오버헤드가 지수적임을 입증 — 스케일업 비현실적.</span></li>
-        </ul>
-      </div>
-    </details>
   </div>
 </section>
 
