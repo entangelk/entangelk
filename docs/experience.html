@@ -37,8 +37,8 @@
       <span class="ko">현업 결과물,<br /><span class="accent">그 뒤의 판단으로 정리합니다.</span></span>
     </h1>
     <p class="lede">
-      <span class="en">From my current flagship — a verified Agentic-RAG assistant in active development — to work delivered in live commercial environments. None of it has public repos, so each is described as the constraint I faced and the decision I made — resource-aware architecture, security boundaries, and avoiding unnecessary complexity.</span>
-      <span class="ko">현재 진행 중인 플래그십 — 활발히 개발 중인 검증형 Agentic-RAG 어시스턴트 — 부터, 실제 상용 환경에 납품한 작업들까지. 모두 공개 repo가 없는 작업이라, 각각을 '마주한 제약'과 '내린 판단'으로 풀었습니다 — 자원 인식 아키텍처, 보안 경계, 불필요한 복잡도 회피.</span>
+      <span class="en">From my current flagship — a verified Agentic-RAG assistant in active development — to the commercial services and internal automation I built and run myself. None of it has public repos, so each is described as the constraint I faced and the decision I made — resource-aware architecture, security boundaries, and avoiding unnecessary complexity.</span>
+      <span class="ko">현재 진행 중인 플래그십 — 활발히 개발 중인 검증형 Agentic-RAG 어시스턴트 — 부터, 직접 구축·운영한 상용 서비스와 사내 자동화까지. 모두 공개 repo가 없는 작업이라, 각각을 '마주한 제약'과 '내린 판단'으로 풀었습니다 — 자원 인식 아키텍처, 보안 경계, 불필요한 복잡도 회피.</span>
     </p>
     <div class="cta-row">
       <a class="btn" href="index.html"><span class="en">← Back to portfolio</span><span class="ko">← 포트폴리오로</span></a>
@@ -116,8 +116,16 @@
 <section id="xp">
   <div class="wrap">
     <div class="sec-head">
-      <div class="sec-tag"><span class="en">Earlier production work</span><span class="ko">이전 상용 작업</span></div>
+      <div class="sec-tag"><span class="en">Production work</span><span class="ko">현업·상용 작업</span></div>
       <h2><span class="en">Professional experience</span><span class="ko">실무 경력</span></h2>
+    </div>
+
+    <div class="xp">
+      <h3><span class="en">Internal Automation Tooling for a Non-Developer Team</span><span class="ko">비개발자 팀을 위한 사내 업무 자동화 도구</span></h3>
+      <p class="sub"><span class="en">Solo-built internal web tools that turn a planning team's repetitive manual work — monthly reporting, data crawling, notification dispatch, and a few AI assists — into self-serve automation. Internal-only, scoped for usage rather than infrastructure.</span><span class="ko">기획팀의 반복 수작업 — 월간 보고서, 데이터 크롤링, 알림 발송, 몇 가지 AI 보조 — 을 셀프서비스 자동화로 바꾼 단독 개발 사내 웹 도구. 인프라가 아니라 사용에 초점을 둔 내부 전용.</span></p>
+      <div class="row"><div class="k">Decision</div><p class="v"><span class="en">I scoped it deliberately small — internal-network only, no deployment or security infrastructure to own. When policy blocked external cloud-DB access, I <b>reused the existing internal email/SMS endpoints</b> instead of asking the core team for new APIs, and kept every script inside the closed network — zero additional backend.</span><span class="ko">범위를 일부러 작게 잡았습니다 — 내부망 전용, 직접 떠안을 배포·보안 인프라 없음. 외부 클라우드 DB 접근이 정책상 막히자, 코어 팀에 새 API를 요청하는 대신 <b>기존 내부 이메일/SMS 엔드포인트를 재사용</b>하고 모든 스크립트를 폐쇄망 안에서만 돌렸습니다 — 추가 백엔드 자원 0.</span></p></div>
+      <div class="row"><div class="k">AI</div><p class="v"><span class="en">Where I added an AI assist (drafting customer-service replies), I gated it: auto-send only above a <b>confidence threshold</b>, everything else to a person — the verify-before-it-ships habit, kept simple.</span><span class="ko">AI 보조를 넣은 부분(고객응대 답변 초안)에는 게이트를 뒀습니다 — <b>신뢰도 임계값</b> 이상만 자동 발송하고 나머지는 사람에게. '내보내기 전에 검증'을 단순하게 적용한 것입니다.</span></p></div>
+      <div class="row"><div class="k">Impact</div><p class="v"><span class="en">Removed recurring manual work — 10+ hours a month on reporting alone — and let non-developers run it themselves.</span><span class="ko">반복 수작업 제거(보고서만 월 10시간 이상)하고, 비개발자가 직접 운용하게 했습니다.</span></p></div>
     </div>
 
     <div class="xp">
@@ -136,19 +144,6 @@
       <div class="row"><div class="k">Scaling</div><p class="v"><span class="en">Ran PoC on local <b>Flux</b>, then migrated mass production to the <b>Gemini API</b> for stability and speed.</span><span class="ko">로컬 <b>Flux</b>로 PoC 후, 안정성·속도를 위해 대량 생산을 <b>Gemini API</b>로 이전했습니다.</span></p></div>
     </div>
 
-    <div class="xp">
-      <h3><span class="en">Zero-Overhead Internal Automation Pipeline</span><span class="ko">제로 오버헤드 내부 자동화 파이프라인</span></h3>
-      <p class="sub"><span class="en">An internal-only automation hub collecting scattered static data and dispatching notifications.</span><span class="ko">흩어진 정적 데이터를 모아 알림을 발송하는 내부 전용 자동화 허브.</span></p>
-      <div class="row"><div class="k">Decision</div><p class="v"><span class="en">Security policy blocked external cloud-DB access. Instead of requesting new APIs from the core team, I <b>reverse-engineered the internal CMS and reused legacy APIs</b> (email/SMS dispatch) — zero additional backend resources.</span><span class="ko">보안 정책으로 외부 클라우드 DB 접근이 막혔습니다. 코어 팀에 새 API를 요청하는 대신 <b>내부 CMS를 리버스 엔지니어링해 레거시 API(이메일/SMS 발송)를 재사용</b>했습니다 — 추가 백엔드 자원 0.</span></p></div>
-      <div class="row"><div class="k">Why</div><p class="v"><span class="en">To stay compliant, scripts run <b>strictly inside the closed internal network</b> (no external port-forwarding), inheriting the existing modules' security authentication.</span><span class="ko">보안 준수를 위해 스크립트를 <b>폐쇄 내부망 안에서만</b> 실행(외부 포트포워딩 없음)하고, 기존 모듈의 보안 인증을 그대로 상속했습니다.</span></p></div>
-    </div>
-
-    <div class="xp">
-      <h3><span class="en">Lightweight Internal Network Utility</span><span class="ko">경량 내부망 유틸리티</span></h3>
-      <p class="sub"><span class="en">A small script to resolve a corporate VPN bottleneck.</span><span class="ko">사내 VPN 병목을 해소하는 작은 스크립트.</span></p>
-      <div class="row"><div class="k">Decision</div><p class="v"><span class="en">Security policy restricted simultaneous VPN connections, bottlenecking the team. I built and deployed a <b>lightweight Python port-connection script</b> enabling multiple secure connections with minimal setup.</span><span class="ko">보안 정책이 동시 VPN 연결을 제한해 팀 작업이 병목됐습니다. <b>경량 Python 포트 연결 스크립트</b>를 만들어 최소 설정으로 다중 보안 연결을 가능하게 배포했습니다.</span></p></div>
-      <div class="row"><div class="k">Impact</div><p class="v"><span class="en">Drastically improved team productivity with minimal setup.</span><span class="ko">최소 설정으로 팀 생산성을 크게 개선.</span></p></div>
-    </div>
 
   </div>
 </section>
