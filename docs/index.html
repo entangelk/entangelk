@@ -128,12 +128,18 @@
         <div class="decision">
           <p class="dh"><span class="num">03</span><span class="en">The server coordinates; it never secretly summarizes</span><span class="ko">서버는 조율할 뿐, 몰래 요약하지 않는다</span></p>
           <p class="why"><span class="en">The server stores, selects candidates, and coordinates lifecycle — but it performs <b>no hidden LLM summarization</b> and never auto-guesses sensitivity from keywords. The agent sets <code>sensitivity</code> explicitly; meaning extraction is done by the client that actually understood the text. The machine coordinates; the understanding party decides what a memory means.</span><span class="ko">서버는 저장·후보 선택·생명주기 조율을 맡지만, <b>숨은 LLM 요약을 하지 않고</b> 키워드로 민감도를 자동 추측하지 않습니다. agent가 <code>sensitivity</code>를 명시하고, 의미 추출은 텍스트를 실제로 이해한 클라이언트가 합니다. 기계는 조율하고, 이해한 주체가 기억의 의미를 결정합니다.</span></p>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">04</span><span class="en">Sensitive memory is hidden by default; you ask to see it</span><span class="ko">민감한 기억은 기본적으로 가려지고, 봐야 할 때만 펼친다</span></p>
+          <p class="why"><span class="en">Privacy is a default, not a feature you remember to turn on. At recall, <code>high</code>-sensitivity memories are redacted unless the caller explicitly sets <code>include_sensitive=true</code> — and because the agent set that level at save time (decision 03), not a keyword heuristic, the boundary is <b>intentional rather than guessed</b>. The safe state is the resting state.</span><span class="ko">프라이버시는 기능이 아니라 기본값이어야 합니다. 검색 시 <code>high</code> 민감도 기억은 호출자가 <code>include_sensitive=true</code>를 명시하지 않는 한 가려집니다 — 그리고 그 등급은 키워드 휴리스틱이 아니라 저장 시점에 agent가 설정한 값(결정 03)이라, 경계가 <b>추측이 아니라 의도된 것</b>입니다. 안전한 상태가 곧 기본 상태입니다.</span></p>
+          <blockquote class="pull"><span class="en">"Privacy is the resting state, not a setting you remember to turn on."</span><span class="ko">"프라이버시는 켜는 걸 기억해야 하는 설정이 아니라, 기본 상태다."</span></blockquote>
           <p class="ai"><b><span class="en">How it connects:</span><span class="ko">연결점:</span></b> <span class="en">This truth-vs-cache split is the seed of the verified RAG I now build at work ("the vector DB is a cache; the source snapshot is the truth"), and the same division of labor runs through everything: the deterministic layer coordinates, the understanding party decides.</span><span class="ko">이 진실/캐시 분리가 지금 회사에서 만드는 검증형 RAG의 씨앗입니다("vector DB는 캐시, source snapshot이 진실"). 그리고 같은 역할 분담이 제가 만드는 모든 것을 관통합니다 — 결정론적 레이어가 조율하고, 이해한 주체가 결정합니다.</span></p>
         </div>
       </div>
     </div>
 
-    <!-- CASE 1: Assessment Spec Harness -->
+    <!-- CASE 2: Assessment Spec Harness -->
     <div class="case">
       <div class="case-top">
         <h3>Assessment Spec Harness</h3>
@@ -190,7 +196,7 @@
       </div>
     </div>
 
-    <!-- CASE 2: Harness IR -->
+    <!-- CASE 3: Harness IR -->
     <div class="case">
       <div class="case-top">
         <h3>Harness IR</h3>
@@ -293,8 +299,8 @@
         <p><span class="label">Decision:</span> <span class="en">Killed — ~1300× slower than baseline and failed pruning validation.</span><span class="ko">종료 — 베이스라인 대비 약 1300배 느렸고 pruning validation에 실패.</span></p>
       </div>
       <div class="card">
-        <img class="card-viz" src="assets/circle-wfc-path.png" alt="Geometry-guided WFC (ray variant) finding a 152-step path through a 100x100 maze" loading="lazy" />
-        <p class="viz-cap"><span class="en">The ray variant finds a full 152-step path where plain WFC stalls — the structural limit, reframed into a usable search-space reducer.</span><span class="ko">ray 변형이 plain WFC가 막히는 곳에서 152-스텝 경로를 찾아냅니다 — 구조적 한계를 쓸모 있는 search-space reducer로 재정의한 결과입니다.</span></p>
+        <img class="card-viz" src="assets/circle-wfc-path.png" alt="Geometry-guided WFC (ray variant) finding a 163-step path through a 100x100 maze" loading="lazy" />
+        <p class="viz-cap"><span class="en">The ray variant finds a full 163-step path where plain WFC stalls — the structural limit, reframed into a usable search-space reducer.</span><span class="ko">ray 변형이 plain WFC가 막히는 곳에서 163-스텝 경로를 찾아냅니다 — 구조적 한계를 쓸모 있는 search-space reducer로 재정의한 결과입니다.</span></p>
         <div class="meta"><span class="en">Architectural pivot</span><span class="ko">아키텍처 피벗</span></div>
         <h3><a href="https://github.com/entangelk/circle-wfc" target="_blank" rel="noopener">Circle-WFC</a></h3>
         <p><span class="en">Replacing A* pathfinding with geometry-guided Wave Function Collapse.</span><span class="ko">A* 경로탐색을 geometry-guided WFC로 대체 시도.</span></p>
