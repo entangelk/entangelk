@@ -244,6 +244,12 @@
           <p class="why"><span class="en">On the easy eval-8 set IR looked slightly ahead, but on hard distractor sets there was no clean IR win — false positives became a shared failure family across both paths. I published the uncomfortable hard-set results and reframed the conclusion: not "IR wins," but "the gain/loss splits by model, domain, and difficulty."</span><span class="ko">쉬운 eval-8에선 IR이 약간 앞서 보였지만, 하드 distractor 셋에선 깔끔한 IR 승리가 없었습니다 — false positive가 양쪽 공통의 실패 패턴이 됐습니다. 불편한 하드셋 결과를 그대로 공개하고 결론을 재정의했습니다: "IR 승리"가 아니라 "모델·도메인·난도에 따라 이득과 손해가 갈린다."</span></p>
           <p class="ai"><b><span class="en">AI's role:</span><span class="ko">AI의 역할:</span></b> <span class="en">One provider-neutral Role IR lowers to many LLM backends (OpenAI / Groq / Gemma / OpenRouter), avoiding vendor lock-in; a 4-stage assurance layer (structure / evidence / policy / role) validates the model output rather than trusting it.</span><span class="ko">하나의 provider-neutral Role IR이 여러 LLM 백엔드(OpenAI / Groq / Gemma / OpenRouter)로 lowering되어 벤더 락인을 피하고, 4단계 assurance(구조 / 근거 / 정책 / 역할)가 모델 출력을 신뢰가 아니라 검증으로 다룹니다.</span></p>
         </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">04</span><span class="en">Called the compiler what it is: a draft generator</span><span class="ko">컴파일러를 있는 그대로 불렀다: 초안 생성기</span></p>
+          <p class="why"><span class="en">The experiments above use a <b>human-authored <code>role_ir.yaml</code></b>. The current deterministic compiler can extract an objective and schema constraints from <code>role.md + output_schema.json</code>, but it cannot yet prove semantic equivalence or adopt its output directly at runtime. So I did not call it an AI role compiler: it generates a reviewable draft, and a person approves the IR. The full product thesis remains larger than the slice that was actually tested.</span><span class="ko">위 실험은 <b>사람이 작성한 <code>role_ir.yaml</code></b>을 사용했습니다. 현재 deterministic compiler는 <code>role.md + output_schema.json</code>에서 목적과 schema 제약을 추출할 수 있지만, 의미적 동등성을 증명하거나 결과를 runtime에 바로 채택하지는 못합니다. 그래서 이를 AI 역할 컴파일러라고 부르지 않았습니다: 검토 가능한 초안을 만들고, 사람이 IR을 확정합니다. 전체 제품 비전은 실제로 검증한 슬라이스보다 여전히 큽니다.</span></p>
+          <blockquote class="pull"><span class="en">"The compiler drafts the role; it does not certify the meaning."</span><span class="ko">"컴파일러는 역할 초안을 만들 뿐, 의미를 인증하지 않는다."</span></blockquote>
+        </div>
       </div>
     </div>
 
