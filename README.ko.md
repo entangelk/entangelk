@@ -66,7 +66,7 @@
 
 - 🗺️ **[Circle-WFC (Architectural Pivot)](https://github.com/entangelk/circle-wfc)**  
   `A*` pathfinding을 geometry-guided Wave Function Collapse(WFC)로 대체하려는 시도였습니다.  
-  `Insight:` 전역 경로 탐색 문제에서 local consistency의 구조적 한계를 발견했고, 이후 이 개념의 가치를 효율적인 search space reducer로 재정의했습니다.
+  `Insight:` 전역 경로 탐색에서 local consistency의 구조적 한계를 발견했고, 최종 경로는 A*나 JPS에 맡기는 candidate corridor generator로 후속 가능성을 재정의했습니다.
 
 - ⚡ **[HW-WFC v2.9 (Feasibility Validated)](https://github.com/entangelk/hw-wfc)**  
   제약 기반 AI compiler scheduling R&D입니다.  

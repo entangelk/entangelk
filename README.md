@@ -63,7 +63,7 @@ When I encounter a business bottleneck, I combine existing models, APIs, and alg
 
 - 🗺️ **[Circle-WFC (Architectural Pivot)](https://github.com/entangelk/circle-wfc)**  
   Attempted to replace `A*` pathfinding with a geometry-guided Wave Function Collapse (WFC).  
-  `Insight:` Found the structural limit of local consistency in global pathfinding, then reframed the value of the concept into an efficient search space reducer.
+  `Insight:` Found the structural limit of local consistency in global pathfinding, then reframed the concept as a candidate corridor generator whose output would still need A* or JPS for the final path.
 
 - ⚡ **[HW-WFC v2.9 (Feasibility Validated)](https://github.com/entangelk/hw-wfc)**  
   Constraint-driven AI compiler scheduling R&D.  
