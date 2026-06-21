@@ -166,6 +166,8 @@
         <span class="ko"><a href="https://github.com/entangelk/assessment_poc/tree/main/docs/planning" target="_blank" rel="noopener">기획 트레일 (ideation → spec) →</a></span>
       </div>
 
+      <p class="bridge"><span class="en"><b>The first-class user is an AI agent.</b> The CLI is therefore a product contract, not a human convenience: every command returns a stable JSON core (<code>status</code>, <code>exit_code</code>, <code>command</code>, <code>next_actions</code>), agents can discover each surface through <code>schema --command</code>, and model integrations sit behind a framework-neutral <code>AgentRunner</code>. That upfront constraint makes the harness swappable and reliably callable rather than tied to one SDK.</span><span class="ko"><b>1차 사용자는 사람이 아니라 AI agent입니다.</b> 그래서 CLI는 사람을 위한 편의가 아니라 제품 계약입니다: 모든 명령이 안정된 JSON 코어(<code>status</code>, <code>exit_code</code>, <code>command</code>, <code>next_actions</code>)를 반환하고, agent는 <code>schema --command</code>로 각 인터페이스를 스스로 발견하며, 모델 연동은 framework-neutral <code>AgentRunner</code> 뒤에 둡니다. 이 선행 제약 덕분에 harness가 특정 SDK에 묶이지 않고 교체 가능하며 안정적으로 호출됩니다.</span></p>
+
       <div class="decisions">
         <div class="decision">
           <p class="dh"><span class="num">01</span><span class="en">Reframed the problem: judge the design, not the candidate</span><span class="ko">문제 재정의: 응시자가 아니라 설계를 평가한다</span></p>
