@@ -45,9 +45,9 @@ When I encounter a business bottleneck, I combine existing models, APIs, and alg
   MCP-based long-term memory architecture.  
   `Architecture:` Separated the State of Truth (MongoDB) from the semantic retrieval layer (ChromaDB) to improve consistency and memory compaction.
 
-- 🎯 **[Automated Brand Logo Extraction](https://github.com/entangelk/logo_image)**  
-  Zero-shot logo extraction pipeline combining Grounding DINO, SAM, and custom post-processing.  
-  `Focus:` Built a robust pipeline that operates without supervised training data.
+- 🎯 **[Logo Segmentation Experiment Workbench](https://github.com/entangelk/logo_image)**<br />
+  A comparison workbench for warp correction, anchor generation, Grounding DINO + SAM segmentation, and post-processing.<br />
+  `Focus:` Separated localization, segmentation, and quality experiments so failed assumptions remain inspectable instead of disappearing inside one pipeline.
 
 - 🧪 **[Assessment Spec Harness (PoC)](https://github.com/entangelk/assessment_poc)**  
   CI for hiring assessments — it doesn't evaluate the candidate, it evaluates the assessment design itself, detecting mismatches between a public `spec.md` and a private `rubric.md` before candidates ever see them.  

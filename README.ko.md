@@ -48,9 +48,9 @@
   MCP 기반 장기 메모리 아키텍처입니다.  
   `Architecture:` 일관성과 메모리 압축을 위해 State of Truth(MongoDB)와 semantic retrieval layer(ChromaDB)를 분리했습니다.
 
-- 🎯 **[Automated Brand Logo Extraction](https://github.com/entangelk/logo_image)**  
-  Grounding DINO, SAM, 그리고 커스텀 후처리를 결합한 zero-shot 로고 추출 파이프라인입니다.  
-  `Focus:` 지도 학습 데이터 없이도 동작하는 견고한 파이프라인 구축에 집중했습니다.
+- 🎯 **[Logo Segmentation Experiment Workbench](https://github.com/entangelk/logo_image)**<br />
+  warp 보정, anchor 생성, Grounding DINO + SAM segmentation, 후처리를 비교하는 실험 워크벤치입니다.<br />
+  `Focus:` localization·segmentation·quality 실험을 분리해, 실패한 가정이 하나의 파이프라인 안에 가려지지 않고 비교 가능하게 만들었습니다.
 
 - 🧪 **[Assessment Spec Harness (PoC)](https://github.com/entangelk/assessment_poc)**  
   채용 과제를 위한 CI입니다. 응시자를 평가하지 않고 평가 설계 자체를 평가하며, 공개 `spec.md`와 비공개 `rubric.md` 사이의 설계 불일치를 응시자가 보기 전에 검출합니다.  
