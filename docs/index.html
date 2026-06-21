@@ -136,6 +136,12 @@
           <blockquote class="pull"><span class="en">"Privacy is the resting state, not a setting you remember to turn on."</span><span class="ko">"프라이버시는 켜는 걸 기억해야 하는 설정이 아니라, 기본 상태다."</span></blockquote>
           <p class="ai"><b><span class="en">How it connects:</span><span class="ko">연결점:</span></b> <span class="en">This truth-vs-cache split is the seed of the verified RAG I now build at work ("the vector DB is a cache; the source snapshot is the truth"), and the same division of labor runs through everything: the deterministic layer coordinates, the understanding party decides.</span><span class="ko">이 진실/캐시 분리가 지금 회사에서 만드는 검증형 RAG의 씨앗입니다("vector DB는 캐시, source snapshot이 진실"). 그리고 같은 역할 분담이 제가 만드는 모든 것을 관통합니다 — 결정론적 레이어가 조율하고, 이해한 주체가 결정합니다.</span></p>
         </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">05</span><span class="en">Named the boundary: a memory server cannot make a client remember</span><span class="ko">경계를 명시했다: 메모리 서버가 클라이언트에게 기억을 강제할 수는 없다</span></p>
+          <p class="why"><span class="en">The MCP contract is implemented, but tool availability is not tool adoption. A client's system prompt or built-in file memory can outrank the server's prompt; a poorly rewritten recall query can also bury the right memory. I kept this as an explicit operating boundary instead of pretending the server controls agent behavior: deployment must define memory precedence in the <b>client's own configuration</b>, and cross-agent memories carry <code>source_agent</code> / <code>source_client</code> when provenance matters. <a href="https://github.com/entangelk/agent-memory-system-public#memory-aware-client-guidance" target="_blank" rel="noopener">Client guidance →</a></span><span class="ko">MCP 계약은 구현돼 있지만, 도구가 있다는 것과 실제로 쓰인다는 것은 다릅니다. 클라이언트의 system prompt나 내장 파일 메모리가 서버 prompt보다 우선할 수 있고, 잘못 재작성된 recall query가 맞는 기억을 검색 순위 아래로 밀 수도 있습니다. 서버가 agent 행동까지 통제하는 척하지 않고 이를 명시적 운영 경계로 남겼습니다: 배포 시 <b>클라이언트 자체 설정</b>에 메모리 우선순위를 정하고, 출처가 중요한 cross-agent 기억에는 <code>source_agent</code> / <code>source_client</code>를 함께 저장합니다. <a href="https://github.com/entangelk/agent-memory-system-public/blob/main/README.ko.md#memory-aware-client-guidance" target="_blank" rel="noopener">클라이언트 가이드 →</a></span></p>
+          <blockquote class="pull"><span class="en">"The server can expose memory; only the client can choose to use it."</span><span class="ko">"서버는 기억을 제공할 수 있지만, 그것을 쓸지는 클라이언트가 결정한다."</span></blockquote>
+        </div>
       </div>
     </div>
 

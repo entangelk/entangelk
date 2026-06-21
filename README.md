@@ -11,8 +11,8 @@
 
 # Hi, I'm entangelk
 
-> **AI Product Builder**  
-> I build AI prototypes, automation workflows, and service concepts to test whether ideas actually work in real business environments.  
+> **Product Planning × AI-Augmented Engineering**<br />
+> I turn ambiguous business needs into testable plans, then design and build the working systems with AI agents to prove whether those ideas survive real-world constraints.<br />
 > My background is in operations, business planning, and data analysis. While working across those roles, I became increasingly drawn to the gap between ambiguous business needs and technical reality, and started building systems myself to close it.  
 > Today, I focus on turning vague requirements into testable PoCs, structured experiments, and clear Go / Drop decisions grounded in real-world constraints.
 
