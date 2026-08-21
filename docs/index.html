@@ -92,12 +92,72 @@
       <div class="sec-tag"><span class="en">★ Featured</span><span class="ko">★ 핵심</span></div>
       <h2><span class="en">Decision case studies</span><span class="ko">의사결정 케이스 스터디</span></h2>
       <p>
-        <span class="en">Three public PoCs — each one piece of a verified Agentic-RAG (retrieval-augmented generation): a memory layer, a provider-neutral execution contract, and a verification gate. I built and validated each in the open. Combined, they're the blueprint for the system I'm now building at production scale in my current role (<a href="experience.html#current">Current work →</a>). Told as decisions, not features: what I decided, why, and what role AI played.</span>
-        <span class="ko">세 개의 공개 PoC — 각각 <b>검증형 Agentic-RAG(검색 증강 생성)의 한 조각</b>입니다: 메모리 레이어, provider-neutral 실행 계약, 검증 게이트. 셋을 공개적으로 만들고 검증했습니다. 합치면 지금 실무에서 실무 규모로 구축 중인 시스템의 설계도가 됩니다(<a href="experience.html#current">현재 실무 →</a>). 기능이 아니라 <b>의사결정</b>으로 풀었습니다 — 무엇을 결정했고, 왜 그랬으며, AI가 어떤 역할을 했는지.</span>
+        <span class="en">One assembled system, and three PoCs. Each PoC is one piece of a verified Agentic-RAG (retrieval-augmented generation) — a memory layer, a provider-neutral execution contract, and a verification gate — built and validated in the open, one hypothesis at a time. The <b>AI Writer System</b> is what those pieces look like running together as a single working product. The same architecture backs the production system I build in my current role (<a href="experience.html#current">Current work →</a>), and that one is private — <b>this one you can read</b>. Told as decisions, not features: what I decided, why, and what role AI played.</span>
+        <span class="ko">통합된 시스템 하나, 그리고 세 개의 PoC. 각 PoC는 <b>검증형 Agentic-RAG(검색 증강 생성)의 한 조각</b>입니다 — 메모리 레이어, provider-neutral 실행 계약, 검증 게이트. 가설 하나씩 공개적으로 만들고 검증했습니다. <b>AI Writer System</b>은 그 조각들이 하나의 동작하는 제품 안에서 함께 도는 모습입니다. 같은 아키텍처가 지금 실무에서 구축 중인 시스템을 받치고 있고(<a href="experience.html#current">현재 실무 →</a>), 그쪽은 비공개입니다 — <b>이쪽은 직접 읽어보실 수 있습니다</b>. 기능이 아니라 <b>의사결정</b>으로 풀었습니다 — 무엇을 결정했고, 왜 그랬으며, AI가 어떤 역할을 했는지.</span>
       </p>
     </div>
 
-    <!-- CASE 1: Agent Memory System (the Memory piece) -->
+    <!-- CASE 1: AI Writer System (flagship — the three pieces assembled) -->
+    <div class="case lead">
+      <div class="case-top">
+        <h3>AI Writer System</h3>
+        <span class="pill current"><span class="en">Active development</span><span class="ko">개발 중</span></span>
+        <span class="pill piece"><span class="en">All three pieces, assembled</span><span class="ko">세 조각 전부, 통합</span></span>
+      </div>
+      <p class="tagline">
+        <span class="en">A "writing operating system" for long-form fiction. What breaks in a book-length manuscript is not prose quality — it is <b>consistency</b>: a character speaks differently in chapter 3 and chapter 17, someone killed off before chapter 20 walks back in, and the author cannot find what a setting originally said. A chatbot cannot fix this structurally, because it remembers nothing outside the conversation window.</span>
+        <span class="ko">장편 창작을 위한 <b>'글쓰기 운영체제'</b>입니다. 책 한 권 분량의 원고에서 무너지는 것은 문장력이 아니라 <b>일관성</b>입니다 — 인물의 말투가 3장과 17장에서 다르고, 20장 전에 죽은 인물이 되살아나고, 작가 자신도 "그때 그 설정이 뭐였더라"를 못 찾습니다. 범용 챗봇은 대화창을 벗어나면 아무것도 기억하지 못하므로 이 문제를 구조적으로 풀 수 없습니다.</span>
+      </p>
+      <div class="case-links">
+        <a class="repo" href="https://github.com/entangelk/ai_writte_system" target="_blank" rel="noopener">GitHub repo</a>
+      </div>
+
+      <p class="bridge"><span class="en"><b>Every LLM call site is instrumented, and failed calls are counted too.</b> All eight call sites write a standard audit record, aggregated into a KPI view (per project, plus a global admin view). Counting only the successful calls would pin the success rate at 100% forever — an observability dashboard that can never deliver bad news is decoration, not instrumentation.</span><span class="ko"><b>LLM 호출부 전부가 계측되고, 실패한 호출도 셉니다.</b> 8개 호출부 모두가 표준 감사 레코드를 남기고, 그것을 집계한 KPI를 화면으로 봅니다(프로젝트별 + 전역 관리자). 성공한 호출만 세면 성공률은 영구히 100%가 됩니다 — 나쁜 소식을 절대 전할 수 없는 관측 대시보드는 계측이 아니라 장식입니다.</span></p>
+
+      <div class="decisions">
+        <div class="decision">
+          <p class="dh"><span class="num">01</span><span class="en">The center is memory, not a smarter model</span><span class="ko">중심은 더 영리한 모델이 아니라 기억이다</span></p>
+          <p class="why"><span class="en">The obvious move is to reach for a better generation model. But no model fixes an author's inability to recall what they established 200 pages ago. So manuscript, settings, worldbuilding, and style accumulate as <b>long-term memory</b>, and at each writing moment only the relevant fragments are retrieved and handed to the model. The model got easier to swap; the memory is the part that had to be designed.</span><span class="ko">쉬운 선택은 더 좋은 생성 모델을 찾는 것입니다. 그러나 어떤 모델도 작가가 200쪽 전에 정해둔 것을 기억하지 못하는 문제를 해결해 주지 않습니다. 그래서 원고·설정·세계관·문체를 <b>장기 기억</b>으로 축적하고, 글을 쓰는 시점마다 필요한 조각만 검색해 모델에 줍니다. 모델은 교체하기 쉬운 쪽이 됐고, 설계가 필요했던 것은 기억 쪽이었습니다.</span></p>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">02</span><span class="en">AI output is not canon on arrival</span><span class="ko">AI 출력은 도착 즉시 정본이 아니다</span></p>
+          <p class="why"><span class="en">Every generated or analyzed result lands as a <code>candidate</code> and becomes memory only after a Gate verdict and human review. This is the load-bearing decision: the moment "whatever the AI wrote is true" is allowed, the memory itself is contaminated — and <b>every later retrieval inherits that contamination</b>. Memory is <b>append-only</b>, so a bad revision stacks a version instead of erasing the past, and every claim carries a <code>source_ref</code> back to its position in the original text, so the author can audit the AI's judgment down to where it came from.</span><span class="ko">생성·분석 결과는 전부 <code>candidate</code>로 남고, Gate 판정과 사람의 검토를 거쳐야 기억이 됩니다. 이것이 하중을 받는 결정입니다 — "AI가 쓴 것이 곧 사실"이 되는 순간 기억 자체가 오염되고, <b>이후의 모든 검색이 그 오염을 물려받습니다</b>. 기억은 <b>append-only</b>라 잘못된 갱신이 과거를 지우지 못하고 버전으로 쌓이며, 모든 주장에는 원문 위치로 되짚는 <code>source_ref</code>가 붙어 작가가 AI의 판단을 출처까지 검증할 수 있습니다.</span></p>
+          <blockquote class="pull"><span class="en">"AI output is not canon on arrival. It is a candidate until something verifies it."</span><span class="ko">"AI 출력은 도착 즉시 정본이 아니다. 무언가 검증하기 전까지는 후보다."</span></blockquote>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">03</span><span class="en">The same truth-vs-cache split, deliberately repeated</span><span class="ko">같은 진실/캐시 분리를 의도적으로 반복했다</span></p>
+          <p class="why"><span class="en">MongoDB holds the canonical record; ChromaDB (BGE-m3 vector) and Elasticsearch (nori lexical) are <b>derived</b> hybrid indexes maintained by an async outbox worker, and final evidence is always reloaded from the canonical record rather than trusted from the index. This is the same split I first built in the <b>Agent Memory System</b> below — repeated here on purpose. A structure that only works once is a coincidence; one that holds across a memory server, a product, and the system I build at work is a design I can rely on.</span><span class="ko">정본은 MongoDB가 들고, ChromaDB(BGE-m3 벡터)와 Elasticsearch(nori 어휘)는 async outbox 워커가 유지하는 <b>파생</b> 하이브리드 색인입니다. 최종 근거는 색인을 믿지 않고 항상 정본에서 재조회합니다. 아래 <b>Agent Memory System</b>에서 처음 만든 분리를 <b>의도적으로 반복</b>한 것입니다. 한 번만 통하는 구조는 우연이고, 메모리 서버·제품·회사에서 만드는 시스템까지 관통하면 그것은 믿고 쓸 수 있는 설계입니다.</span></p>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">04</span><span class="en">Make the swappable parts swappable — but measure before swapping</span><span class="ko">교체할 자리는 교체 가능하게 — 다만 재기 전에는 바꾸지 않는다</span></p>
+          <p class="why"><span class="en">Embedding and reranking became <b>provider-neutral seams</b>. With no endpoint configured the embedding helper falls back to a fake, but the reranker falls back to <code>None</code> — no reranking at all. That asymmetry is deliberate: there is no useful stand-in for "fake reranking," and shuffling at random is worse than doing nothing. The brief specified "a generic OpenAI-compatible adapter" — but <b>OpenAI has no rerank endpoint at all</b>. Following the wording literally would have implemented a contract that does not exist, so I built the shape the field actually shares (<code>POST /v1/rerank</code>, as Cohere · Jina · Voyage · TEI expose it) and recorded the departure in the brief. A guard locks the assembly, because <b>this failure is silent</b>: if reranking quietly falls out, nothing looks broken — the ranking just goes back to what it was. And before any swap, an evaluation harness (<code>recall@k</code> · <code>MRR</code> · <code>nDCG@k</code>) written first, with the gold labels deliberately <b>not</b> filled in — and a test that fails if a labeled <code>.jsonl</code> ever lands in the repo.</span><span class="ko">임베딩과 리랭킹을 <b>provider-neutral seam</b>으로 뺐습니다. 엔드포인트가 없으면 임베딩 헬퍼는 fake로 내려가지만, 리랭커는 <code>None</code>으로 — 아예 재정렬하지 않습니다. 이 비대칭은 의도한 것입니다. 리랭킹에는 "가짜 재정렬"이라는 쓸모 있는 대체물이 없고, <b>무작위로 섞는 것은 no-op보다 나쁘기</b> 때문입니다. 브리프의 문언은 "generic OpenAI-호환 어댑터"였지만 <b>OpenAI에는 rerank 엔드포인트가 없습니다</b>. 글자를 그대로 따랐으면 <b>존재하지 않는 계약</b>을 구현할 뻔했고, 그래서 이 분야가 실제로 공유하는 형태(<code>POST /v1/rerank</code> — Cohere · Jina · Voyage · TEI가 같은 모양)를 구현하고 그 이탈을 브리프에 적었습니다. 조립은 가드로 잠급니다. <b>이 실패는 조용하기</b> 때문입니다 — 리랭킹이 조용히 빠져도 비는 것이 없고, 순위만 예전으로 돌아갑니다. 그리고 교체하기 전에 평가 하네스(<code>recall@k</code> · <code>MRR</code> · <code>nDCG@k</code>)를 <b>먼저</b> 썼습니다. 정답은 <b>일부러 채우지 않았고</b>, 라벨링된 <code>.jsonl</code>이 저장소에 들어오면 실패하는 셀을 함께 뒀습니다.</span></p>
+          <blockquote class="pull"><span class="en">"Owning a harness is not the same as having evaluated anything."</span><span class="ko">"하네스가 있다는 사실은 '평가했다'가 아니다."</span></blockquote>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">05</span><span class="en">Write the decision brief before the code — and stop</span><span class="ko">코드보다 결정 브리프를 먼저 쓰고, 멈춘다</span></p>
+          <p class="why"><span class="en">Choices that cannot be quietly reversed later — architecture, contract literals, policy — are raised as a <b>decision brief</b> with an options table (option / description / upside / downside), a recommendation, and an explicit list of what I am deferring. Then implementation <b>stops</b> until the owner decides; guessing is not allowed. <b>80+ decision briefs</b> exist so far. The cost is real — work halts — and that is the point: a silently chosen default is a decision nobody remembers making, and those are the ones that cannot be undone later.</span><span class="ko">조용히 고르면 나중에 되돌릴 수 없는 선택 — 아키텍처·계약 리터럴·정책 — 은 선택지 표(선택지·설명·장점·단점)와 추천, 그리고 유예할 항목을 명시한 <b>결정 브리프</b>로 올립니다. 그리고 오너가 결정할 때까지 구현을 <b>멈춥니다</b>. 추측 구현은 금지입니다. 현재까지 <b>결정 브리프 80여 건</b>. 작업이 멈추는 비용은 실제로 발생하고, 그게 요점입니다 — 조용히 골라진 기본값은 아무도 내린 기억이 없는 결정이고, 나중에 되돌릴 수 없는 것은 바로 그런 것들입니다.</span></p>
+          <blockquote class="pull"><span class="en">"A silently chosen default is a decision nobody remembers making."</span><span class="ko">"조용히 골라진 기본값은, 아무도 내린 기억이 없는 결정이다."</span></blockquote>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">06</span><span class="en">Verification that is allowed to fail</span><span class="ko">실패가 허용되는 검증</span></p>
+          <p class="why"><span class="en">After implementation, a <b>different session</b> tries to falsify the work by <b>mutation</b> — reverting the fix to confirm the regression guard fails again. Guards must fail in both directions: reintroducing the original bug, and over-correcting into a valid case. <b>240+ independent verification records over 50+ days</b>, sitting on a suite of <b>2,000+ tests</b>. Roughly <b>one verification in four comes back conditional</b>, and a couple have failed outright. One representative catch: an enforcement recorded as "complete" was true at the compose-file level but <b>false at runtime</b>, because already-created containers still carried the old port mapping — found by <code>docker ps</code>, not by the test suite.</span><span class="ko">구현 뒤에는 <b>다른 세션</b>이 <b>뮤테이션</b>으로 반증을 시도합니다 — 고친 것을 되돌려 회귀 가드가 다시 실패하는지 확인합니다. 가드는 양방향이어야 합니다: 원래 결함을 재현해도 실패하고, 과잉 교정으로 정상 경로를 깨도 실패해야 합니다. <b>50일 넘게 쌓인 독립 검증 기록 240여 건</b>, 그 아래 <b>테스트 2,000여 건</b>. <b>검증 네 건 중 한 건꼴로 '조건부 합격'</b>이 나오고 불합격도 나옵니다. 대표적으로 잡힌 것 하나: "시행 완료"로 기록된 항목이 <b>compose 파일 수준에서는 참, 런타임에서는 거짓</b>이었습니다. 이미 만들어진 컨테이너가 옛 포트 매핑을 그대로 들고 있었기 때문이고, 이를 잡은 것은 테스트 스위트가 아니라 <code>docker ps</code>였습니다.</span></p>
+          <blockquote class="pull"><span class="en">"One verification in four comes back conditional. That isn't a weak process — it's the evidence the process is real."</span><span class="ko">"네 건 중 한 건이 조건부 합격으로 돌아온다. 절차가 허술하다는 뜻이 아니라, 절차가 진짜라는 증거다."</span></blockquote>
+        </div>
+
+        <div class="decision">
+          <p class="dh"><span class="num">07</span><span class="en">Stated the limit honestly: local single-operator, pre-dogfood</span><span class="ko">한계를 정직하게: 로컬 1인 운영, dogfood 직전</span></p>
+          <p class="why"><span class="en">The whole stack comes up on one <code>docker compose up</code> (FastAPI · React/TS · MongoDB · ChromaDB · Elasticsearch · a local Gemma 4 12B endpoint), with multi-user auth, project ownership, per-request quota, and an admin surface implemented. The stores bind to <code>127.0.0.1</code> only — the risk was removed by <b>shrinking the exposed surface, not by adding credentials</b>. What this is <b>not</b> yet: a multi-tenant production service with real users. It runs; it has not been run by anyone but me.</span><span class="ko">전체 스택이 <code>docker compose up</code> 하나로 뜹니다(FastAPI · React/TS · MongoDB · ChromaDB · Elasticsearch · 로컬 Gemma 4 12B endpoint). 다중 사용자 인증·프로젝트 소유권·요청 quota·관리자 표면까지 구현돼 있습니다. 저장소는 <code>127.0.0.1</code>에만 바인드합니다 — 위험을 <b>자격증명이 아니라 노출면 축소로</b> 없앤 선택입니다. 아직 <b>아닌 것</b>: 실사용자를 받는 다중 테넌트 프로덕션 서비스입니다. 돌아가지만, 저 말고는 아무도 돌려보지 않았습니다.</span></p>
+          <p class="ai"><b><span class="en">How it connects:</span><span class="ko">연결점:</span></b> <span class="en">This is the readable version of what I build at work. The production system (<a href="experience.html#current">Current work →</a>) is the same architecture — candidate output, claim-level verification, a gate that decides what ships — but its source is company-private. Here the whole trail is open: the briefs, the verification records, the guards, and the limits.</span><span class="ko">이것은 제가 회사에서 만드는 것의 <b>읽을 수 있는 버전</b>입니다. 실무 시스템(<a href="experience.html#current">현재 실무 →</a>)은 같은 아키텍처입니다 — candidate 출력, claim 단위 검증, 무엇을 내보낼지 결정하는 gate. 다만 소스가 회사 비공개입니다. 여기서는 그 자취 전부가 열려 있습니다 — 브리프, 검증 기록, 가드, 그리고 한계까지.</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 2: Agent Memory System (the Memory piece) -->
     <div class="case">
       <div class="case-top">
         <h3>Agent Memory System</h3>
@@ -144,7 +204,7 @@
       </div>
     </div>
 
-    <!-- CASE 2: Assessment Spec Harness -->
+    <!-- CASE 3: Assessment Spec Harness -->
     <div class="case">
       <div class="case-top">
         <h3>Assessment Spec Harness</h3>
@@ -199,13 +259,13 @@
         </div>
 
         <div class="decision">
-          <p class="dh"><span class="num">06</span><span class="en">Stated the limit honestly: this is still a PoC</span><span class="ko">한계를 정직하게: 아직 PoC다</span></p>
+          <p class="dh"><span class="num">07</span><span class="en">Stated the limit honestly: this is still a PoC</span><span class="ko">한계를 정직하게: 아직 PoC다</span></p>
           <p class="why"><span class="en">The deterministic core and the review/verdict flow are implemented; live LLM SDK runners are still deferred. The offline workflow is more than a smoke test that just confirms the wiring connects: two synthetic example assignments were each run end-to-end three times, using fixed deterministic extraction plus a mock stand-in for the semantic check. Every run produced identical finding distributions and zero grounding diagnostics — no broken references, no fabricated quotes. That proves the pipeline is deterministically reproducible on valid inputs — <b>not that a live LLM extracts well</b>.</span><span class="ko">결정론적 코어와 review/verdict 흐름은 구현됐지만, live LLM SDK runner는 여전히 보류 상태입니다. offline workflow는 '배선이 연결되는지'만 확인하는 단순 smoke 테스트보다 깊습니다: 두 합성 예제 과제를, 고정된 결정론적 추출 + 의미 검사를 대신하는 mock으로 각각 3회 end-to-end 실행했습니다. 매번 동일한 finding 분포가 나왔고, grounding 진단(깨진 참조·날조된 인용)은 0건이었습니다. 이는 유효 입력 위에서 파이프라인이 결정론적으로 재현된다는 증명일 뿐, <b>live LLM의 추출 품질 증명은 아닙니다</b>.</span></p>
         </div>
       </div>
     </div>
 
-    <!-- CASE 3: Harness IR -->
+    <!-- CASE 4: Harness IR -->
     <div class="case">
       <div class="case-top">
         <h3>Harness IR</h3>
@@ -254,8 +314,8 @@
     </div>
 
     <p class="bridge synth">
-      <span class="en">Put the three together — memory, a provider-neutral execution contract, and a verification gate — and you have a verified Agentic-RAG. That synthesis is exactly what I build at production scale in my current role. <a href="experience.html#current">See the current work →</a></span>
-      <span class="ko">세 조각 — 메모리, provider-neutral 실행 계약, 검증 게이트 — 을 합치면 검증형 Agentic-RAG가 됩니다. 그 통합이 바로 지금 실무에서 실무 규모로 만들고 있는 것입니다. <a href="experience.html#current">현재 실무 보기 →</a></span>
+      <span class="en">Put the three together — memory, a provider-neutral execution contract, and a verification gate — and you have a verified Agentic-RAG. I have assembled that synthesis twice: once in the open, as the <a href="#decisions">AI Writer System</a> above, and once at production scale in my current role. <a href="experience.html#current">See the current work →</a></span>
+      <span class="ko">세 조각 — 메모리, provider-neutral 실행 계약, 검증 게이트 — 을 합치면 검증형 Agentic-RAG가 됩니다. 그 통합을 저는 두 번 만들었습니다. 한 번은 공개적으로, 위의 <a href="#decisions">AI Writer System</a>으로. 또 한 번은 지금 실무에서 실무 규모로. <a href="experience.html#current">현재 실무 보기 →</a></span>
     </p>
   </div>
 </section>
@@ -266,7 +326,7 @@
     <div class="sec-head">
       <div class="sec-tag"><span class="en">Method</span><span class="ko">방법론</span></div>
       <h2><span class="en">How I work with AI</span><span class="ko">AI를 다루는 방식</span></h2>
-      <p><span class="en">This is what AI-native engineering looks like in practice: framing the problem, directing agents, auditing their output, and keeping one source of truth. The verification records and the judgment behind each call are the evidence — not the claim. The same pattern runs through all three PoCs above.</span><span class="ko">이것이 실제 AI-native 엔지니어링의 모습입니다 — 문제를 프레이밍하고, 에이전트를 지휘하고, 산출물을 감사하고, 단일 진실 공급원을 유지합니다. 검증 기록과 그 뒤의 판단이 주장이 아니라 증거입니다. 위 세 PoC에 공통으로 흐르는 패턴입니다.</span></p>
+      <p><span class="en">This is what AI-native engineering looks like in practice: framing the problem, directing agents, auditing their output, and keeping one source of truth. The verification records and the judgment behind each call are the evidence — not the claim. The same pattern runs through every case study above.</span><span class="ko">이것이 실제 AI-native 엔지니어링의 모습입니다 — 문제를 프레이밍하고, 에이전트를 지휘하고, 산출물을 감사하고, 단일 진실 공급원을 유지합니다. 검증 기록과 그 뒤의 판단이 주장이 아니라 증거입니다. 위의 모든 케이스 스터디에 공통으로 흐르는 패턴입니다.</span></p>
     </div>
     <div class="grid2">
       <div class="card">

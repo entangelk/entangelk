@@ -41,6 +41,12 @@ When I encounter a business bottleneck, I combine existing models, APIs, and alg
 
 ## 🏗️ Highlighted Architecture & PoC
 
+- 📖 **[AI Writer System](https://github.com/entangelk/ai_writte_system)** — *flagship personal project*  
+  A "writing operating system" for long-form fiction. What breaks in a long manuscript is not prose quality, it is **consistency** — and a chatbot cannot fix that structurally, because it remembers nothing outside the conversation window.  
+  `Architecture:` MongoDB as the canonical source of truth, hybrid retrieval (ChromaDB/BGE-m3 vector + Elasticsearch nori lexical), and a Writing Gate. **AI output is never canon on arrival** — it lands as a `candidate` and becomes append-only memory only after a gate verdict and human review, with a `source_ref` pointing back to the original text for every claim. Embedding and reranking sit behind **provider-neutral seams**, and an evaluation harness (`recall@k` · `MRR` · `nDCG@k`) was written *before* any swap — with the gold labels deliberately left unfilled.  
+  `Process:` 80+ decision briefs written *before* implementation · 240+ independent verification records over 50+ days · a suite of 2,000+ tests · two-way regression guards checked by mutation · a versioned canonical contract. Roughly **one verification in four comes back conditional**, and a couple have failed outright — the review is not a formality.  
+  `Stack:` FastAPI · React/TS · a local Gemma 4 12B endpoint — the whole stack on one `docker compose up`.
+
 - 🧠 **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public)**  
   MCP-based long-term memory architecture.  
   `Architecture:` Separated the State of Truth (MongoDB) from the semantic retrieval layer (ChromaDB) to improve consistency and memory compaction.
