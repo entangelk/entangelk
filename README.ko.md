@@ -85,7 +85,7 @@
 ## Notes
 
 트러블슈팅, 아키텍처 의사결정, 트레이드오프, 프로젝트 맥락에 대한 더 긴 글은 아래에서 볼 수 있습니다.  
-👉 **[Selected Project Details (PROJECTS.md)](./PROJECTS.md)**
+👉 **[주요 프로젝트 상세 (PROJECTS.ko.md)](./PROJECTS.ko.md)**
 
 ## Contact
 
