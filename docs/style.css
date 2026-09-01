@@ -83,6 +83,25 @@ header.nav {
 .hero h1 .accent { color: var(--accent); }
 .hero .lede { font-size: clamp(1.05rem, 2.2vw, 1.28rem); color: var(--ink-soft); max-width: 720px; margin: 0 0 26px; }
 .quote { font-style: italic; color: var(--ink-faint); border-left: 3px solid var(--accent); padding-left: 16px; margin: 0 0 30px; }
+/* ---- hero proof strip ---- */
+.proof-strip {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  margin: 0 0 28px; max-width: 860px;
+}
+.proof {
+  display: block; background: var(--bg-card); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 16px 18px; color: var(--ink);
+}
+.proof:hover { text-decoration: none; border-color: var(--accent); box-shadow: 0 4px 14px rgba(58,78,224,0.07); }
+.proof .pv {
+  display: block; font-family: var(--mono); font-weight: 600;
+  font-size: clamp(1.25rem, 2.6vw, 1.7rem); letter-spacing: -0.02em;
+  color: var(--accent); line-height: 1.15; margin-bottom: 7px;
+}
+.proof .pv i { font-style: normal; opacity: 0.55; }
+.proof .pl { display: block; font-size: 0.82rem; line-height: 1.5; color: var(--ink-soft); }
+.proof .pl b { color: var(--ink); }
+
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
 .btn {
   display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.95rem;
@@ -128,6 +147,21 @@ section { padding: 52px 0; border-top: 1px solid var(--line); }
 .card-viz { display: block; width: 100%; border-radius: 8px; border: 1px solid var(--line); margin-bottom: 8px; background: #fff; }
 .viz-cap { font-size: 0.78rem; color: var(--ink-faint); line-height: 1.5; margin: 0 0 12px; }
 .case .tagline { color: var(--ink-soft); font-size: 1.02rem; margin: 4px 0 18px; }
+
+/* ---- ownership boundary box ---- */
+.owned {
+  background: var(--bg); border: 1px solid var(--line); border-left: 3px solid var(--accent);
+  border-radius: 10px; padding: 16px 20px; margin: 0 0 24px;
+}
+.owned-h {
+  margin: 0 0 8px; font-size: 0.74rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-ink);
+}
+.owned ul { margin: 0; padding-left: 18px; }
+.owned li { color: var(--ink-soft); font-size: 0.92rem; margin-bottom: 6px; }
+.owned li:last-child { margin-bottom: 0; }
+.owned li b { color: var(--ink); }
+
 .case-links { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 22px; }
 .case-links a { font-size: 0.85rem; font-weight: 600; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-soft); }
 .case-links a:hover { border-color: var(--accent); color: var(--accent-ink); text-decoration: none; }
@@ -197,6 +231,8 @@ footer { padding: 40px 0 60px; color: var(--ink-faint); font-size: 0.85rem; bord
 @media (max-width: 760px) {
   .nav-links { display: none; }
   .principles, .grid2, .grid3 { grid-template-columns: 1fr; }
+  .proof-strip { grid-template-columns: 1fr; gap: 10px; }
+  .proof { padding: 13px 15px; }
   .case { padding: 22px; }
   .hero { padding: 56px 0 40px; }
   .hero h1 { font-size: 1.85rem; }
@@ -210,6 +246,7 @@ footer { padding: 40px 0 60px; color: var(--ink-faint); font-size: 0.85rem; bord
   body { background: #fff; }
   section, .case, .card, details.dd, .xp { break-inside: avoid; border-color: #ccc; }
   .decision, .principle, .sec-head, figure, .viz-cap { break-inside: avoid; }
+  .owned, .proof-strip { break-inside: avoid; }
   .card-viz { break-after: avoid; }
   details.dd[open] .dd-body, details.dd .dd-body { display: block; }
   a { color: var(--ink); text-decoration: none; }
