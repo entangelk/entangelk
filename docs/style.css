@@ -119,6 +119,26 @@ section { padding: 52px 0; border-top: 1px solid var(--line); }
 .sec-head h2 { font-size: clamp(1.5rem, 3.4vw, 2.1rem); letter-spacing: -0.02em; margin: 8px 0 6px; font-weight: 800; }
 .sec-head p { color: var(--ink-soft); margin: 0; max-width: 760px; }
 
+/* ---- reader paths (scan layer) ---- */
+#paths { padding: 34px 0; }
+.paths { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.path {
+  display: block; background: var(--bg-card); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 22px 24px; color: var(--ink);
+}
+.path:hover { text-decoration: none; border-color: var(--accent); box-shadow: 0 4px 16px rgba(58,78,224,0.07); }
+.path .pt {
+  display: inline-block; font-family: var(--mono); font-weight: 600; font-size: 1.15rem;
+  color: var(--accent); letter-spacing: -0.02em; margin-right: 10px;
+}
+.path .pw {
+  display: inline-block; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-faint);
+}
+.path p { margin: 10px 0 12px; color: var(--ink-soft); font-size: 0.93rem; }
+.path p b { color: var(--ink); }
+.path .pgo { display: block; font-weight: 600; font-size: 0.9rem; color: var(--accent-ink); }
+
 /* ---- principles ---- */
 .principles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .principle { background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
@@ -147,6 +167,17 @@ section { padding: 52px 0; border-top: 1px solid var(--line); }
 .card-viz { display: block; width: 100%; border-radius: 8px; border: 1px solid var(--line); margin-bottom: 8px; background: #fff; }
 .viz-cap { font-size: 0.78rem; color: var(--ink-faint); line-height: 1.5; margin: 0 0 12px; }
 .case .tagline { color: var(--ink-soft); font-size: 1.02rem; margin: 4px 0 18px; }
+
+/* ---- case scan strip ---- */
+.scan { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin: 0 0 22px; }
+.srow { display: grid; grid-template-columns: 104px 1fr; gap: 14px; padding: 11px 2px; }
+.srow + .srow { border-top: 1px dashed var(--line); }
+.sk {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent); padding-top: 3px;
+}
+.sv { color: var(--ink-soft); font-size: 0.93rem; }
+.sv b { color: var(--ink); }
 
 /* ---- ownership boundary box ---- */
 .owned {
@@ -232,6 +263,9 @@ footer { padding: 40px 0 60px; color: var(--ink-faint); font-size: 0.85rem; bord
   .nav-links { display: none; }
   .principles, .grid2, .grid3 { grid-template-columns: 1fr; }
   .proof-strip { grid-template-columns: 1fr; gap: 10px; }
+  .paths { grid-template-columns: 1fr; }
+  .srow { grid-template-columns: 1fr; gap: 3px; }
+  .sk { padding-top: 0; }
   .proof { padding: 13px 15px; }
   .case { padding: 22px; }
   .hero { padding: 56px 0 40px; }
@@ -246,7 +280,7 @@ footer { padding: 40px 0 60px; color: var(--ink-faint); font-size: 0.85rem; bord
   body { background: #fff; }
   section, .case, .card, details.dd, .xp { break-inside: avoid; border-color: #ccc; }
   .decision, .principle, .sec-head, figure, .viz-cap { break-inside: avoid; }
-  .owned, .proof-strip { break-inside: avoid; }
+  .owned, .proof-strip, .scan, .path { break-inside: avoid; }
   .card-viz { break-after: avoid; }
   details.dd[open] .dd-body, details.dd .dd-body { display: block; }
   a { color: var(--ink); text-decoration: none; }
