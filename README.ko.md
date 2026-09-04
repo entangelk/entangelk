@@ -6,6 +6,7 @@
 
 <p align="center">
   <a href="https://entangelk.github.io/entangelk/"><img src="https://img.shields.io/badge/Portfolio-Live_Site-3a4ee0?style=for-the-badge&logo=githubpages&logoColor=white" alt="포트폴리오 — entangelk.github.io/entangelk"></a>
+  <a href="https://entangelk.github.io/entangelk/#intro"><img src="https://img.shields.io/badge/%E2%96%B6_1--min_Intro-KO_%7C_EN-111111?style=for-the-badge" alt="1분 소개 영상 — 한국어 / 영어"></a>
 </p>
 <p align="center"><sub>판단 중심 의사결정 케이스 스터디 / Decision case studies</sub></p>
 
@@ -17,6 +18,16 @@
 > 지금은 불분명한 요구사항을 검증 가능한 PoC, 구조화된 실험, 그리고 현실 제약에 기반한 명확한 Go / Drop 판단으로 바꾸는 일에 집중하고 있습니다.
 
 *"기억은 로그가 아니다. 기억은 압축된 의미다."*
+
+## 1분 소개 영상
+
+**한국어**
+
+https://github.com/user-attachments/assets/fb68ad64-1589-4e17-98c4-a67e5231c7d5
+
+**English**
+
+https://github.com/user-attachments/assets/9470b845-b59b-41fa-afc7-782c456412b8
 
 ## Why I Build (만들면서 배우는 이유)
 

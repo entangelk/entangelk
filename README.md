@@ -6,6 +6,7 @@
 
 <p align="center">
   <a href="https://entangelk.github.io/entangelk/"><img src="https://img.shields.io/badge/Portfolio-Live_Site-3a4ee0?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live portfolio — entangelk.github.io/entangelk"></a>
+  <a href="https://entangelk.github.io/entangelk/#intro"><img src="https://img.shields.io/badge/%E2%96%B6_1--min_Intro-KO_%7C_EN-111111?style=for-the-badge" alt="1-minute intro video — Korean and English"></a>
 </p>
 <p align="center"><sub>Decision case studies, told as judgment / 의사결정 케이스 스터디</sub></p>
 
@@ -17,6 +18,16 @@
 > Today, I focus on turning vague requirements into testable PoCs, structured experiments, and clear Go / Drop decisions grounded in real-world constraints.
 
 *"Memory is not a log. Memory is compacted meaning."*
+
+## Watch: 1-minute intro
+
+**English**
+
+https://github.com/user-attachments/assets/9470b845-b59b-41fa-afc7-782c456412b8
+
+**한국어 (Korean)**
+
+https://github.com/user-attachments/assets/fb68ad64-1589-4e17-98c4-a67e5231c7d5
 
 ## Why I Build (Learning by Building)
 

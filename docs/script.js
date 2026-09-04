@@ -18,3 +18,13 @@ function setLang(lang) {
   if (lang !== 'en' && lang !== 'ko') lang = 'en';
   setLang(lang);
 })();
+
+/* only one intro video plays at a time (play does not bubble -> capture) */
+document.addEventListener('play', function (e) {
+  var t = e.target;
+  if (!t || t.tagName !== 'VIDEO') return;
+  var vids = document.querySelectorAll('.introvid video');
+  for (var i = 0; i < vids.length; i++) {
+    if (vids[i] !== t) vids[i].pause();
+  }
+}, true);

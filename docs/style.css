@@ -112,6 +112,30 @@ header.nav {
 .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
 .btn.primary:hover { background: var(--accent-ink); color: #fff; }
 
+/* ---- intro videos (KO / EN, both always shown) ---- */
+.introvid { margin: 30px 0 0; }
+.introvid-tag {
+  font-weight: 700; font-size: 0.78rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 10px;
+}
+.introvid-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px; max-width: 720px;
+}
+.introvid figure { margin: 0; min-width: 0; }
+/* sources are 640x480 with the real 16:9 frame letterboxed inside (content at y=62,
+   h=356) -- crop the baked-in bars back off so the poster/inline frame is not
+   half black. Fullscreen falls back to the file's native 4:3. */
+.introvid video {
+  display: block; width: 100%; aspect-ratio: 16 / 9; background: #000;
+  object-fit: cover;
+  border: 1px solid var(--line); border-radius: 10px;
+}
+.introvid figcaption {
+  font-size: 0.82rem; color: var(--ink-faint); margin-top: 7px; font-weight: 600;
+}
+@media (max-width: 720px) { .introvid-grid { grid-template-columns: 1fr; } }
+
 /* ---- sections ---- */
 section { padding: 52px 0; border-top: 1px solid var(--line); }
 .sec-head { margin-bottom: 30px; }
@@ -276,7 +300,7 @@ footer { padding: 40px 0 60px; color: var(--ink-faint); font-size: 0.85rem; bord
 
 /* ---- print ---- */
 @media print {
-  header.nav, .lang-toggle, .cta-row, .nav-links { display: none !important; }
+  header.nav, .lang-toggle, .cta-row, .nav-links, .introvid { display: none !important; }
   body { background: #fff; }
   section, .case, .card, details.dd, .xp { break-inside: avoid; border-color: #ccc; }
   .decision, .principle, .sec-head, figure, .viz-cap { break-inside: avoid; }
