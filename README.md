@@ -21,13 +21,24 @@
 
 ## Watch: 1-minute intro
 
+<table>
+<tr>
+<td width="50%">
+
 **English**
 
 https://github.com/user-attachments/assets/9470b845-b59b-41fa-afc7-782c456412b8
 
+</td>
+<td width="50%">
+
 **한국어 (Korean)**
 
 https://github.com/user-attachments/assets/fb68ad64-1589-4e17-98c4-a67e5231c7d5
+
+</td>
+</tr>
+</table>
 
 ## Why I Build (Learning by Building)
 

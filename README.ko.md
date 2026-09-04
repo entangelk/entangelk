@@ -21,13 +21,24 @@
 
 ## 1분 소개 영상
 
+<table>
+<tr>
+<td width="50%">
+
 **한국어**
 
 https://github.com/user-attachments/assets/fb68ad64-1589-4e17-98c4-a67e5231c7d5
 
+</td>
+<td width="50%">
+
 **English**
 
 https://github.com/user-attachments/assets/9470b845-b59b-41fa-afc7-782c456412b8
+
+</td>
+</tr>
+</table>
 
 ## Why I Build (만들면서 배우는 이유)
 
