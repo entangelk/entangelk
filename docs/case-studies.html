@@ -98,12 +98,8 @@
 <div class="wrap">
 <div class="sec-head">
 <div class="sec-tag">
-<span class="en">
-        ★ Featured
-       </span>
-<span class="ko">
-        ★ 핵심
-       </span>
+<span class="en">Featured</span>
+<span class="ko">핵심</span>
 </div>
 <h2>
 <span class="en">
@@ -139,12 +135,6 @@
 </span>
 </div>
 <p class="tagline"><span class="en">A writing workspace that keeps long manuscripts and their memory consistent.</span><span class="ko">장편 원고와 설정의 일관성을 유지하는 글쓰기 워크스페이스.</span></p>
-
-
-
-
-
-
 <dl class="project-brief"><div><dt><span class="en">Decision</span><span class="ko">핵심 판단</span></dt><dd><span class="en">AI output stays a candidate until verification and human review. Accepted memory is append-only and linked to the source.</span><span class="ko">AI 출력은 검증과 사람의 검토 전까지 후보로 둡니다. 채택된 기억은 원문 출처와 함께 append-only로 쌓습니다.</span></dd></div><div><dt><span class="en">Result</span><span class="ko">확인된 결과</span></dt><dd><span class="en">End-to-end operation via Docker Compose; 96 decision briefs, 269 verification records, and 2,316 passing tests in the documented snapshot.</span><span class="ko">Docker Compose로 관통 동작합니다. 기록 시점 기준 결정 브리프 96개, 검증 기록 269건, 통과 테스트 2,316건입니다.</span></dd></div><div><dt><span class="en">Limit</span><span class="ko">한계</span></dt><dd><span class="en">System evidence does not establish writing quality. Dogfooding was declared started on 2026-08-23; this is not a live multi-tenant service.</span><span class="ko">시스템 지표가 작품 품질을 증명하지는 않습니다. 2026-08-23 dogfood 착수 선언 단계이며, 실사용자를 받는 다중 테넌트 서비스가 아닙니다.</span></dd></div></dl><div class="case-links"><a class="repo" href="https://github.com/entangelk/ai_writte_system" rel="noopener" target="_blank">
         GitHub repo
        </a></div><details class="evidence-details"><summary><span class="en">7 decisions, ownership &amp; evidence</span><span class="ko">설계 판단 7개 · 직접 맡은 일 · 검증 기록</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><div class="case-links">
@@ -913,10 +903,6 @@
 </span>
 </div>
 <p class="tagline"><span class="en">A shared long-term memory layer for AI assistants, exposed through MCP.</span><span class="ko">MCP로 여러 AI 클라이언트가 공유하는 장기 메모리 레이어.</span></p>
-
-
-
-
 <dl class="project-brief"><div><dt><span class="en">Decision</span><span class="ko">핵심 판단</span></dt><dd><span class="en">Store compacted meaning, not just logs. MongoDB is authoritative; ChromaDB is a rebuildable retrieval cache.</span><span class="ko">로그 대신 압축된 의미를 저장합니다. MongoDB가 정본이고 ChromaDB는 재구축 가능한 검색 캐시입니다.</span></dd></div><div><dt><span class="en">Result</span><span class="ko">확인된 결과</span></dt><dd><span class="en">Clients can save and recall memory, and compact it into daily, weekly, monthly, and yearly digests.</span><span class="ko">클라이언트가 기억을 저장·검색하고 일·주·월·년 단위 digest로 압축하는 구조를 구현했습니다.</span></dd></div><div><dt><span class="en">Limit</span><span class="ko">한계</span></dt><dd><span class="en">Masking is off by default. The server cannot force clients to use memory, and cache reindexing remains an operational task.</span><span class="ko">가림 정책은 기본 비활성화입니다. 클라이언트의 기억 사용을 강제할 수 없으며, 캐시 재색인은 운영상 필요합니다.</span></dd></div></dl><div class="case-links"><a class="repo" href="https://github.com/entangelk/agent-memory-system-public" rel="noopener" target="_blank">
         GitHub repo
        </a></div><details class="evidence-details"><summary><span class="en">5 decisions, ownership &amp; evidence</span><span class="ko">설계 판단 5개 · 직접 맡은 일 · 검증 기록</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><div class="case-links">
@@ -1323,11 +1309,6 @@
 </span>
 </div>
 <p class="tagline"><span class="en">CI for assessment design: inspect the task specification, not the candidate.</span><span class="ko">응시자 대신 과제 명세와 평가 설계를 검사하는 CI.</span></p>
-
-
-
-
-
 <dl class="project-brief"><div><dt><span class="en">Decision</span><span class="ko">핵심 판단</span></dt><dd><span class="en">Keep automated checks provisional and human approval separate. Reject rules that police legitimate evaluator discretion.</span><span class="ko">자동 검사는 잠정 판정으로 두고 사람의 승인을 분리했습니다. 평가자의 정당한 재량을 단속하는 규칙은 제외했습니다.</span></dd></div><div><dt><span class="en">Result</span><span class="ko">확인된 결과</span></dt><dd><span class="en">A deterministic checker, separate review gate, and JSON CLI contract for agents.</span><span class="ko">결정론적 checker, 별도 검토 gate, 에이전트용 JSON CLI 계약을 구현했습니다.</span></dd></div><div><dt><span class="en">Limit</span><span class="ko">한계</span></dt><dd><span class="en">Offline runs establish reproducibility on valid inputs. Live LLM SDK integration and extraction quality remain unverified.</span><span class="ko">오프라인 실행은 유효 입력의 재현성만 입증합니다. live LLM SDK 연동은 보류이며 추출 품질은 검증하지 않았습니다.</span></dd></div></dl><div class="case-links"><a class="repo" href="https://github.com/entangelk/assessment_poc" rel="noopener" target="_blank">
         GitHub repo
        </a></div><details class="evidence-details"><summary><span class="en">6 decisions, ownership &amp; evidence</span><span class="ko">설계 판단 6개 · 직접 맡은 일 · 검증 기록</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><div class="case-links">
@@ -1867,10 +1848,6 @@
 </span>
 </div>
 <p class="tagline"><span class="en">Test whether a provider-neutral Role IR improves structured extraction over hard-coded prompts.</span><span class="ko">제공자 독립 Role IR이 하드코딩 프롬프트보다 구조화 추출에 유리한지 검증한 PoC.</span></p>
-
-
-
-
 <dl class="project-brief"><div><dt><span class="en">Decision</span><span class="ko">핵심 판단</span></dt><dd><span class="en">Give the baseline the same retry budget and separate operational success from strict output quality.</span><span class="ko">baseline에도 동일한 retry 예산을 주고, 실행 성공과 엄격한 출력 품질을 분리했습니다.</span></dd></div><div><dt><span class="en">Result</span><span class="ko">확인된 결과</span></dt><dd><span class="en">One IR lowers to multiple providers; schema and evidence checks run at runtime. Hard distractors removed the clear IR advantage.</span><span class="ko">하나의 IR을 여러 제공자 경로로 변환하고 schema·evidence를 검증합니다. 어려운 distractor 셋에서는 명확한 IR 우위가 사라졌습니다.</span></dd></div><div><dt><span class="en">Limit</span><span class="ko">한계</span></dt><dd><span class="en">Mixed results, not an IR win. Different prompt shapes mean this system comparison does not isolate the causal effect of lowering.</span><span class="ko">결론은 승리가 아닌 혼재입니다. prompt 형태가 달라 lowering만의 인과효과를 분리한 실험은 아닙니다.</span></dd></div></dl><div class="case-links"><a class="repo" href="https://github.com/entangelk/Harness_ir" rel="noopener" target="_blank">
         GitHub repo
        </a></div><details class="evidence-details"><summary><span class="en">4 decisions, ownership &amp; evidence</span><span class="ko">설계 판단 4개 · 직접 맡은 일 · 검증 기록</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><div class="case-links">
@@ -2225,10 +2202,8 @@
 </blockquote>
 </div>
 </div></div></details></div>
-
 </div>
 </section>
-
 <section id="ai">
 <div class="wrap"><div class="sec-head"><span id="principles"></span><div class="sec-tag"><span class="en">Working principles</span><span class="ko">일하는 방식</span></div><h2><span class="en">Direction, ownership, verification.</span><span class="ko">방향을 정하고, 결과를 검증합니다.</span></h2><p><span class="en">I own architecture and acceptance decisions. Agents implement within those boundaries; separate verification checks the result.</span><span class="ko">아키텍처와 채택 판단은 직접 맡습니다. 에이전트는 그 경계 안에서 구현하고, 별도의 검증으로 결과를 확인합니다.</span></p></div><details class="evidence-details"><summary><span class="en">Working principles &amp; public verification trails</span><span class="ko">운영 원칙과 공개 검증 기록</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><section>
 <div class="wrap">
@@ -2562,7 +2537,6 @@
         Logo Segmentation Experiment Workbench
        </a>
 </h3>
-
 <p><span class="en">An inspectable logo-segmentation workbench. Not a production-validated automatic extractor.</span><span class="ko">실패 지점을 확인할 수 있는 로고 분할 워크벤치입니다. 프로덕션 검증을 마친 자동 추출기는 아닙니다.</span></p><details class="evidence-details"><summary><span class="en">Experiment record</span><span class="ko">실험과 실패 분석</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><p>
 <span class="en">
         A
@@ -2621,8 +2595,6 @@
 </div>
 <div class="grid3">
 <div class="card">
-
-
 <div class="meta tag-kill">
 <span class="en">
          Project killed
@@ -2636,9 +2608,6 @@
          Q-PSA
         </a>
 </h3>
-
-
-
 <p><span class="en">Stopped in Phase 1: removing one selected layer raised PPL 3.65×, versus 1.05× with Layer Ablation.</span><span class="ko">Phase 1에서 종료했습니다. 선택한 레이어 하나 제거 시 PPL이 3.65배로 상승했고, Layer Ablation은 1.05배였습니다.</span></p><details class="evidence-details"><summary><span class="en">Experiment record</span><span class="ko">실험과 실패 분석</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><img alt="Pruning validation chart — Q-PSA perplexity explodes vs the Layer Ablation baseline as more layers are pruned" class="card-viz" loading="lazy" src="assets/q-psa-pruning.png"/><p class="viz-cap">
 <span class="en">
          Q-PSA (red) vs a simple baseline — perplexity explodes as more layers are pruned. Lower is better; the gap is why I killed it.
@@ -2726,8 +2695,6 @@
 </span>
 </p></div></details></div>
 <div class="card">
-
-
 <div class="meta">
 <span class="en">
          Architectural pivot
@@ -2741,9 +2708,6 @@
          Circle-WFC
         </a>
 </h3>
-
-
-
 <p><span class="en">Stopped treating WFC as a standalone pathfinder. Its use as a corridor proposal layer remains a research direction.</span><span class="ko">WFC를 단독 경로탐색기로 보는 것을 중단했습니다. 경로 후보 제안 레이어로의 전환은 아직 연구 방향입니다.</span></p><details class="evidence-details"><summary><span class="en">Experiment record</span><span class="ko">실험과 실패 분석</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><img alt="Geometry-guided WFC (ray variant) finding a 163-step path through a 100x100 maze" class="card-viz" loading="lazy" src="assets/circle-wfc-path.png"/><p class="viz-cap">
 <span class="en">
          The ray variant finds a full 163-step path where plain WFC stalls. It demonstrates recovery on this maze, not a general connectivity guarantee.
@@ -2791,8 +2755,6 @@
 </span>
 </p></div></details></div>
 <div class="card">
-
-
 <div class="meta tag-ok">
 <span class="en">
          Feasibility validated
@@ -2806,9 +2768,6 @@
          HW-WFC v2.9
         </a>
 </h3>
-
-
-
 <p><span class="en">Matched Exact DP on a synthetic benchmark, but demonstrated no practical speed advantage or production scheduling reliability.</span><span class="ko">가상 벤치마크에서 Exact DP 최적값과 일치했지만, 실용적 속도 우위나 프로덕션 스케줄링 신뢰성은 입증하지 못했습니다.</span></p><details class="evidence-details"><summary><span class="en">Experiment record</span><span class="ko">실험과 실패 분석</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><img alt="HW-WFC final schedule — attention block layers collapsed to optimal tile/layout states under SRAM limits, 0 backtracks" class="card-viz" loading="lazy" src="assets/hw-wfc-collapse.png"/><p class="viz-cap">
 <span class="en">
          Final attention-block schedule — on the synthetic 12KB-SRAM benchmark, WFC matches exact dynamic programming. Search correctness on this case is validated; production advantage is not.

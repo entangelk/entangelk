@@ -148,12 +148,8 @@
 <div class="wrap">
 <div class="sec-head">
 <div class="sec-tag">
-<span class="en">
-        ★ Current work
-       </span>
-<span class="ko">
-        ★ 현재 실무
-       </span>
+<span class="en">Current work</span>
+<span class="ko">현재 실무</span>
 </div>
 <h2>
 <span class="en">
@@ -193,8 +189,6 @@
 </span>
 </div>
 <p class="tagline"><span class="en">A legal-domain assistant that links answers to verifiable sources.</span><span class="ko">법률 질문에 답하고, 답변의 주장을 원문 근거로 검증하는 어시스턴트.</span></p>
-
-
 <dl class="project-brief"><div><dt><span class="en">Decision</span><span class="ko">핵심 판단</span></dt><dd><span class="en">Separate intake, retrieval, and verification. Treat the vector database as a cache and verify claims against immutable source snapshots.</span><span class="ko">요청 정리·검색·검증을 분리했습니다. 벡터 DB는 캐시로 두고, 불변 원문 스냅샷으로 주장을 검증합니다.</span></dd></div><div><dt><span class="en">Status</span><span class="ko">현재 결과</span></dt><dd><span class="en">The pipeline runs end to end on Korean legislation. Verification Core is now a separate internal service with a versioned HTTP API.</span><span class="ko">한국 법령 코퍼스에서 전체 파이프라인이 동작합니다. 검증 Core는 버전이 붙은 HTTP API를 가진 독립 사내 서비스로 분리했습니다.</span></dd></div><div><dt><span class="en">Boundary</span><span class="ko">운영 경계</span></dt><dd><span class="en">Unresolved requests or exhausted grounding budgets go to human review; unverified text is withheld.</span><span class="ko">요청을 확정할 수 없거나 근거 검증 예산을 소진하면 사람의 검토로 보류하고, 미검증 텍스트는 내보내지 않습니다.</span></dd></div></dl><details class="evidence-details"><summary><span class="en">7 design decisions &amp; verification</span><span class="ko">설계 판단 7개와 검증 근거</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><p class="private-note">
 <span class="en">
         Company project, source not public (internal Git only). The retrieval-to-gate pipeline runs end-to-end on a real Korean statute corpus. The extraction milestone is closed: the verification core now lives as its own internal repository with a versioned HTTP contract, and the next phase starts as a separate consumer project. Described here at the architecture / decision level only.
@@ -603,8 +597,6 @@
 </span>
 </div>
 <p class="tagline"><span class="en">Turn an approved creative brief into a reproducible, multi-segment video generation plan.</span><span class="ko">승인된 제작 브리프를 재현 가능한 다중 세그먼트 영상 생성 계획으로 바꾸는 시스템.</span></p>
-
-
 <dl class="project-brief"><div><dt><span class="en">Decision</span><span class="ko">핵심 판단</span></dt><dd><span class="en">Compile only the user-approved brief. Fix the workflow graph and snapshot each execution for reproducibility.</span><span class="ko">사용자가 승인한 브리프만 실행 계획으로 변환합니다. 워크플로우 그래프를 고정하고 실행 스냅샷을 남깁니다.</span></dd></div><div><dt><span class="en">Status</span><span class="ko">현재 결과</span></dt><dd><span class="en">Brief → approval → planning → segment generation runs end to end on a local generation host.</span><span class="ko">브리프 → 승인 → 계획 → 세그먼트 생성이 로컬 생성 호스트에서 관통 동작합니다.</span></dd></div><div><dt><span class="en">Limit</span><span class="ko">남은 한계</span></dt><dd><span class="en">Long-form quality is unresolved. Music-video, ad, and drama trials failed final-use criteria; continuity and voice consistency remain open.</span><span class="ko">장편 품질은 미해결입니다. 뮤직비디오·광고·드라마 실험 모두 최종 사용 기준을 통과하지 못했고, 연속성과 목소리 일관성이 남은 과제입니다.</span></dd></div></dl><details class="evidence-details"><summary><span class="en">6 design decisions &amp; verification</span><span class="ko">설계 판단 6개와 검증 근거</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><p class="private-note">
 <span class="en">
         Active company project, source not public. The brief → approval → plan → segment generation path runs end-to-end against a local generation host; long-form quality is still an open track, and this page says so where it failed. Described at the architecture / decision level only.
@@ -1011,9 +1003,6 @@
         </span>
 </p>
 </div>
-
-
-
 <details class="evidence-details"><summary><span class="en">Implementation &amp; trade-offs</span><span class="ko">구현 방식과 선택의 이유</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><div class="row">
 <div class="k">
         Decision
@@ -1100,9 +1089,6 @@
         </span>
 </p>
 </div>
-
-
-
 <details class="evidence-details"><summary><span class="en">Implementation &amp; trade-offs</span><span class="ko">구현 방식과 선택의 이유</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><div class="row">
 <div class="k">
         Decision
@@ -1167,10 +1153,6 @@
         의 서비스 이미지 에셋을 재생성·검수·마이그레이션한 재개 가능한 사내 파이프라인.
        </span>
 </p>
-
-
-
-
 <details class="evidence-details"><summary><span class="en">Implementation &amp; trade-offs</span><span class="ko">구현 방식과 선택의 이유</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><div class="row">
 <div class="k">
         Pipeline
