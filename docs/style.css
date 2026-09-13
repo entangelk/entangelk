@@ -954,3 +954,18 @@ html[lang="ko"] .hero-description p { word-break:keep-all; }
   .home .project-image { padding: 0; background: transparent; }
   .home .project-caption { padding-top: 20px; }
 }
+
+/* Motion on screen, a still on paper: a GIF prints whichever frame is current. */
+.print-only { display: none !important; }
+@media print {
+  .print-only { display: block !important; }
+  .screen-only { display: none !important; }
+}
+
+/* Case figures outside the grid keep 720px: the lead GIF shows at its recorded
+   width (no upscaling blur), and a standalone evidence still at 720px fits the
+   evidence cap (480px) exactly for a 3:2 image — no letterboxing. */
+.lead-viz { margin: 26px 0 8px; max-width: 720px; }
+.solo-viz { margin: 20px 0 6px; max-width: 720px; }
+.lead-viz .card-viz,
+.solo-viz .card-viz { display: block; width: 100%; height: auto; }

@@ -70,3 +70,34 @@ function revealLinkedEvidence() {
 }
 window.addEventListener('hashchange', revealLinkedEvidence);
 revealLinkedEvidence();
+
+// Print and PDF carry the whole record. A closed <details> is not rendered when
+// printing, so the print stylesheet alone cannot reveal the evidence: open it for
+// the print pass, wake lazy images, and restore the reader's view afterwards.
+var openedForPrint = [];
+window.addEventListener('beforeprint', function () {
+  document.querySelectorAll('details.evidence-details').forEach(function (details) {
+    if (!details.open) {
+      details.open = true;
+      openedForPrint.push(details);
+    }
+  });
+  document.querySelectorAll('img[loading="lazy"]').forEach(function (img) { img.loading = 'eager'; });
+});
+window.addEventListener('afterprint', function () {
+  openedForPrint.forEach(function (details) { details.open = false; });
+  openedForPrint = [];
+});
+
+// Printing cannot wait for the network, and a lazy image that is folded away or
+// hidden on screen is never fetched. Once the page has settled, fetch the images
+// a print pass will need so a later PDF export is complete.
+function warmPrintImages() {
+  setTimeout(function () {
+    document.querySelectorAll('.evidence-details img[loading="lazy"], img.print-only[loading="lazy"]').forEach(function (img) {
+      img.loading = 'eager';
+    });
+  }, 1500);
+}
+if (document.readyState === 'complete') warmPrintImages();
+else window.addEventListener('load', warmPrintImages);

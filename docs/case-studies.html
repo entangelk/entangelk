@@ -135,7 +135,7 @@
 </span>
 </div>
 <p class="tagline"><span class="en">A writing workspace that keeps long manuscripts and their memory consistent.</span><span class="ko">장편 원고와 설정의 일관성을 유지하는 글쓰기 워크스페이스.</span></p>
-<dl class="project-brief"><div><dt><span class="en">Decision</span><span class="ko">핵심 판단</span></dt><dd><span class="en">AI output stays a candidate until verification and human review. Accepted memory is append-only and linked to the source.</span><span class="ko">AI 출력은 검증과 사람의 검토 전까지 후보로 둡니다. 채택된 기억은 원문 출처와 함께 append-only로 쌓습니다.</span></dd></div><div><dt><span class="en">Result</span><span class="ko">확인된 결과</span></dt><dd><span class="en">End-to-end operation via Docker Compose; 118 decision briefs, 315 verification records, and 3,075 passing tests in the documented snapshot.</span><span class="ko">Docker Compose로 관통 동작합니다. 기록 시점 기준 결정 브리프 118개, 검증 기록 315건, 통과 테스트 3,075건입니다.</span></dd></div><div><dt><span class="en">Limit</span><span class="ko">한계</span></dt><dd><span class="en">System evidence does not establish writing quality. Dogfooding was declared started on 2026-08-23; this is not a live multi-tenant service.</span><span class="ko">시스템 지표가 작품 품질을 증명하지는 않습니다. 2026-08-23 dogfood 착수 선언 단계이며, 실사용자를 받는 다중 테넌트 서비스가 아닙니다.</span></dd></div></dl><div class="case-links"><a class="repo" href="https://github.com/entangelk/ai_writte_system" rel="noopener" target="_blank">
+<dl class="project-brief"><div><dt><span class="en">Decision</span><span class="ko">핵심 판단</span></dt><dd><span class="en">AI output stays a candidate until verification and human review. Accepted memory is append-only and linked to the source.</span><span class="ko">AI 출력은 검증과 사람의 검토 전까지 후보로 둡니다. 채택된 기억은 원문 출처와 함께 append-only로 쌓습니다.</span></dd></div><div><dt><span class="en">Result</span><span class="ko">확인된 결과</span></dt><dd><span class="en">End-to-end operation via Docker Compose; 118 decision briefs, 315 verification records, and 3,075 passing tests in the documented snapshot.</span><span class="ko">Docker Compose로 관통 동작합니다. 기록 시점 기준 결정 브리프 118개, 검증 기록 315건, 통과 테스트 3,075건입니다.</span></dd></div><div><dt><span class="en">Limit</span><span class="ko">한계</span></dt><dd><span class="en">System evidence does not establish writing quality. Dogfooding was declared started on 2026-08-23; this is not a live multi-tenant service.</span><span class="ko">시스템 지표가 작품 품질을 증명하지는 않습니다. 2026-08-23 dogfood 착수 선언 단계이며, 실사용자를 받는 다중 테넌트 서비스가 아닙니다.</span></dd></div></dl><div class="lead-viz"><img alt="AI Writer System — a continuation being generated in the background, recorded live" class="card-viz" height="450" src="assets/aiw-generation.gif" width="720"/><p class="viz-cap"><span class="en">Recorded live: a long request becomes <code>202 + job</code> and a worker runs it outside the request timeout. The suggestion lands in a side pad; the manuscript is untouched until a person adopts it.</span><span class="ko">실제 녹화 — 긴 요청은 <code>202 + 잡</code>이 되어 워커가 요청 타임아웃 밖에서 돌립니다. 제안은 옆 패드에 도착하고, 사람이 채택하기 전까지 원고는 그대로입니다.</span></p></div><div class="case-links"><a class="repo" href="https://github.com/entangelk/ai_writte_system" rel="noopener" target="_blank">
         GitHub repo
        </a></div><details class="evidence-details"><summary><span class="en">7 decisions, ownership &amp; evidence</span><span class="ko">설계 판단 7개 · 직접 맡은 일 · 검증 기록</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><div class="case-links">
 <a class="repo" href="https://github.com/entangelk/ai_writte_system" rel="noopener" target="_blank">
@@ -245,23 +245,8 @@
 </div>
 </div><div class="grid2">
 <div>
-<img alt="AI Writer System — a continuation being generated in the background" class="card-viz" loading="lazy" src="assets/aiw-generation.gif"/>
-<p class="viz-cap">
-<span class="en">
-          Generation, recorded live: a long request becomes
-          <code>
-           202 + job
-          </code>
-          and a worker runs it outside the request timeout — the candidate lands in the pad, not in the manuscript.
-         </span>
-<span class="ko">
-          이어쓰기 생성 실제 녹화 — 긴 요청은
-          <code>
-           202 + 잡
-          </code>
-          이 되어 워커가 요청 타임아웃 밖에서 돌립니다. 후보는 원고가 아니라 패드에 도착합니다.
-         </span>
-</p>
+<img alt="AI Writer System — memory candidates grouped by identity in the review inbox" class="card-viz" loading="lazy" src="assets/aiw-review-groups.png"/>
+<p class="viz-cap"><span class="en">The review inbox, grouped: nine observations of the same character arrive as one group with the judge's stated reason, so a person can approve or reject them together or one by one.</span><span class="ko">묶인 검토함 — 같은 인물에 대한 관찰 9건이 판정 근거와 함께 한 그룹으로 도착하고, 사람이 그룹째로 또는 하나씩 승인·거절합니다.</span></p>
 </div>
 <div>
 <img alt="AI Writer System — approving a memory candidate after checking its evidence" class="card-viz" loading="lazy" src="assets/aiw-review.gif"/>
@@ -274,7 +259,7 @@
          </span>
 </p>
 </div>
-</div><p class="bridge">
+</div><div class="solo-viz"><img alt="AI Writer System — LLM call observability dashboard on the demo project" class="card-viz" height="800" loading="lazy" src="assets/aiw-observability.png" width="1200"/><p class="viz-cap"><span class="en">The observability view on the demo project: calls, success rate and tokens per call site, with failed and refused calls counted in the same chart rather than filtered out.</span><span class="ko">데모 프로젝트의 관측 화면 — 호출부별 호출 수·성공률·토큰을 보여 주고, 실패·거부된 호출도 걸러내지 않고 같은 차트에 셉니다.</span></p></div><p class="bridge">
 <span class="en">
 <b>
          Every LLM call site is instrumented, and failed calls are counted too.
