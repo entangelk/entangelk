@@ -135,7 +135,7 @@
 </span>
 </div>
 <p class="tagline"><span class="en">A writing workspace that keeps long manuscripts and their memory consistent.</span><span class="ko">장편 원고와 설정의 일관성을 유지하는 글쓰기 워크스페이스.</span></p>
-<dl class="project-brief"><div><dt><span class="en">Decision</span><span class="ko">핵심 판단</span></dt><dd><span class="en">AI output stays a candidate until verification and human review. Accepted memory is append-only and linked to the source.</span><span class="ko">AI 출력은 검증과 사람의 검토 전까지 후보로 둡니다. 채택된 기억은 원문 출처와 함께 append-only로 쌓습니다.</span></dd></div><div><dt><span class="en">Result</span><span class="ko">확인된 결과</span></dt><dd><span class="en">End-to-end operation via Docker Compose; 96 decision briefs, 269 verification records, and 2,316 passing tests in the documented snapshot.</span><span class="ko">Docker Compose로 관통 동작합니다. 기록 시점 기준 결정 브리프 96개, 검증 기록 269건, 통과 테스트 2,316건입니다.</span></dd></div><div><dt><span class="en">Limit</span><span class="ko">한계</span></dt><dd><span class="en">System evidence does not establish writing quality. Dogfooding was declared started on 2026-08-23; this is not a live multi-tenant service.</span><span class="ko">시스템 지표가 작품 품질을 증명하지는 않습니다. 2026-08-23 dogfood 착수 선언 단계이며, 실사용자를 받는 다중 테넌트 서비스가 아닙니다.</span></dd></div></dl><div class="case-links"><a class="repo" href="https://github.com/entangelk/ai_writte_system" rel="noopener" target="_blank">
+<dl class="project-brief"><div><dt><span class="en">Decision</span><span class="ko">핵심 판단</span></dt><dd><span class="en">AI output stays a candidate until verification and human review. Accepted memory is append-only and linked to the source.</span><span class="ko">AI 출력은 검증과 사람의 검토 전까지 후보로 둡니다. 채택된 기억은 원문 출처와 함께 append-only로 쌓습니다.</span></dd></div><div><dt><span class="en">Result</span><span class="ko">확인된 결과</span></dt><dd><span class="en">End-to-end operation via Docker Compose; 118 decision briefs, 315 verification records, and 3,075 passing tests in the documented snapshot.</span><span class="ko">Docker Compose로 관통 동작합니다. 기록 시점 기준 결정 브리프 118개, 검증 기록 315건, 통과 테스트 3,075건입니다.</span></dd></div><div><dt><span class="en">Limit</span><span class="ko">한계</span></dt><dd><span class="en">System evidence does not establish writing quality. Dogfooding was declared started on 2026-08-23; this is not a live multi-tenant service.</span><span class="ko">시스템 지표가 작품 품질을 증명하지는 않습니다. 2026-08-23 dogfood 착수 선언 단계이며, 실사용자를 받는 다중 테넌트 서비스가 아닙니다.</span></dd></div></dl><div class="case-links"><a class="repo" href="https://github.com/entangelk/ai_writte_system" rel="noopener" target="_blank">
         GitHub repo
        </a></div><details class="evidence-details"><summary><span class="en">7 decisions, ownership &amp; evidence</span><span class="ko">설계 판단 7개 · 직접 맡은 일 · 검증 기록</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><div class="case-links">
 <a class="repo" href="https://github.com/entangelk/ai_writte_system" rel="noopener" target="_blank">
@@ -175,14 +175,14 @@
           <code>
            docker compose up
           </code>
-          , with the canonical record, the Gate, and human review in the path. 96 decision briefs · 269 verification records · 2,316 passing tests.
+          , with the canonical record, the Gate, and human review in the path. 118 decision briefs · 315 verification records · 3,075 passing tests.
          </span>
 <span class="ko">
           정본·Gate·사람 검토가 경로에 들어간 글쓰기 운영체제가
           <code>
            docker compose up
           </code>
-          하나로 관통 동작합니다. 결정 브리프 96 · 검증 기록 269 · 통과 테스트 2,316.
+          하나로 관통 동작합니다. 결정 브리프 118 · 검증 기록 315 · 통과 테스트 3,075.
          </span>
 </div>
 </div>
@@ -243,18 +243,49 @@
          </span>
 </p>
 </div>
+</div><div class="grid2">
+<div>
+<img alt="AI Writer System — a continuation being generated in the background" class="card-viz" loading="lazy" src="assets/aiw-generation.gif"/>
+<p class="viz-cap">
+<span class="en">
+          Generation, recorded live: a long request becomes
+          <code>
+           202 + job
+          </code>
+          and a worker runs it outside the request timeout — the candidate lands in the pad, not in the manuscript.
+         </span>
+<span class="ko">
+          이어쓰기 생성 실제 녹화 — 긴 요청은
+          <code>
+           202 + 잡
+          </code>
+          이 되어 워커가 요청 타임아웃 밖에서 돌립니다. 후보는 원고가 아니라 패드에 도착합니다.
+         </span>
+</p>
+</div>
+<div>
+<img alt="AI Writer System — approving a memory candidate after checking its evidence" class="card-viz" loading="lazy" src="assets/aiw-review.gif"/>
+<p class="viz-cap">
+<span class="en">
+          Review, recorded live: open the candidate, read the source quote it is anchored to, then approve — the human step that stands between an AI claim and memory.
+         </span>
+<span class="ko">
+          기억 후보 검토 실제 녹화 — 후보를 열어 그것이 걸려 있는 원문 근거를 확인하고 승인합니다. AI의 주장과 기억 사이에 서 있는 사람의 단계입니다.
+         </span>
+</p>
+</div>
 </div><p class="bridge">
 <span class="en">
 <b>
          Every LLM call site is instrumented, and failed calls are counted too.
         </b>
-        All eight call sites write a standard audit record, aggregated into a KPI view (per project, plus a global admin view). Counting only the successful calls would pin the success rate at 100% forever — an observability dashboard that can never deliver bad news is decoration, not instrumentation.
+        All nine call sites write a standard audit record, aggregated into a KPI view (per project, plus a global admin view). Counting only the successful calls would pin the success rate at 100% forever — an observability dashboard that can never deliver bad news is decoration, not instrumentation.
        </span>
 <span class="ko">
 <b>
          LLM 호출부 전부가 계측되고, 실패한 호출도 셉니다.
         </b>
-        8개 호출부 모두가 표준 감사 레코드를 남기고, 그것을 집계한 KPI를 화면으로 봅니다(프로젝트별 + 전역 관리자). 성공한 호출만 세면 성공률은 영구히 100%가 됩니다 — 나쁜 소식을 절대 전할 수 없는 관측 대시보드는 계측이 아니라 장식입니다.
+        9개 호출부 모두가 표준 감사 레코드를 남기고, 그것을 집계한 KPI를 화면으로 봅니다(프로젝트별 + 전역 관리자). 성공한 호출만 세면 성공률은 영구히 100%가 됩니다 — 나쁜 소식을 절대 전할 수 없는 관측 대시보드는 계측이 아니라 장식입니다.
        </span>
 </p><div class="owned">
 <p class="owned-h">
@@ -274,7 +305,7 @@
           The canonical MongoDB record, the versioned system contract, and the candidate → Gate → human review → append-only memory pipeline — designed and specified by me before any code existed. The contract is versioned (
           <a href="https://github.com/entangelk/ai_writte_system/blob/main/docs/system-contract-sot.md" rel="noopener" target="_blank">
 <code>
-            v1.8.14
+            v1.8.68
            </code>
 </a>
           ) with every revision and its reason retained.
@@ -286,7 +317,7 @@
           MongoDB 정본 레코드, 버전 관리되는 시스템 계약, candidate → Gate → 사람 검토 → append-only 기억 파이프라인 — 코드가 나오기 전에 제가 설계하고 명세했습니다. 계약은 버전 관리되며(
           <a href="https://github.com/entangelk/ai_writte_system/blob/main/docs/system-contract-sot.md" rel="noopener" target="_blank">
 <code>
-            v1.8.14
+            v1.8.68
            </code>
 </a>
           ) 모든 개정과 그 이유를 남깁니다.
@@ -621,7 +652,7 @@
           until the owner decides; guessing is not allowed.
           <a href="https://github.com/entangelk/ai_writte_system/tree/main/docs/plans" rel="noopener" target="_blank">
 <b>
-            96 decision briefs
+            118 decision briefs
            </b>
 </a>
           exist so far — the trail is public. The cost is real — work halts — and that is the point: a silently chosen default is a decision nobody remembers making, and those are the ones that cannot be undone later.
@@ -638,7 +669,7 @@
           . 추측 구현은 금지입니다. 현재까지
           <a href="https://github.com/entangelk/ai_writte_system/tree/main/docs/plans" rel="noopener" target="_blank">
 <b>
-            결정 브리프 96개
+            결정 브리프 118개
            </b>
 </a>
           — 기록은 공개돼 있습니다. 작업이 멈추는 비용은 실제로 발생하고, 그게 요점입니다 — 조용히 골라진 기본값은 아무도 내린 기억이 없는 결정이고, 나중에 되돌릴 수 없는 것은 바로 그런 것들입니다.
@@ -678,18 +709,18 @@
           — reverting the fix to confirm the regression guard fails again. Guards must fail in both directions: reintroducing the original bug, and over-correcting into a valid case.
           <a href="https://github.com/entangelk/ai_writte_system/tree/main/docs/verifications" rel="noopener" target="_blank">
 <b>
-            269 independent verification records over 61 dated days
+            315 independent verification records over 73 dated days
            </b>
 </a>
           , sitting on a suite of
           <a href="https://github.com/entangelk/ai_writte_system/tree/main/tests" rel="noopener" target="_blank">
 <b>
-            2,316 passing tests (2,654 subtests)
+            3,075 passing tests (4,239 subtests)
            </b>
 </a>
           . The verdict split is
           <b>
-           185 pass · 80 conditional · 4 outright fail
+           216 pass · 94 conditional · 5 outright fail
           </b>
           —
           <b>
@@ -729,18 +760,18 @@
           으로 반증을 시도합니다 — 고친 것을 되돌려 회귀 가드가 다시 실패하는지 확인합니다. 가드는 양방향이어야 합니다: 원래 결함을 재현해도 실패하고, 과잉 교정으로 정상 경로를 깨도 실패해야 합니다.
           <a href="https://github.com/entangelk/ai_writte_system/tree/main/docs/verifications" rel="noopener" target="_blank">
 <b>
-            61일치로 쌓인 독립 검증 기록 269건
+            73일치로 쌓인 독립 검증 기록 315건
            </b>
 </a>
           , 그 아래
           <a href="https://github.com/entangelk/ai_writte_system/tree/main/tests" rel="noopener" target="_blank">
 <b>
-            통과 테스트 2,316건(서브테스트 2,654)
+            통과 테스트 3,075건(서브테스트 4,239)
            </b>
 </a>
           . 판정 분포는
           <b>
-           합격 185 · 조건부 합격 80 · 불합격 4
+           합격 216 · 조건부 합격 94 · 불합격 5
           </b>
           로,
           <b>

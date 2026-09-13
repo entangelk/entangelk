@@ -69,7 +69,7 @@ https://github.com/user-attachments/assets/9470b845-b59b-41fa-afc7-782c456412b8
 - 📖 **[AI Writer System](https://github.com/entangelk/ai_writte_system)** — *대표 개인 프로젝트*  
   장편 창작을 위한 **'글쓰기 운영체제'**입니다. 긴 원고에서 무너지는 것은 문장력이 아니라 **일관성**이고, 범용 챗봇은 대화창을 벗어나면 아무것도 기억하지 못하므로 이 문제를 구조적으로 풀 수 없습니다.  
   `Architecture:` MongoDB 정본(SoT) + 하이브리드 검색(ChromaDB/BGE-m3 벡터 · Elasticsearch nori 어휘) + Writing Gate. **AI 출력은 도착 즉시 정본이 되지 않습니다** — 전부 `candidate`로 남고, Gate 판정과 사람의 검토를 거쳐야 append-only 기억이 되며, 모든 주장에는 원문 위치로 되짚는 `source_ref`가 붙습니다. 임베딩과 리랭킹은 **provider-neutral seam** 뒤에 있고, 교체하기 **전에** 평가 하네스(`recall@k` · `MRR` · `nDCG@k`)를 먼저 썼습니다 — 정답은 일부러 채우지 않았습니다.  
-  `Process:` 구현보다 **먼저** 쓴 결정 브리프 96개 · 61일치로 쌓인 독립 검증 기록 269건 · 통과 테스트 2,316건(서브테스트 2,654) · 뮤테이션으로 확인하는 양방향 회귀 가드 · 버전 관리되는 정본 계약(`v1.8.14`, 변경이력 전량 보존). 판정 분포는 **합격 185 · 조건부 합격 80 · 불합격 4** — **10건 중 3건은 깨끗하게 돌아오지 않습니다**. 검증이 형식적 통과가 아니라는 증거입니다.  
+  `Process:` 구현보다 **먼저** 쓴 결정 브리프 118개 · 73일치로 쌓인 독립 검증 기록 315건 · 통과 테스트 3,075건(서브테스트 4,239) · 뮤테이션으로 확인하는 양방향 회귀 가드 · 버전 관리되는 정본 계약(`v1.8.68`, 변경이력 전량 보존). 판정 분포는 **합격 216 · 조건부 합격 94 · 불합격 5** — **10건 중 3건은 깨끗하게 돌아오지 않습니다**. 검증이 형식적 통과가 아니라는 증거입니다.  
   `Stack:` FastAPI · React/TS · 로컬 Gemma 4 12B endpoint — 전체 스택이 `docker compose up` 하나로 뜹니다.
 
 - 🧠 **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public)**  
