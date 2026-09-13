@@ -68,6 +68,11 @@ I care most about building practical solutions that reduce friction, work under 
 
 * **Impact:** Corporate security policies restricted multiple simultaneous VPN connections, causing workflow bottlenecks. I developed and deployed a lightweight Python-based port-connection script that enabled team members to maintain multiple secure connections efficiently, drastically improving team productivity with minimal setup.
 
+### 📊 Seasonal Staffing Analysis for a Customer Center
+*Data analysis to set the right number of part-time staff for the customer center's special (peak) season.*
+
+* **Impact:** Right-sized the seasonal part-time headcount through data analysis, cutting labor cost by **₩6 million** for the summer 2026 season.
+
 ---
 
 ## 🔥 Personal Projects, Experiments & Post-Mortems
