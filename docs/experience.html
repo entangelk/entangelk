@@ -1074,14 +1074,14 @@
        </div>
 <p class="v">
 <span class="en">
-         Right-sizing the seasonal part-time headcount cut labor cost by
+         Sizing the seasonal part-time pool from call data instead of habit reduced the headcount and cut labor cost by
          <b>
           ₩6 million
          </b>
          for the summer 2026 season.
         </span>
 <span class="ko">
-         아르바이트 인원을 적정 규모로 맞춰 2026년 여름 시즌 인건비를
+         관행이 아니라 상담 데이터로 시즌 아르바이트 규모를 산정해 채용 인원을 줄였고, 2026년 여름 시즌 인건비를
          <b>
           600만 원
          </b>
@@ -1089,7 +1089,66 @@
         </span>
 </p>
 </div>
-</div>
+<details class="evidence-details"><summary><span class="en">Method &amp; validation</span><span class="ko">분석 방법과 검증</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><div class="row">
+<div class="k">
+        Data
+       </div>
+<p class="v">
+<span class="en">
+         About
+         <b>
+          2.5 years of daily call-center logs
+         </b>
+         — total/inbound/outbound calls, answer rate, abandoned calls, staff on shift, and per-agent volume — split into the three peak seasons (Lunar New Year, summer vacation, Chuseok) and compared year over year.
+        </span>
+<span class="ko">
+<b>
+          약 2년 반 치 일별 상담 로그
+         </b>
+         — 총·인입·발신 호수, 인입 상담률, 포기호, 근무 인원, 상담사별 처리량 — 를 설날·여름휴가·추석 세 시즌으로 나눠 연도별로 비교했습니다.
+        </span>
+</p>
+</div><div class="row">
+<div class="k">
+        Decision
+       </div>
+<p class="v">
+<span class="en">
+         Averages hide the days that actually break service, so I sized to the
+         <b>
+          90th percentile (Q90) of high-load days
+         </b>
+         rather than the mean. A linear trend on monthly peaks pointed downward but explained almost none of the variance (R² ≈ 0.06), so it stayed a reference, not the plan. Required part-timers = (peak volume − regular staff capacity) ÷ realistic per-person daily throughput, with a +1 conservative option.
+        </span>
+<span class="ko">
+         서비스가 실제로 무너지는 날은 평균에 가려지므로, 평균이 아니라
+         <b>
+          고부하일의 90분위수(Q90)
+         </b>
+         를 피크 하한선으로 삼았습니다. 월별 최대 호수에 선형 추세를 적합하면 하락세였지만 설명력이 거의 없어(R² ≈ 0.06) 계획이 아닌 참고치로만 뒀습니다. 필요 아르바이트 = (피크 호수 − 정규직 처리량) ÷ 실무 기준 1인당 일일 처리량으로 산정하고, +1명 보수안을 함께 제시했습니다.
+        </span>
+</p>
+</div><div class="row">
+<div class="k">
+        Validation
+       </div>
+<p class="v">
+<span class="en">
+         The per-person daily threshold was back-tested against days whose answer rate fell below the 90% target: about
+         <b>
+          91% accuracy, catching 96% of understaffed days
+         </b>
+         . Correlation analysis showed the answer rate moved with call surges rather than with headcount alone, and a workload-concentration check exposed dependence on a few senior agents — so the plan also fixed hiring two weeks before each season and a live trigger to add staff when load per person crosses the threshold.
+        </span>
+<span class="ko">
+         1인당 일일 처리 임계값을 인입 상담률 90% 미달일에 대해 역검증해
+         <b>
+          정확도 약 91%, 인원 부족일 96% 탐지
+         </b>
+         를 확인했습니다. 상관분석으로 상담률이 인원수 자체보다 호수 급증과 강하게 연동됨을, 업무 집중도 분석으로 소수 숙련 인력 의존도가 높음을 확인해 — 시즌 2주 전 인력 확보와 1인당 처리량이 임계값을 넘으면 즉시 증원하는 운영 기준까지 함께 정했습니다.
+        </span>
+</p>
+</div></div></details></div>
 <div class="xp" id="nlp">
 <h3>
 <span class="en">

@@ -71,7 +71,9 @@ I care most about building practical solutions that reduce friction, work under 
 ### 📊 Seasonal Staffing Analysis for a Customer Center
 *Data analysis to set the right number of part-time staff for the customer center's special (peak) season.*
 
-* **Impact:** Right-sized the seasonal part-time headcount through data analysis, cutting labor cost by **₩6 million** for the summer 2026 season.
+* **Peak-Based Sizing, Not Averages:** Analyzed ~2.5 years of daily call-center logs (call volume, answer rate, abandoned calls, staffing, per-agent throughput) split by peak season. Sized to the **90th percentile of high-load days**; a linear trend on monthly peaks explained almost none of the variance (R² ≈ 0.06), so it stayed a reference. Required part-timers = (peak volume − regular staff capacity) ÷ realistic per-person daily throughput, with a +1 conservative option.
+* **Validated Before Use:** Back-tested the per-person threshold against days below the 90% answer-rate target (~91% accuracy, 96% of understaffed days caught). Correlation and workload-concentration analysis added operating rules: hire two weeks before the season and add staff when per-person load crosses the threshold.
+* **Impact:** Sizing from data instead of habit reduced the seasonal part-time headcount, cutting labor cost by **₩6 million** for the summer 2026 season.
 
 ---
 
