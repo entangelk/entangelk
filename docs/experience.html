@@ -161,6 +161,381 @@
 </h2>
 <p><span class="en">Two company projects; source code is private. Architecture and verification are described below.</span><span class="ko">진행 중인 회사 프로젝트로 소스는 비공개입니다. 설계와 검증 과정은 아래에서 확인할 수 있습니다.</span></p>
 </div>
+<div class="case lead" id="video">
+<div class="case-top">
+<h3>
+<span class="en">
+         Long-Form AI Video Production System
+        </span>
+<span class="ko">
+         장편 AI 영상 제작 시스템
+        </span>
+</h3>
+<span class="pill current">
+<span class="en">
+         Current work
+        </span>
+<span class="ko">
+         현재 실무
+        </span>
+</span>
+<span class="pill private">
+<span class="en">
+         Company · not public
+        </span>
+<span class="ko">
+         회사 · 비공개
+        </span>
+</span>
+</div>
+<p class="tagline"><span class="en">Turn an approved creative brief into a reproducible, multi-segment video generation plan.</span><span class="ko">승인된 제작 브리프를 재현 가능한 다중 세그먼트 영상 생성 계획으로 바꾸는 시스템.</span></p>
+<dl class="project-brief"><div><dt><span class="en">Decision</span><span class="ko">핵심 판단</span></dt><dd><span class="en">Compile only the user-approved brief. Fix the workflow graph and snapshot each execution for reproducibility.</span><span class="ko">사용자가 승인한 브리프만 실행 계획으로 변환합니다. 워크플로우 그래프를 고정하고 실행 스냅샷을 남깁니다.</span></dd></div><div><dt><span class="en">Status</span><span class="ko">현재 결과</span></dt><dd><span class="en">Brief → approval → planning → segment generation runs end to end on a local generation host.</span><span class="ko">브리프 → 승인 → 계획 → 세그먼트 생성이 로컬 생성 호스트에서 관통 동작합니다.</span></dd></div><div><dt><span class="en">Limit</span><span class="ko">남은 한계</span></dt><dd><span class="en">Long-form quality is unresolved. Music-video, ad, and drama trials failed final-use criteria; continuity and voice consistency remain open.</span><span class="ko">장편 품질은 미해결입니다. 뮤직비디오·광고·드라마 실험 모두 최종 사용 기준을 통과하지 못했고, 연속성과 목소리 일관성이 남은 과제입니다.</span></dd></div></dl><details class="evidence-details"><summary><span class="en">6 design decisions &amp; verification</span><span class="ko">설계 판단 6개와 검증 근거</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><p class="private-note">
+<span class="en">
+        Active company project, source not public. The brief → approval → plan → segment generation path runs end-to-end against a local generation host; long-form quality is still an open track, and this page says so where it failed. Described at the architecture / decision level only.
+       </span>
+<span class="ko">
+        진행 중인 회사 프로젝트로 소스는 비공개입니다. 브리프 → 승인 → 계획 → 세그먼트 생성 경로는 로컬 생성 호스트에서 end-to-end로 동작하며, 장편 품질은 아직 열린 과제입니다. 실패한 지점은 아래에 그대로 적었습니다. 아키텍처·의사결정 수준으로만 서술합니다.
+       </span>
+</p><div class="decisions">
+<div class="decision">
+<p class="dh">
+<span class="num">
+          01
+         </span>
+<span class="en">
+          What executes is an approved spec, not a conversation
+         </span>
+<span class="ko">
+          실행되는 것은 대화가 아니라 승인된 명세다
+         </span>
+</p>
+<p class="why">
+<span class="en">
+          The model drafts a creative brief that keeps three things visibly separate: what the user
+          <b>
+           stated
+          </b>
+          , what the model
+          <b>
+           assumed
+          </b>
+          , and what it needs to
+          <b>
+           ask
+          </b>
+          . Only the version the user edited and approved compiles — deterministically — into a shot-by-shot generation plan. Assumptions surface
+          <b>
+           before
+          </b>
+          approval, so an inferred mood or camera choice never rides into a paid GPU run unnoticed.
+         </span>
+<span class="ko">
+          모델은 사용자가
+          <b>
+           말한 것
+          </b>
+          , 모델이
+          <b>
+           추정한 것
+          </b>
+          , 되물어야 할
+          <b>
+           질문
+          </b>
+          을 분리해 보여주는 크리에이티브 브리프 초안을 만듭니다. 실행으로 가는 것은 사용자가 수정하고 승인한 버전뿐이며, 그 버전만 숏 단위 생성 계획으로
+          <b>
+           결정적으로
+          </b>
+          컴파일됩니다. 추정값은 승인
+          <b>
+           전에
+          </b>
+          드러나므로, 모델이 임의로 정한 무드나 카메라가 사용자 모르게 GPU 실행에 섞여 들어가지 않습니다.
+         </span>
+</p>
+<blockquote class="pull">
+<span class="en">
+          "Assumptions are shown before approval, not discovered in the output."
+         </span>
+<span class="ko">
+          "추정값은 승인 전에 보인다. 결과물에서 발견되는 게 아니라."
+         </span>
+</blockquote>
+</div>
+<div class="decision">
+<p class="dh">
+<span class="num">
+          02
+         </span>
+<span class="en">
+          The LLM never authors the workflow graph
+         </span>
+<span class="ko">
+          LLM은 워크플로우 그래프를 만들지 않는다
+         </span>
+</p>
+<p class="why">
+<span class="en">
+          Let a model assemble a ComfyUI graph freely and you get nonexistent nodes, incompatible checkpoints, VRAM blowouts, and runs nobody can reproduce. So the graph is fixed to operator-qualified workflows and the model fills only
+          <b>
+           declared parameter slots
+          </b>
+          . That inverted the product surface too: users don't pick a workflow, they assemble a structured prompt — shots, duration, dialogue, soundscape, music, constraints — and the workflow stays an internal execution recipe.
+         </span>
+<span class="ko">
+          모델이 ComfyUI 그래프를 자유롭게 조립하게 두면 존재하지 않는 노드, 호환되지 않는 체크포인트, VRAM 초과, 아무도 재현할 수 없는 실행이 나옵니다. 그래서 그래프는 운영자가 검증한 워크플로우로 고정하고, 모델은
+          <b>
+           미리 선언된 파라미터 슬롯
+          </b>
+          만 채웁니다. 이 결정은 제품 표면도 뒤집었습니다 — 사용자는 워크플로우를 고르지 않고 숏·길이·대사·환경음·음악·제약으로 이뤄진 구조화 프롬프트를 조립하며, 워크플로우는 내부 실행 레시피로 남습니다.
+         </span>
+</p>
+</div>
+<div class="decision">
+<p class="dh">
+<span class="num">
+          03
+         </span>
+<span class="en">
+          One execution boundary, swappable runtimes, immutable snapshots
+         </span>
+<span class="ko">
+          실행 경계는 하나, 런타임은 교체 가능, 스냅샷은 불변
+         </span>
+</p>
+<p class="why">
+<span class="en">
+          Our backend is the
+          <b>
+           only
+          </b>
+          execution boundary: a local ComfyUI host and a hosted runtime sit behind the same adapter contract, with identical queue/history state handling and receipt-based resume and artifact recovery. The workflow and parameters at run time are frozen as an
+          <b>
+           immutable snapshot
+          </b>
+          — recipes change only as a new revision — so reproduction is snapshot-based, not memory-based. Nothing that leaves the boundary carries a raw graph, provider payload, storage key, or credential.
+         </span>
+<span class="ko">
+          우리 백엔드가
+          <b>
+           유일한
+          </b>
+          실행 경계입니다. 로컬 ComfyUI 호스트와 호스팅 런타임은 같은 adapter 계약 뒤에 있고, 큐·히스토리 상태 분기와 receipt 기반 재개·산출물 회수를 동일하게 처리합니다. 실행 시점의 워크플로우와 파라미터는
+          <b>
+           불변 스냅샷
+          </b>
+          으로 고정되고 레시피는 새 revision으로만 바뀌므로, 재현은 기억이 아니라 스냅샷 기준입니다. 경계 밖으로 나가는 응답에는 raw graph·provider payload·storage key·credential이 포함되지 않습니다.
+         </span>
+</p>
+</div>
+<div class="decision">
+<p class="dh">
+<span class="num">
+          04
+         </span>
+<span class="en">
+          The 15-second wall: long form is a continuity problem, not an editing one
+         </span>
+<span class="ko">
+          15초의 벽 — 장편은 편집 문제가 아니라 연속성 문제다
+         </span>
+</p>
+<p class="why">
+<span class="en">
+          The generation model produces about 15 seconds at a time, so a 15 / 30 / 60 / 180-second request is analyzed
+          <b>
+           once per video
+          </b>
+          and planned into exactly 1 / 2 / 4 / 12 segments. The decision that mattered was refusing to treat two things as one feature:
+          <b>
+           reference-to-video
+          </b>
+          (identity, style, motion) and
+          <b>
+           frame chaining
+          </b>
+          (last frame → next first frame) are a subject anchor and a time-boundary anchor, and they are verified separately. A manager step that sees the whole video at once decides per segment which references to
+          <b>
+           use or omit
+          </b>
+          , and a segment left with no reference is explicitly stopped rather than quietly generated from text.
+         </span>
+<span class="ko">
+          생성 모델이 한 번에 만드는 길이는 약 15초입니다. 그래서 15 / 30 / 60 / 180초 요청은
+          <b>
+           영상당 한 번
+          </b>
+          분석해 정확히 1 / 2 / 4 / 12개 세그먼트로 계획합니다. 여기서 중요한 판단은 두 가지를 같은 기능으로 묶지 않은 것입니다 —
+          <b>
+           reference-to-video
+          </b>
+          (인물·스타일·모션 동일성)와
+          <b>
+           프레임 체이닝
+          </b>
+          (이전 마지막 프레임 → 다음 첫 프레임)은 각각 대상 앵커와 시간 경계 앵커이며, 별도로 검증합니다. 전체 영상을 한 번에 보는 관리자 단계가 세그먼트마다 어떤 참조를
+          <b>
+           쓰고 뺄지
+          </b>
+          결정하고, 참조가 하나도 남지 않은 세그먼트는 조용히 텍스트로 생성하지 않고 명시적으로 중단합니다.
+         </span>
+</p>
+<blockquote class="pull">
+<span class="en">
+          "A reference is who it is. Frame chaining is when it is. They are not the same feature."
+         </span>
+<span class="ko">
+          "reference는 '누구인가'이고, 프레임 체이닝은 '언제인가'다. 같은 기능이 아니다."
+         </span>
+</blockquote>
+</div>
+<div class="decision">
+<p class="dh">
+<span class="num">
+          05
+         </span>
+<span class="en">
+          Three generation modes, one prompt IR — and a gate that only judges
+         </span>
+<span class="ko">
+          세 생성 모드, 하나의 prompt IR — 그리고 판정만 하는 게이트
+         </span>
+</p>
+<p class="why">
+<span class="en">
+          Text-, image-, and reference-driven generation each grew their own prompt rules, so I unified them behind a single structured prompt IR and renderer: verbatim dialogue with lip-sync and subtitle policy, ambient soundscape kept separate from non-diegetic music, length ceilings, and constraint phrasing now apply identically across all three. Multimodal image analysis records
+          <b>
+           what the user declared
+          </b>
+          apart from
+          <b>
+           what the pixels show
+          </b>
+          , and never rewrites the user's own classification. The specialist steps are not free-form agent chat — each has a fixed input, output, and write scope — and the pre-generation gate returns only
+          <code>
+           PASS
+          </code>
+          /
+          <code>
+           REPAIR
+          </code>
+          /
+          <code>
+           BLOCKED
+          </code>
+          with a target step and reasons. It never edits the prompt itself; a repair re-runs just the failed step, under a call ceiling.
+         </span>
+<span class="ko">
+          텍스트·이미지·참조 기반 생성이 각자의 프롬프트 규칙을 갖게 되자, 하나의 구조화 prompt IR과 renderer로 통합했습니다. 대사 원문과 립싱크·자막 정책, 환경음과 비-디제틱 음악의 분리, 길이 상한, 제약 표현이 이제 세 모드에 동일하게 적용됩니다. 멀티모달 이미지 분석은
+          <b>
+           사용자가 선언한 사실
+          </b>
+          과
+          <b>
+           픽셀에서 관찰된 것
+          </b>
+          을 분리해 기록하며, 사용자가 정한 분류를 임의로 바꾸지 않습니다. 전문가 단계들은 자유로운 에이전트 대화가 아니라 입력·출력·쓰기 권한이 고정된 순서로 돌고, 생성 직전 게이트는
+          <code>
+           PASS
+          </code>
+          /
+          <code>
+           REPAIR
+          </code>
+          /
+          <code>
+           BLOCKED
+          </code>
+          와 대상 단계·근거만 반환합니다. 게이트가 프롬프트를 직접 고치지는 않으며, 보정은 실패한 단계만 호출 상한 안에서 다시 실행합니다.
+         </span>
+</p>
+<blockquote class="pull">
+<span class="en">
+          "The gate judges. It does not rewrite the prompt."
+         </span>
+<span class="ko">
+          "게이트는 판정한다. 프롬프트를 고쳐 쓰지 않는다."
+         </span>
+</blockquote>
+</div>
+<div class="decision">
+<p class="dh">
+<span class="num">
+          06
+         </span>
+<span class="en">
+          Failures get recorded, not promoted
+         </span>
+<span class="ko">
+          실패는 기록하고, 승격하지 않는다
+         </span>
+</p>
+<p class="why">
+<span class="en">
+          The honest state of the long-form track: the music-video direction improved with longer context but still drifted at the one-minute musical boundary, so it was
+          <b>
+           put on hold
+          </b>
+          . A ~58-second ad passed on Korean dialogue alone and failed on static framing, low information density, and broken on-screen Hangul. A ~3-minute drama had so many defects that I
+          <b>
+           declined to itemize fixes
+          </b>
+          rather than produce a fake remediation table. None of the three were promoted to a user-facing capability, and per-segment voice drift — the same character sounding different across independently generated segments — is named as an open problem instead of being papered over. Behind that:
+          <b>
+           10 decision briefs written before implementation
+          </b>
+          ,
+          <b>
+           26 dated independent verification records
+          </b>
+          , ~
+          <b>
+           490 backend tests
+          </b>
+          , and a single canonical contract file that the phase docs are not allowed to override.
+         </span>
+<span class="ko">
+          장편 트랙의 정직한 현재 상태입니다. 뮤직비디오 방향은 문맥을 늘리자 상대적으로 개선됐지만 1분 음악 경계에서 여전히 어긋나
+          <b>
+           보류
+          </b>
+          했습니다. 약 58초 광고는 한국어 대사만 통과했고 정적인 화면·낮은 정보 밀도·깨진 화면 한글 때문에 최종 사용에 실패했습니다. 약 3분 드라마는 결함이 너무 많아, 그럴듯한 수정표를 만드는 대신
+          <b>
+           세부 수정 범위 도출을 거부
+          </b>
+          했습니다. 셋 다 사용자 대상 기능으로 승격하지 않았고, 독립 생성된 세그먼트마다 같은 인물의 목소리가 달라지는 문제도 덮지 않고 별도 과제로 명시했습니다. 그 뒤에는
+          <b>
+           구현 전에 쓴 결정 브리프 10건
+          </b>
+          ,
+          <b>
+           날짜별 독립 검증 기록 26건
+          </b>
+          ,
+          <b>
+           약 490개의 백엔드 테스트
+          </b>
+          , 그리고 페이즈 문서가 덮어쓸 수 없는 단일 계약 정본 파일이 있습니다.
+         </span>
+</p>
+<p class="ai">
+<b>
+<span class="en">
+           How it connects:
+          </span>
+<span class="ko">
+           연결점:
+          </span>
+</b>
+<span class="en">
+          Same discipline as the legal assistant below and my public PoCs — the model proposes, a deterministic layer verifies, and an explicit gate decides what ships. Here the artifact is a video instead of an answer, and the reproducible unit is an execution snapshot instead of a source reference.
+         </span>
+<span class="ko">
+          아래 법률 어시스턴트, 그리고 제 공개 PoC와 같은 방식입니다 — 모델이 제안하고, 결정적 레이어가 확인하고, 명시적 게이트가 무엇을 내보낼지 결정합니다. 다만 여기서 산출물은 답변이 아니라 영상이고, 재현의 단위는 source reference가 아니라 실행 스냅샷입니다.
+         </span>
+</p>
+</div>
+</div></div></details></div>
 <div class="case lead" id="rag">
 <div class="case-top">
 <h3>
@@ -567,381 +942,6 @@
           "wheel은 계약이 아니다. 공개된 HTTP 버전이 계약이다."
          </span>
 </blockquote>
-</div>
-</div></div></details></div>
-<div class="case lead" id="video">
-<div class="case-top">
-<h3>
-<span class="en">
-         Long-Form AI Video Production System
-        </span>
-<span class="ko">
-         장편 AI 영상 제작 시스템
-        </span>
-</h3>
-<span class="pill current">
-<span class="en">
-         Current work
-        </span>
-<span class="ko">
-         현재 실무
-        </span>
-</span>
-<span class="pill private">
-<span class="en">
-         Company · not public
-        </span>
-<span class="ko">
-         회사 · 비공개
-        </span>
-</span>
-</div>
-<p class="tagline"><span class="en">Turn an approved creative brief into a reproducible, multi-segment video generation plan.</span><span class="ko">승인된 제작 브리프를 재현 가능한 다중 세그먼트 영상 생성 계획으로 바꾸는 시스템.</span></p>
-<dl class="project-brief"><div><dt><span class="en">Decision</span><span class="ko">핵심 판단</span></dt><dd><span class="en">Compile only the user-approved brief. Fix the workflow graph and snapshot each execution for reproducibility.</span><span class="ko">사용자가 승인한 브리프만 실행 계획으로 변환합니다. 워크플로우 그래프를 고정하고 실행 스냅샷을 남깁니다.</span></dd></div><div><dt><span class="en">Status</span><span class="ko">현재 결과</span></dt><dd><span class="en">Brief → approval → planning → segment generation runs end to end on a local generation host.</span><span class="ko">브리프 → 승인 → 계획 → 세그먼트 생성이 로컬 생성 호스트에서 관통 동작합니다.</span></dd></div><div><dt><span class="en">Limit</span><span class="ko">남은 한계</span></dt><dd><span class="en">Long-form quality is unresolved. Music-video, ad, and drama trials failed final-use criteria; continuity and voice consistency remain open.</span><span class="ko">장편 품질은 미해결입니다. 뮤직비디오·광고·드라마 실험 모두 최종 사용 기준을 통과하지 못했고, 연속성과 목소리 일관성이 남은 과제입니다.</span></dd></div></dl><details class="evidence-details"><summary><span class="en">6 design decisions &amp; verification</span><span class="ko">설계 판단 6개와 검증 근거</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><p class="private-note">
-<span class="en">
-        Active company project, source not public. The brief → approval → plan → segment generation path runs end-to-end against a local generation host; long-form quality is still an open track, and this page says so where it failed. Described at the architecture / decision level only.
-       </span>
-<span class="ko">
-        진행 중인 회사 프로젝트로 소스는 비공개입니다. 브리프 → 승인 → 계획 → 세그먼트 생성 경로는 로컬 생성 호스트에서 end-to-end로 동작하며, 장편 품질은 아직 열린 과제입니다. 실패한 지점은 아래에 그대로 적었습니다. 아키텍처·의사결정 수준으로만 서술합니다.
-       </span>
-</p><div class="decisions">
-<div class="decision">
-<p class="dh">
-<span class="num">
-          01
-         </span>
-<span class="en">
-          What executes is an approved spec, not a conversation
-         </span>
-<span class="ko">
-          실행되는 것은 대화가 아니라 승인된 명세다
-         </span>
-</p>
-<p class="why">
-<span class="en">
-          The model drafts a creative brief that keeps three things visibly separate: what the user
-          <b>
-           stated
-          </b>
-          , what the model
-          <b>
-           assumed
-          </b>
-          , and what it needs to
-          <b>
-           ask
-          </b>
-          . Only the version the user edited and approved compiles — deterministically — into a shot-by-shot generation plan. Assumptions surface
-          <b>
-           before
-          </b>
-          approval, so an inferred mood or camera choice never rides into a paid GPU run unnoticed.
-         </span>
-<span class="ko">
-          모델은 사용자가
-          <b>
-           말한 것
-          </b>
-          , 모델이
-          <b>
-           추정한 것
-          </b>
-          , 되물어야 할
-          <b>
-           질문
-          </b>
-          을 분리해 보여주는 크리에이티브 브리프 초안을 만듭니다. 실행으로 가는 것은 사용자가 수정하고 승인한 버전뿐이며, 그 버전만 숏 단위 생성 계획으로
-          <b>
-           결정적으로
-          </b>
-          컴파일됩니다. 추정값은 승인
-          <b>
-           전에
-          </b>
-          드러나므로, 모델이 임의로 정한 무드나 카메라가 사용자 모르게 GPU 실행에 섞여 들어가지 않습니다.
-         </span>
-</p>
-<blockquote class="pull">
-<span class="en">
-          "Assumptions are shown before approval, not discovered in the output."
-         </span>
-<span class="ko">
-          "추정값은 승인 전에 보인다. 결과물에서 발견되는 게 아니라."
-         </span>
-</blockquote>
-</div>
-<div class="decision">
-<p class="dh">
-<span class="num">
-          02
-         </span>
-<span class="en">
-          The LLM never authors the workflow graph
-         </span>
-<span class="ko">
-          LLM은 워크플로우 그래프를 만들지 않는다
-         </span>
-</p>
-<p class="why">
-<span class="en">
-          Let a model assemble a ComfyUI graph freely and you get nonexistent nodes, incompatible checkpoints, VRAM blowouts, and runs nobody can reproduce. So the graph is fixed to operator-qualified workflows and the model fills only
-          <b>
-           declared parameter slots
-          </b>
-          . That inverted the product surface too: users don't pick a workflow, they assemble a structured prompt — shots, duration, dialogue, soundscape, music, constraints — and the workflow stays an internal execution recipe.
-         </span>
-<span class="ko">
-          모델이 ComfyUI 그래프를 자유롭게 조립하게 두면 존재하지 않는 노드, 호환되지 않는 체크포인트, VRAM 초과, 아무도 재현할 수 없는 실행이 나옵니다. 그래서 그래프는 운영자가 검증한 워크플로우로 고정하고, 모델은
-          <b>
-           미리 선언된 파라미터 슬롯
-          </b>
-          만 채웁니다. 이 결정은 제품 표면도 뒤집었습니다 — 사용자는 워크플로우를 고르지 않고 숏·길이·대사·환경음·음악·제약으로 이뤄진 구조화 프롬프트를 조립하며, 워크플로우는 내부 실행 레시피로 남습니다.
-         </span>
-</p>
-</div>
-<div class="decision">
-<p class="dh">
-<span class="num">
-          03
-         </span>
-<span class="en">
-          One execution boundary, swappable runtimes, immutable snapshots
-         </span>
-<span class="ko">
-          실행 경계는 하나, 런타임은 교체 가능, 스냅샷은 불변
-         </span>
-</p>
-<p class="why">
-<span class="en">
-          Our backend is the
-          <b>
-           only
-          </b>
-          execution boundary: a local ComfyUI host and a hosted runtime sit behind the same adapter contract, with identical queue/history state handling and receipt-based resume and artifact recovery. The workflow and parameters at run time are frozen as an
-          <b>
-           immutable snapshot
-          </b>
-          — recipes change only as a new revision — so reproduction is snapshot-based, not memory-based. Nothing that leaves the boundary carries a raw graph, provider payload, storage key, or credential.
-         </span>
-<span class="ko">
-          우리 백엔드가
-          <b>
-           유일한
-          </b>
-          실행 경계입니다. 로컬 ComfyUI 호스트와 호스팅 런타임은 같은 adapter 계약 뒤에 있고, 큐·히스토리 상태 분기와 receipt 기반 재개·산출물 회수를 동일하게 처리합니다. 실행 시점의 워크플로우와 파라미터는
-          <b>
-           불변 스냅샷
-          </b>
-          으로 고정되고 레시피는 새 revision으로만 바뀌므로, 재현은 기억이 아니라 스냅샷 기준입니다. 경계 밖으로 나가는 응답에는 raw graph·provider payload·storage key·credential이 포함되지 않습니다.
-         </span>
-</p>
-</div>
-<div class="decision">
-<p class="dh">
-<span class="num">
-          04
-         </span>
-<span class="en">
-          The 15-second wall: long form is a continuity problem, not an editing one
-         </span>
-<span class="ko">
-          15초의 벽 — 장편은 편집 문제가 아니라 연속성 문제다
-         </span>
-</p>
-<p class="why">
-<span class="en">
-          The generation model produces about 15 seconds at a time, so a 15 / 30 / 60 / 180-second request is analyzed
-          <b>
-           once per video
-          </b>
-          and planned into exactly 1 / 2 / 4 / 12 segments. The decision that mattered was refusing to treat two things as one feature:
-          <b>
-           reference-to-video
-          </b>
-          (identity, style, motion) and
-          <b>
-           frame chaining
-          </b>
-          (last frame → next first frame) are a subject anchor and a time-boundary anchor, and they are verified separately. A manager step that sees the whole video at once decides per segment which references to
-          <b>
-           use or omit
-          </b>
-          , and a segment left with no reference is explicitly stopped rather than quietly generated from text.
-         </span>
-<span class="ko">
-          생성 모델이 한 번에 만드는 길이는 약 15초입니다. 그래서 15 / 30 / 60 / 180초 요청은
-          <b>
-           영상당 한 번
-          </b>
-          분석해 정확히 1 / 2 / 4 / 12개 세그먼트로 계획합니다. 여기서 중요한 판단은 두 가지를 같은 기능으로 묶지 않은 것입니다 —
-          <b>
-           reference-to-video
-          </b>
-          (인물·스타일·모션 동일성)와
-          <b>
-           프레임 체이닝
-          </b>
-          (이전 마지막 프레임 → 다음 첫 프레임)은 각각 대상 앵커와 시간 경계 앵커이며, 별도로 검증합니다. 전체 영상을 한 번에 보는 관리자 단계가 세그먼트마다 어떤 참조를
-          <b>
-           쓰고 뺄지
-          </b>
-          결정하고, 참조가 하나도 남지 않은 세그먼트는 조용히 텍스트로 생성하지 않고 명시적으로 중단합니다.
-         </span>
-</p>
-<blockquote class="pull">
-<span class="en">
-          "A reference is who it is. Frame chaining is when it is. They are not the same feature."
-         </span>
-<span class="ko">
-          "reference는 '누구인가'이고, 프레임 체이닝은 '언제인가'다. 같은 기능이 아니다."
-         </span>
-</blockquote>
-</div>
-<div class="decision">
-<p class="dh">
-<span class="num">
-          05
-         </span>
-<span class="en">
-          Three generation modes, one prompt IR — and a gate that only judges
-         </span>
-<span class="ko">
-          세 생성 모드, 하나의 prompt IR — 그리고 판정만 하는 게이트
-         </span>
-</p>
-<p class="why">
-<span class="en">
-          Text-, image-, and reference-driven generation each grew their own prompt rules, so I unified them behind a single structured prompt IR and renderer: verbatim dialogue with lip-sync and subtitle policy, ambient soundscape kept separate from non-diegetic music, length ceilings, and constraint phrasing now apply identically across all three. Multimodal image analysis records
-          <b>
-           what the user declared
-          </b>
-          apart from
-          <b>
-           what the pixels show
-          </b>
-          , and never rewrites the user's own classification. The specialist steps are not free-form agent chat — each has a fixed input, output, and write scope — and the pre-generation gate returns only
-          <code>
-           PASS
-          </code>
-          /
-          <code>
-           REPAIR
-          </code>
-          /
-          <code>
-           BLOCKED
-          </code>
-          with a target step and reasons. It never edits the prompt itself; a repair re-runs just the failed step, under a call ceiling.
-         </span>
-<span class="ko">
-          텍스트·이미지·참조 기반 생성이 각자의 프롬프트 규칙을 갖게 되자, 하나의 구조화 prompt IR과 renderer로 통합했습니다. 대사 원문과 립싱크·자막 정책, 환경음과 비-디제틱 음악의 분리, 길이 상한, 제약 표현이 이제 세 모드에 동일하게 적용됩니다. 멀티모달 이미지 분석은
-          <b>
-           사용자가 선언한 사실
-          </b>
-          과
-          <b>
-           픽셀에서 관찰된 것
-          </b>
-          을 분리해 기록하며, 사용자가 정한 분류를 임의로 바꾸지 않습니다. 전문가 단계들은 자유로운 에이전트 대화가 아니라 입력·출력·쓰기 권한이 고정된 순서로 돌고, 생성 직전 게이트는
-          <code>
-           PASS
-          </code>
-          /
-          <code>
-           REPAIR
-          </code>
-          /
-          <code>
-           BLOCKED
-          </code>
-          와 대상 단계·근거만 반환합니다. 게이트가 프롬프트를 직접 고치지는 않으며, 보정은 실패한 단계만 호출 상한 안에서 다시 실행합니다.
-         </span>
-</p>
-<blockquote class="pull">
-<span class="en">
-          "The gate judges. It does not rewrite the prompt."
-         </span>
-<span class="ko">
-          "게이트는 판정한다. 프롬프트를 고쳐 쓰지 않는다."
-         </span>
-</blockquote>
-</div>
-<div class="decision">
-<p class="dh">
-<span class="num">
-          06
-         </span>
-<span class="en">
-          Failures get recorded, not promoted
-         </span>
-<span class="ko">
-          실패는 기록하고, 승격하지 않는다
-         </span>
-</p>
-<p class="why">
-<span class="en">
-          The honest state of the long-form track: the music-video direction improved with longer context but still drifted at the one-minute musical boundary, so it was
-          <b>
-           put on hold
-          </b>
-          . A ~58-second ad passed on Korean dialogue alone and failed on static framing, low information density, and broken on-screen Hangul. A ~3-minute drama had so many defects that I
-          <b>
-           declined to itemize fixes
-          </b>
-          rather than produce a fake remediation table. None of the three were promoted to a user-facing capability, and per-segment voice drift — the same character sounding different across independently generated segments — is named as an open problem instead of being papered over. Behind that:
-          <b>
-           10 decision briefs written before implementation
-          </b>
-          ,
-          <b>
-           26 dated independent verification records
-          </b>
-          , ~
-          <b>
-           490 backend tests
-          </b>
-          , and a single canonical contract file that the phase docs are not allowed to override.
-         </span>
-<span class="ko">
-          장편 트랙의 정직한 현재 상태입니다. 뮤직비디오 방향은 문맥을 늘리자 상대적으로 개선됐지만 1분 음악 경계에서 여전히 어긋나
-          <b>
-           보류
-          </b>
-          했습니다. 약 58초 광고는 한국어 대사만 통과했고 정적인 화면·낮은 정보 밀도·깨진 화면 한글 때문에 최종 사용에 실패했습니다. 약 3분 드라마는 결함이 너무 많아, 그럴듯한 수정표를 만드는 대신
-          <b>
-           세부 수정 범위 도출을 거부
-          </b>
-          했습니다. 셋 다 사용자 대상 기능으로 승격하지 않았고, 독립 생성된 세그먼트마다 같은 인물의 목소리가 달라지는 문제도 덮지 않고 별도 과제로 명시했습니다. 그 뒤에는
-          <b>
-           구현 전에 쓴 결정 브리프 10건
-          </b>
-          ,
-          <b>
-           날짜별 독립 검증 기록 26건
-          </b>
-          ,
-          <b>
-           약 490개의 백엔드 테스트
-          </b>
-          , 그리고 페이즈 문서가 덮어쓸 수 없는 단일 계약 정본 파일이 있습니다.
-         </span>
-</p>
-<p class="ai">
-<b>
-<span class="en">
-           How it connects:
-          </span>
-<span class="ko">
-           연결점:
-          </span>
-</b>
-<span class="en">
-          Same discipline as the assistant above and my public PoCs — the model proposes, a deterministic layer verifies, and an explicit gate decides what ships. Here the artifact is a video instead of an answer, and the reproducible unit is an execution snapshot instead of a source reference.
-         </span>
-<span class="ko">
-          위 어시스턴트, 그리고 제 공개 PoC와 같은 방식입니다 — 모델이 제안하고, 결정적 레이어가 확인하고, 명시적 게이트가 무엇을 내보낼지 결정합니다. 다만 여기서 산출물은 답변이 아니라 영상이고, 재현의 단위는 source reference가 아니라 실행 스냅샷입니다.
-         </span>
-</p>
 </div>
 </div></div></details></div>
 </div>
