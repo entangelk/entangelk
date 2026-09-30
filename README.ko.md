@@ -25,9 +25,9 @@
 <tr>
 <td width="50%" valign="top">
 
-**1분 · 1min_v3_master.mp4**
+**1분 · ad_ko.mp4**
 
-https://github.com/user-attachments/assets/05fddc97-0a09-4347-881d-289cd3fa5aac
+https://github.com/user-attachments/assets/fb68ad64-1589-4e17-98c4-a67e5231c7d5
 
 </td>
 <td width="50%" valign="top">
@@ -45,9 +45,9 @@ https://github.com/user-attachments/assets/05fddc97-0a09-4347-881d-289cd3fa5aac
 <details>
 <summary>1분 영상 더보기</summary>
 
-#### 한국어
+#### 1min_v3_master.mp4
 
-https://github.com/user-attachments/assets/fb68ad64-1589-4e17-98c4-a67e5231c7d5
+https://github.com/user-attachments/assets/05fddc97-0a09-4347-881d-289cd3fa5aac
 
 #### English
 
