@@ -21,36 +21,37 @@
 
 ## 소개 영상
 
-### 대표 · 1분 (한국어)
+<table>
+<tr>
+<td width="50%" valign="top">
 
-https://github.com/user-attachments/assets/fb68ad64-1589-4e17-98c4-a67e5231c7d5
+**1분 · 1min_v3_master.mp4**
 
-### 대표 · 3분 (직관)
+https://github.com/user-attachments/assets/05fddc97-0a09-4347-881d-289cd3fa5aac
 
-<div style="position:relative; width:100%; height:0; padding-bottom:55.556%;">
-  <iframe
-    src="https://streamable.com/e/cd9qrk"
-    title="3-minute intro video"
-    width="100%"
-    height="100%"
-    allow="fullscreen"
-    allowfullscreen
-    style="border:none; width:100%; height:100%; position:absolute; left:0; top:0; overflow:hidden;">
-  </iframe>
-</div>
+</td>
+<td width="50%" valign="top">
 
-https://streamable.com/cd9qrk
+**3분 · 직관**
+
+<a href="https://streamable.com/cd9qrk"><img src="https://cdn-cf-east.streamable.com/image/cd9qrk.jpg" alt="3분 직관 소개 영상" width="100%"></a>
+
+[▶ Streamable에서 보기](https://streamable.com/cd9qrk)
+
+</td>
+</tr>
+</table>
 
 <details>
 <summary>1분 영상 더보기</summary>
 
+#### 한국어
+
+https://github.com/user-attachments/assets/fb68ad64-1589-4e17-98c4-a67e5231c7d5
+
 #### English
 
 https://github.com/user-attachments/assets/9470b845-b59b-41fa-afc7-782c456412b8
-
-#### 추가 버전
-
-https://github.com/user-attachments/assets/05fddc97-0a09-4347-881d-289cd3fa5aac
 
 </details>
 

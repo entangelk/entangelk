@@ -21,36 +21,37 @@
 
 ## Intro videos
 
-### Featured · 1 minute (English)
+<table>
+<tr>
+<td width="50%" valign="top">
 
-https://github.com/user-attachments/assets/9470b845-b59b-41fa-afc7-782c456412b8
+**1 minute · 1min_v3_master.mp4**
 
-### Featured · 3 minutes (Intuitive)
+https://github.com/user-attachments/assets/05fddc97-0a09-4347-881d-289cd3fa5aac
 
-<div style="position:relative; width:100%; height:0; padding-bottom:55.556%;">
-  <iframe
-    src="https://streamable.com/e/cd9qrk"
-    title="3-minute intro video"
-    width="100%"
-    height="100%"
-    allow="fullscreen"
-    allowfullscreen
-    style="border:none; width:100%; height:100%; position:absolute; left:0; top:0; overflow:hidden;">
-  </iframe>
-</div>
+</td>
+<td width="50%" valign="top">
 
-https://streamable.com/cd9qrk
+**3 minutes · Intuitive**
+
+<a href="https://streamable.com/cd9qrk"><img src="https://cdn-cf-east.streamable.com/image/cd9qrk.jpg" alt="3-minute intuitive intro video" width="100%"></a>
+
+[▶ Watch on Streamable](https://streamable.com/cd9qrk)
+
+</td>
+</tr>
+</table>
 
 <details>
 <summary>More 1-minute videos</summary>
 
+#### English
+
+https://github.com/user-attachments/assets/9470b845-b59b-41fa-afc7-782c456412b8
+
 #### 한국어 (Korean)
 
 https://github.com/user-attachments/assets/fb68ad64-1589-4e17-98c4-a67e5231c7d5
-
-#### Additional version
-
-https://github.com/user-attachments/assets/05fddc97-0a09-4347-881d-289cd3fa5aac
 
 </details>
 
