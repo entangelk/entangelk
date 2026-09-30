@@ -45,13 +45,24 @@ https://github.com/user-attachments/assets/fb68ad64-1589-4e17-98c4-a67e5231c7d5
 <details>
 <summary>More 1-minute videos</summary>
 
-#### English
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**English**
 
 https://github.com/user-attachments/assets/9470b845-b59b-41fa-afc7-782c456412b8
 
-#### 1min_v3_master.mp4
+</td>
+<td width="50%" valign="top">
+
+**1min_v3_master.mp4**
 
 https://github.com/user-attachments/assets/05fddc97-0a09-4347-881d-289cd3fa5aac
+
+</td>
+</tr>
+</table>
 
 </details>
 
