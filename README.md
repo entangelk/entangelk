@@ -19,26 +19,37 @@
 
 *"Memory is not a log. Memory is compacted meaning."*
 
-## Watch: 1-minute intro
+## Intro videos
 
-<table>
-<tr>
-<td width="50%">
-
-**English**
+### Featured · 1 minute (English)
 
 https://github.com/user-attachments/assets/9470b845-b59b-41fa-afc7-782c456412b8
 
-</td>
-<td width="50%">
+### Featured · 3 minutes (Intuitive)
 
-**한국어 (Korean)**
+https://streamable.com/cd9qrk
+
+<details>
+<summary>More 1-minute videos</summary>
+
+#### 한국어 (Korean)
 
 https://github.com/user-attachments/assets/fb68ad64-1589-4e17-98c4-a67e5231c7d5
 
-</td>
-</tr>
-</table>
+#### Additional version
+
+https://github.com/user-attachments/assets/05fddc97-0a09-4347-881d-289cd3fa5aac
+
+</details>
+
+<details>
+<summary>More 3-minute videos</summary>
+
+1. **Animation:** [Watch on Streamable](https://streamable.com/zsggw4)
+2. **Museum:** [Watch on Streamable](https://streamable.com/ygppxr)
+3. **Standard:** [Version 1](https://streamable.com/cqx4s7) · [Version 2](https://streamable.com/yejr8a)
+
+</details>
 
 ## Why I Build (Learning by Building)
 

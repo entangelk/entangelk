@@ -19,26 +19,37 @@
 
 *"기억은 로그가 아니다. 기억은 압축된 의미다."*
 
-## 1분 소개 영상
+## 소개 영상
 
-<table>
-<tr>
-<td width="50%">
-
-**한국어**
+### 대표 · 1분 (한국어)
 
 https://github.com/user-attachments/assets/fb68ad64-1589-4e17-98c4-a67e5231c7d5
 
-</td>
-<td width="50%">
+### 대표 · 3분 (직관)
 
-**English**
+https://streamable.com/cd9qrk
+
+<details>
+<summary>1분 영상 더보기</summary>
+
+#### English
 
 https://github.com/user-attachments/assets/9470b845-b59b-41fa-afc7-782c456412b8
 
-</td>
-</tr>
-</table>
+#### 추가 버전
+
+https://github.com/user-attachments/assets/05fddc97-0a09-4347-881d-289cd3fa5aac
+
+</details>
+
+<details>
+<summary>3분 영상 더보기</summary>
+
+1. **애니메이션:** [Streamable에서 보기](https://streamable.com/zsggw4)
+2. **박물관:** [Streamable에서 보기](https://streamable.com/ygppxr)
+3. **노말:** [버전 1](https://streamable.com/cqx4s7) · [버전 2](https://streamable.com/yejr8a)
+
+</details>
 
 ## Why I Build (만들면서 배우는 이유)
 
