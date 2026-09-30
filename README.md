@@ -34,7 +34,7 @@ https://github.com/user-attachments/assets/05fddc97-0a09-4347-881d-289cd3fa5aac
 
 **3 minutes · Intuitive**
 
-<a href="https://streamable.com/cd9qrk"><img src="https://cdn-cf-east.streamable.com/image/cd9qrk.jpg" alt="3-minute intuitive intro video" width="100%"></a>
+<a href="https://streamable.com/cd9qrk"><img src="./docs/assets/intro-3min-intuitive.jpg" alt="3-minute intuitive intro video" width="100%"></a>
 
 [▶ Watch on Streamable](https://streamable.com/cd9qrk)
 
@@ -58,9 +58,48 @@ https://github.com/user-attachments/assets/fb68ad64-1589-4e17-98c4-a67e5231c7d5
 <details>
 <summary>More 3-minute videos</summary>
 
-1. **Animation:** [Watch on Streamable](https://streamable.com/zsggw4)
-2. **Museum:** [Watch on Streamable](https://streamable.com/ygppxr)
-3. **Standard:** [Version 1](https://streamable.com/cqx4s7) · [Version 2](https://streamable.com/yejr8a)
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**Animation**
+
+<a href="https://streamable.com/zsggw4"><img src="./docs/assets/intro-3min-animation.jpg" alt="Animation 3-minute video" width="100%"></a>
+
+[▶ Watch on Streamable](https://streamable.com/zsggw4)
+
+</td>
+<td width="50%" valign="top">
+
+**Museum**
+
+<a href="https://streamable.com/ygppxr"><img src="./docs/assets/intro-3min-museum.jpg" alt="Museum 3-minute video" width="100%"></a>
+
+[▶ Watch on Streamable](https://streamable.com/ygppxr)
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+**Standard · Version 1**
+
+<a href="https://streamable.com/cqx4s7"><img src="./docs/assets/intro-3min-standard-1.jpg" alt="Standard · Version 1 3-minute video" width="100%"></a>
+
+[▶ Watch on Streamable](https://streamable.com/cqx4s7)
+
+</td>
+<td width="50%" valign="top">
+
+**Standard · Version 2**
+
+<a href="https://streamable.com/yejr8a"><img src="./docs/assets/intro-3min-standard-2.jpg" alt="Standard · Version 2 3-minute video" width="100%"></a>
+
+[▶ Watch on Streamable](https://streamable.com/yejr8a)
+
+</td>
+</tr>
+</table>
 
 </details>
 

@@ -34,7 +34,7 @@ https://github.com/user-attachments/assets/05fddc97-0a09-4347-881d-289cd3fa5aac
 
 **3분 · 직관**
 
-<a href="https://streamable.com/cd9qrk"><img src="https://cdn-cf-east.streamable.com/image/cd9qrk.jpg" alt="3분 직관 소개 영상" width="100%"></a>
+<a href="https://streamable.com/cd9qrk"><img src="./docs/assets/intro-3min-intuitive.jpg" alt="3분 직관 소개 영상" width="100%"></a>
 
 [▶ Streamable에서 보기](https://streamable.com/cd9qrk)
 
@@ -58,9 +58,48 @@ https://github.com/user-attachments/assets/9470b845-b59b-41fa-afc7-782c456412b8
 <details>
 <summary>3분 영상 더보기</summary>
 
-1. **애니메이션:** [Streamable에서 보기](https://streamable.com/zsggw4)
-2. **박물관:** [Streamable에서 보기](https://streamable.com/ygppxr)
-3. **노말:** [버전 1](https://streamable.com/cqx4s7) · [버전 2](https://streamable.com/yejr8a)
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**애니메이션**
+
+<a href="https://streamable.com/zsggw4"><img src="./docs/assets/intro-3min-animation.jpg" alt="애니메이션 3분 영상" width="100%"></a>
+
+[▶ Streamable에서 보기](https://streamable.com/zsggw4)
+
+</td>
+<td width="50%" valign="top">
+
+**박물관**
+
+<a href="https://streamable.com/ygppxr"><img src="./docs/assets/intro-3min-museum.jpg" alt="박물관 3분 영상" width="100%"></a>
+
+[▶ Streamable에서 보기](https://streamable.com/ygppxr)
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+**노말 · 버전 1**
+
+<a href="https://streamable.com/cqx4s7"><img src="./docs/assets/intro-3min-standard-1.jpg" alt="노말 · 버전 1 3분 영상" width="100%"></a>
+
+[▶ Streamable에서 보기](https://streamable.com/cqx4s7)
+
+</td>
+<td width="50%" valign="top">
+
+**노말 · 버전 2**
+
+<a href="https://streamable.com/yejr8a"><img src="./docs/assets/intro-3min-standard-2.jpg" alt="노말 · 버전 2 3분 영상" width="100%"></a>
+
+[▶ Streamable에서 보기](https://streamable.com/yejr8a)
+
+</td>
+</tr>
+</table>
 
 </details>
 
