@@ -27,6 +27,18 @@ https://github.com/user-attachments/assets/fb68ad64-1589-4e17-98c4-a67e5231c7d5
 
 ### 대표 · 3분 (직관)
 
+<div style="position:relative; width:100%; height:0; padding-bottom:55.556%;">
+  <iframe
+    src="https://streamable.com/e/cd9qrk"
+    title="3-minute intro video"
+    width="100%"
+    height="100%"
+    allow="fullscreen"
+    allowfullscreen
+    style="border:none; width:100%; height:100%; position:absolute; left:0; top:0; overflow:hidden;">
+  </iframe>
+</div>
+
 https://streamable.com/cd9qrk
 
 <details>

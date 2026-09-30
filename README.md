@@ -27,6 +27,18 @@ https://github.com/user-attachments/assets/9470b845-b59b-41fa-afc7-782c456412b8
 
 ### Featured · 3 minutes (Intuitive)
 
+<div style="position:relative; width:100%; height:0; padding-bottom:55.556%;">
+  <iframe
+    src="https://streamable.com/e/cd9qrk"
+    title="3-minute intro video"
+    width="100%"
+    height="100%"
+    allow="fullscreen"
+    allowfullscreen
+    style="border:none; width:100%; height:100%; position:absolute; left:0; top:0; overflow:hidden;">
+  </iframe>
+</div>
+
 https://streamable.com/cd9qrk
 
 <details>
