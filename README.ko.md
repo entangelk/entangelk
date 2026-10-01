@@ -21,7 +21,7 @@
 
 장편 창작자가 이전 원고의 설정과 사건을 찾아 다음 집필에 활용하도록 만드는 글쓰기 워크스페이스입니다. **일관성 추적을 핵심 문제로 보고**, 생성뿐 아니라 기억의 검색과 검토에 중심을 뒀습니다.
 
-원고 작성 → 기억 후보의 원문 근거 확인 → 승인·거절 → 다음 집필에서 검색. 생성 제안은 옆 패드에서 검토하고, 채택하기 전까지 원고를 바꾸지 않습니다. 로컬 관통 동작과 실제 화면 녹화는 있으며, 집필 시간 절감과 일관성 개선은 아직 공개 자료로 확인되지 않았습니다.
+원고 작성 → 기억 후보의 원문 근거 확인 → 승인·거절 → 다음 집필에서 검색. 생성 제안은 옆 패드에서 검토하고, 채택하기 전까지 원고를 바꾸지 않습니다. 로컬에서 집필·생성·기억 검토·검색까지 동작하며 실제 화면 녹화를 제공합니다.
 
 [사용 경험과 구현 근거](https://entangelk.github.io/entangelk/case-studies.html#writer)
 
@@ -29,26 +29,26 @@
 
 영상 요청자가 생성 도구의 워크플로우 대신 **원하는 영상과 시나리오를 다루게 하는 경험**을 설계했습니다. 참조 이미지를 검토하고 생성 계획으로 연결하며, 복잡한 실행 레시피는 내부에 둡니다.
 
-로컬에서 생성·완성본 조립까지 동작합니다. 장편 품질과 목소리 일관성은 미해결이며, 실제 제작 시간 절감은 확인되지 않았습니다. 소스는 비공개입니다.
+로컬에서 생성·완성본 조립까지 동작합니다. 장편 품질과 목소리 일관성은 미해결이며, 소스는 비공개입니다.
 
 ### [Assessment Spec Harness](https://github.com/entangelk/assessment_poc) · PoC
 
-채용 과제의 **공개 안내와 비공개 채점 기준이 어긋나는 문제**를 검사합니다. 응시자 채점 대신 과제 설계의 불일치를 찾고, 자동 finding과 사람의 최종 검토를 분리했습니다. CLI와 AI agent는 호출 방식이며, 과제 설계팀을 위한 사용자 가설은 검증이 필요합니다.
+채용 과제의 **공개 안내와 비공개 채점 기준이 어긋나는 문제**를 검사합니다. 응시자 채점 대신 과제 설계의 불일치를 찾고, 자동 finding과 사람의 최종 검토를 분리했습니다. CLI와 AI agent를 통해 검사하고, 과제 설계자가 결과를 검토하는 구조입니다.
 
-합성 예제의 결정론적 재현성을 확인한 단계입니다. 실제 과제에서의 오탐·검토 시간과 live LLM 추출 품질은 미검증입니다.
+합성 예제로 결정론적 재현성을 확인했으며, live LLM SDK 연동은 후속 범위로 남겼습니다.
 
 ## 실무에서 내린 판단
 
 | 사례 | 문제와 선택 | 확인된 범위 |
 | --- | --- | --- |
-| [고객센터 인력 분석](https://entangelk.github.io/entangelk/experience.html#staffing) | 평균에 가려지는 고부하일을 고려해 Q90과 보수안을 채용·증원 기준으로 제시 | 과거 데이터 역검증. 적용 후 비용·서비스 수준의 사후 근거는 확인 중 |
+| [고객센터 인력 분석](https://entangelk.github.io/entangelk/experience.html#staffing) | 평균에 가려지는 고부하일을 고려해 Q90과 보수안을 채용·증원 기준으로 제시 | 과거 데이터 역검증과 채용·증원 기준 수립 |
 | [대규모 에셋 생성·검수](https://entangelk.github.io/entangelk/experience.html#assets) | 대량 생성 결과를 사람이 비교·재생성·검수하고 남은 작업을 이어가는 흐름 | 로컬 생성 인덱스에 고유 항목 22,068개. 최종 승인·배포 수와는 구별 |
-| [NLP 카테고리 매칭](https://entangelk.github.io/entangelk/experience.html#nlp) | 자연어를 기존 분류 체계와 연결하고, 변경 데이터만 임베딩 갱신 | 상용 적용 서술과 구현 근거. 분류 정확도·작업 절감은 별도 검증 필요 |
-| [사내 업무 자동화](https://entangelk.github.io/entangelk/experience.html#automation) | 반복 보고·수집을 웹 작업으로 연결하고 사람이 처리할 예외 경로를 제공 | 보고서·검토·출력 흐름 구현. 시간 절감의 측정 근거는 확인 중 |
+| [NLP 카테고리 매칭](https://entangelk.github.io/entangelk/experience.html#nlp) | 자연어를 기존 분류 체계와 연결하고, 변경 데이터만 임베딩 갱신 | 기존 분류 체계와 연결하는 API·증분 갱신 구현 |
+| [사내 업무 자동화](https://entangelk.github.io/entangelk/experience.html#automation) | 반복 보고·수집을 웹 작업으로 연결하고 사람이 처리할 예외 경로를 제공 | 보고서 생성·편집·출력과 정기 실행 구현 |
 
 ## 기술 기반과 연구
 
-- **[Verified RAG](https://entangelk.github.io/entangelk/experience.html#rag)** — 법령 검색과 근거 검증의 기술 사례. 실제 모델 실험과 독립 검증 Core를 구현했으며, 답변 정확도와 사용자 효과는 별도 평가 대상입니다.
+- **[Verified RAG](https://entangelk.github.io/entangelk/experience.html#rag)** — 법령 검색과 근거 검증의 기술 사례. 실제 모델 실험과 독립 검증 Core를 구현했으며, 최종 채택은 호출 서비스가 결정합니다.
 - **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public)** — 여러 AI 클라이언트가 공유하는 기억 기반을 실험했습니다. 정본과 검색 캐시의 분리를 AI Writer에 이어 적용했습니다.
 - **[Logo Workbench](https://github.com/entangelk/logo_image)** · **[Harness IR](https://github.com/entangelk/Harness_ir)** — 분할 실패와 구조화 추출 가설을 비교하는 연구 사례입니다. 실사용 제품 성과와 구분합니다.
 - **제약 탐색 연구 시리즈** — [HW-WFC](https://github.com/entangelk/hw-wfc), [Circle-WFC](https://github.com/entangelk/circle-wfc), [T-WFC](https://github.com/entangelk/T-WFC). 실험에서 작동한 범위와 실패한 조건을 정리했습니다. Circle-WFC의 corridor 활용은 후속 가설입니다.
@@ -56,7 +56,7 @@
 
 ## 일하는 방식
 
-문제와 기존 작업을 먼저 정리하고, 바꿀 경험과 제외할 범위를 정합니다. AI와 함께 구현하며 회귀 검증을 남깁니다. **구현이 동작한다는 근거와 사용자가 도움을 받았다는 근거를 구별**하고, 확인하지 못한 효과는 가설로 남깁니다.
+문제와 기존 작업을 먼저 정리하고, 바꿀 경험과 제외할 범위를 정합니다. AI와 함께 구현하며 회귀 검증을 남깁니다. **시스템 동작과 사용자 효과의 근거를 구별**해 제품 판단에 연결합니다.
 
 [상세 판단과 기술 근거 — PROJECTS.ko.md](https://github.com/entangelk/entangelk/blob/main/PROJECTS.ko.md)
 

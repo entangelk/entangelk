@@ -21,7 +21,7 @@
 
 A writing workspace for long-form creators to find earlier settings and events while drafting. **Consistency tracking is the product hypothesis**, so memory retrieval and review sit alongside generation.
 
-Draft → check the source behind a memory suggestion → approve or reject → retrieve it during later writing. Generated prose arrives in a side pad and changes the manuscript only when adopted. Local end-to-end operation and recorded screens exist; writing-time savings and improved consistency are not established by the public evidence.
+Draft → check the source behind a memory suggestion → approve or reject → retrieve it during later writing. Generated prose arrives in a side pad and changes the manuscript only when adopted. Drafting, generation, memory review and retrieval run locally, with recorded screens.
 
 [Experience and implementation evidence](https://entangelk.github.io/entangelk/case-studies.html#writer)
 
@@ -29,26 +29,26 @@ Draft → check the source behind a memory suggestion → approve or reject → 
 
 Designed an experience where requesters work with **video intent and scenarios instead of generation workflows**. Reference-image review feeds the generation plan; execution recipes stay internal.
 
-Generation and master assembly run locally. Long-form quality and voice consistency remain unresolved, and production-time savings are unverified. Source is private.
+Generation and master assembly run locally. Long-form quality and voice consistency remain unresolved. Source is private.
 
 ### [Assessment Spec Harness](https://github.com/entangelk/assessment_poc) · PoC
 
-Checks **mismatches between public assignment instructions and private scoring criteria**. It reviews the assessment design rather than grading candidates, separating automatic findings from human judgment. CLI and AI agents are callers; the assessment-design team is a user hypothesis to validate.
+Checks **mismatches between public assignment instructions and private scoring criteria**. It reviews the assessment design rather than grading candidates, separating automatic findings from human judgment. CLI and AI agents run the checks; assessment designers review the findings.
 
-Deterministic reproducibility was checked on synthetic examples. False positives, review time on real assessments, and live LLM extraction quality remain unverified.
+Deterministic reproducibility was checked on synthetic examples. Live LLM SDK integration remains deferred.
 
 ## Decisions in operational work
 
 | Case | Problem and choice | Evidence boundary |
 | --- | --- | --- |
-| [Customer-center staffing](https://entangelk.github.io/entangelk/experience.html#staffing) | Used Q90 and a conservative option to plan for high-load days hidden by averages | Historical back-testing. Post-adoption cost and service-level evidence is under review |
+| [Customer-center staffing](https://entangelk.github.io/entangelk/experience.html#staffing) | Used Q90 and a conservative option to plan for high-load days hidden by averages | Historical back-testing and staffing rules |
 | [Asset generation and review](https://entangelk.github.io/entangelk/experience.html#assets) | Let reviewers compare, regenerate and review outputs, then continue unfinished work | 22,068 unique items in a local generation index; distinct from final approvals or deployment |
-| [NLP category matching](https://entangelk.github.io/entangelk/experience.html#nlp) | Connected natural language to existing categories and updated embeddings only for changed data | Documented commercial integration and implementation; accuracy and task savings need separate evaluation |
-| [Internal automation](https://entangelk.github.io/entangelk/experience.html#automation) | Connected repetitive reporting and collection to web tasks with human exception handling | Reporting, review and export workflows implemented; time-savings measurement needs confirmation |
+| [NLP category matching](https://entangelk.github.io/entangelk/experience.html#nlp) | Connected natural language to existing categories and updated embeddings only for changed data | API integration with managed categories and incremental updates |
+| [Internal automation](https://entangelk.github.io/entangelk/experience.html#automation) | Connected repetitive reporting and collection to web tasks with human exception handling | Report generation, editing, export and scheduled execution implemented |
 
 ## Technical foundations and research
 
-- **[Verified RAG](https://entangelk.github.io/entangelk/experience.html#rag)** — A technical case in statute retrieval and evidence verification. Live-model experiments and a standalone verification Core exist; answer accuracy and user benefit need separate evaluation.
+- **[Verified RAG](https://entangelk.github.io/entangelk/experience.html#rag)** — A technical case in statute retrieval and evidence verification. Live-model experiments and a standalone verification Core exist; the calling service owns final adoption.
 - **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public)** — Explored shared memory across AI clients. The canonical-record/search-cache separation carries into AI Writer.
 - **[Logo Workbench](https://github.com/entangelk/logo_image)** · **[Harness IR](https://github.com/entangelk/Harness_ir)** — Research into segmentation failures and structured extraction, distinct from validated product outcomes.
 - **Constraint-search research series** — [HW-WFC](https://github.com/entangelk/hw-wfc), [Circle-WFC](https://github.com/entangelk/circle-wfc), [T-WFC](https://github.com/entangelk/T-WFC). Recorded tested successes and failure conditions. Corridor generation remains a follow-up hypothesis for Circle-WFC.
@@ -56,7 +56,7 @@ Deterministic reproducibility was checked on synthetic examples. False positives
 
 ## How I work
 
-Start with the problem and existing task, choose the experience and scope, then build with AI and preserve regression evidence. **Working implementation and user benefit require different evidence.** Effects I have not measured remain hypotheses.
+Start with the problem and existing task, choose the experience and scope, then build with AI and preserve regression evidence. **Working implementation and user benefit require different evidence.** Connect each product decision to the relevant evidence.
 
 [Decisions and technical evidence — PROJECTS.md](https://github.com/entangelk/entangelk/blob/main/PROJECTS.md)
 

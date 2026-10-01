@@ -14,7 +14,7 @@ Each case starts with the work problem, chosen experience, implemented result an
 
 **Experience and choice:** Draft → inspect a memory suggestion's source → approve or reject → retrieve during later writing. Generated prose stays in a side pad until adopted. Generated content does not enter accepted memory without review.
 
-**Result and next decision:** Local operation and recorded generation/review screens exist. Use after the dogfood declaration, search time and acceptance rates remain unverified. The next evaluation concerns retrieval, review and recovery effort on real long-form work, then revising the experience from those observations.
+**Implemented result:** Drafting, generation, memory review and retrieval run locally. Separate prose-adoption and memory-approval screens let the author decide what enters the manuscript and its context.
 
 
 <details>
@@ -25,8 +25,8 @@ Each case starts with the work problem, chosen experience, implemented result an
 * **The Vector Store Is a Cache, Not the Truth.** MongoDB holds the canonical record; ChromaDB (BGE-m3 vector) and Elasticsearch (nori lexical) are derived hybrid retrieval indexes maintained through an async outbox worker. Final evidence is always reloaded from the canonical record rather than trusted from the index — the same truth-vs-cache split I first built in the **Agent Memory System** (below), applied here at product scale.
 * **Swappable Parts, Measured Before Swapping.** Embedding and reranking sit behind provider-neutral seams. With no endpoint configured, embedding falls back to a fake but reranking falls back to `None` — no reranking at all — because there is no useful stand-in for "fake reranking," and shuffling at random is worse than doing nothing. The brief specified "a generic OpenAI-compatible adapter," but **OpenAI has no rerank endpoint**; following the wording literally would have implemented a contract that does not exist, so I built the shape the field actually shares (`POST /v1/rerank` — Cohere, Jina, Voyage, TEI) and recorded the departure in the brief. The assembly is locked by a guard because **this failure is silent**: if reranking quietly falls out, nothing looks broken and the ranking simply reverts. An evaluation harness (`recall@k` · `MRR` · `nDCG@k`) was written **before** any swap, with gold labels deliberately unfilled — owning a harness is not the same as having evaluated anything.
 * **Documentation as a Precondition, Not a Byproduct.** Choices that cannot be quietly reversed later — architecture, contract literals, policy — are raised as a **decision brief** with an options table before any code is written, and implementation stops until the owner decides. The public snapshot contains **118 decision briefs**. After implementation, a *different* session attempts to falsify the work by **mutation**: reverting the fix to confirm the regression guard fails again. Guards must fail in both directions — reintroducing the original bug, and over-correcting into a valid case.
-* **Documented system verification.** The existing public snapshot reports 118 decision briefs, 315 verification records, and 3,075 passing tests (4,239 subtests). Verdict proportions establish neither review quality nor product value. A runtime container retaining an old port mapping illustrates the need to inspect deployment state alongside tests. These counts were not remeasured here.
-* **Validation status.** Local end-to-end operation, authentication, project ownership, quotas and administration are implementation evidence. Dogfooding was declared on 2026-08-23, but subsequent use records and product metrics were not established in this review. An external multi-user service and remote multi-host operation are outside the verified scope.
+* **Documented system verification.** The existing public snapshot reports 118 decision briefs, 315 verification records, and 3,075 passing tests (4,239 subtests). Verdict proportions establish neither review quality nor product value. A runtime container retaining an old port mapping illustrates the need to inspect deployment state alongside tests.
+* **Operating scope.** Local end-to-end operation, authentication, project ownership, quotas and administration are implemented. Remote multi-host deployment remains deferred.
 
 </details>
 
@@ -34,7 +34,7 @@ Each case starts with the work problem, chosen experience, implemented result an
 
 [Case](https://entangelk.github.io/entangelk/experience.html#video) · Private source
 
-**Audience and problem:** Let video requesters describe intent without managing complex generation recipes. Baseline production time and observation of actual users remain unverified.
+**Audience and problem:** Let video requesters describe intent without managing complex generation recipes.
 
 **Experience and choice:** Video intent → scenario confirmation → required reference-image review → planning → segment generation and master review. Workflows stay internal; users work with content and intent. Free graph assembly, SNS publishing and performance-based learning are separate from the current experience.
 
@@ -57,11 +57,11 @@ Each case starts with the work problem, chosen experience, implemented result an
 
 [GitHub](https://github.com/entangelk/assessment_poc) · [Case](https://entangelk.github.io/entangelk/case-studies.html#assessment)
 
-**Audience and problem:** Help assessment designers detect drift between assignment instructions and grading rubrics. Demand from real hiring teams is still a user hypothesis.
+**Audience and problem:** A PoC for assessment designers to detect drift between assignment instructions and grading rubrics.
 
 **Experience and choice:** Spec/rubric input → inspect mismatch findings → human review → gate decision. Check the assessment design rather than automatically grading candidates. CLI and AI agents are calling interfaces, distinct from the user's job.
 
-**Result and next decision:** Two synthetic examples ran three times each using deterministic extraction and mock semantic verification. Real-assessment false positives, review time and live LLM extraction quality are unverified. Next: compare findings against human review of real paired specs/rubrics.
+**Verification result:** Two synthetic examples ran three times each using deterministic extraction and mock semantic verification, reproducing the finding distributions. Live LLM SDK integration remains outside the implemented scope.
 
 
 <details>
@@ -84,7 +84,7 @@ Each case starts with the work problem, chosen experience, implemented result an
 
 **Choice:** Split about 2.5 years of call logs by season and use Q90 of high-load days for peak planning. A monthly-peak trend with little explanatory power (R² about 0.06) stayed a reference. Estimate extra staffing from remaining demand and practical throughput, with a +1 conservative option.
 
-**Evidence:** The report records historical back-testing at about 91% accuracy and 96% detection of understaffed days. It connects the analysis to staffing two weeks before the season and adding capacity above the per-person threshold. The previously stated ₩6M summer-2026 saving needs post-adoption calculation evidence; preserved service levels after adoption have not been established.
+**Evidence:** The report records historical back-testing at about 91% accuracy and 96% detection of understaffed days. It connects the analysis to staffing two weeks before the season and adding capacity above the per-person threshold.
 
 ### Large-scale asset generation and review
 
@@ -94,7 +94,7 @@ Each case starts with the work problem, chosen experience, implemented result an
 
 **Choice:** Exclude reviewed, skipped and already-generated items from new batches and continue unfinished work. `Pass` means skipping, not approval. The current interface uses paginated lists and lazy image loading.
 
-**Evidence:** The local generation index has 22,068 unique items. That is distinct from generation attempts, final approvals and deployed assets. Post-change load time, reviewer throughput and actual cost savings are unverified. Historical cost comparisons are forecasts rather than invoices.
+**Evidence:** The local generation index has 22,068 unique items. That is distinct from generation attempts, final approvals and deployed assets.
 
 ### NLP category matching
 
@@ -104,7 +104,7 @@ Each case starts with the work problem, chosen experience, implemented result an
 
 **Choice:** Account for common-tag bias and image relevance; update only changed embeddings instead of rebuilding everything. Docker and API documentation connect the module to the existing backend.
 
-**Measurement conditions:** The service README records about 125 seconds to rebuild 4,121 mappings versus about 2 seconds to incrementally update 10 mappings. Different workloads do not establish a 61.5× speedup on the same task. Commercial integration is previously documented; accuracy comparisons, operating period and usage need separate confirmation.
+**Update paths:** Separate full rebuilds from incremental updates of changed mappings. Documented timings are about 125 seconds for 4,121 mappings and about 2 seconds for 10 mappings, with each workload stated explicitly.
 
 ### Internal operations automation
 
@@ -112,11 +112,11 @@ Each case starts with the work problem, chosen experience, implemented result an
 
 **Problem and experience:** Connect repetitive collection and monthly reporting to web-based generation, viewing, editing and export. When collection encounters a CAPTCHA, a person can enter it and resume.
 
-**Choice and evidence:** Scheduled execution and status management are implemented. The README's claim of over 10 hours saved per month needs calculation and sample evidence. Constraints of a particular CMS/API reuse workflow should not be generalized to the full platform, which also uses a database.
+**Choice and result:** Connect report generation, editing and export to scheduled execution and status checks. Existing CMS/API reuse in individual workflows and the platform’s datastore and scheduler serve their respective operating scopes.
 
 ### Supporting work: internal network utility
 
-Deployed a small Python utility for team work interrupted by VPN connection constraints. User count and time savings are unmeasured.
+Deployed a small Python utility for team work interrupted by VPN connection constraints.
 
 ## Technical foundations
 
@@ -124,7 +124,7 @@ Deployed a small Python utility for team work interrupted by VPN connection cons
 
 [Case](https://entangelk.github.io/entangelk/experience.html#rag) · Private source
 
-Experimented with intake, retrieval, answer candidates and evidence verification over real Korean statutes. Unresolved requests or evidence route to human review. The verification Core is a standalone foundation for other services; the caller owns final storage and acceptance. Implementation and live-model experiments do not establish answer accuracy or reviewer time savings.
+Experimented with intake, retrieval, answer candidates and evidence verification over real Korean statutes. Unresolved requests or evidence route to human review. The verification Core is a standalone foundation for other services; the caller owns final storage and acceptance.
 
 
 <details>
@@ -143,7 +143,7 @@ Experimented with intake, retrieval, answer candidates and evidence verification
 
 [GitHub](https://github.com/entangelk/agent-memory-system-public)
 
-An MCP experiment in shared memory storage and retrieval across AI clients. Canonical-record/search-cache separation carries into AI Writer. Full cache consistency after memory updates/deletes requires reindexing or rebuilding, and the server cannot force clients to use memory. Reduced user re-explanation is a separate evaluation question.
+An MCP experiment in shared memory storage and retrieval across AI clients. Canonical-record/search-cache separation carries into AI Writer. Full cache consistency after memory updates/deletes requires reindexing or rebuilding, and the server cannot force clients to use memory.
 
 
 <details>
@@ -159,7 +159,7 @@ An MCP experiment in shared memory storage and retrieval across AI clients. Cano
 
 [GitHub](https://github.com/entangelk/logo_image)
 
-A CV workbench that separates warp, anchoring, segmentation and cleanup to inspect failures. It combines OCR/contours with Grounding DINO and SAM, using sharpness/noise to compare settings. Cleanup cannot recover missing foreground or guarantee commercially usable extraction. Reduced manual work on a real business dataset is unverified.
+A CV workbench that separates warp, anchoring, segmentation and cleanup to inspect failures. It combines OCR/contours with Grounding DINO and SAM, using sharpness/noise to compare settings. Cleanup cannot recover missing foreground or guarantee commercially usable extraction.
 
 ### Harness IR · Mixed results
 

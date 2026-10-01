@@ -189,7 +189,7 @@
 </span>
 </div>
 <p class="tagline"><span class="en">Turn an approved creative brief into a reproducible, multi-segment video generation plan.</span><span class="ko">승인된 제작 브리프를 재현 가능한 다중 세그먼트 영상 생성 계획으로 바꾸는 시스템.</span></p>
-<dl class="project-brief"><div><dt><span class="en">User &amp; problem</span><span class="ko">대상과 문제</span></dt><dd><span class="en">An intended workflow for business staff requesting promotional videos in natural language, without selecting generation graphs themselves. Actual users and the previous workflow need confirmation.</span><span class="ko">업무 담당자가 생성 그래프를 직접 고르지 않고 자연어로 홍보 영상을 요청하는 흐름을 목표로 합니다. 실제 사용자와 기존 작업 방식은 확인이 필요합니다.</span></dd></div><div><dt><span class="en">Choice &amp; workflow</span><span class="ko">선택과 작업 흐름</span></dt><dd><span class="en">Request → brief review → approved workflow parameters → segment generation and review. Require image review on relevant paths; some image-free paths support automatic approval.</span><span class="ko">요청 → 브리프 검토 → 승인된 워크플로우의 매개변수 → 구간 생성·검토로 연결합니다. 이미지 경로에는 필요한 검토를 두며, 일부 무이미지 경로는 자동 승인을 지원합니다.</span></dd></div><div><dt><span class="en">Evidence &amp; next decision</span><span class="ko">근거와 다음 판단</span></dt><dd><span class="en">Local end-to-end operation exists. Long-form continuity and voice quality remain unresolved, and earlier trials failed final-use criteria. Production usefulness requires review of usable output and correction effort.</span><span class="ko">로컬 관통 동작은 확인됩니다. 장편 연속성과 음성 품질은 미해결이며 기존 실험은 최종 사용 기준을 통과하지 못했습니다. 실제 유용성은 사용할 수 있는 결과와 수정 부담으로 판단해야 합니다.</span></dd></div></dl><details class="evidence-details"><summary><span class="en">6 design decisions &amp; verification</span><span class="ko">설계 판단 6개와 검증 근거</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><p class="private-note">
+<dl class="project-brief"><div><dt><span class="en">User &amp; problem</span><span class="ko">대상과 문제</span></dt><dd><span class="en">For business staff requesting promotional videos in natural language, with generation workflows kept behind the interface.</span><span class="ko">업무 담당자가 생성 그래프 대신 원하는 영상과 시나리오를 다루도록 설계한 자연어 요청 흐름입니다.</span></dd></div><div><dt><span class="en">Choice &amp; workflow</span><span class="ko">선택과 작업 흐름</span></dt><dd><span class="en">Request → brief review → approved workflow parameters → segment generation and review. Require image review on relevant paths; some image-free paths support automatic approval.</span><span class="ko">요청 → 브리프 검토 → 승인된 워크플로우의 매개변수 → 구간 생성·검토로 연결합니다. 이미지 경로에는 필요한 검토를 두며, 일부 무이미지 경로는 자동 승인을 지원합니다.</span></dd></div><div><dt><span class="en">Evidence &amp; next decision</span><span class="ko">근거와 다음 판단</span></dt><dd><span class="en">Local end-to-end operation exists. Long-form continuity and voice quality remain unresolved, and earlier trials failed final-use criteria. Production usefulness requires review of usable output and correction effort.</span><span class="ko">로컬 관통 동작은 확인됩니다. 장편 연속성과 음성 품질은 미해결이며 기존 실험은 최종 사용 기준을 통과하지 못했습니다. 실제 유용성은 사용할 수 있는 결과와 수정 부담으로 판단해야 합니다.</span></dd></div></dl><details class="evidence-details"><summary><span class="en">6 design decisions &amp; verification</span><span class="ko">설계 판단 6개와 검증 근거</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><p class="private-note">
 <span class="en">
         Active company project, source not public. The brief → approval → plan → segment generation path runs end-to-end against a local generation host; long-form quality is still an open track, and this page says so where it failed. Described at the architecture / decision level only.
        </span>
@@ -1028,24 +1028,7 @@
      </span>
     </p>
    </div>
-   <div class="row">
-    <div class="k">
-     <span class="en">
-      Pending evidence
-     </span>
-     <span class="ko">
-      추가 근거
-     </span>
-    </div>
-    <p class="v">
-     <span class="en">
-      The previously stated ₩6 million summer 2026 saving needs a post-season calculation and comparison baseline. The earlier planning report cannot establish that saving or retained service levels.
-     </span>
-     <span class="ko">
-      기존의 2026년 여름 600만 원 절감 서술은 사후 산식과 비교 기준을 확인 중입니다. 사전 계획 보고서로 비용 절감과 서비스 수준 유지를 입증하지 않습니다.
-     </span>
-    </p>
-   </div>
+
   </div>
  </details>
 </div>
@@ -1143,32 +1126,11 @@
      </span>
     </div>
     <p class="v">
-     <span class="en">
-      Pagination and lazy image loading avoid rendering every image at once. The implementation is confirmed; the previously claimed loading-time improvement has no verified timing comparison here.
-     </span>
-     <span class="ko">
-      페이지 분할과 이미지 지연 로딩으로 전체 이미지를 한 번에 불러오지 않습니다. 구현은 확인했으나 기존 로딩 시간 개선 서술의 전후 실측은 미확인입니다.
-     </span>
+     <span class="en">Pagination and lazy image loading avoid fetching and rendering every image at once.</span>
+     <span class="ko">페이지 분할과 이미지 지연 로딩으로 전체 이미지를 한 번에 불러오지 않도록 구성했습니다.</span>
     </p>
    </div>
-   <div class="row">
-    <div class="k">
-     <span class="en">
-      Next decision
-     </span>
-     <span class="ko">
-      다음 판단
-     </span>
-    </div>
-    <p class="v">
-     <span class="en">
-      Confirm final deployment scope, reviewer usage, loading measurements, and the quality/cost basis for the generation-model choice.
-     </span>
-     <span class="ko">
-      최종 배포 범위·검수자 사용·로딩 실측·생성 모델 선택의 품질/비용 근거를 확인해야 합니다.
-     </span>
-    </p>
-   </div>
+
   </div>
  </details>
 </div>
@@ -1248,32 +1210,11 @@
      </span>
     </div>
     <p class="v">
-     <span class="en">
-      Docker packaging and Swagger documentation provide an API boundary. Commercial integration was previously documented; the operating period and real usage still need confirmation.
-     </span>
-     <span class="ko">
-      Docker 패키징과 Swagger 문서로 API 연동 경계를 제공했습니다. 상용 적용은 기존 서술이며 운영 기간과 실제 사용량은 확인이 필요합니다.
-     </span>
+     <span class="en">Docker packaging and Swagger documentation provide an API integration boundary for the existing backend.</span>
+     <span class="ko">Docker 패키징과 Swagger 문서로 기존 백엔드에 연결할 API 경계를 제공했습니다.</span>
     </p>
    </div>
-   <div class="row">
-    <div class="k">
-     <span class="en">
-      Limit
-     </span>
-     <span class="ko">
-      한계
-     </span>
-    </div>
-    <p class="v">
-     <span class="en">
-      The timing comparison does not establish a 61.5× same-task speedup. Accuracy, label quality and latency trade-offs require a separate evaluation.
-     </span>
-     <span class="ko">
-      이 비교로 동일 작업 61.5배 속도 개선을 주장하지 않습니다. 정확도·라벨 품질·지연 시간의 선택은 별도 평가가 필요합니다.
-     </span>
-    </p>
-   </div>
+
   </div>
  </details>
 </div>
@@ -1322,12 +1263,8 @@
    </span>
   </div>
   <p class="v">
-   <span class="en">
-    The README states 10+ hours saved per month. Its calculation, observation period and actual usage need confirmation; it is not a measured outcome here.
-   </span>
-   <span class="ko">
-    README의 월 10시간 이상 절감은 산식·관찰 기간·실제 사용 확인이 필요합니다. 이번 자료에서 실측 성과로 확인한 수치는 아닙니다.
-   </span>
+   <span class="en">Report generation, editing and export are connected to scheduled tasks and status checks in the internal web tool.</span>
+   <span class="ko">사내 웹 도구에서 보고서 생성·편집·출력과 정기 실행·상태 확인을 연결했습니다.</span>
   </p>
  </div>
  <details class="evidence-details">
@@ -1361,24 +1298,7 @@
      </span>
     </p>
    </div>
-   <div class="row">
-    <div class="k">
-     <span class="en">
-      Next decision
-     </span>
-     <span class="ko">
-      다음 판단
-     </span>
-    </div>
-    <p class="v">
-     <span class="en">
-      Confirm the tasks replaced, before/after effort, user adoption and direct contribution before claiming productivity gains or sole ownership.
-     </span>
-     <span class="ko">
-      생산성 효과나 단독 기여를 확정하기 전에 대체 업무·전후 소요 시간·사용자의 활용·직접 기여 범위를 확인해야 합니다.
-     </span>
-    </p>
-   </div>
+
   </div>
  </details>
 </div>
