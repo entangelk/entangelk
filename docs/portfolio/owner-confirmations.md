@@ -4,7 +4,9 @@
 
 이 문서는 작업용 확인 목록이다. 질문과 답변 대기 사유를 PROJECTS·README·웹 소개에 노출하지 않는다. 답변 전에는 해당 성과를 생략하고 확인된 문제·판단·구현 결과로 소개한다. 자료를 확보하지 못한 상태를 미측정·미실사용으로 단정하지 않는다.
 
-참고: [사내 근거 요약](company-evidence-snapshot.md) · [개편 계획](portfolio-revision-plan.md) · [핸드오프](HANDOFF.md)
+참고: [사내 근거 요약](company-evidence-snapshot.md) · [개편 계획](portfolio-revision-plan.md) · [핸드오프](HANDOFF.md) · [후속 작업 체크리스트](https://github.com/entangelk/entangelk/blob/main/docs/portfolio/NEXT_ACTIONS.md)
+
+현재 소개를 마무리하기 위한 필수 추가 답변은 없다. OWN-01·OPS-03은 선택적 보강이며, 이미 답한 성과·기여도·개발 상태를 다시 확인하지 않는다. 사용자가 이어갈 실제 작업은 후속 작업 체크리스트를 따른다.
 
 ## 답변과 작업 원칙
 
