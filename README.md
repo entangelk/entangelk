@@ -15,52 +15,7 @@
 > **Product Planning × AI-Augmented Engineering**<br />
 > My background is in operations, business planning, and data analysis. I turn work problems into product flows, build with AI, and use implementation and experiment evidence to decide what to change or stop.
 
-## Decisions in operational work
-
-| Case | Problem and choice | Evidence boundary |
-| --- | --- | --- |
-| [Customer-center staffing](https://entangelk.github.io/entangelk/experience.html#staffing) | Used Q90 and a conservative option to plan for high-load days hidden by averages | Three fewer staff than the previous year, saving ₩6 million; post-adjustment connection rate exceeded the 90% target |
-| [Asset generation and review](https://entangelk.github.io/entangelk/experience.html#assets) | Let reviewers compare, regenerate and review outputs, then continue unfinished work | Replacement assets fully deployed and license terminated; generation API spend ≈40% of the former annual license fee |
-| [NLP category matching](https://entangelk.github.io/entangelk/experience.html#nlp) | Connected natural language to existing categories and updated embeddings only for changed data | Used by production agencies for v비즈링 and v프로필 across three mobile carriers; owned the automatic-production module |
-| [Internal automation](https://entangelk.github.io/entangelk/experience.html#automation) | Connected repetitive reporting and collection to web tasks with human exception handling | Monthly reports for four services: two days of work by an experienced planner generated in under half a day |
-
-## Products in active use and development
-
-### [AI Writer System](https://github.com/entangelk/ai_writte_system) · In development
-
-A writing workspace for long-form creators to find earlier settings and events while drafting. **Consistency tracking is the product hypothesis**, so memory retrieval and review sit alongside generation.
-
-Draft → check the source behind a memory suggestion → approve or reject → retrieve it during later writing. Generated prose arrives in a side pad and changes the manuscript only when adopted. Drafting, generation, memory review and retrieval are connected in one local workspace. I use it for my own writing, dogfooding the product and improving the analysis display and review workflow from issues encountered during use.
-
-[Experience and implementation evidence](https://entangelk.github.io/entangelk/case-studies.html#writer)
-
-### [Long-Form AI Video Production System](https://entangelk.github.io/entangelk/experience.html#video) · Company project, quality under evaluation
-
-Designed an experience where requesters work with **video intent and scenarios instead of generation workflows**. Reference-image review feeds the generation plan; execution recipes stay internal.
-
-In development within a CEO-led task force, focused on B2B advertising. I perform most testing; operational adoption is a later stage.
-
-My project contribution is 85%. I own service planning, architecture, the full backend and management of two working developers; frontend development is handled separately.
-
-Generation and master assembly run locally. Custom-node reference features support long-form continuity and voice consistency to a degree; differences in output quality across models remain the focus of evaluation. Source is private.
-
-## Technical foundations and research
-
-- **[Verified RAG](https://entangelk.github.io/entangelk/experience.html#rag)** — An MVP for foundational AI-service capabilities in the CEO-led task force. My project contribution is 90%, and I currently test it during development.
-- **[Assessment Spec Harness](https://github.com/entangelk/assessment_poc)** — A supporting PoC checking assignment/rubric mismatches, with deterministic reproducibility checked on synthetic examples.
-- **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public)** — Explored shared memory across AI clients. The canonical-record/search-cache separation carries into AI Writer.
-- **[Logo Workbench](https://github.com/entangelk/logo_image)** · **[Harness IR](https://github.com/entangelk/Harness_ir)** — Research into segmentation failures and structured extraction, distinct from validated product outcomes.
-- **Constraint-search research series** — [HW-WFC](https://github.com/entangelk/hw-wfc), [Circle-WFC](https://github.com/entangelk/circle-wfc), [T-WFC](https://github.com/entangelk/T-WFC). Recorded tested successes and failure conditions. Corridor generation remains a follow-up hypothesis for Circle-WFC.
-- **[Q-PSA](https://github.com/entangelk/Q-PSA_Pr)** — A separate perturbation experiment inspired by WFC. Stopped after layer removal raised PPL 3.65× versus 1.05× for the baseline, with scoring roughly 1,300× slower.
-
-## How I work
-
-Start with the problem and existing task, choose the experience and scope, then build with AI and preserve regression evidence. **Working implementation and user benefit require different evidence.** Connect each product decision to the relevant evidence.
-
-[Decisions and technical evidence — PROJECTS.md](https://github.com/entangelk/entangelk/blob/main/PROJECTS.md)
-
-<details>
-<summary>Intro videos</summary>
+## Intro videos
 
 <table>
 <tr>
@@ -155,7 +110,50 @@ https://github.com/user-attachments/assets/05fddc97-0a09-4347-881d-289cd3fa5aac
 
 </details>
 
-</details>
+## Decisions in operational work
+
+| Case | Problem and choice | Evidence boundary |
+| --- | --- | --- |
+| [Customer-center staffing](https://entangelk.github.io/entangelk/experience.html#staffing) | Used Q90 and a conservative option to plan for high-load days hidden by averages | Three fewer staff than the previous year, saving ₩6 million; post-adjustment connection rate exceeded the 90% target |
+| [Asset generation and review](https://entangelk.github.io/entangelk/experience.html#assets) | Let reviewers compare, regenerate and review outputs, then continue unfinished work | Replacement assets fully deployed and license terminated; generation API spend ≈40% of the former annual license fee |
+| [NLP category matching](https://entangelk.github.io/entangelk/experience.html#nlp) | Connected natural language to existing categories and updated embeddings only for changed data | Used by production agencies for v비즈링 and v프로필 across three mobile carriers; owned the automatic-production module |
+| [Internal automation](https://entangelk.github.io/entangelk/experience.html#automation) | Connected repetitive reporting and collection to web tasks with human exception handling | Monthly reports for four services: two days of work by an experienced planner generated in under half a day |
+
+## Products in active use and development
+
+### [AI Writer System](https://github.com/entangelk/ai_writte_system) · In development
+
+A writing workspace for long-form creators to find earlier settings and events while drafting. **Consistency tracking is the product hypothesis**, so memory retrieval and review sit alongside generation.
+
+Draft → check the source behind a memory suggestion → approve or reject → retrieve it during later writing. Generated prose arrives in a side pad and changes the manuscript only when adopted. Drafting, generation, memory review and retrieval are connected in one local workspace. I use it for my own writing, dogfooding the product and improving the analysis display and review workflow from issues encountered during use.
+
+[Experience and implementation evidence](https://entangelk.github.io/entangelk/case-studies.html#writer)
+
+### [Long-Form AI Video Production System](https://entangelk.github.io/entangelk/experience.html#video) · Company project, quality under evaluation
+
+Designed an experience where requesters work with **video intent and scenarios instead of generation workflows**. Reference-image review feeds the generation plan; execution recipes stay internal.
+
+In development within a CEO-led task force, focused on B2B advertising. I perform most testing; operational adoption is a later stage.
+
+My project contribution is 85%. I own service planning, architecture, the full backend and management of two working developers; frontend development is handled separately.
+
+Generation and master assembly run locally. Custom-node reference features support long-form continuity and voice consistency to a degree; differences in output quality across models remain the focus of evaluation. Source is private.
+
+## Technical foundations and research
+
+- **[Verified RAG](https://entangelk.github.io/entangelk/experience.html#rag)** — An MVP for foundational AI-service capabilities in the CEO-led task force. My project contribution is 90%, and I currently test it during development.
+- **[Assessment Spec Harness](https://github.com/entangelk/assessment_poc)** — A supporting PoC checking assignment/rubric mismatches, with deterministic reproducibility checked on synthetic examples.
+- **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public)** — Explored shared memory across AI clients. The canonical-record/search-cache separation carries into AI Writer.
+- **[Logo Workbench](https://github.com/entangelk/logo_image)** · **[Harness IR](https://github.com/entangelk/Harness_ir)** — Research into segmentation failures and structured extraction, distinct from validated product outcomes.
+- **Constraint-search research series** — [HW-WFC](https://github.com/entangelk/hw-wfc), [Circle-WFC](https://github.com/entangelk/circle-wfc), [T-WFC](https://github.com/entangelk/T-WFC). Recorded tested successes and failure conditions. Corridor generation remains a follow-up hypothesis for Circle-WFC.
+- **[Q-PSA](https://github.com/entangelk/Q-PSA_Pr)** — A separate perturbation experiment inspired by WFC. Stopped after layer removal raised PPL 3.65× versus 1.05× for the baseline, with scoring roughly 1,300× slower.
+
+## How I work
+
+Start with the problem and existing task, choose the experience and scope, then build with AI and preserve regression evidence. **Working implementation and user benefit require different evidence.** Connect each product decision to the relevant evidence.
+
+[Decisions and technical evidence — PROJECTS.md](https://github.com/entangelk/entangelk/blob/main/PROJECTS.md)
+
 
 ## Contact
 
