@@ -189,12 +189,12 @@
 </span>
 </div>
 <p class="tagline"><span class="en">Turn an approved creative brief into a reproducible, multi-segment video generation plan.</span><span class="ko">승인된 제작 브리프를 재현 가능한 다중 세그먼트 영상 생성 계획으로 바꾸는 시스템.</span></p>
-<dl class="project-brief"><div><dt><span class="en">User &amp; problem</span><span class="ko">대상과 문제</span></dt><dd><span class="en">For business staff requesting promotional videos in natural language, with generation workflows kept behind the interface.</span><span class="ko">업무 담당자가 생성 그래프 대신 원하는 영상과 시나리오를 다루도록 설계한 자연어 요청 흐름입니다.</span></dd></div><div><dt><span class="en">Choice &amp; workflow</span><span class="ko">선택과 작업 흐름</span></dt><dd><span class="en">Request → brief review → approved workflow parameters → segment generation and review. Require image review on relevant paths; some image-free paths support automatic approval.</span><span class="ko">요청 → 브리프 검토 → 승인된 워크플로우의 매개변수 → 구간 생성·검토로 연결합니다. 이미지 경로에는 필요한 검토를 두며, 일부 무이미지 경로는 자동 승인을 지원합니다.</span></dd></div><div><dt><span class="en">Evidence &amp; next decision</span><span class="ko">근거와 다음 판단</span></dt><dd><span class="en">Local end-to-end operation exists. Long-form continuity and voice quality remain unresolved, and earlier trials failed final-use criteria. Production usefulness requires review of usable output and correction effort.</span><span class="ko">로컬 관통 동작은 확인됩니다. 장편 연속성과 음성 품질은 미해결이며 기존 실험은 최종 사용 기준을 통과하지 못했습니다. 실제 유용성은 사용할 수 있는 결과와 수정 부담으로 판단해야 합니다.</span></dd></div></dl><details class="evidence-details"><summary><span class="en">6 design decisions &amp; verification</span><span class="ko">설계 판단 6개와 검증 근거</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><p class="private-note">
+<dl class="project-brief"><div><dt><span class="en">User &amp; problem</span><span class="ko">대상과 문제</span></dt><dd><span class="en">For business staff requesting promotional videos in natural language, with generation workflows kept behind the interface.</span><span class="ko">업무 담당자가 생성 그래프 대신 원하는 영상과 시나리오를 다루도록 설계한 자연어 요청 흐름입니다.</span></dd></div><div><dt><span class="en">Choice &amp; workflow</span><span class="ko">선택과 작업 흐름</span></dt><dd><span class="en">Request → brief review → approved workflow parameters → segment generation and review. Require image review on relevant paths; some image-free paths support automatic approval.</span><span class="ko">요청 → 브리프 검토 → 승인된 워크플로우의 매개변수 → 구간 생성·검토로 연결합니다. 이미지 경로에는 필요한 검토를 두며, 일부 무이미지 경로는 자동 승인을 지원합니다.</span></dd></div><div><dt><span class="en">Evidence &amp; next decision</span><span class="ko">근거와 다음 판단</span></dt><dd><span class="en">Generation and master assembly run locally. Reference features support long-form continuity and voice consistency to a degree. Current evaluation focuses on differences in output quality across models.</span><span class="ko">로컬에서 생성·완성본 조립까지 동작합니다. 레퍼런스 기능으로 장편 연속성과 목소리 일관성을 일정 수준 구현했고, 현재는 모델별 결과 품질의 차이를 검토합니다.</span></dd></div></dl><details class="evidence-details"><summary><span class="en">6 design decisions &amp; verification</span><span class="ko">설계 판단 6개와 검증 근거</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><p class="private-note">
 <span class="en">
-        Active company project, source not public. The brief → approval → plan → segment generation path runs end-to-end against a local generation host; long-form quality is still an open track, and this page says so where it failed. Described at the architecture / decision level only.
+        Active company project, source not public. The brief → approval → plan → segment generation path runs end-to-end against a local generation host; reference features support continuity and voice consistency, while model-specific output quality remains under evaluation. Described at the architecture / decision level only.
        </span>
 <span class="ko">
-        진행 중인 회사 프로젝트로 소스는 비공개입니다. 브리프 → 승인 → 계획 → 세그먼트 생성 경로는 로컬 생성 호스트에서 end-to-end로 동작하며, 장편 품질은 아직 열린 과제입니다. 실패한 지점은 아래에 그대로 적었습니다. 아키텍처·의사결정 수준으로만 서술합니다.
+        진행 중인 회사 프로젝트로 소스는 비공개입니다. 브리프 → 승인 → 계획 → 세그먼트 생성 경로는 로컬 생성 호스트에서 end-to-end로 동작하며, 레퍼런스로 연속성과 목소리 일관성을 일정 수준 구현했습니다. 남은 품질 과제는 모델별 결과 차이입니다. 아키텍처·의사결정 수준으로만 서술합니다.
        </span>
 </p><div class="decisions">
 <div class="decision">
@@ -424,59 +424,15 @@
           06
          </span>
 <span class="en">
-          Failures get recorded, not promoted
+          Experiment record and current implementation
          </span>
 <span class="ko">
-          실패는 기록하고, 승격하지 않는다
+          기존 실험과 현재 구현을 구분
          </span>
 </p>
 <p class="why">
-<span class="en">
-          The honest state of the long-form track: the music-video direction improved with longer context but still drifted at the one-minute musical boundary, so it was
-          <b>
-           put on hold
-          </b>
-          . A ~58-second ad passed on Korean dialogue alone and failed on static framing, low information density, and broken on-screen Hangul. A ~3-minute drama had so many defects that I
-          <b>
-           declined to itemize fixes
-          </b>
-          rather than produce a fake remediation table. None of the three were promoted to a user-facing capability, and per-segment voice drift — the same character sounding different across independently generated segments — is named as an open problem instead of being papered over. Behind that:
-          <b>
-           10 decision briefs written before implementation
-          </b>
-          ,
-          <b>
-           26 dated independent verification records
-          </b>
-          , ~
-          <b>
-           490 backend tests
-          </b>
-          , and a single canonical contract file that the phase docs are not allowed to override.
-         </span>
-<span class="ko">
-          장편 트랙의 정직한 현재 상태입니다. 뮤직비디오 방향은 문맥을 늘리자 상대적으로 개선됐지만 1분 음악 경계에서 여전히 어긋나
-          <b>
-           보류
-          </b>
-          했습니다. 약 58초 광고는 한국어 대사만 통과했고 정적인 화면·낮은 정보 밀도·깨진 화면 한글 때문에 최종 사용에 실패했습니다. 약 3분 드라마는 결함이 너무 많아, 그럴듯한 수정표를 만드는 대신
-          <b>
-           세부 수정 범위 도출을 거부
-          </b>
-          했습니다. 셋 다 사용자 대상 기능으로 승격하지 않았고, 독립 생성된 세그먼트마다 같은 인물의 목소리가 달라지는 문제도 덮지 않고 별도 과제로 명시했습니다. 그 뒤에는
-          <b>
-           구현 전에 쓴 결정 브리프 10건
-          </b>
-          ,
-          <b>
-           날짜별 독립 검증 기록 26건
-          </b>
-          ,
-          <b>
-           약 490개의 백엔드 테스트
-          </b>
-          , 그리고 페이즈 문서가 덮어쓸 수 없는 단일 계약 정본 파일이 있습니다.
-         </span>
+<span class="en">Earlier music-video, ad and drama trials recorded issues with musical boundaries, visual information, on-screen Hangul and voice quality. Reference features now support long-form continuity and voice consistency to a degree. The current task is evaluating model-specific output quality. The existing engineering snapshot includes 10 decision briefs, 26 dated verification records, roughly 490 backend tests and a canonical contract.</span>
+<span class="ko">기존 뮤직비디오·광고·드라마 실험에서는 음악 경계, 화면 정보량·한글, 목소리 등의 품질 문제를 기록했습니다. 현재는 레퍼런스 기능으로 장편 연속성과 목소리 일관성을 일정 수준 구현했으며, 모델별 결과 품질을 검토합니다. 기존 기술 기록에는 결정 브리프 10건, 날짜별 검증 기록 26건, 약 490개의 백엔드 테스트와 단일 계약 정본이 있습니다.</span>
 </p>
 <p class="ai">
 <b>

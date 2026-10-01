@@ -30,7 +30,7 @@ Each case starts with the work problem, chosen experience, implemented result an
 
 </details>
 
-### Long-Form AI Video Production System · Company project, quality unresolved
+### Long-Form AI Video Production System · Company project, model quality under evaluation
 
 [Case](https://entangelk.github.io/entangelk/experience.html#video) · Private source
 
@@ -38,7 +38,7 @@ Each case starts with the work problem, chosen experience, implemented result an
 
 **Experience and choice:** Video intent → scenario confirmation → required reference-image review → planning → segment generation and master review. Workflows stay internal; users work with content and intent. Free graph assembly, SNS publishing and performance-based learning are separate from the current experience.
 
-**Result and next decision:** Local end-to-end execution exists, but documented music-video, ad and drama trials failed final-use criteria. Generation success and usable quality require different checks; production effort, continuity and voice consistency need separate evaluation.
+**Result and next decision:** Generation and master assembly run locally. Reference features implement support for long-form continuity and voice consistency to a degree. Current evaluation focuses on differences in output quality across models.
 
 
 <details>
@@ -49,7 +49,7 @@ Each case starts with the work problem, chosen experience, implemented result an
 * **One Execution Boundary, Immutable Snapshots:** Our backend is the only execution boundary — a local ComfyUI host and a hosted runtime sit behind the same adapter contract, with identical queue/history handling and receipt-based resume and artifact recovery. Run-time workflow and parameters freeze into an immutable snapshot (recipes change only as a new revision), so reproduction is snapshot-based. Nothing leaving the boundary carries a raw graph, provider payload, storage key, or credential.
 * **The 15-Second Wall — Continuity, Not Editing:** The generation model produces ~15 seconds at a time, so a 15 / 30 / 60 / 180-second request is analyzed once per video and planned into exactly 1 / 2 / 4 / 12 segments. The decision that mattered was refusing to merge two things into one feature: **reference-to-video** (identity, style, motion) is a subject anchor and **frame chaining** (last frame → next first frame) is a time-boundary anchor, verified separately. A manager step that sees the whole video decides per segment which references to use or omit, and a segment left with no reference is explicitly stopped rather than quietly generated from text.
 * **One Prompt IR, a Gate That Only Judges:** Text-, image-, and reference-driven generation were unified behind a single structured prompt IR and renderer — verbatim dialogue with lip-sync and subtitle policy, ambient soundscape kept separate from non-diegetic music, length ceilings, and constraint phrasing now apply identically across all three modes. Multimodal image analysis records what the user *declared* apart from what the *pixels show*. Specialist steps have fixed input/output/write scopes rather than free-form agent chat, and the pre-generation gate returns only `PASS` / `REPAIR` / `BLOCKED` with a target step and reasons — it never edits the prompt; a repair re-runs just the failed step under a call ceiling.
-* **Failures Recorded, Not Promoted:** The music-video direction improved with longer context but still drifted at the one-minute musical boundary, so it was put on hold. A ~58-second ad passed on Korean dialogue alone and failed on static framing, low information density, and broken on-screen Hangul. A ~3-minute drama had so many defects that I declined to itemize fixes rather than produce a fake remediation table. None were promoted to a user-facing capability, and per-segment voice drift is named as an open problem rather than papered over. Behind that: **10 decision briefs written before implementation**, **26 dated independent verification records**, ~**490 backend tests**, and a single canonical contract file the phase docs cannot override.
+* **Distinguish experiments from current implementation:** Earlier music-video, ad and drama trials recorded issues with musical boundaries, visual information, on-screen Hangul and voice quality. Reference features now support long-form continuity and voice consistency to a degree; current evaluation concerns model-specific output quality. The existing snapshot includes 10 decision briefs, 26 dated verification records, roughly 490 backend tests and a canonical contract.
 
 </details>
 
