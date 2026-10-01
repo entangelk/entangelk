@@ -96,7 +96,7 @@ Deployed a small Python utility for team work interrupted by VPN connection cons
 
 **Experience and choice:** Video intent → scenario confirmation → required reference-image review → planning → segment generation and master review. Workflows stay internal; users work with content and intent. Free graph assembly, SNS publishing and performance-based learning are separate from the current experience.
 
-**Ownership:** I own service planning, architecture, the full backend and management of two working developers. Frontend development is handled separately. Reference functionality was added using custom nodes.
+**Ownership:** My project contribution is 85%. I own service planning, architecture, the full backend and management of two working developers. Frontend development is handled separately. Reference functionality was added using custom nodes.
 
 **Purpose and status:** In development within a CEO-led task force, focused on B2B advertising. I perform most testing; the system is at the development stage before operational adoption.
 
@@ -124,7 +124,7 @@ Deployed a small Python utility for team work interrupted by VPN connection cons
 Experimented with intake, retrieval, answer candidates and evidence verification over real Korean statutes. Unresolved requests or evidence route to human review. The verification Core is a standalone foundation for other services; the caller owns final storage and acceptance.
 
 
-**Purpose, contribution and status:** Built as an MVP for foundational AI-service capabilities within a CEO-led task force. I implemented approximately 98% and perform most testing. It remains at the development stage before operational adoption.
+**Purpose, contribution and status:** Built as an MVP for foundational AI-service capabilities within a CEO-led task force. My project contribution is 90%, and I perform most testing. It remains at the development stage before operational adoption.
 
 <details>
 <summary>Technical structure and documented verification</summary>

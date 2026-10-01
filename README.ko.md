@@ -40,13 +40,13 @@
 
 사장님 직속 TFT에서 B2B 광고 기능을 중심으로 개발 중입니다. 테스트는 주로 직접 수행하며 실제 업무 도입 전 단계입니다.
 
-서비스 기획·아키텍처·백엔드 전체와 실무 개발 인원 2명의 팀 관리를 맡습니다. 프런트엔드는 별도 담당입니다.
+프로젝트 기여도는 85%입니다. 서비스 기획·아키텍처·백엔드 전체와 실무 개발 인원 2명의 팀 관리를 맡습니다. 프런트엔드는 별도 담당입니다.
 
 로컬에서 생성·완성본 조립까지 동작하며, 커스텀 노드 기반 레퍼런스 기능으로 장편 연속성과 목소리 일관성을 일정 수준 지원합니다. 남은 과제는 모델별 생성 결과의 품질 차이입니다. 소스는 비공개입니다.
 
 ## 기술 기반과 연구
 
-- **[Verified RAG](https://entangelk.github.io/entangelk/experience.html#rag)** — 초기 AI 서비스의 기본 기능을 위한 MVP. 사장님 직속 TFT에서 구현 대부분을 맡았으며 현재 직접 테스트하는 개발 단계입니다.
+- **[Verified RAG](https://entangelk.github.io/entangelk/experience.html#rag)** — 초기 AI 서비스의 기본 기능을 위한 MVP. 프로젝트 기여도 90%로 사장님 직속 TFT에서 개발하며 현재 직접 테스트하는 개발 단계입니다.
 - **[Assessment Spec Harness](https://github.com/entangelk/assessment_poc)** — 공개 과제 안내와 비공개 채점 기준의 불일치를 검사하는 보조 PoC. 합성 예제로 결정론적 재현성을 확인한 범위입니다.
 - **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public)** — 여러 AI 클라이언트가 공유하는 기억 기반을 실험했습니다. 정본과 검색 캐시의 분리를 AI Writer에 이어 적용했습니다.
 - **[Logo Workbench](https://github.com/entangelk/logo_image)** · **[Harness IR](https://github.com/entangelk/Harness_ir)** — 분할 실패와 구조화 추출 가설을 비교하는 연구 사례입니다. 실사용 제품 성과와 구분합니다.

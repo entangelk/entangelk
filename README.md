@@ -40,13 +40,13 @@ Designed an experience where requesters work with **video intent and scenarios i
 
 In development within a CEO-led task force, focused on B2B advertising. I perform most testing; operational adoption is a later stage.
 
-I own service planning, architecture, the full backend and management of two working developers; frontend development is handled separately.
+My project contribution is 85%. I own service planning, architecture, the full backend and management of two working developers; frontend development is handled separately.
 
 Generation and master assembly run locally. Custom-node reference features support long-form continuity and voice consistency to a degree; differences in output quality across models remain the focus of evaluation. Source is private.
 
 ## Technical foundations and research
 
-- **[Verified RAG](https://entangelk.github.io/entangelk/experience.html#rag)** — An MVP for foundational AI-service capabilities in the CEO-led task force. I implemented nearly all of it and currently test it during development.
+- **[Verified RAG](https://entangelk.github.io/entangelk/experience.html#rag)** — An MVP for foundational AI-service capabilities in the CEO-led task force. My project contribution is 90%, and I currently test it during development.
 - **[Assessment Spec Harness](https://github.com/entangelk/assessment_poc)** — A supporting PoC checking assignment/rubric mismatches, with deterministic reproducibility checked on synthetic examples.
 - **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public)** — Explored shared memory across AI clients. The canonical-record/search-cache separation carries into AI Writer.
 - **[Logo Workbench](https://github.com/entangelk/logo_image)** · **[Harness IR](https://github.com/entangelk/Harness_ir)** — Research into segmentation failures and structured extraction, distinct from validated product outcomes.
