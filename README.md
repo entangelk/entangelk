@@ -15,7 +15,16 @@
 > **Product Planning × AI-Augmented Engineering**<br />
 > My background is in operations, business planning, and data analysis. I turn work problems into product flows, build with AI, and use implementation and experiment evidence to decide what to change or stop.
 
-## Selected product decisions
+## Decisions in operational work
+
+| Case | Problem and choice | Evidence boundary |
+| --- | --- | --- |
+| [Customer-center staffing](https://entangelk.github.io/entangelk/experience.html#staffing) | Used Q90 and a conservative option to plan for high-load days hidden by averages | Three fewer staff than the previous year, saving ₩6 million; post-adjustment connection rate exceeded the 90% target |
+| [Asset generation and review](https://entangelk.github.io/entangelk/experience.html#assets) | Let reviewers compare, regenerate and review outputs, then continue unfinished work | Replacement assets fully deployed and license terminated; generation API spend ≈40% of the former annual license fee |
+| [NLP category matching](https://entangelk.github.io/entangelk/experience.html#nlp) | Connected natural language to existing categories and updated embeddings only for changed data | Used by production agencies for v비즈링 and v프로필 across three mobile carriers; owned the automatic-production module |
+| [Internal automation](https://entangelk.github.io/entangelk/experience.html#automation) | Connected repetitive reporting and collection to web tasks with human exception handling | Monthly reports for four services: two days of work by an experienced planner generated in under half a day |
+
+## Products in active use and development
 
 ### [AI Writer System](https://github.com/entangelk/ai_writte_system) · In development
 
@@ -29,28 +38,16 @@ Draft → check the source behind a memory suggestion → approve or reject → 
 
 Designed an experience where requesters work with **video intent and scenarios instead of generation workflows**. Reference-image review feeds the generation plan; execution recipes stay internal.
 
-I own service planning, architecture, the full backend and management of a two-person team; frontend development is handled separately.
+In development within a CEO-led task force, focused on B2B advertising. I perform most testing; operational adoption is a later stage.
+
+I own service planning, architecture, the full backend and management of two working developers; frontend development is handled separately.
 
 Generation and master assembly run locally. Custom-node reference features support long-form continuity and voice consistency to a degree; differences in output quality across models remain the focus of evaluation. Source is private.
 
-### [Assessment Spec Harness](https://github.com/entangelk/assessment_poc) · PoC
-
-Checks **mismatches between public assignment instructions and private scoring criteria**. It reviews the assessment design rather than grading candidates, separating automatic findings from human judgment. CLI and AI agents run the checks; assessment designers review the findings.
-
-Deterministic reproducibility was checked on synthetic examples. Live LLM SDK integration remains deferred.
-
-## Decisions in operational work
-
-| Case | Problem and choice | Evidence boundary |
-| --- | --- | --- |
-| [Customer-center staffing](https://entangelk.github.io/entangelk/experience.html#staffing) | Used Q90 and a conservative option to plan for high-load days hidden by averages | Three fewer staff than the previous year, saving ₩6 million; post-adjustment connection rate exceeded the 90% target |
-| [Asset generation and review](https://entangelk.github.io/entangelk/experience.html#assets) | Let reviewers compare, regenerate and review outputs, then continue unfinished work | Replacement assets fully deployed and license terminated; generation API spend ≈40% of the former annual license fee |
-| [NLP category matching](https://entangelk.github.io/entangelk/experience.html#nlp) | Connected natural language to existing categories and updated embeddings only for changed data | Used by production agencies for v비즈링 and v프로필 across three mobile carriers; owned the automatic-production module |
-| [Internal automation](https://entangelk.github.io/entangelk/experience.html#automation) | Connected repetitive reporting and collection to web tasks with human exception handling | Monthly reports for four services: two days of work by an experienced planner generated in under half a day |
-
 ## Technical foundations and research
 
-- **[Verified RAG](https://entangelk.github.io/entangelk/experience.html#rag)** — A technical case in statute retrieval and evidence verification. Live-model experiments and a standalone verification Core exist; the calling service owns final adoption.
+- **[Verified RAG](https://entangelk.github.io/entangelk/experience.html#rag)** — An MVP for foundational AI-service capabilities in the CEO-led task force. I implemented nearly all of it and currently test it during development.
+- **[Assessment Spec Harness](https://github.com/entangelk/assessment_poc)** — A supporting PoC checking assignment/rubric mismatches, with deterministic reproducibility checked on synthetic examples.
 - **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public)** — Explored shared memory across AI clients. The canonical-record/search-cache separation carries into AI Writer.
 - **[Logo Workbench](https://github.com/entangelk/logo_image)** · **[Harness IR](https://github.com/entangelk/Harness_ir)** — Research into segmentation failures and structured extraction, distinct from validated product outcomes.
 - **Constraint-search research series** — [HW-WFC](https://github.com/entangelk/hw-wfc), [Circle-WFC](https://github.com/entangelk/circle-wfc), [T-WFC](https://github.com/entangelk/T-WFC). Recorded tested successes and failure conditions. Corridor generation remains a follow-up hypothesis for Circle-WFC.

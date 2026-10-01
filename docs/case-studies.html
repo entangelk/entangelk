@@ -92,7 +92,7 @@
        ← 대표 작업으로
       </span>
 </a>
-<nav aria-label="On this page" class="page-index"><a href="#writer"><span class="en">AI Writer</span><span class="ko">AI Writer</span></a><a href="#assessment"><span class="en">Assessment</span><span class="ko">Assessment</span></a><a href="#memory"><span class="en">Memory</span><span class="ko">Memory</span></a><a href="#harness"><span class="en">Harness IR</span><span class="ko">Harness IR</span></a><a href="#work"><span class="en">Experiments</span><span class="ko">실험</span></a></nav></div>
+<nav aria-label="On this page" class="page-index"><a href="#writer"><span class="en">AI Writer</span><span class="ko">AI Writer</span></a><a href="#memory"><span class="en">Memory</span><span class="ko">Memory</span></a><a href="#harness"><span class="en">Harness IR</span><span class="ko">Harness IR</span></a><a href="#assessment"><span class="en">Assessment PoC</span><span class="ko">Assessment PoC</span></a><a href="#work"><span class="en">Experiments</span><span class="ko">실험</span></a></nav></div>
 </div>
 <section id="decisions">
 <div class="wrap">
@@ -109,7 +109,7 @@
         의사결정 케이스 스터디
        </span>
 </h2>
-<p><span class="en">AI Writer and Assessment describe the intended workflow and scope choices. Memory is a technical foundation; Harness IR is a research experiment.</span><span class="ko">AI Writer와 Assessment는 목표 작업 흐름과 범위 선택을 설명합니다. Memory는 기술 기반, Harness IR은 연구 실험으로 구분합니다.</span></p>
+<p><span class="en">AI Writer describes the writing workflow and scope choices. Memory is a technical foundation; Harness IR is research, followed by Assessment as a supporting PoC.</span><span class="ko">AI Writer의 집필 흐름과 범위 선택을 설명합니다. Memory는 기술 기반, Harness IR은 연구이며 Assessment는 보조 PoC로 뒤에 둡니다.</span></p>
 </div>
 <!-- CASE 1: AI Writer System (flagship — the three pieces assembled) -->
 <div class="case lead" id="writer">
@@ -785,7 +785,7 @@
           </span>
 </b>
 <span class="en">
-          This is the readable version of what I build at work. The production system (
+          This is the readable version of what I build at work. The company system in development (
           <a href="experience.html#current">
            Current work →
           </a>
@@ -796,545 +796,11 @@
           <b>
            읽을 수 있는 버전
           </b>
-          입니다. 실무 시스템(
+          입니다. 개발 중인 사내 시스템(
           <a href="experience.html#current">
            현재 실무 →
           </a>
           )은 다른 업무에 candidate·검증·gate 경계를 적용합니다. 다만 소스가 회사 비공개입니다. 여기서는 그 자취 전부가 열려 있습니다 — 브리프, 검증 기록, 가드, 그리고 한계까지.
-         </span>
-</p>
-</div>
-</div></div></details></div>
-<!-- CASE 3: Assessment Spec Harness -->
-<div class="case" id="assessment">
-<div class="case-top">
-<h3>
-        Assessment Spec Harness
-       </h3>
-<span class="pill poc">
-        PoC
-       </span>
-<span class="pill piece">
-<span class="en">
-         Assessment design gate
-        </span>
-<span class="ko">
-         평가 설계 게이트
-        </span>
-</span>
-</div>
-<p class="tagline"><span class="en">CI for assessment design: inspect the task specification, not the candidate.</span><span class="ko">응시자 대신 과제 명세와 평가 설계를 검사하는 CI.</span></p>
-<dl class="project-brief"><div><dt><span class="en">User &amp; problem</span><span class="ko">대상과 문제</span></dt><dd><span class="en">A PoC for hiring-team designers to check mismatches between public task instructions and private scoring criteria.</span><span class="ko">채용 과제 설계자를 대상으로 공개 안내와 비공개 채점 기준의 불일치를 검사하는 PoC입니다.</span></dd></div><div><dt><span class="en">Scope choice</span><span class="ko">범위 선택</span></dt><dd><span class="en">Inspect the assessment design rather than grade applicants. Keep checks advisory and human review separate from the release gate; exclude automatic policing of grader discretion.</span><span class="ko">응시자 채점 대신 평가 설계를 검사합니다. 검사 결과는 잠정 판단으로 두고 사람 검토와 배포 gate를 분리하며, 평가자의 재량을 자동 단속하는 규칙은 제외했습니다.</span></dd></div><div><dt><span class="en">Evidence &amp; next decision</span><span class="ko">근거와 다음 판단</span></dt><dd><span class="en">A JSON CLI and offline synthetic tests exist. Live LLM extraction and a real spec/rubric pilot remain open; those results must guide whether the scope is useful.</span><span class="ko">JSON CLI와 합성 자료의 offline 검증이 있습니다. live LLM 추출과 실제 명세·채점표 파일럿은 남아 있으며, 그 결과로 현재 범위의 유용성을 판단해야 합니다.</span></dd></div></dl><div class="case-links"><a class="repo" href="https://github.com/entangelk/assessment_poc" rel="noopener" target="_blank">
-        GitHub repo
-       </a></div><details class="evidence-details"><summary><span class="en">6 decisions, ownership &amp; evidence</span><span class="ko">설계 판단 6개 · 직접 맡은 일 · 검증 기록</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><div class="case-links">
-<a class="repo" href="https://github.com/entangelk/assessment_poc" rel="noopener" target="_blank">
-        GitHub repo
-       </a>
-<span class="en">
-<a href="https://github.com/entangelk/assessment_poc/blob/main/docs/case_study.md" rel="noopener" target="_blank">
-         Case study →
-        </a>
-</span>
-<span class="en">
-<a href="https://github.com/entangelk/assessment_poc/blob/main/docs/decisions.md" rel="noopener" target="_blank">
-         Decision vignettes →
-        </a>
-</span>
-<span class="en">
-<a href="https://github.com/entangelk/assessment_poc/tree/main/docs/planning" rel="noopener" target="_blank">
-         Planning trail (ideation → spec) →
-        </a>
-</span>
-<span class="ko">
-<a href="https://github.com/entangelk/assessment_poc/blob/main/docs/case_study.ko.md" rel="noopener" target="_blank">
-         케이스 스터디 →
-        </a>
-</span>
-<span class="ko">
-<a href="https://github.com/entangelk/assessment_poc/blob/main/docs/decisions.ko.md" rel="noopener" target="_blank">
-         결정 비네트 →
-        </a>
-</span>
-<span class="ko">
-<a href="https://github.com/entangelk/assessment_poc/tree/main/docs/planning" rel="noopener" target="_blank">
-         기획 트레일 (ideation → spec) →
-        </a>
-</span>
-</div><div class="scan">
-<div class="srow">
-<div class="sk">
-<span class="en">
-          Problem
-         </span>
-<span class="ko">
-          문제
-         </span>
-</div>
-<div class="sv">
-<span class="en">
-          Assessment rounds fail one level above the graders: rubric criteria that never appeared in the public spec, "optional" items that decide the outcome, recommended times that do not match the real depth of work.
-         </span>
-<span class="ko">
-          채용 과제의 실패는 평가자보다 한 단계 위에서 납니다 — 공개 명세에 없던 채점 기준, 사실상 결과를 가르는 "선택" 항목, 실제 작업 깊이와 맞지 않는 권장 시간.
-         </span>
-</div>
-</div>
-<div class="srow">
-<div class="sk">
-<span class="en">
-          Result
-         </span>
-<span class="ko">
-          결과
-         </span>
-</div>
-<div class="sv">
-<span class="en">
-          A CI that checks the assessment design, not the candidate, catching spec/rubric mismatches before applicants see them — a deterministic core plus a separate gate that reads human review, exposed as a JSON CLI contract an agent can call.
-         </span>
-<span class="ko">
-          응시자가 아니라 평가 설계를 검사하는 CI입니다. 명세·채점표 불일치를 응시자가 보기 전에 잡습니다 — 결정론적 코어와, 사람의 검토를 읽는 별도 gate, 그리고 agent가 호출할 수 있는 JSON CLI 계약.
-         </span>
-</div>
-</div>
-<div class="srow">
-<div class="sk">
-<span class="en">
-          Boundary
-         </span>
-<span class="ko">
-          경계
-         </span>
-</div>
-<div class="sv">
-<span class="en">
-          The live LLM SDK runner is still on hold. What the offline runs proved is
-          <b>
-           deterministic reproducibility on valid input
-          </b>
-          — not live LLM extraction quality.
-         </span>
-<span class="ko">
-          live LLM SDK runner는 여전히 보류입니다. offline 실행이 증명한 것은
-          <b>
-           유효 입력 위에서의 결정론적 재현성
-          </b>
-          이지, live LLM의 추출 품질이 아닙니다.
-         </span>
-</div>
-</div>
-</div><p class="bridge">
-<span class="en">
-<b>
-         The primary caller is an AI agent; the intended human user is an assessment designer.
-        </b>
-        In JSON mode (
-        <code>
-         --output json
-        </code>
-        ) every command returns the same predictable envelope — what happened (
-        <code>
-         status
-        </code>
-        ), an
-        <code>
-         exit_code
-        </code>
-        , which
-        <code>
-         command
-        </code>
-        ran, and suggested
-        <code>
-         next_actions
-        </code>
-        — and an agent can call
-        <code>
-         schema --command
-        </code>
-        to learn each interface on its own. A framework-neutral
-        <code>
-         AgentRunner
-        </code>
-        marks the seam where a real model will plug in later, but the runners that exist today are a test fixture and an offline deterministic stand-in, not live SDK integrations.
-       </span>
-<span class="ko">
-<b>
-         주 호출자는 AI agent이며, 목표 사용자 가설은 채용 과제 설계자입니다.
-        </b>
-        JSON 모드(
-        <code>
-         --output json
-        </code>
-        )에서 모든 명령은 똑같이 예측 가능한 형태로 응답합니다 — 무슨 일이 있었는지(
-        <code>
-         status
-        </code>
-        ), 종료 코드(
-        <code>
-         exit_code
-        </code>
-        ), 어떤 명령이 실행됐는지(
-        <code>
-         command
-        </code>
-        ), 다음에 할 일 제안(
-        <code>
-         next_actions
-        </code>
-        ). 그리고 agent는
-        <code>
-         schema --command
-        </code>
-        를 호출해 각 인터페이스를 스스로 익힐 수 있습니다. framework-neutral
-        <code>
-         AgentRunner
-        </code>
-        는 나중에 실제 모델이 꽂힐 자리를 표시하지만, 현재 존재하는 runner는 테스트 fixture와 offline deterministic stand-in이며 live SDK 연동은 아닙니다.
-       </span>
-</p><div class="owned">
-<p class="owned-h">
-<span class="en">
-         What I owned myself
-        </span>
-<span class="ko">
-         제가 직접 소유한 것
-        </span>
-</p>
-<ul>
-<li>
-<span class="en">
-<b>
-           The reframing.
-          </b>
-          Reading one round of submissions and retrospectives and concluding the failure sat one level up — in the assessment design, not in the graders. Aiming the tool there is the decision the whole project rests on.
-         </span>
-<span class="ko">
-<b>
-           문제 재정의.
-          </b>
-          한 라운드의 응시·회고 자료를 정독하고, 실패가 평가자가 아니라 한 단계 위 — 평가 설계 — 에 있다고 판정한 것. 프로젝트 전체가 그 결정 위에 서 있습니다.
-         </span>
-</li>
-<li>
-<span class="en">
-<b>
-           The three rules I refused.
-          </b>
-          Scoring-split inspection, automatic grader-variance detection, and contradictory-rubric detection were all proposed and all rejected: they police legitimate grader discretion instead of the actual target. Drawing scope by refusal was mine.
-         </span>
-<span class="ko">
-<b>
-           거부한 세 규칙.
-          </b>
-          배점 분할 검사, 채점 편차 자동 감지, 모순 채점기준 검출 — 셋 다 제안됐고 셋 다 거부했습니다. 진짜 표적 대신 평가자의 정당한 재량을 단속하기 때문입니다. '거부로 범위를 긋는' 것이 제 몫이었습니다.
-         </span>
-</li>
-<li>
-<span class="en">
-<b>
-           The check/gate separation and the label split.
-          </b>
-          Keeping
-          <code>
-           check
-          </code>
-          advisory so a linter never becomes an automatic judge, and splitting a label that was quietly lying into
-          <code>
-           structurally_validated
-          </code>
-          vs
-          <code>
-           validated
-          </code>
-          after an AI audit exposed it.
-         </span>
-<span class="ko">
-<b>
-           check/gate 분리와 라벨 분할.
-          </b>
-          linter가 자동 심판자로 변질되지 않도록
-          <code>
-           check
-          </code>
-          를 잠정 판정으로 묶은 것, 그리고 AI 감사가 드러낸 뒤 조용히 거짓말하던 라벨을
-          <code>
-           structurally_validated
-          </code>
-          와
-          <code>
-           validated
-          </code>
-          로 쪼갠 것.
-         </span>
-</li>
-<li>
-<span class="en">
-<b>
-           Retracting my own verdict.
-          </b>
-          When an early verification found a rule's boundary check incomplete, I retracted an already-issued PASS and reissued it. Nobody made me do that.
-         </span>
-<span class="ko">
-<b>
-           내가 내린 판정의 철회.
-          </b>
-          초기 검증에서 한 규칙의 경계 검사가 불완전하다는 게 드러났을 때, 이미 발행한 합격 판정을 철회하고 다시 발행했습니다. 아무도 시키지 않은 일입니다.
-         </span>
-</li>
-</ul>
-</div><div class="decisions">
-<div class="decision">
-<p class="dh">
-<span class="num">
-          01
-         </span>
-<span class="en">
-          Reframed the problem: judge the design, not the candidate
-         </span>
-<span class="ko">
-          문제 재정의: 응시자가 아니라 설계를 평가한다
-         </span>
-</p>
-<p class="why">
-<span class="en">
-          Reading one assessment round and its retrospective, I saw a
-          <b>
-           systemic gap in the assessment infrastructure
-          </b>
-          — recommended hours vs. real depth, "optional" items that were actually the deciding signal, grading criteria absent from the public brief. So I targeted the upstream failure, not the candidate.
-         </span>
-<span class="ko">
-          한 라운드의 응시·회고 자료를 정독하니 개별 평가자의 실수가 아니라
-          <b>
-           평가 인프라 자체의 시스템적 공백
-          </b>
-          이 보였습니다 — 권장 시간 vs 실제 작업 깊이, 사실상 결정적이던 "선택" 항목, 공개 명세에 없던 채점 기준. 그래서 응시자가 아니라 그 위쪽 단계의 실패를 겨눴습니다.
-         </span>
-</p>
-<blockquote class="pull">
-<span class="en">
-          "This tool does not evaluate the candidate. It evaluates the assessment design itself."
-         </span>
-<span class="ko">
-          "이 도구는 응시자를 평가하지 않는다. 평가 설계 자체를 평가한다."
-         </span>
-</blockquote>
-</div>
-<div class="decision">
-<p class="dh">
-<span class="num">
-          02
-         </span>
-<span class="en">
-          Drew the scope by what I refused to build
-         </span>
-<span class="ko">
-          '거부'로 범위를 그었다
-         </span>
-</p>
-<p class="why">
-<span class="en">
-          Three rules were proposed that I turned down on principle: checking how an evaluator distributes scoring weight, auto-detecting scoring drift, and flagging mutually contradictory criteria. Each one polices a judgment call the candidate can already see, instead of the tool's actual target — criteria that were never disclosed to the candidate at all. A PoC's default failure mode is scope creep, and every refusal keeps the tool explainable in one sentence.
-         </span>
-<span class="ko">
-          제안됐지만 원칙적으로 거부한 세 규칙이 있습니다: 평가자가 배점을 어떻게 나누는지 검사하는 것, 채점 편차를 자동으로 감지하는 것, 서로 모순되는 채점 기준을 잡아내는 것. 셋 다 응시자가 이미 볼 수 있는 '평가자의 정당한 재량'을 단속할 뿐, 정작 이 도구가 노리는 표적 — 응시자에게 아예 공개되지 않은 기준 — 은 잡지 못합니다. PoC의 기본 실패 모드는 scope creep이고, 각 거부가 도구를 한 문장으로 설명 가능하게 유지합니다.
-         </span>
-</p>
-<blockquote class="pull">
-<span class="en">
-          "A tool is defined as much by what it refuses to do as by what it does."
-         </span>
-<span class="ko">
-          "도구는 하기로 한 것만큼이나 하지 않기로 한 것으로 정의된다."
-         </span>
-</blockquote>
-</div>
-<div class="decision">
-<p class="dh">
-<span class="num">
-          03
-         </span>
-<span class="en">
-          The machine analyzes; only the human judges
-         </span>
-<span class="ko">
-          기계는 분석만, 판단은 사람만
-         </span>
-</p>
-<p class="why">
-<span class="en">
-          If the deterministic checker returned pass/fail, a
-          <i>
-           linter for assessment design
-          </i>
-          would quietly become an
-          <i>
-           automated judge
-          </i>
-          . So the
-          <code>
-           check
-          </code>
-          step only produces provisional findings, and a separate
-          <code>
-           gate
-          </code>
-          step reads the human's final review before anything blocks. A blocking verdict fires for only three defects that genuinely invalidate a design: a rubric scores something the public brief never mentions, an item marked "optional" actually decides the outcome, or mandatory work earns bonus points only.
-         </span>
-<span class="ko">
-          결정론적 checker가 pass/fail을 반환하면,
-          <i>
-           평가 설계의 linter
-          </i>
-          가 조용히
-          <i>
-           자동 심판자
-          </i>
-          로 변질됩니다. 그래서
-          <code>
-           check
-          </code>
-          단계는 잠정 finding만 만들고, 별도의
-          <code>
-           gate
-          </code>
-          단계가 사람의 최종 검토를 읽은 뒤에야 차단합니다. 차단 판정은 설계를 실제로 무효화하는 세 결함에만 발화합니다 — 공개 명세엔 없는 것을 채점표가 점수화하거나, "선택"이라 표시됐지만 사실상 결과를 가르는 항목이거나, 필수 작업인데 가산점으로만 인정되는 경우입니다.
-         </span>
-</p>
-</div>
-<div class="decision">
-<p class="dh">
-<span class="num">
-          04
-         </span>
-<span class="en">
-          Split a label that was quietly lying
-         </span>
-<span class="ko">
-          조용히 거짓말하던 라벨을 쪼갰다
-         </span>
-</p>
-<p class="why">
-<span class="en">
-          A classifier was stamping the label
-          <code>
-           validated
-          </code>
-          after checking only the file's shape and its audit trail — while the stricter check, that every quoted piece of evidence actually traces back to the source spec, was still unimplemented. An AI audit caught it by feeding in a run that cited a reference that didn't exist and a quote that was made up; the classifier passed it with zero errors. So I split the one label in two:
-          <code>
-           structurally_validated
-          </code>
-          (the shape is sound) versus
-          <code>
-           validated
-          </code>
-          (the evidence is genuinely grounded), so a shallow pass can never be silently promoted as the real thing.
-         </span>
-<span class="ko">
-          분류기가 파일의 형식과 감사 추적(audit-trace)만 확인하고
-          <code>
-           validated
-          </code>
-          라벨을 찍고 있었습니다 — 인용된 근거가 실제로 원본 명세까지 거슬러 추적되는지 보는 더 엄격한 단계는 아직 미구현인데도요. AI 감사가 존재하지 않는 참조와 날조된 인용을 가진 run을 찔러 이를 잡아냈고, 분류기는 에러 0개로 통과시켰습니다. 그래서 라벨 하나를 둘로 분리했습니다:
-          <code>
-           structurally_validated
-          </code>
-          (형식은 멀쩡함)와
-          <code>
-           validated
-          </code>
-          (근거까지 실제로 입증됨). 얕은 통과가 진짜인 척 조용히 승격되지 못하게 한 것입니다.
-         </span>
-</p>
-<blockquote class="pull">
-<span class="en">
-          "A label that lies is worse than one more label."
-         </span>
-<span class="ko">
-          "거짓말하는 라벨이 라벨 하나 더 있는 것보다 나쁘다."
-         </span>
-</blockquote>
-</div>
-<div class="decision">
-<p class="dh">
-<span class="num">
-          05
-         </span>
-<span class="en">
-          Had AI audit my own work — and allowed verdicts to be withdrawn
-         </span>
-<span class="ko">
-          AI에게 내 작업을 감사시키고, verdict 철회까지 허용했다
-         </span>
-</p>
-<p class="why">
-<span class="en">
-          A green test suite only proves the code matches the tests, not the spec. So I made independent verification a first-class artifact, guarded in both directions — against the bug creeping back, and against valid cases getting falsely flagged — and treated a missing guard as a blocker. When an early verification record found that one rule's boundary check was incomplete, I
-          <b>
-           withdrew the passing verdict and reissued it
-          </b>
-          rather than quietly patching over it.
-         </span>
-<span class="ko">
-          green 테스트는 코드가 테스트대로 작동함만 증명할 뿐, 명세대로임을 보장하지 않습니다. 그래서 독립 검증을 1급 산출물로 삼고 양방향으로 가드를 걸었습니다 — 버그가 다시 기어들어오는 쪽과, 정상 케이스가 잘못 걸리는 쪽 모두에 대해. 누락된 가드는 차단 사유로 다뤘습니다. 초기 검증 기록에서 한 규칙의 경계 검사가 불완전하다는 걸 발견했을 때는, 조용히 덮지 않고
-          <b>
-           이미 내린 합격 verdict를 철회한 뒤 다시 발행
-          </b>
-          했습니다.
-         </span>
-</p>
-<p class="ai">
-<b>
-<span class="en">
-           AI's role:
-          </span>
-<span class="ko">
-           AI의 역할:
-          </span>
-</b>
-<span class="en">
-          Claude Code, Codex, and Gemini were used to draft, probe, and independently audit the implementation; the CLI itself is designed for agent callers. That development workflow is separate from runtime maturity: no live model runner is implemented. I retained commit authority and final judgment.
-         </span>
-<span class="ko">
-          Claude Code·Codex·Gemini를 구현 초안·probe·독립 감사에 사용했고, CLI 자체도 agent caller를 위해 설계했습니다. 다만 이 개발 방식과 runtime 성숙도는 별개입니다 — live model runner는 아직 없습니다. commit 권한과 최종 판단은 제가 가졌습니다.
-         </span>
-</p>
-<blockquote class="pull">
-<span class="en">
-          "I'd rather record a withdrawn verdict than ship a green bar that lies."
-         </span>
-<span class="ko">
-          "거짓말하는 green bar를 내보내느니 철회된 verdict를 기록하겠다."
-         </span>
-</blockquote>
-</div>
-<div class="decision">
-<p class="dh">
-<span class="num">
-          07
-         </span>
-<span class="en">
-          Stated the limit honestly: this is still a PoC
-         </span>
-<span class="ko">
-          한계를 정직하게: 아직 PoC다
-         </span>
-</p>
-<p class="why">
-<span class="en">
-          The deterministic core and the review/verdict flow are implemented; live LLM SDK runners are still deferred. The offline workflow is more than a smoke test that just confirms the wiring connects: two synthetic example assignments were each run end-to-end three times, using fixed deterministic extraction plus a mock stand-in for the semantic check. Every run produced identical finding distributions and zero grounding diagnostics — no broken references, no fabricated quotes. That proves the pipeline is deterministically reproducible on valid inputs —
-          <b>
-           not that a live LLM extracts well
-          </b>
-          .
-         </span>
-<span class="ko">
-          결정론적 코어와 review/verdict 흐름은 구현됐지만, live LLM SDK runner는 여전히 보류 상태입니다. offline workflow는 '배선이 연결되는지'만 확인하는 단순 smoke 테스트보다 깊습니다: 두 합성 예제 과제를, 고정된 결정론적 추출 + 의미 검사를 대신하는 mock으로 각각 3회 end-to-end 실행했습니다. 매번 동일한 finding 분포가 나왔고, grounding 진단(깨진 참조·날조된 인용)은 0건이었습니다. 이는 유효 입력 위에서 파이프라인이 결정론적으로 재현된다는 증명일 뿐,
-          <b>
-           live LLM의 추출 품질 증명은 아닙니다
-          </b>
-          .
          </span>
 </p>
 </div>
@@ -2117,6 +1583,540 @@
           "컴파일러는 역할 초안을 만들 뿐, 의미를 인증하지 않는다."
          </span>
 </blockquote>
+</div>
+</div></div></details></div>
+<!-- CASE 3: Assessment Spec Harness -->
+<div class="case" id="assessment">
+<div class="case-top">
+<h3>
+        Assessment Spec Harness
+       </h3>
+<span class="pill poc">
+        PoC
+       </span>
+<span class="pill piece">
+<span class="en">
+         Assessment design gate
+        </span>
+<span class="ko">
+         평가 설계 게이트
+        </span>
+</span>
+</div>
+<p class="tagline"><span class="en">CI for assessment design: inspect the task specification, not the candidate.</span><span class="ko">응시자 대신 과제 명세와 평가 설계를 검사하는 CI.</span></p>
+<dl class="project-brief"><div><dt><span class="en">User &amp; problem</span><span class="ko">대상과 문제</span></dt><dd><span class="en">A PoC for hiring-team designers to check mismatches between public task instructions and private scoring criteria.</span><span class="ko">채용 과제 설계자를 대상으로 공개 안내와 비공개 채점 기준의 불일치를 검사하는 PoC입니다.</span></dd></div><div><dt><span class="en">Scope choice</span><span class="ko">범위 선택</span></dt><dd><span class="en">Inspect the assessment design rather than grade applicants. Keep checks advisory and human review separate from the release gate; exclude automatic policing of grader discretion.</span><span class="ko">응시자 채점 대신 평가 설계를 검사합니다. 검사 결과는 잠정 판단으로 두고 사람 검토와 배포 gate를 분리하며, 평가자의 재량을 자동 단속하는 규칙은 제외했습니다.</span></dd></div><div><dt><span class="en">Evidence &amp; next decision</span><span class="ko">근거와 다음 판단</span></dt><dd><span class="en">A JSON CLI and offline synthetic tests exist. Live LLM extraction and a real spec/rubric pilot remain open; those results must guide whether the scope is useful.</span><span class="ko">JSON CLI와 합성 자료의 offline 검증이 있습니다. live LLM 추출과 실제 명세·채점표 파일럿은 남아 있으며, 그 결과로 현재 범위의 유용성을 판단해야 합니다.</span></dd></div></dl><div class="case-links"><a class="repo" href="https://github.com/entangelk/assessment_poc" rel="noopener" target="_blank">
+        GitHub repo
+       </a></div><details class="evidence-details"><summary><span class="en">6 decisions, ownership &amp; evidence</span><span class="ko">설계 판단 6개 · 직접 맡은 일 · 검증 기록</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><div class="case-links">
+<a class="repo" href="https://github.com/entangelk/assessment_poc" rel="noopener" target="_blank">
+        GitHub repo
+       </a>
+<span class="en">
+<a href="https://github.com/entangelk/assessment_poc/blob/main/docs/case_study.md" rel="noopener" target="_blank">
+         Case study →
+        </a>
+</span>
+<span class="en">
+<a href="https://github.com/entangelk/assessment_poc/blob/main/docs/decisions.md" rel="noopener" target="_blank">
+         Decision vignettes →
+        </a>
+</span>
+<span class="en">
+<a href="https://github.com/entangelk/assessment_poc/tree/main/docs/planning" rel="noopener" target="_blank">
+         Planning trail (ideation → spec) →
+        </a>
+</span>
+<span class="ko">
+<a href="https://github.com/entangelk/assessment_poc/blob/main/docs/case_study.ko.md" rel="noopener" target="_blank">
+         케이스 스터디 →
+        </a>
+</span>
+<span class="ko">
+<a href="https://github.com/entangelk/assessment_poc/blob/main/docs/decisions.ko.md" rel="noopener" target="_blank">
+         결정 비네트 →
+        </a>
+</span>
+<span class="ko">
+<a href="https://github.com/entangelk/assessment_poc/tree/main/docs/planning" rel="noopener" target="_blank">
+         기획 트레일 (ideation → spec) →
+        </a>
+</span>
+</div><div class="scan">
+<div class="srow">
+<div class="sk">
+<span class="en">
+          Problem
+         </span>
+<span class="ko">
+          문제
+         </span>
+</div>
+<div class="sv">
+<span class="en">
+          Assessment rounds fail one level above the graders: rubric criteria that never appeared in the public spec, "optional" items that decide the outcome, recommended times that do not match the real depth of work.
+         </span>
+<span class="ko">
+          채용 과제의 실패는 평가자보다 한 단계 위에서 납니다 — 공개 명세에 없던 채점 기준, 사실상 결과를 가르는 "선택" 항목, 실제 작업 깊이와 맞지 않는 권장 시간.
+         </span>
+</div>
+</div>
+<div class="srow">
+<div class="sk">
+<span class="en">
+          Result
+         </span>
+<span class="ko">
+          결과
+         </span>
+</div>
+<div class="sv">
+<span class="en">
+          A CI that checks the assessment design, not the candidate, catching spec/rubric mismatches before applicants see them — a deterministic core plus a separate gate that reads human review, exposed as a JSON CLI contract an agent can call.
+         </span>
+<span class="ko">
+          응시자가 아니라 평가 설계를 검사하는 CI입니다. 명세·채점표 불일치를 응시자가 보기 전에 잡습니다 — 결정론적 코어와, 사람의 검토를 읽는 별도 gate, 그리고 agent가 호출할 수 있는 JSON CLI 계약.
+         </span>
+</div>
+</div>
+<div class="srow">
+<div class="sk">
+<span class="en">
+          Boundary
+         </span>
+<span class="ko">
+          경계
+         </span>
+</div>
+<div class="sv">
+<span class="en">
+          The live LLM SDK runner is still on hold. What the offline runs proved is
+          <b>
+           deterministic reproducibility on valid input
+          </b>
+          — not live LLM extraction quality.
+         </span>
+<span class="ko">
+          live LLM SDK runner는 여전히 보류입니다. offline 실행이 증명한 것은
+          <b>
+           유효 입력 위에서의 결정론적 재현성
+          </b>
+          이지, live LLM의 추출 품질이 아닙니다.
+         </span>
+</div>
+</div>
+</div><p class="bridge">
+<span class="en">
+<b>
+         The primary caller is an AI agent; the intended human user is an assessment designer.
+        </b>
+        In JSON mode (
+        <code>
+         --output json
+        </code>
+        ) every command returns the same predictable envelope — what happened (
+        <code>
+         status
+        </code>
+        ), an
+        <code>
+         exit_code
+        </code>
+        , which
+        <code>
+         command
+        </code>
+        ran, and suggested
+        <code>
+         next_actions
+        </code>
+        — and an agent can call
+        <code>
+         schema --command
+        </code>
+        to learn each interface on its own. A framework-neutral
+        <code>
+         AgentRunner
+        </code>
+        marks the seam where a real model will plug in later, but the runners that exist today are a test fixture and an offline deterministic stand-in, not live SDK integrations.
+       </span>
+<span class="ko">
+<b>
+         주 호출자는 AI agent이며, 목표 사용자 가설은 채용 과제 설계자입니다.
+        </b>
+        JSON 모드(
+        <code>
+         --output json
+        </code>
+        )에서 모든 명령은 똑같이 예측 가능한 형태로 응답합니다 — 무슨 일이 있었는지(
+        <code>
+         status
+        </code>
+        ), 종료 코드(
+        <code>
+         exit_code
+        </code>
+        ), 어떤 명령이 실행됐는지(
+        <code>
+         command
+        </code>
+        ), 다음에 할 일 제안(
+        <code>
+         next_actions
+        </code>
+        ). 그리고 agent는
+        <code>
+         schema --command
+        </code>
+        를 호출해 각 인터페이스를 스스로 익힐 수 있습니다. framework-neutral
+        <code>
+         AgentRunner
+        </code>
+        는 나중에 실제 모델이 꽂힐 자리를 표시하지만, 현재 존재하는 runner는 테스트 fixture와 offline deterministic stand-in이며 live SDK 연동은 아닙니다.
+       </span>
+</p><div class="owned">
+<p class="owned-h">
+<span class="en">
+         What I owned myself
+        </span>
+<span class="ko">
+         제가 직접 소유한 것
+        </span>
+</p>
+<ul>
+<li>
+<span class="en">
+<b>
+           The reframing.
+          </b>
+          Reading one round of submissions and retrospectives and concluding the failure sat one level up — in the assessment design, not in the graders. Aiming the tool there is the decision the whole project rests on.
+         </span>
+<span class="ko">
+<b>
+           문제 재정의.
+          </b>
+          한 라운드의 응시·회고 자료를 정독하고, 실패가 평가자가 아니라 한 단계 위 — 평가 설계 — 에 있다고 판정한 것. 프로젝트 전체가 그 결정 위에 서 있습니다.
+         </span>
+</li>
+<li>
+<span class="en">
+<b>
+           The three rules I refused.
+          </b>
+          Scoring-split inspection, automatic grader-variance detection, and contradictory-rubric detection were all proposed and all rejected: they police legitimate grader discretion instead of the actual target. Drawing scope by refusal was mine.
+         </span>
+<span class="ko">
+<b>
+           거부한 세 규칙.
+          </b>
+          배점 분할 검사, 채점 편차 자동 감지, 모순 채점기준 검출 — 셋 다 제안됐고 셋 다 거부했습니다. 진짜 표적 대신 평가자의 정당한 재량을 단속하기 때문입니다. '거부로 범위를 긋는' 것이 제 몫이었습니다.
+         </span>
+</li>
+<li>
+<span class="en">
+<b>
+           The check/gate separation and the label split.
+          </b>
+          Keeping
+          <code>
+           check
+          </code>
+          advisory so a linter never becomes an automatic judge, and splitting a label that was quietly lying into
+          <code>
+           structurally_validated
+          </code>
+          vs
+          <code>
+           validated
+          </code>
+          after an AI audit exposed it.
+         </span>
+<span class="ko">
+<b>
+           check/gate 분리와 라벨 분할.
+          </b>
+          linter가 자동 심판자로 변질되지 않도록
+          <code>
+           check
+          </code>
+          를 잠정 판정으로 묶은 것, 그리고 AI 감사가 드러낸 뒤 조용히 거짓말하던 라벨을
+          <code>
+           structurally_validated
+          </code>
+          와
+          <code>
+           validated
+          </code>
+          로 쪼갠 것.
+         </span>
+</li>
+<li>
+<span class="en">
+<b>
+           Retracting my own verdict.
+          </b>
+          When an early verification found a rule's boundary check incomplete, I retracted an already-issued PASS and reissued it. Nobody made me do that.
+         </span>
+<span class="ko">
+<b>
+           내가 내린 판정의 철회.
+          </b>
+          초기 검증에서 한 규칙의 경계 검사가 불완전하다는 게 드러났을 때, 이미 발행한 합격 판정을 철회하고 다시 발행했습니다. 아무도 시키지 않은 일입니다.
+         </span>
+</li>
+</ul>
+</div><div class="decisions">
+<div class="decision">
+<p class="dh">
+<span class="num">
+          01
+         </span>
+<span class="en">
+          Reframed the problem: judge the design, not the candidate
+         </span>
+<span class="ko">
+          문제 재정의: 응시자가 아니라 설계를 평가한다
+         </span>
+</p>
+<p class="why">
+<span class="en">
+          Reading one assessment round and its retrospective, I saw a
+          <b>
+           systemic gap in the assessment infrastructure
+          </b>
+          — recommended hours vs. real depth, "optional" items that were actually the deciding signal, grading criteria absent from the public brief. So I targeted the upstream failure, not the candidate.
+         </span>
+<span class="ko">
+          한 라운드의 응시·회고 자료를 정독하니 개별 평가자의 실수가 아니라
+          <b>
+           평가 인프라 자체의 시스템적 공백
+          </b>
+          이 보였습니다 — 권장 시간 vs 실제 작업 깊이, 사실상 결정적이던 "선택" 항목, 공개 명세에 없던 채점 기준. 그래서 응시자가 아니라 그 위쪽 단계의 실패를 겨눴습니다.
+         </span>
+</p>
+<blockquote class="pull">
+<span class="en">
+          "This tool does not evaluate the candidate. It evaluates the assessment design itself."
+         </span>
+<span class="ko">
+          "이 도구는 응시자를 평가하지 않는다. 평가 설계 자체를 평가한다."
+         </span>
+</blockquote>
+</div>
+<div class="decision">
+<p class="dh">
+<span class="num">
+          02
+         </span>
+<span class="en">
+          Drew the scope by what I refused to build
+         </span>
+<span class="ko">
+          '거부'로 범위를 그었다
+         </span>
+</p>
+<p class="why">
+<span class="en">
+          Three rules were proposed that I turned down on principle: checking how an evaluator distributes scoring weight, auto-detecting scoring drift, and flagging mutually contradictory criteria. Each one polices a judgment call the candidate can already see, instead of the tool's actual target — criteria that were never disclosed to the candidate at all. A PoC's default failure mode is scope creep, and every refusal keeps the tool explainable in one sentence.
+         </span>
+<span class="ko">
+          제안됐지만 원칙적으로 거부한 세 규칙이 있습니다: 평가자가 배점을 어떻게 나누는지 검사하는 것, 채점 편차를 자동으로 감지하는 것, 서로 모순되는 채점 기준을 잡아내는 것. 셋 다 응시자가 이미 볼 수 있는 '평가자의 정당한 재량'을 단속할 뿐, 정작 이 도구가 노리는 표적 — 응시자에게 아예 공개되지 않은 기준 — 은 잡지 못합니다. PoC의 기본 실패 모드는 scope creep이고, 각 거부가 도구를 한 문장으로 설명 가능하게 유지합니다.
+         </span>
+</p>
+<blockquote class="pull">
+<span class="en">
+          "A tool is defined as much by what it refuses to do as by what it does."
+         </span>
+<span class="ko">
+          "도구는 하기로 한 것만큼이나 하지 않기로 한 것으로 정의된다."
+         </span>
+</blockquote>
+</div>
+<div class="decision">
+<p class="dh">
+<span class="num">
+          03
+         </span>
+<span class="en">
+          The machine analyzes; only the human judges
+         </span>
+<span class="ko">
+          기계는 분석만, 판단은 사람만
+         </span>
+</p>
+<p class="why">
+<span class="en">
+          If the deterministic checker returned pass/fail, a
+          <i>
+           linter for assessment design
+          </i>
+          would quietly become an
+          <i>
+           automated judge
+          </i>
+          . So the
+          <code>
+           check
+          </code>
+          step only produces provisional findings, and a separate
+          <code>
+           gate
+          </code>
+          step reads the human's final review before anything blocks. A blocking verdict fires for only three defects that genuinely invalidate a design: a rubric scores something the public brief never mentions, an item marked "optional" actually decides the outcome, or mandatory work earns bonus points only.
+         </span>
+<span class="ko">
+          결정론적 checker가 pass/fail을 반환하면,
+          <i>
+           평가 설계의 linter
+          </i>
+          가 조용히
+          <i>
+           자동 심판자
+          </i>
+          로 변질됩니다. 그래서
+          <code>
+           check
+          </code>
+          단계는 잠정 finding만 만들고, 별도의
+          <code>
+           gate
+          </code>
+          단계가 사람의 최종 검토를 읽은 뒤에야 차단합니다. 차단 판정은 설계를 실제로 무효화하는 세 결함에만 발화합니다 — 공개 명세엔 없는 것을 채점표가 점수화하거나, "선택"이라 표시됐지만 사실상 결과를 가르는 항목이거나, 필수 작업인데 가산점으로만 인정되는 경우입니다.
+         </span>
+</p>
+</div>
+<div class="decision">
+<p class="dh">
+<span class="num">
+          04
+         </span>
+<span class="en">
+          Split a label that was quietly lying
+         </span>
+<span class="ko">
+          조용히 거짓말하던 라벨을 쪼갰다
+         </span>
+</p>
+<p class="why">
+<span class="en">
+          A classifier was stamping the label
+          <code>
+           validated
+          </code>
+          after checking only the file's shape and its audit trail — while the stricter check, that every quoted piece of evidence actually traces back to the source spec, was still unimplemented. An AI audit caught it by feeding in a run that cited a reference that didn't exist and a quote that was made up; the classifier passed it with zero errors. So I split the one label in two:
+          <code>
+           structurally_validated
+          </code>
+          (the shape is sound) versus
+          <code>
+           validated
+          </code>
+          (the evidence is genuinely grounded), so a shallow pass can never be silently promoted as the real thing.
+         </span>
+<span class="ko">
+          분류기가 파일의 형식과 감사 추적(audit-trace)만 확인하고
+          <code>
+           validated
+          </code>
+          라벨을 찍고 있었습니다 — 인용된 근거가 실제로 원본 명세까지 거슬러 추적되는지 보는 더 엄격한 단계는 아직 미구현인데도요. AI 감사가 존재하지 않는 참조와 날조된 인용을 가진 run을 찔러 이를 잡아냈고, 분류기는 에러 0개로 통과시켰습니다. 그래서 라벨 하나를 둘로 분리했습니다:
+          <code>
+           structurally_validated
+          </code>
+          (형식은 멀쩡함)와
+          <code>
+           validated
+          </code>
+          (근거까지 실제로 입증됨). 얕은 통과가 진짜인 척 조용히 승격되지 못하게 한 것입니다.
+         </span>
+</p>
+<blockquote class="pull">
+<span class="en">
+          "A label that lies is worse than one more label."
+         </span>
+<span class="ko">
+          "거짓말하는 라벨이 라벨 하나 더 있는 것보다 나쁘다."
+         </span>
+</blockquote>
+</div>
+<div class="decision">
+<p class="dh">
+<span class="num">
+          05
+         </span>
+<span class="en">
+          Had AI audit my own work — and allowed verdicts to be withdrawn
+         </span>
+<span class="ko">
+          AI에게 내 작업을 감사시키고, verdict 철회까지 허용했다
+         </span>
+</p>
+<p class="why">
+<span class="en">
+          A green test suite only proves the code matches the tests, not the spec. So I made independent verification a first-class artifact, guarded in both directions — against the bug creeping back, and against valid cases getting falsely flagged — and treated a missing guard as a blocker. When an early verification record found that one rule's boundary check was incomplete, I
+          <b>
+           withdrew the passing verdict and reissued it
+          </b>
+          rather than quietly patching over it.
+         </span>
+<span class="ko">
+          green 테스트는 코드가 테스트대로 작동함만 증명할 뿐, 명세대로임을 보장하지 않습니다. 그래서 독립 검증을 1급 산출물로 삼고 양방향으로 가드를 걸었습니다 — 버그가 다시 기어들어오는 쪽과, 정상 케이스가 잘못 걸리는 쪽 모두에 대해. 누락된 가드는 차단 사유로 다뤘습니다. 초기 검증 기록에서 한 규칙의 경계 검사가 불완전하다는 걸 발견했을 때는, 조용히 덮지 않고
+          <b>
+           이미 내린 합격 verdict를 철회한 뒤 다시 발행
+          </b>
+          했습니다.
+         </span>
+</p>
+<p class="ai">
+<b>
+<span class="en">
+           AI's role:
+          </span>
+<span class="ko">
+           AI의 역할:
+          </span>
+</b>
+<span class="en">
+          Claude Code, Codex, and Gemini were used to draft, probe, and independently audit the implementation; the CLI itself is designed for agent callers. That development workflow is separate from runtime maturity: no live model runner is implemented. I retained commit authority and final judgment.
+         </span>
+<span class="ko">
+          Claude Code·Codex·Gemini를 구현 초안·probe·독립 감사에 사용했고, CLI 자체도 agent caller를 위해 설계했습니다. 다만 이 개발 방식과 runtime 성숙도는 별개입니다 — live model runner는 아직 없습니다. commit 권한과 최종 판단은 제가 가졌습니다.
+         </span>
+</p>
+<blockquote class="pull">
+<span class="en">
+          "I'd rather record a withdrawn verdict than ship a green bar that lies."
+         </span>
+<span class="ko">
+          "거짓말하는 green bar를 내보내느니 철회된 verdict를 기록하겠다."
+         </span>
+</blockquote>
+</div>
+<div class="decision">
+<p class="dh">
+<span class="num">
+          07
+         </span>
+<span class="en">
+          Stated the limit honestly: this is still a PoC
+         </span>
+<span class="ko">
+          한계를 정직하게: 아직 PoC다
+         </span>
+</p>
+<p class="why">
+<span class="en">
+          The deterministic core and the review/verdict flow are implemented; live LLM SDK runners are still deferred. The offline workflow is more than a smoke test that just confirms the wiring connects: two synthetic example assignments were each run end-to-end three times, using fixed deterministic extraction plus a mock stand-in for the semantic check. Every run produced identical finding distributions and zero grounding diagnostics — no broken references, no fabricated quotes. That proves the pipeline is deterministically reproducible on valid inputs —
+          <b>
+           not that a live LLM extracts well
+          </b>
+          .
+         </span>
+<span class="ko">
+          결정론적 코어와 review/verdict 흐름은 구현됐지만, live LLM SDK runner는 여전히 보류 상태입니다. offline workflow는 '배선이 연결되는지'만 확인하는 단순 smoke 테스트보다 깊습니다: 두 합성 예제 과제를, 고정된 결정론적 추출 + 의미 검사를 대신하는 mock으로 각각 3회 end-to-end 실행했습니다. 매번 동일한 finding 분포가 나왔고, grounding 진단(깨진 참조·날조된 인용)은 0건이었습니다. 이는 유효 입력 위에서 파이프라인이 결정론적으로 재현된다는 증명일 뿐,
+          <b>
+           live LLM의 추출 품질 증명은 아닙니다
+          </b>
+          .
+         </span>
+</p>
 </div>
 </div></div></details></div>
 </div>

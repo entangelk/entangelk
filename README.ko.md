@@ -15,7 +15,16 @@
 > **기획 × AI 기반 엔지니어링**<br />
 > 운영·사업기획·데이터 분석에서 출발했습니다. 업무의 문제를 제품 흐름으로 정리하고 AI와 함께 구현하며, 구현과 실험의 근거로 바꿀 것과 멈출 것을 판단합니다.
 
-## 대표 제품 판단 사례
+## 실무에서 내린 판단
+
+| 사례 | 문제와 선택 | 확인된 범위 |
+| --- | --- | --- |
+| [고객센터 인력 분석](https://entangelk.github.io/entangelk/experience.html#staffing) | 평균에 가려지는 고부하일을 고려해 Q90과 보수안을 채용·증원 기준으로 제시 | 전년 대비 인력 3명·인건비 600만 원 절감, 조정 후 목표 소통률 90% 상회 |
+| [대규모 에셋 생성·검수](https://entangelk.github.io/entangelk/experience.html#assets) | 대량 생성 결과를 사람이 비교·재생성·검수하고 남은 작업을 이어가는 흐름 | 대상 에셋 전체 서비스 반영·라이선스 종료. 생성 API 비용은 기존 연간 라이선스 비용의 약 40% |
+| [NLP 카테고리 매칭](https://entangelk.github.io/entangelk/experience.html#nlp) | 자연어를 기존 분류 체계와 연결하고, 변경 데이터만 임베딩 갱신 | 이동통신 3사 제공 v비즈링·v프로필의 제작대행사 업무에 적용. 자동제작 전체 담당 |
+| [사내 업무 자동화](https://entangelk.github.io/entangelk/experience.html#automation) | 반복 보고·수집을 웹 작업으로 연결하고 사람이 처리할 예외 경로를 제공 | 4개 서비스 월간보고: 숙련 담당자 기준 2일 작업을 반나절 미만에 생성 |
+
+## 직접 사용·개발 중인 제품
 
 ### [AI Writer System](https://github.com/entangelk/ai_writte_system) · 개발 중
 
@@ -29,28 +38,16 @@
 
 영상 요청자가 생성 도구의 워크플로우 대신 **원하는 영상과 시나리오를 다루게 하는 경험**을 설계했습니다. 참조 이미지를 검토하고 생성 계획으로 연결하며, 복잡한 실행 레시피는 내부에 둡니다.
 
-서비스 기획·아키텍처·백엔드 전체와 2인 팀 관리를 맡습니다. 프런트엔드는 별도 담당입니다.
+사장님 직속 TFT에서 B2B 광고 기능을 중심으로 개발 중입니다. 테스트는 주로 직접 수행하며 실제 업무 도입 전 단계입니다.
+
+서비스 기획·아키텍처·백엔드 전체와 실무 개발 인원 2명의 팀 관리를 맡습니다. 프런트엔드는 별도 담당입니다.
 
 로컬에서 생성·완성본 조립까지 동작하며, 커스텀 노드 기반 레퍼런스 기능으로 장편 연속성과 목소리 일관성을 일정 수준 지원합니다. 남은 과제는 모델별 생성 결과의 품질 차이입니다. 소스는 비공개입니다.
 
-### [Assessment Spec Harness](https://github.com/entangelk/assessment_poc) · PoC
-
-채용 과제의 **공개 안내와 비공개 채점 기준이 어긋나는 문제**를 검사합니다. 응시자 채점 대신 과제 설계의 불일치를 찾고, 자동 finding과 사람의 최종 검토를 분리했습니다. CLI와 AI agent를 통해 검사하고, 과제 설계자가 결과를 검토하는 구조입니다.
-
-합성 예제로 결정론적 재현성을 확인했으며, live LLM SDK 연동은 후속 범위로 남겼습니다.
-
-## 실무에서 내린 판단
-
-| 사례 | 문제와 선택 | 확인된 범위 |
-| --- | --- | --- |
-| [고객센터 인력 분석](https://entangelk.github.io/entangelk/experience.html#staffing) | 평균에 가려지는 고부하일을 고려해 Q90과 보수안을 채용·증원 기준으로 제시 | 전년 대비 인력 3명·인건비 600만 원 절감, 조정 후 목표 소통률 90% 상회 |
-| [대규모 에셋 생성·검수](https://entangelk.github.io/entangelk/experience.html#assets) | 대량 생성 결과를 사람이 비교·재생성·검수하고 남은 작업을 이어가는 흐름 | 대상 에셋 전체 서비스 반영·라이선스 종료. 생성 API 비용은 기존 연간 라이선스 비용의 약 40% |
-| [NLP 카테고리 매칭](https://entangelk.github.io/entangelk/experience.html#nlp) | 자연어를 기존 분류 체계와 연결하고, 변경 데이터만 임베딩 갱신 | 이동통신 3사 제공 v비즈링·v프로필의 제작대행사 업무에 적용. 자동제작 전체 담당 |
-| [사내 업무 자동화](https://entangelk.github.io/entangelk/experience.html#automation) | 반복 보고·수집을 웹 작업으로 연결하고 사람이 처리할 예외 경로를 제공 | 4개 서비스 월간보고: 숙련 담당자 기준 2일 작업을 반나절 미만에 생성 |
-
 ## 기술 기반과 연구
 
-- **[Verified RAG](https://entangelk.github.io/entangelk/experience.html#rag)** — 법령 검색과 근거 검증의 기술 사례. 실제 모델 실험과 독립 검증 Core를 구현했으며, 최종 채택은 호출 서비스가 결정합니다.
+- **[Verified RAG](https://entangelk.github.io/entangelk/experience.html#rag)** — 초기 AI 서비스의 기본 기능을 위한 MVP. 사장님 직속 TFT에서 구현 대부분을 맡았으며 현재 직접 테스트하는 개발 단계입니다.
+- **[Assessment Spec Harness](https://github.com/entangelk/assessment_poc)** — 공개 과제 안내와 비공개 채점 기준의 불일치를 검사하는 보조 PoC. 합성 예제로 결정론적 재현성을 확인한 범위입니다.
 - **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public)** — 여러 AI 클라이언트가 공유하는 기억 기반을 실험했습니다. 정본과 검색 캐시의 분리를 AI Writer에 이어 적용했습니다.
 - **[Logo Workbench](https://github.com/entangelk/logo_image)** · **[Harness IR](https://github.com/entangelk/Harness_ir)** — 분할 실패와 구조화 추출 가설을 비교하는 연구 사례입니다. 실사용 제품 성과와 구분합니다.
 - **제약 탐색 연구 시리즈** — [HW-WFC](https://github.com/entangelk/hw-wfc), [Circle-WFC](https://github.com/entangelk/circle-wfc), [T-WFC](https://github.com/entangelk/T-WFC). 실험에서 작동한 범위와 실패한 조건을 정리했습니다. Circle-WFC의 corridor 활용은 후속 가설입니다.
