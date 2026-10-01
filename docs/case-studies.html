@@ -83,7 +83,7 @@
        설계와 판단의 기록.
       </span>
 </h1>
-<p class="lede"><span class="en">Four projects: the problem, my decision, and what the evidence supports. Open each record for the full reasoning.</span><span class="ko">네 프로젝트의 문제와 핵심 판단, 확인된 결과를 정리했습니다. 자세한 설계와 검증 기록은 각 항목에서 펼쳐 볼 수 있습니다.</span></p>
+<p class="lede"><span class="en">Product decisions first; technical foundations and research follow. Each case distinguishes implemented behavior from unverified user value.</span><span class="ko">제품 판단을 먼저, 기술 기반과 연구를 뒤에 둡니다. 각 사례에서 구현된 동작과 아직 확인하지 못한 사용자 효과를 구분합니다.</span></p>
 <a class="text-link" href="index.html#work">
 <span class="en">
        ← Back to selected work
@@ -92,7 +92,7 @@
        ← 대표 작업으로
       </span>
 </a>
-<nav aria-label="On this page" class="page-index"><a href="#writer"><span class="en">AI Writer</span><span class="ko">AI Writer</span></a><a href="#memory"><span class="en">Memory</span><span class="ko">Memory</span></a><a href="#assessment"><span class="en">Assessment</span><span class="ko">Assessment</span></a><a href="#harness"><span class="en">Harness IR</span><span class="ko">Harness IR</span></a><a href="#work"><span class="en">Experiments</span><span class="ko">실험</span></a></nav></div>
+<nav aria-label="On this page" class="page-index"><a href="#writer"><span class="en">AI Writer</span><span class="ko">AI Writer</span></a><a href="#assessment"><span class="en">Assessment</span><span class="ko">Assessment</span></a><a href="#memory"><span class="en">Memory</span><span class="ko">Memory</span></a><a href="#harness"><span class="en">Harness IR</span><span class="ko">Harness IR</span></a><a href="#work"><span class="en">Experiments</span><span class="ko">실험</span></a></nav></div>
 </div>
 <section id="decisions">
 <div class="wrap">
@@ -109,7 +109,7 @@
         의사결정 케이스 스터디
        </span>
 </h2>
-<p><span class="en">One writing product, built on three public PoCs: memory, verification, and a provider-neutral execution contract.</span><span class="ko">글쓰기 제품 하나와 그 기반이 된 세 공개 PoC입니다. 메모리, 검증 게이트, 제공자 독립 실행 계약을 각각 검증했습니다.</span></p>
+<p><span class="en">AI Writer and Assessment describe the intended workflow and scope choices. Memory is a technical foundation; Harness IR is a research experiment.</span><span class="ko">AI Writer와 Assessment는 목표 작업 흐름과 범위 선택을 설명합니다. Memory는 기술 기반, Harness IR은 연구 실험으로 구분합니다.</span></p>
 </div>
 <!-- CASE 1: AI Writer System (flagship — the three pieces assembled) -->
 <div class="case lead" id="writer">
@@ -127,15 +127,15 @@
 </span>
 <span class="pill piece">
 <span class="en">
-         All three pieces, assembled
+         Writing workflow
         </span>
 <span class="ko">
-         세 조각 전부, 통합
+         집필 작업 흐름
         </span>
 </span>
 </div>
-<p class="tagline"><span class="en">A writing workspace that keeps long manuscripts and their memory consistent.</span><span class="ko">장편 원고와 설정의 일관성을 유지하는 글쓰기 워크스페이스.</span></p>
-<dl class="project-brief"><div><dt><span class="en">Decision</span><span class="ko">핵심 판단</span></dt><dd><span class="en">AI output stays a candidate until verification and human review. Accepted memory is append-only and linked to the source.</span><span class="ko">AI 출력은 검증과 사람의 검토 전까지 후보로 둡니다. 채택된 기억은 원문 출처와 함께 append-only로 쌓습니다.</span></dd></div><div><dt><span class="en">Result</span><span class="ko">확인된 결과</span></dt><dd><span class="en">End-to-end operation via Docker Compose; 118 decision briefs, 315 verification records, and 3,075 passing tests in the documented snapshot.</span><span class="ko">Docker Compose로 관통 동작합니다. 기록 시점 기준 결정 브리프 118개, 검증 기록 315건, 통과 테스트 3,075건입니다.</span></dd></div><div><dt><span class="en">Limit</span><span class="ko">한계</span></dt><dd><span class="en">System evidence does not establish writing quality. Dogfooding was declared started on 2026-08-23; this is not a live multi-tenant service.</span><span class="ko">시스템 지표가 작품 품질을 증명하지는 않습니다. 2026-08-23 dogfood 착수 선언 단계이며, 실사용자를 받는 다중 테넌트 서비스가 아닙니다.</span></dd></div></dl><div class="lead-viz"><img alt="AI Writer System — a continuation being generated in the background, recorded live" class="card-viz" height="450" src="assets/aiw-generation.gif" width="720"/><p class="viz-cap"><span class="en">Recorded live: a long request becomes <code>202 + job</code> and a worker runs it outside the request timeout. The suggestion lands in a side pad; the manuscript is untouched until a person adopts it.</span><span class="ko">실제 녹화 — 긴 요청은 <code>202 + 잡</code>이 되어 워커가 요청 타임아웃 밖에서 돌립니다. 제안은 옆 패드에 도착하고, 사람이 채택하기 전까지 원고는 그대로입니다.</span></p></div><div class="case-links"><a class="repo" href="https://github.com/entangelk/ai_writte_system" rel="noopener" target="_blank">
+<p class="tagline"><span class="en">Find prior settings, review the source, and bring accepted context into the next draft.</span><span class="ko">이전 설정을 찾고, 원문 근거를 검토하고, 채택한 맥락으로 다음 원고를 쓰는 작업공간.</span></p>
+<dl class="project-brief"><div><dt><span class="en">User &amp; problem</span><span class="ko">대상과 문제</span></dt><dd><span class="en">For long-form writers who need to recover prior settings while drafting. This is a product hypothesis, without external interview evidence.</span><span class="ko">이전 설정을 다시 찾아 집필에 활용하려는 장편 창작자를 위한 제품 가설입니다. 외부 인터뷰 근거는 아직 없습니다.</span></dd></div><div><dt><span class="en">Choice &amp; workflow</span><span class="ko">선택과 작업 흐름</span></dt><dd><span class="en">Draft → inspect a proposed memory and its source → accept or reject → retrieve accepted context. Generated prose stays beside the manuscript until adopted.</span><span class="ko">집필 → 기억 후보와 원문 확인 → 승인·거절 → 채택한 맥락 검색으로 연결합니다. 생성문도 채택 전에는 원고 옆의 제안으로 둡니다.</span></dd></div><div><dt><span class="en">Evidence &amp; next decision</span><span class="ko">근거와 다음 판단</span></dt><dd><span class="en">Local end-to-end operation and recorded review screens exist. Dogfood was declared on 2026-08-23; subsequent use and writing benefits remain unverified. Next: observe retrieval, review and recovery effort in real writing.</span><span class="ko">로컬 관통 동작과 검토 화면은 확인됩니다. 2026-08-23 dogfood 착수 선언 이후의 사용량과 집필 효과는 미확인입니다. 다음 판단은 실제 작업의 검색·검토·복구 부담을 관찰한 뒤 내립니다.</span></dd></div></dl><div class="lead-viz"><img alt="AI Writer System — a continuation being generated in the background, recorded live" class="card-viz" height="450" src="assets/aiw-generation.gif" width="720"/><p class="viz-cap"><span class="en">Recorded workflow: the generated suggestion arrives beside the draft. The author reviews it before deciding what enters the manuscript.</span><span class="ko">실제 작업 화면: 생성된 제안이 원고 옆에 도착합니다. 작성자가 검토하고 원고에 넣을 내용을 결정합니다.</span></p></div><div class="case-links"><a class="repo" href="https://github.com/entangelk/ai_writte_system" rel="noopener" target="_blank">
         GitHub repo
        </a></div><details class="evidence-details"><summary><span class="en">7 decisions, ownership &amp; evidence</span><span class="ko">설계 판단 7개 · 직접 맡은 일 · 검증 기록</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><div class="case-links">
 <a class="repo" href="https://github.com/entangelk/ai_writte_system" rel="noopener" target="_blank">
@@ -152,12 +152,8 @@
          </span>
 </div>
 <div class="sv">
-<span class="en">
-          In a book-length manuscript what breaks is consistency, not prose — and a chatbot cannot fix it structurally, because it remembers nothing outside the conversation window.
-         </span>
-<span class="ko">
-          책 한 권 분량의 원고에서 무너지는 것은 문장력이 아니라 일관성입니다. 챗봇은 대화창을 벗어나면 아무것도 기억하지 못해 이 문제를 구조적으로 풀 수 없습니다.
-         </span>
+<span class="en">The working hypothesis is that recovering prior settings and checking consistency can support long-form writing. External interviews and comparative writing outcomes have not yet established its value.</span>
+<span class="ko">이전 설정을 찾고 일관성을 확인하는 일이 장편 집필을 돕는다는 작업 가설입니다. 외부 인터뷰와 기존 작업 방식 대비 집필 효과는 아직 확인하지 못했습니다.</span>
 </div>
 </div>
 <div class="srow">
@@ -205,7 +201,7 @@
           <b>
            product
           </b>
-          one — nothing says the writing is good. Dogfood was declared started 2026-08-23; this is not a multi-tenant service with real users.
+          one — writing benefits remain unverified. Dogfood was declared on 2026-08-23; subsequent use was not confirmed in this review.
          </span>
 <span class="ko">
           여기 숫자는 전부
@@ -216,7 +212,7 @@
           <b>
            작품
           </b>
-          지표가 아닙니다 — 글이 좋다는 말은 없습니다. dogfood는 2026-08-23 착수 선언 단계이고, 실사용자를 받는 다중 테넌트 서비스가 아닙니다.
+          지표가 아닙니다. 2026-08-23 dogfood 착수 선언 이후의 실제 사용과 집필 효과는 이번 검토에서 확인하지 못했습니다.
          </span>
 </div>
 </div>
@@ -374,18 +370,10 @@
 </p>
 <p class="why">
 <span class="en">
-          The obvious move is to reach for a better generation model. But no model fixes an author's inability to recall what they established 200 pages ago. So manuscript, settings, worldbuilding, and style accumulate as
-          <b>
-           long-term memory
-          </b>
-          , and at each writing moment only the relevant fragments are retrieved and handed to the model. The model got easier to swap; the memory is the part that had to be designed.
+          The product hypothesis prioritizes retrieving prior settings over making generation the only centerpiece. Manuscript, settings and style can accumulate as source-linked memory; the writer selects relevant context for the next draft. Whether this beats the existing workflow needs real-use comparison.
          </span>
 <span class="ko">
-          쉬운 선택은 더 좋은 생성 모델을 찾는 것입니다. 그러나 어떤 모델도 작가가 200쪽 전에 정해둔 것을 기억하지 못하는 문제를 해결해 주지 않습니다. 그래서 원고·설정·세계관·문체를
-          <b>
-           장기 기억
-          </b>
-          으로 축적하고, 글을 쓰는 시점마다 필요한 조각만 검색해 모델에 줍니다. 모델은 교체하기 쉬운 쪽이 됐고, 설계가 필요했던 것은 기억 쪽이었습니다.
+          생성만을 중심에 두기보다 이전 설정을 검색하는 경험을 우선한다는 제품 가설입니다. 원고·설정·문체를 출처가 있는 기억으로 쌓고, 다음 원고에 필요한 맥락을 가져옵니다. 기존 작업 방식보다 유용한지는 실제 사용 비교가 필요합니다.
          </span>
 </p>
 </div>
@@ -709,7 +697,7 @@
           </b>
           —
           <b>
-           30% do not come back clean
+           Snapshot counts; verdict proportions do not establish verification quality
           </b>
           . One representative catch: an enforcement recorded as "complete" was true at the compose-file level but
           <b>
@@ -760,7 +748,7 @@
           </b>
           로,
           <b>
-           10건 중 3건은 깨끗하게 돌아오지 않습니다
+           기록 시점의 집계이며 판정 비율만으로 검증 품질을 입증하지 않습니다
           </b>
           . 대표적으로 잡힌 것 하나: "시행 완료"로 기록된 항목이
           <b>
@@ -800,10 +788,10 @@
           07
          </span>
 <span class="en">
-          Stated the limit honestly: local single-operator, dogfood just declared
+          Local implementation; real-use outcomes still unverified
          </span>
 <span class="ko">
-          한계를 정직하게: 로컬 1인 운영, dogfood 착수 선언 단계
+          로컬 구현과 아직 확인하지 못한 실사용 효과
          </span>
 </p>
 <p class="why">
@@ -824,7 +812,7 @@
           <b>
            declared started on 2026-08-23
           </b>
-          — which means the honest reading of every number above is that they are all
+          ; subsequent usage and writing outcomes remain unverified. The reading of every number above is that they are all
           <b>
            system
           </b>
@@ -855,7 +843,7 @@
           <b>
            2026-08-23 착수 선언
           </b>
-          단계입니다 — 그래서 위의 모든 숫자를 정직하게 읽으면 전부
+          기록이 있습니다. 이후 실제 사용량과 집필 효과는 미확인입니다. 위의 수치는 전부
           <b>
            시스템
           </b>
@@ -884,7 +872,7 @@
           <a href="experience.html#current">
            Current work →
           </a>
-          ) is the same architecture — candidate output, claim-level verification, a gate that decides what ships — but its source is company-private. Here the whole trail is open: the briefs, the verification records, the guards, and the limits.
+          ) uses related candidate, verification and gate boundaries for a different task — but its source is company-private. Here the whole trail is open: the briefs, the verification records, the guards, and the limits.
          </span>
 <span class="ko">
           이것은 제가 회사에서 만드는 것의
@@ -895,415 +883,9 @@
           <a href="experience.html#current">
            현재 실무 →
           </a>
-          )은 같은 아키텍처입니다 — candidate 출력, claim 단위 검증, 무엇을 내보낼지 결정하는 gate. 다만 소스가 회사 비공개입니다. 여기서는 그 자취 전부가 열려 있습니다 — 브리프, 검증 기록, 가드, 그리고 한계까지.
+          )은 다른 업무에 candidate·검증·gate 경계를 적용합니다. 다만 소스가 회사 비공개입니다. 여기서는 그 자취 전부가 열려 있습니다 — 브리프, 검증 기록, 가드, 그리고 한계까지.
          </span>
 </p>
-</div>
-</div></div></details></div>
-<!-- CASE 2: Agent Memory System (the Memory piece) -->
-<div class="case" id="memory">
-<div class="case-top">
-<h3>
-        Agent Memory System
-       </h3>
-<span class="pill poc">
-        PoC
-       </span>
-<span class="pill piece">
-<span class="en">
-         Piece · Memory
-        </span>
-<span class="ko">
-         조각 · 메모리
-        </span>
-</span>
-</div>
-<p class="tagline"><span class="en">A shared long-term memory layer for AI assistants, exposed through MCP.</span><span class="ko">MCP로 여러 AI 클라이언트가 공유하는 장기 메모리 레이어.</span></p>
-<dl class="project-brief"><div><dt><span class="en">Decision</span><span class="ko">핵심 판단</span></dt><dd><span class="en">Store compacted meaning, not just logs. MongoDB is authoritative; ChromaDB is a rebuildable retrieval cache.</span><span class="ko">로그 대신 압축된 의미를 저장합니다. MongoDB가 정본이고 ChromaDB는 재구축 가능한 검색 캐시입니다.</span></dd></div><div><dt><span class="en">Result</span><span class="ko">확인된 결과</span></dt><dd><span class="en">Clients can save and recall memory, and compact it into daily, weekly, monthly, and yearly digests.</span><span class="ko">클라이언트가 기억을 저장·검색하고 일·주·월·년 단위 digest로 압축하는 구조를 구현했습니다.</span></dd></div><div><dt><span class="en">Limit</span><span class="ko">한계</span></dt><dd><span class="en">Masking is off by default. The server cannot force clients to use memory, and cache reindexing remains an operational task.</span><span class="ko">가림 정책은 기본 비활성화입니다. 클라이언트의 기억 사용을 강제할 수 없으며, 캐시 재색인은 운영상 필요합니다.</span></dd></div></dl><div class="case-links"><a class="repo" href="https://github.com/entangelk/agent-memory-system-public" rel="noopener" target="_blank">
-        GitHub repo
-       </a></div><details class="evidence-details"><summary><span class="en">5 decisions, ownership &amp; evidence</span><span class="ko">설계 판단 5개 · 직접 맡은 일 · 검증 기록</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><div class="case-links">
-<a class="repo" href="https://github.com/entangelk/agent-memory-system-public" rel="noopener" target="_blank">
-        GitHub repo
-       </a>
-</div><div class="scan">
-<div class="srow">
-<div class="sk">
-<span class="en">
-          Problem
-         </span>
-<span class="ko">
-          문제
-         </span>
-</div>
-<div class="sv">
-<span class="en">
-          An assistant loses everything when the session ends, and piling up raw chat transcripts does not become long-term memory — it becomes a log nobody can retrieve meaning from.
-         </span>
-<span class="ko">
-          AI 어시스턴트는 세션이 끝나면 전부 잃습니다. 그렇다고 대화 기록을 그대로 쌓으면 장기 기억이 되는 게 아니라, 아무도 의미를 꺼낼 수 없는 로그가 됩니다.
-         </span>
-</div>
-</div>
-<div class="srow">
-<div class="sk">
-<span class="en">
-          Result
-         </span>
-<span class="ko">
-          결과
-         </span>
-</div>
-<div class="sv">
-<span class="en">
-          An MCP long-term memory layer whose primary unit is compacted meaning: MongoDB authoritative, ChromaDB a rebuildable derived cache, client-driven compaction into day → week → month → year digests.
-         </span>
-<span class="ko">
-          압축된 의미를 기본 단위로 삼는 MCP 장기 메모리 레이어입니다. MongoDB가 권위 저장소, ChromaDB는 재구축 가능한 파생 캐시이고, client-driven compaction이 일→주→월→년 digest를 만듭니다.
-         </span>
-</div>
-</div>
-<div class="srow">
-<div class="sk">
-<span class="en">
-          Boundary
-         </span>
-<span class="ko">
-          경계
-         </span>
-</div>
-<div class="sv">
-<span class="en">
-          The masking policy ships
-          <b>
-           disabled by default
-          </b>
-          — it supports a safe policy but is not safe-by-default. And a memory server cannot force a client to actually use the memory it serves.
-         </span>
-<span class="ko">
-          가림 정책은
-          <b>
-           기본값이 비활성화
-          </b>
-          입니다 — 안전 정책을 지원하지만 safe-by-default는 아닙니다. 그리고 메모리 서버는 클라이언트가 그 기억을 실제로 쓰도록 강제하지 못합니다.
-         </span>
-</div>
-</div>
-</div><div class="owned">
-<p class="owned-h">
-<span class="en">
-         What I owned myself
-        </span>
-<span class="ko">
-         제가 직접 소유한 것
-        </span>
-</p>
-<ul>
-<li>
-<span class="en">
-<b>
-           The truth/cache split.
-          </b>
-          Deciding that MongoDB is authoritative and ChromaDB is a rebuildable derived cache — the structural call this whole portfolio later repeats.
-         </span>
-<span class="ko">
-<b>
-           진실/캐시 분리.
-          </b>
-          MongoDB를 권위 저장소로, ChromaDB를 재구축 가능한 파생 캐시로 둔 결정 — 이후 이 포트폴리오 전체가 반복하는 구조적 판단입니다.
-         </span>
-</li>
-<li>
-<span class="en">
-<b>
-           What the server refuses to do.
-          </b>
-          No hidden LLM summarization, no keyword-guessed sensitivity. Sensitivity is explicit metadata supplied by the agent; the machine coordinates, the party that understood the text decides. That refusal is a design decision, not a missing feature.
-         </span>
-<span class="ko">
-<b>
-           서버가 하지 않기로 한 것.
-          </b>
-          숨은 LLM 요약 없음, 키워드 기반 민감도 추측 없음. 민감도는 agent가 명시하는 메타데이터이고, 기계는 조율하며 텍스트를 이해한 주체가 결정합니다. 이 거부는 미구현이 아니라 설계 결정입니다.
-         </span>
-</li>
-<li>
-<span class="en">
-<b>
-           Stating the limit.
-          </b>
-          The masking policy ships
-          <b>
-           disabled by default
-          </b>
-          , and a memory server cannot force a client to actually use its memory. I documented both as operating boundaries rather than letting the MCP contract imply a guarantee it does not give.
-         </span>
-<span class="ko">
-<b>
-           한계 명시.
-          </b>
-          가림 정책은
-          <b>
-           기본값 비활성화
-          </b>
-          로 출하되고, 메모리 서버는 클라이언트에게 기억 사용을 강제할 수 없습니다. MCP 계약이 주지 않는 보장을 암시하게 두지 않고, 둘 다 운영 경계로 문서화했습니다.
-         </span>
-</li>
-</ul>
-</div><div class="decisions">
-<div class="decision">
-<p class="dh">
-<span class="num">
-          01
-         </span>
-<span class="en">
-          Memory is compacted meaning, not a conversation log
-         </span>
-<span class="ko">
-          기억은 대화 로그가 아니라 압축된 의미다
-         </span>
-</p>
-<p class="why">
-<span class="en">
-          Most "memory" systems treat chat transcripts as the long-term unit. This one instead models a
-          <b>
-           distilled, structured, time-aware memory
-          </b>
-          as the primary unit: the client that understood the conversation is expected to decide what deserves saving. That is an operating contract, not a server-side ban on arbitrary text — memory quality is decided at save time. Client-driven compaction then builds day → week → month → year digests.
-         </span>
-<span class="ko">
-          대부분의 '메모리' 시스템은 대화 기록을 장기 단위로 삼습니다. 이 시스템은 대신
-          <b>
-           증류된 구조적·시간 인식 memory
-          </b>
-          를 기본 단위로 모델링하고, 대화를 이해한 client가 무엇을 저장할지 결정하게 합니다. 이는 임의 텍스트를 서버가 금지한다는 뜻이 아니라 운영 계약입니다 — 기억 품질은 저장 시점에 결정됩니다. 이후 client-driven compaction이 일→주→월→년 digest를 만듭니다.
-         </span>
-</p>
-<blockquote class="pull">
-<span class="en">
-          "Memory is not a log. Memory is compacted meaning."
-         </span>
-<span class="ko">
-          "기억은 로그가 아니다. 기억은 압축된 의미다."
-         </span>
-</blockquote>
-</div>
-<div class="decision">
-<p class="dh">
-<span class="num">
-          02
-         </span>
-<span class="en">
-          MongoDB is authoritative; the vector store is a rebuildable cache
-         </span>
-<span class="ko">
-          MongoDB가 권위 저장소이고, 벡터 store는 재구성 가능한 캐시다
-         </span>
-</p>
-<p class="why">
-<span class="en">
-          I split the architecture in two:
-          <b>
-           MongoDB
-          </b>
-          is the durable source of truth, while
-          <b>
-           ChromaDB
-          </b>
-          is a derived vector cache that can be rebuilt from Mongo. "Source of truth" does not mean immutable — memories can be updated or deleted. The current handlers do not fully synchronize every Chroma document inline, so reindex/rebuild remains an operational requirement; that is exactly why the cache never outranks Mongo.
-         </span>
-<span class="ko">
-          아키텍처를 둘로 나눴습니다:
-          <b>
-           MongoDB
-          </b>
-          는 영속적인 source of truth이고,
-          <b>
-           ChromaDB
-          </b>
-          는 Mongo 기준으로 재구축하는 파생 벡터 캐시입니다. 여기서 source of truth는 불변이라는 뜻이 아닙니다 — memory는 update/delete할 수 있습니다. 현재 handler는 모든 Chroma 문서를 inline으로 완전 동기화하지 않아 reindex/rebuild가 운영상 필요하며, 바로 그래서 캐시가 Mongo보다 권위를 갖지 않습니다.
-         </span>
-</p>
-<blockquote class="pull">
-<span class="en">
-          "The vector DB is a cache. The source of truth is the durable store."
-         </span>
-<span class="ko">
-          "벡터 DB는 캐시다. 진실은 영속 저장소에 있다."
-         </span>
-</blockquote>
-</div>
-<div class="decision">
-<p class="dh">
-<span class="num">
-          03
-         </span>
-<span class="en">
-          The server coordinates; it never secretly summarizes
-         </span>
-<span class="ko">
-          서버는 조율할 뿐, 몰래 요약하지 않는다
-         </span>
-</p>
-<p class="why">
-<span class="en">
-          The server stores, selects candidates, and coordinates lifecycle — but it performs
-          <b>
-           no hidden LLM summarization
-          </b>
-          and never auto-guesses sensitivity from keywords. The agent sets
-          <code>
-           sensitivity
-          </code>
-          explicitly; meaning extraction is done by the client that actually understood the text. The machine coordinates; the understanding party decides what a memory means.
-         </span>
-<span class="ko">
-          서버는 저장·후보 선택·생명주기 조율을 맡지만,
-          <b>
-           숨은 LLM 요약을 하지 않고
-          </b>
-          키워드로 민감도를 자동 추측하지 않습니다. agent가
-          <code>
-           sensitivity
-          </code>
-          를 명시하고, 의미 추출은 텍스트를 실제로 이해한 클라이언트가 합니다. 기계는 조율하고, 이해한 주체가 기억의 의미를 결정합니다.
-         </span>
-</p>
-</div>
-<div class="decision">
-<p class="dh">
-<span class="num">
-          04
-         </span>
-<span class="en">
-          Sensitivity is explicit metadata; redaction is an explicit policy
-         </span>
-<span class="ko">
-          민감도는 명시적 메타데이터, 가림은 명시적 정책이다
-         </span>
-</p>
-<p class="why">
-<span class="en">
-          The agent sets
-          <code>
-           sensitivity
-          </code>
-          explicitly at save time instead of relying on keyword guesses. Recall redacts
-          <code>
-           high
-          </code>
-          items only when
-          <code>
-           hide_sensitive_on_recall=true
-          </code>
-          ;
-          <code>
-           include_sensitive=true
-          </code>
-          then explicitly expands them. The honest boundary matters: the implementation ships with hiding
-          <b>
-           disabled by default
-          </b>
-          , so an operator must enable the policy. The mechanism is safe-capable, not safe-by-default.
-         </span>
-<span class="ko">
-          agent가 저장 시
-          <code>
-           sensitivity
-          </code>
-          를 키워드 추측 대신 명시합니다. Recall은
-          <code>
-           hide_sensitive_on_recall=true
-          </code>
-          일 때만
-          <code>
-           high
-          </code>
-          항목을 가리고,
-          <code>
-           include_sensitive=true
-          </code>
-          로 명시적으로 펼칩니다. 중요한 실제 경계가 있습니다: 구현의 가림 정책은
-          <b>
-           기본값이 비활성화
-          </b>
-          라 운영자가 직접 켜야 합니다. 안전 정책을 지원하지만 safe-by-default는 아닙니다.
-         </span>
-</p>
-<p class="ai">
-<b>
-<span class="en">
-           How it connects:
-          </span>
-<span class="ko">
-           연결점:
-          </span>
-</b>
-<span class="en">
-          This truth-vs-cache split is the seed of the verified RAG I now build at work ("the vector DB is a cache; the source snapshot is the truth"), and the same division of labor runs through everything: the deterministic layer coordinates, the understanding party decides.
-         </span>
-<span class="ko">
-          이 진실/캐시 분리가 지금 회사에서 만드는 검증형 RAG의 씨앗입니다("vector DB는 캐시, source snapshot이 진실"). 그리고 같은 역할 분담이 제가 만드는 모든 것을 관통합니다 — 결정론적 레이어가 조율하고, 이해한 주체가 결정합니다.
-         </span>
-</p>
-</div>
-<div class="decision">
-<p class="dh">
-<span class="num">
-          05
-         </span>
-<span class="en">
-          Named the boundary: a memory server cannot make a client remember
-         </span>
-<span class="ko">
-          경계를 명시했다: 메모리 서버가 클라이언트에게 기억을 강제할 수는 없다
-         </span>
-</p>
-<p class="why">
-<span class="en">
-          The MCP contract is implemented, but tool availability is not tool adoption. A client's system prompt or built-in file memory can outrank the server's prompt; a poorly rewritten recall query can also bury the right memory. I kept this as an explicit operating boundary instead of pretending the server controls agent behavior: deployment must define memory precedence in the
-          <b>
-           client's own configuration
-          </b>
-          , and cross-agent memories carry
-          <code>
-           source_agent
-          </code>
-          /
-          <code>
-           source_client
-          </code>
-          when provenance matters.
-          <a href="https://github.com/entangelk/agent-memory-system-public#memory-aware-client-guidance" rel="noopener" target="_blank">
-           Client guidance →
-          </a>
-</span>
-<span class="ko">
-          MCP 계약은 구현돼 있지만, 도구가 있다는 것과 실제로 쓰인다는 것은 다릅니다. 클라이언트의 system prompt나 내장 파일 메모리가 서버 prompt보다 우선할 수 있고, 잘못 재작성된 recall query가 맞는 기억을 검색 순위 아래로 밀 수도 있습니다. 서버가 agent 행동까지 통제하는 척하지 않고 이를 명시적 운영 경계로 남겼습니다: 배포 시
-          <b>
-           클라이언트 자체 설정
-          </b>
-          에 메모리 우선순위를 정하고, 출처가 중요한 cross-agent 기억에는
-          <code>
-           source_agent
-          </code>
-          /
-          <code>
-           source_client
-          </code>
-          를 함께 저장합니다.
-          <a href="https://github.com/entangelk/agent-memory-system-public/blob/main/README.ko.md#memory-aware-client-guidance" rel="noopener" target="_blank">
-           클라이언트 가이드 →
-          </a>
-</span>
-</p>
-<blockquote class="pull">
-<span class="en">
-          "The server can expose memory; only the client can choose to use it."
-         </span>
-<span class="ko">
-          "서버는 기억을 제공할 수 있지만, 그것을 쓸지는 클라이언트가 결정한다."
-         </span>
-</blockquote>
 </div>
 </div></div></details></div>
 <!-- CASE 3: Assessment Spec Harness -->
@@ -1317,15 +899,15 @@
        </span>
 <span class="pill piece">
 <span class="en">
-         Piece · Verification gate
+         Assessment design gate
         </span>
 <span class="ko">
-         조각 · 검증 게이트
+         평가 설계 게이트
         </span>
 </span>
 </div>
 <p class="tagline"><span class="en">CI for assessment design: inspect the task specification, not the candidate.</span><span class="ko">응시자 대신 과제 명세와 평가 설계를 검사하는 CI.</span></p>
-<dl class="project-brief"><div><dt><span class="en">Decision</span><span class="ko">핵심 판단</span></dt><dd><span class="en">Keep automated checks provisional and human approval separate. Reject rules that police legitimate evaluator discretion.</span><span class="ko">자동 검사는 잠정 판정으로 두고 사람의 승인을 분리했습니다. 평가자의 정당한 재량을 단속하는 규칙은 제외했습니다.</span></dd></div><div><dt><span class="en">Result</span><span class="ko">확인된 결과</span></dt><dd><span class="en">A deterministic checker, separate review gate, and JSON CLI contract for agents.</span><span class="ko">결정론적 checker, 별도 검토 gate, 에이전트용 JSON CLI 계약을 구현했습니다.</span></dd></div><div><dt><span class="en">Limit</span><span class="ko">한계</span></dt><dd><span class="en">Offline runs establish reproducibility on valid inputs. Live LLM SDK integration and extraction quality remain unverified.</span><span class="ko">오프라인 실행은 유효 입력의 재현성만 입증합니다. live LLM SDK 연동은 보류이며 추출 품질은 검증하지 않았습니다.</span></dd></div></dl><div class="case-links"><a class="repo" href="https://github.com/entangelk/assessment_poc" rel="noopener" target="_blank">
+<dl class="project-brief"><div><dt><span class="en">User &amp; problem</span><span class="ko">대상과 문제</span></dt><dd><span class="en">A hiring-team designer is the intended user: public task instructions and private scoring criteria can disagree. Actual team adoption remains unverified.</span><span class="ko">채용 과제 설계자를 목표 사용자로 가정합니다. 공개 안내와 비공개 채점 기준의 불일치를 다루며, 실제 팀의 도입은 미확인입니다.</span></dd></div><div><dt><span class="en">Scope choice</span><span class="ko">범위 선택</span></dt><dd><span class="en">Inspect the assessment design rather than grade applicants. Keep checks advisory and human review separate from the release gate; exclude automatic policing of grader discretion.</span><span class="ko">응시자 채점 대신 평가 설계를 검사합니다. 검사 결과는 잠정 판단으로 두고 사람 검토와 배포 gate를 분리하며, 평가자의 재량을 자동 단속하는 규칙은 제외했습니다.</span></dd></div><div><dt><span class="en">Evidence &amp; next decision</span><span class="ko">근거와 다음 판단</span></dt><dd><span class="en">A JSON CLI and offline synthetic tests exist. Live LLM extraction and a real spec/rubric pilot remain open; those results must guide whether the scope is useful.</span><span class="ko">JSON CLI와 합성 자료의 offline 검증이 있습니다. live LLM 추출과 실제 명세·채점표 파일럿은 남아 있으며, 그 결과로 현재 범위의 유용성을 판단해야 합니다.</span></dd></div></dl><div class="case-links"><a class="repo" href="https://github.com/entangelk/assessment_poc" rel="noopener" target="_blank">
         GitHub repo
        </a></div><details class="evidence-details"><summary><span class="en">6 decisions, ownership &amp; evidence</span><span class="ko">설계 판단 6개 · 직접 맡은 일 · 검증 기록</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><div class="case-links">
 <a class="repo" href="https://github.com/entangelk/assessment_poc" rel="noopener" target="_blank">
@@ -1427,7 +1009,7 @@
 </div><p class="bridge">
 <span class="en">
 <b>
-         The first-class user isn't a person — it's an AI agent.
+         The primary caller is an AI agent; the intended human user is an assessment designer.
         </b>
         In JSON mode (
         <code>
@@ -1461,7 +1043,7 @@
        </span>
 <span class="ko">
 <b>
-         1차 사용자는 사람이 아니라 AI agent입니다.
+         주 호출자는 AI agent이며, 목표 사용자 가설은 채용 과제 설계자입니다.
         </b>
         JSON 모드(
         <code>
@@ -1838,6 +1420,408 @@
           .
          </span>
 </p>
+</div>
+</div></div></details></div>
+<!-- CASE 2: Agent Memory System (the Memory piece) -->
+<div class="case" id="memory">
+<div class="case-top">
+<h3>
+        Agent Memory System
+       </h3>
+<span class="pill poc">
+        PoC
+       </span>
+<span class="pill piece">
+<span class="en">
+         Technical foundation
+        </span>
+<span class="ko">
+         기술 기반
+        </span>
+</span>
+</div>
+<p class="tagline"><span class="en">A shared long-term memory layer for AI assistants, exposed through MCP.</span><span class="ko">MCP로 여러 AI 클라이언트가 공유하는 장기 메모리 레이어.</span></p>
+<dl class="project-brief"><div><dt><span class="en">Decision</span><span class="ko">핵심 판단</span></dt><dd><span class="en">Store compacted meaning, not just logs. MongoDB is authoritative; ChromaDB is a rebuildable retrieval cache.</span><span class="ko">로그 대신 압축된 의미를 저장합니다. MongoDB가 정본이고 ChromaDB는 재구축 가능한 검색 캐시입니다.</span></dd></div><div><dt><span class="en">Result</span><span class="ko">확인된 결과</span></dt><dd><span class="en">Clients can save and recall memory, and compact it into daily, weekly, monthly, and yearly digests.</span><span class="ko">클라이언트가 기억을 저장·검색하고 일·주·월·년 단위 digest로 압축하는 구조를 구현했습니다.</span></dd></div><div><dt><span class="en">Limit</span><span class="ko">한계</span></dt><dd><span class="en">Masking is off by default. The server cannot force clients to use memory, and cache reindexing remains an operational task.</span><span class="ko">가림 정책은 기본 비활성화입니다. 클라이언트의 기억 사용을 강제할 수 없으며, 캐시 재색인은 운영상 필요합니다.</span></dd></div></dl><div class="case-links"><a class="repo" href="https://github.com/entangelk/agent-memory-system-public" rel="noopener" target="_blank">
+        GitHub repo
+       </a></div><details class="evidence-details"><summary><span class="en">5 decisions, ownership &amp; evidence</span><span class="ko">설계 판단 5개 · 직접 맡은 일 · 검증 기록</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><div class="case-links">
+<a class="repo" href="https://github.com/entangelk/agent-memory-system-public" rel="noopener" target="_blank">
+        GitHub repo
+       </a>
+</div><div class="scan">
+<div class="srow">
+<div class="sk">
+<span class="en">
+          Problem
+         </span>
+<span class="ko">
+          문제
+         </span>
+</div>
+<div class="sv">
+<span class="en">Repeatedly explaining prior context can interrupt AI-assisted work. This PoC offers explicit save and recall; its effect on re-explanation effort remains unmeasured.</span>
+<span class="ko">AI와 작업할 때 이전 맥락을 반복해서 설명하는 부담을 줄이려는 PoC입니다. 명시적 저장·검색을 제공하며 재설명 부담을 실제로 얼마나 줄이는지는 미측정입니다.</span>
+</div>
+</div>
+<div class="srow">
+<div class="sk">
+<span class="en">
+          Result
+         </span>
+<span class="ko">
+          결과
+         </span>
+</div>
+<div class="sv">
+<span class="en">
+          An MCP long-term memory layer whose primary unit is compacted meaning: MongoDB authoritative, ChromaDB a rebuildable derived cache, client-driven compaction into day → week → month → year digests.
+         </span>
+<span class="ko">
+          압축된 의미를 기본 단위로 삼는 MCP 장기 메모리 레이어입니다. MongoDB가 권위 저장소, ChromaDB는 재구축 가능한 파생 캐시이고, client-driven compaction이 일→주→월→년 digest를 만듭니다.
+         </span>
+</div>
+</div>
+<div class="srow">
+<div class="sk">
+<span class="en">
+          Boundary
+         </span>
+<span class="ko">
+          경계
+         </span>
+</div>
+<div class="sv">
+<span class="en">
+          The masking policy ships
+          <b>
+           disabled by default
+          </b>
+          — it supports a safe policy but is not safe-by-default. And a memory server cannot force a client to actually use the memory it serves.
+         </span>
+<span class="ko">
+          가림 정책은
+          <b>
+           기본값이 비활성화
+          </b>
+          입니다 — 안전 정책을 지원하지만 safe-by-default는 아닙니다. 그리고 메모리 서버는 클라이언트가 그 기억을 실제로 쓰도록 강제하지 못합니다.
+         </span>
+</div>
+</div>
+</div><div class="owned">
+<p class="owned-h">
+<span class="en">
+         What I owned myself
+        </span>
+<span class="ko">
+         제가 직접 소유한 것
+        </span>
+</p>
+<ul>
+<li>
+<span class="en">
+<b>
+           The truth/cache split.
+          </b>
+          Deciding that MongoDB is authoritative and ChromaDB is a rebuildable derived cache — a storage boundary later used in AI Writer.
+         </span>
+<span class="ko">
+<b>
+           진실/캐시 분리.
+          </b>
+          MongoDB를 권위 저장소로, ChromaDB를 재구축 가능한 파생 캐시로 둔 결정 — 이후 AI Writer에 사용한 저장 경계입니다.
+         </span>
+</li>
+<li>
+<span class="en">
+<b>
+           What the server refuses to do.
+          </b>
+          No hidden LLM summarization, no keyword-guessed sensitivity. Sensitivity is explicit metadata supplied by the agent; the machine coordinates, the party that understood the text decides. That refusal is a design decision, not a missing feature.
+         </span>
+<span class="ko">
+<b>
+           서버가 하지 않기로 한 것.
+          </b>
+          숨은 LLM 요약 없음, 키워드 기반 민감도 추측 없음. 민감도는 agent가 명시하는 메타데이터이고, 기계는 조율하며 텍스트를 이해한 주체가 결정합니다. 이 거부는 미구현이 아니라 설계 결정입니다.
+         </span>
+</li>
+<li>
+<span class="en">
+<b>
+           Stating the limit.
+          </b>
+          The masking policy ships
+          <b>
+           disabled by default
+          </b>
+          , and a memory server cannot force a client to actually use its memory. I documented both as operating boundaries rather than letting the MCP contract imply a guarantee it does not give.
+         </span>
+<span class="ko">
+<b>
+           한계 명시.
+          </b>
+          가림 정책은
+          <b>
+           기본값 비활성화
+          </b>
+          로 출하되고, 메모리 서버는 클라이언트에게 기억 사용을 강제할 수 없습니다. MCP 계약이 주지 않는 보장을 암시하게 두지 않고, 둘 다 운영 경계로 문서화했습니다.
+         </span>
+</li>
+</ul>
+</div><div class="decisions">
+<div class="decision">
+<p class="dh">
+<span class="num">
+          01
+         </span>
+<span class="en">
+          Memory is compacted meaning, not a conversation log
+         </span>
+<span class="ko">
+          기억은 대화 로그가 아니라 압축된 의미다
+         </span>
+</p>
+<p class="why">
+<span class="en">
+          Most "memory" systems treat chat transcripts as the long-term unit. This one instead models a
+          <b>
+           distilled, structured, time-aware memory
+          </b>
+          as the primary unit: the client that understood the conversation is expected to decide what deserves saving. That is an operating contract, not a server-side ban on arbitrary text — memory quality is decided at save time. Client-driven compaction then builds day → week → month → year digests.
+         </span>
+<span class="ko">
+          대부분의 '메모리' 시스템은 대화 기록을 장기 단위로 삼습니다. 이 시스템은 대신
+          <b>
+           증류된 구조적·시간 인식 memory
+          </b>
+          를 기본 단위로 모델링하고, 대화를 이해한 client가 무엇을 저장할지 결정하게 합니다. 이는 임의 텍스트를 서버가 금지한다는 뜻이 아니라 운영 계약입니다 — 기억 품질은 저장 시점에 결정됩니다. 이후 client-driven compaction이 일→주→월→년 digest를 만듭니다.
+         </span>
+</p>
+<blockquote class="pull">
+<span class="en">
+          "Memory is not a log. Memory is compacted meaning."
+         </span>
+<span class="ko">
+          "기억은 로그가 아니다. 기억은 압축된 의미다."
+         </span>
+</blockquote>
+</div>
+<div class="decision">
+<p class="dh">
+<span class="num">
+          02
+         </span>
+<span class="en">
+          MongoDB is authoritative; the vector store is a rebuildable cache
+         </span>
+<span class="ko">
+          MongoDB가 권위 저장소이고, 벡터 store는 재구성 가능한 캐시다
+         </span>
+</p>
+<p class="why">
+<span class="en">
+          I split the architecture in two:
+          <b>
+           MongoDB
+          </b>
+          is the durable source of truth, while
+          <b>
+           ChromaDB
+          </b>
+          is a derived vector cache that can be rebuilt from Mongo. "Source of truth" does not mean immutable — memories can be updated or deleted. The current handlers do not fully synchronize every Chroma document inline, so reindex/rebuild remains an operational requirement; that is exactly why the cache never outranks Mongo.
+         </span>
+<span class="ko">
+          아키텍처를 둘로 나눴습니다:
+          <b>
+           MongoDB
+          </b>
+          는 영속적인 source of truth이고,
+          <b>
+           ChromaDB
+          </b>
+          는 Mongo 기준으로 재구축하는 파생 벡터 캐시입니다. 여기서 source of truth는 불변이라는 뜻이 아닙니다 — memory는 update/delete할 수 있습니다. 현재 handler는 모든 Chroma 문서를 inline으로 완전 동기화하지 않아 reindex/rebuild가 운영상 필요하며, 바로 그래서 캐시가 Mongo보다 권위를 갖지 않습니다.
+         </span>
+</p>
+<blockquote class="pull">
+<span class="en">
+          "The vector DB is a cache. The source of truth is the durable store."
+         </span>
+<span class="ko">
+          "벡터 DB는 캐시다. 진실은 영속 저장소에 있다."
+         </span>
+</blockquote>
+</div>
+<div class="decision">
+<p class="dh">
+<span class="num">
+          03
+         </span>
+<span class="en">
+          The server coordinates; it never secretly summarizes
+         </span>
+<span class="ko">
+          서버는 조율할 뿐, 몰래 요약하지 않는다
+         </span>
+</p>
+<p class="why">
+<span class="en">
+          The server stores, selects candidates, and coordinates lifecycle — but it performs
+          <b>
+           no hidden LLM summarization
+          </b>
+          and never auto-guesses sensitivity from keywords. The agent sets
+          <code>
+           sensitivity
+          </code>
+          explicitly; meaning extraction is done by the client that actually understood the text. The machine coordinates; the understanding party decides what a memory means.
+         </span>
+<span class="ko">
+          서버는 저장·후보 선택·생명주기 조율을 맡지만,
+          <b>
+           숨은 LLM 요약을 하지 않고
+          </b>
+          키워드로 민감도를 자동 추측하지 않습니다. agent가
+          <code>
+           sensitivity
+          </code>
+          를 명시하고, 의미 추출은 텍스트를 실제로 이해한 클라이언트가 합니다. 기계는 조율하고, 이해한 주체가 기억의 의미를 결정합니다.
+         </span>
+</p>
+</div>
+<div class="decision">
+<p class="dh">
+<span class="num">
+          04
+         </span>
+<span class="en">
+          Sensitivity is explicit metadata; redaction is an explicit policy
+         </span>
+<span class="ko">
+          민감도는 명시적 메타데이터, 가림은 명시적 정책이다
+         </span>
+</p>
+<p class="why">
+<span class="en">
+          The agent sets
+          <code>
+           sensitivity
+          </code>
+          explicitly at save time instead of relying on keyword guesses. Recall redacts
+          <code>
+           high
+          </code>
+          items only when
+          <code>
+           hide_sensitive_on_recall=true
+          </code>
+          ;
+          <code>
+           include_sensitive=true
+          </code>
+          then explicitly expands them. The honest boundary matters: the implementation ships with hiding
+          <b>
+           disabled by default
+          </b>
+          , so an operator must enable the policy. The mechanism is safe-capable, not safe-by-default.
+         </span>
+<span class="ko">
+          agent가 저장 시
+          <code>
+           sensitivity
+          </code>
+          를 키워드 추측 대신 명시합니다. Recall은
+          <code>
+           hide_sensitive_on_recall=true
+          </code>
+          일 때만
+          <code>
+           high
+          </code>
+          항목을 가리고,
+          <code>
+           include_sensitive=true
+          </code>
+          로 명시적으로 펼칩니다. 중요한 실제 경계가 있습니다: 구현의 가림 정책은
+          <b>
+           기본값이 비활성화
+          </b>
+          라 운영자가 직접 켜야 합니다. 안전 정책을 지원하지만 safe-by-default는 아닙니다.
+         </span>
+</p>
+<p class="ai">
+<b>
+<span class="en">
+           How it connects:
+          </span>
+<span class="ko">
+           연결점:
+          </span>
+</b>
+<span class="en">
+          This truth-vs-cache split is the seed of the verified RAG I now build at work ("the vector DB is a cache; the source snapshot is the truth"), and the same division of labor runs through everything: the deterministic layer coordinates, the understanding party decides.
+         </span>
+<span class="ko">
+          이 진실/캐시 분리가 지금 회사에서 만드는 검증형 RAG의 씨앗입니다("vector DB는 캐시, source snapshot이 진실"). 그리고 같은 역할 분담이 제가 만드는 모든 것을 관통합니다 — 결정론적 레이어가 조율하고, 이해한 주체가 결정합니다.
+         </span>
+</p>
+</div>
+<div class="decision">
+<p class="dh">
+<span class="num">
+          05
+         </span>
+<span class="en">
+          Named the boundary: a memory server cannot make a client remember
+         </span>
+<span class="ko">
+          경계를 명시했다: 메모리 서버가 클라이언트에게 기억을 강제할 수는 없다
+         </span>
+</p>
+<p class="why">
+<span class="en">
+          The MCP contract is implemented, but tool availability is not tool adoption. A client's system prompt or built-in file memory can outrank the server's prompt; a poorly rewritten recall query can also bury the right memory. I kept this as an explicit operating boundary instead of pretending the server controls agent behavior: deployment must define memory precedence in the
+          <b>
+           client's own configuration
+          </b>
+          , and cross-agent memories carry
+          <code>
+           source_agent
+          </code>
+          /
+          <code>
+           source_client
+          </code>
+          when provenance matters.
+          <a href="https://github.com/entangelk/agent-memory-system-public#memory-aware-client-guidance" rel="noopener" target="_blank">
+           Client guidance →
+          </a>
+</span>
+<span class="ko">
+          MCP 계약은 구현돼 있지만, 도구가 있다는 것과 실제로 쓰인다는 것은 다릅니다. 클라이언트의 system prompt나 내장 파일 메모리가 서버 prompt보다 우선할 수 있고, 잘못 재작성된 recall query가 맞는 기억을 검색 순위 아래로 밀 수도 있습니다. 서버가 agent 행동까지 통제하는 척하지 않고 이를 명시적 운영 경계로 남겼습니다: 배포 시
+          <b>
+           클라이언트 자체 설정
+          </b>
+          에 메모리 우선순위를 정하고, 출처가 중요한 cross-agent 기억에는
+          <code>
+           source_agent
+          </code>
+          /
+          <code>
+           source_client
+          </code>
+          를 함께 저장합니다.
+          <a href="https://github.com/entangelk/agent-memory-system-public/blob/main/README.ko.md#memory-aware-client-guidance" rel="noopener" target="_blank">
+           클라이언트 가이드 →
+          </a>
+</span>
+</p>
+<blockquote class="pull">
+<span class="en">
+          "The server can expose memory; only the client can choose to use it."
+         </span>
+<span class="ko">
+          "서버는 기억을 제공할 수 있지만, 그것을 쓸지는 클라이언트가 결정한다."
+         </span>
+</blockquote>
 </div>
 </div></div></details></div>
 <!-- CASE 4: Harness IR -->
@@ -2221,7 +2205,7 @@
 </div>
 </section>
 <section id="ai">
-<div class="wrap"><div class="sec-head"><span id="principles"></span><div class="sec-tag"><span class="en">Working principles</span><span class="ko">일하는 방식</span></div><h2><span class="en">Direction, ownership, verification.</span><span class="ko">방향을 정하고, 결과를 검증합니다.</span></h2><p><span class="en">I own architecture and acceptance decisions. Agents implement within those boundaries; separate verification checks the result.</span><span class="ko">아키텍처와 채택 판단은 직접 맡습니다. 에이전트는 그 경계 안에서 구현하고, 별도의 검증으로 결과를 확인합니다.</span></p></div><details class="evidence-details"><summary><span class="en">Working principles &amp; public verification trails</span><span class="ko">운영 원칙과 공개 검증 기록</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><section>
+<div class="wrap"><div class="sec-head"><span id="principles"></span><div class="sec-tag"><span class="en">Working principles</span><span class="ko">일하는 방식</span></div><h2><span class="en">Direction, ownership, verification.</span><span class="ko">방향을 정하고, 결과를 검증합니다.</span></h2><p><span class="en">Start with the task and scope, then build with AI. Keep evidence for system behavior separate from evidence for user value.</span><span class="ko">업무 문제와 범위를 먼저 정하고 AI와 구현합니다. 시스템 동작 근거와 사용자 효과의 근거를 구분합니다.</span></p></div><details class="evidence-details"><summary><span class="en">Working principles &amp; public verification trails</span><span class="ko">운영 원칙과 공개 검증 기록</span><span aria-hidden="true" class="detail-symbol">+</span></summary><div class="evidence-body"><section>
 <div class="wrap">
 <div class="sec-head">
 <div class="sec-tag">
