@@ -13,13 +13,55 @@
 # 안녕하세요, entangelk입니다
 
 > **기획 × AI 기반 엔지니어링**<br />
-> 모호한 비즈니스 요구를 검증 가능한 기획으로 바꾸고, AI 에이전트와 함께 동작하는 시스템을 설계·구현해 그 아이디어가 현실 제약에서도 성립하는지 증명합니다.<br />
-> 제 커리어는 운영, 사업기획, 데이터 분석에서 시작했습니다. 그 과정에서 모호한 비즈니스 요구와 기술적 현실 사이의 간극에 계속 부딪혔고, 그 간극을 직접 메우기 위해 시스템을 만들기 시작했습니다.  
-> 지금은 불분명한 요구사항을 검증 가능한 PoC, 구조화된 실험, 그리고 현실 제약에 기반한 명확한 Go / Drop 판단으로 바꾸는 일에 집중하고 있습니다.
+> 운영·사업기획·데이터 분석에서 출발했습니다. 업무의 문제를 제품 흐름으로 정리하고 AI와 함께 구현하며, 구현과 실험의 근거로 바꿀 것과 멈출 것을 판단합니다.
 
-*"기억은 로그가 아니다. 기억은 압축된 의미다."*
+## 대표 제품 판단 사례
 
-## 소개 영상
+### [AI Writer System](https://github.com/entangelk/ai_writte_system) · 개발 중
+
+장편 창작자가 이전 원고의 설정과 사건을 찾아 다음 집필에 활용하도록 만드는 글쓰기 워크스페이스입니다. **일관성 추적을 핵심 문제로 보고**, 생성뿐 아니라 기억의 검색과 검토에 중심을 뒀습니다.
+
+원고 작성 → 기억 후보의 원문 근거 확인 → 승인·거절 → 다음 집필에서 검색. 생성 제안은 옆 패드에서 검토하고, 채택하기 전까지 원고를 바꾸지 않습니다. 로컬 관통 동작과 실제 화면 녹화는 있으며, 집필 시간 절감과 일관성 개선은 아직 공개 자료로 확인되지 않았습니다.
+
+[사용 경험과 구현 근거](https://entangelk.github.io/entangelk/case-studies.html#writer)
+
+### [장편 AI 영상 제작 시스템](https://entangelk.github.io/entangelk/experience.html#video) · 회사 프로젝트, 품질 검증 중
+
+영상 요청자가 생성 도구의 워크플로우 대신 **원하는 영상과 시나리오를 다루게 하는 경험**을 설계했습니다. 참조 이미지를 검토하고 생성 계획으로 연결하며, 복잡한 실행 레시피는 내부에 둡니다.
+
+로컬에서 생성·완성본 조립까지 동작합니다. 장편 품질과 목소리 일관성은 미해결이며, 실제 제작 시간 절감은 확인되지 않았습니다. 소스는 비공개입니다.
+
+### [Assessment Spec Harness](https://github.com/entangelk/assessment_poc) · PoC
+
+채용 과제의 **공개 안내와 비공개 채점 기준이 어긋나는 문제**를 검사합니다. 응시자 채점 대신 과제 설계의 불일치를 찾고, 자동 finding과 사람의 최종 검토를 분리했습니다. CLI와 AI agent는 호출 방식이며, 과제 설계팀을 위한 사용자 가설은 검증이 필요합니다.
+
+합성 예제의 결정론적 재현성을 확인한 단계입니다. 실제 과제에서의 오탐·검토 시간과 live LLM 추출 품질은 미검증입니다.
+
+## 실무에서 내린 판단
+
+| 사례 | 문제와 선택 | 확인된 범위 |
+| --- | --- | --- |
+| [고객센터 인력 분석](https://entangelk.github.io/entangelk/experience.html#staffing) | 평균에 가려지는 고부하일을 고려해 Q90과 보수안을 채용·증원 기준으로 제시 | 과거 데이터 역검증. 적용 후 비용·서비스 수준의 사후 근거는 확인 중 |
+| [대규모 에셋 생성·검수](https://entangelk.github.io/entangelk/experience.html#assets) | 대량 생성 결과를 사람이 비교·재생성·검수하고 남은 작업을 이어가는 흐름 | 로컬 생성 인덱스에 고유 항목 22,068개. 최종 승인·배포 수와는 구별 |
+| [NLP 카테고리 매칭](https://entangelk.github.io/entangelk/experience.html#nlp) | 자연어를 기존 분류 체계와 연결하고, 변경 데이터만 임베딩 갱신 | 상용 적용 서술과 구현 근거. 분류 정확도·작업 절감은 별도 검증 필요 |
+| [사내 업무 자동화](https://entangelk.github.io/entangelk/experience.html#automation) | 반복 보고·수집을 웹 작업으로 연결하고 사람이 처리할 예외 경로를 제공 | 보고서·검토·출력 흐름 구현. 시간 절감의 측정 근거는 확인 중 |
+
+## 기술 기반과 연구
+
+- **[Verified RAG](https://entangelk.github.io/entangelk/experience.html#rag)** — 법령 검색과 근거 검증의 기술 사례. 실제 모델 실험과 독립 검증 Core를 구현했으며, 답변 정확도와 사용자 효과는 별도 평가 대상입니다.
+- **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public)** — 여러 AI 클라이언트가 공유하는 기억 기반을 실험했습니다. 정본과 검색 캐시의 분리를 AI Writer에 이어 적용했습니다.
+- **[Logo Workbench](https://github.com/entangelk/logo_image)** · **[Harness IR](https://github.com/entangelk/Harness_ir)** — 분할 실패와 구조화 추출 가설을 비교하는 연구 사례입니다. 실사용 제품 성과와 구분합니다.
+- **제약 탐색 연구 시리즈** — [HW-WFC](https://github.com/entangelk/hw-wfc), [Circle-WFC](https://github.com/entangelk/circle-wfc), [T-WFC](https://github.com/entangelk/T-WFC). 실험에서 작동한 범위와 실패한 조건을 정리했습니다. Circle-WFC의 corridor 활용은 후속 가설입니다.
+- **[Q-PSA](https://github.com/entangelk/Q-PSA_Pr)** — WFC에서 영감을 받은 별도 perturbation 실험. 레이어 제거 시 PPL 3.65배 vs baseline 1.05배, 약 1,300배 느린 결과로 종료했습니다.
+
+## 일하는 방식
+
+문제와 기존 작업을 먼저 정리하고, 바꿀 경험과 제외할 범위를 정합니다. AI와 함께 구현하며 회귀 검증을 남깁니다. **구현이 동작한다는 근거와 사용자가 도움을 받았다는 근거를 구별**하고, 확인하지 못한 효과는 가설로 남깁니다.
+
+[상세 판단과 기술 근거 — PROJECTS.ko.md](https://github.com/entangelk/entangelk/blob/main/PROJECTS.ko.md)
+
+<details>
+<summary>소개 영상</summary>
 
 <table>
 <tr>
@@ -114,74 +156,7 @@ https://github.com/user-attachments/assets/9470b845-b59b-41fa-afc7-782c456412b8
 
 </details>
 
-## Why I Build (만들면서 배우는 이유)
-
-저는 저수준 최적화를 다루거나 수학적 원리를 처음부터 증명하는 핵심 AI 연구자는 아닙니다.  
-대신 저의 강점은 **실행력, 구조화된 실험, 그리고 제품 관점의 기술적 사고**에 있습니다.
-
-비즈니스 병목을 마주하면, 기존 모델·API·알고리즘을 조합해 아이디어가 실제 제약 조건 안에서 성립하는지 먼저 검증합니다.  
-저는 만들기 위해서만 만드는 것이 아니라, 구조적 한계를 드러내기 위해 만들고, 그 결과를 바탕으로 반복할지, 피벗할지, 확장할지, 멈출지를 판단합니다.
-
-## Core Philosophy
-
-- **Build to Validate:** 아이디어가 실제 비즈니스 제약을 견딜 수 있는지 검증하기 위해 프로토타입과 워크플로우를 만듭니다.
-- **Production-Aware Thinking:** AI 시스템을 단순 데모가 아니라 비용, 안정성, 운영 마찰까지 고려해야 하는 서비스로 봅니다.
-- **Data-Driven Decisions:** 시스템이 측정 가능한 결과로 가치를 입증하지 못하면, 실패를 기록하고 다음 판단으로 넘어갑니다.
-- **Learn from Limits:** 실패한 실험, 트레이드오프, 막다른 길 역시 더 나은 시스템 설계를 위한 중요한 입력이라고 생각합니다.
-
-## What I Work With
-
-- AI Proof-of-Concepts (PoCs)
-- Automation Workflows
-- LLM Application Prototyping
-- Data Pipelines
-- Technical Feasibility Validation
-- Product-Oriented Experiment Design
-
-## 🏗️ 주요 아키텍처 & PoC
-
-- 📖 **[AI Writer System](https://github.com/entangelk/ai_writte_system)** — *대표 개인 프로젝트*  
-  장편 창작을 위한 **'글쓰기 운영체제'**입니다. 긴 원고에서 무너지는 것은 문장력이 아니라 **일관성**이고, 범용 챗봇은 대화창을 벗어나면 아무것도 기억하지 못하므로 이 문제를 구조적으로 풀 수 없습니다.  
-  `Architecture:` MongoDB 정본(SoT) + 하이브리드 검색(ChromaDB/BGE-m3 벡터 · Elasticsearch nori 어휘) + Writing Gate. **AI 출력은 도착 즉시 정본이 되지 않습니다** — 전부 `candidate`로 남고, Gate 판정과 사람의 검토를 거쳐야 append-only 기억이 되며, 모든 주장에는 원문 위치로 되짚는 `source_ref`가 붙습니다. 임베딩과 리랭킹은 **provider-neutral seam** 뒤에 있고, 교체하기 **전에** 평가 하네스(`recall@k` · `MRR` · `nDCG@k`)를 먼저 썼습니다 — 정답은 일부러 채우지 않았습니다.  
-  `Process:` 구현보다 **먼저** 쓴 결정 브리프 118개 · 73일치로 쌓인 독립 검증 기록 315건 · 통과 테스트 3,075건(서브테스트 4,239) · 뮤테이션으로 확인하는 양방향 회귀 가드 · 버전 관리되는 정본 계약(`v1.8.68`, 변경이력 전량 보존). 판정 분포는 **합격 216 · 조건부 합격 94 · 불합격 5** — **10건 중 3건은 깨끗하게 돌아오지 않습니다**. 검증이 형식적 통과가 아니라는 증거입니다.  
-  `Stack:` FastAPI · React/TS · 로컬 Gemma 4 12B endpoint — 전체 스택이 `docker compose up` 하나로 뜹니다.
-
-- 🧠 **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public)**  
-  MCP 기반 장기 메모리 아키텍처입니다.  
-  `Architecture:` 일관성과 메모리 압축을 위해 State of Truth(MongoDB)와 semantic retrieval layer(ChromaDB)를 분리했습니다.
-
-- 🎯 **[Logo Segmentation Experiment Workbench](https://github.com/entangelk/logo_image)**<br />
-  warp 보정, anchor 생성, Grounding DINO + SAM segmentation, 후처리를 비교하는 실험 워크벤치입니다.<br />
-  `Focus:` localization·segmentation·quality 실험을 분리해, 실패한 가정이 하나의 파이프라인 안에 가려지지 않고 비교 가능하게 만들었습니다.
-
-- 🧪 **[Assessment Spec Harness (PoC)](https://github.com/entangelk/assessment_poc)**  
-  채용 과제를 위한 CI입니다. 응시자를 평가하지 않고 평가 설계 자체를 평가하며, 공개 `spec.md`와 비공개 `rubric.md` 사이의 설계 불일치를 응시자가 보기 전에 검출합니다.  
-  `Architecture:` 불변 해시 기반 소스 스냅샷 위의 결정론적 검증 코어를 agent-consumable CLI 계약으로 노출했습니다. 현재 multi-run 증거는 offline `deterministic_extraction` + mock semantic verification이며, live LLM SDK runner는 보류 상태입니다.
-
-## 📊 R&D, 실패한 실험, 그리고 포스트모템
-
-*저는 성공한 결과만큼이나 실패한 실험에서 얻은 교훈도 중요하게 생각합니다. 아래 프로젝트들은 아키텍처 가설을 검증하고, 실현 가능성을 판단하며, 데이터 기반으로 결정을 내린 사례들입니다.*
-
-- 🧪 **[Q-PSA (Project Killed)](https://github.com/entangelk/Q-PSA_Pr)**  
-  양자화된 LLM에서 레이어 중요도를 추정하기 위해 discrete perturbation 방식을 실험했습니다.  
-  `Decision:` 실험 결과, 베이스라인 대비 약 1300배 느리고 pruning validation에도 실패해 프로젝트를 종료했습니다.
-
-- 🗺️ **[Circle-WFC (Architectural Pivot)](https://github.com/entangelk/circle-wfc)**  
-  `A*` pathfinding을 geometry-guided Wave Function Collapse(WFC)로 대체하려는 시도였습니다.  
-  `Insight:` 전역 경로 탐색에서 local consistency의 구조적 한계를 발견했고, 최종 경로는 A*나 JPS에 맡기는 candidate corridor generator로 후속 가능성을 재정의했습니다.
-
-- ⚡ **[HW-WFC v2.9 (Feasibility Validated)](https://github.com/entangelk/hw-wfc)**  
-  제약 기반 AI compiler scheduling R&D입니다.  
-  `Result:` Exact DP의 최적값과 일치해 알고리즘적 실현 가능성은 입증했지만, 실제 프로덕션 병목이 하드웨어 기반 cost-model calibration에 있다는 점을 확인하고 연구를 마무리했습니다.
-
-- 🧩 **[Harness IR (Feasibility Study — Mixed)](https://github.com/entangelk/Harness_ir)**  
-  provider-neutral Role IR lowering이 하드코딩 프롬프트 템플릿보다 structured extraction 신뢰도를 높이는지를 여러 LLM 백엔드에서 검증한 PoC입니다.  
-  `Insight:` 하드 distractor 셋에서는 깔끔한 IR 우위가 없었고(`renewal`/`penalty` false positive가 IR·baseline 양쪽 공통의 실패 패턴이 됨), 진짜 다음 단계 레버는 lowering 단계 자체가 아니라 self-verification과 critic loop라는 점으로 방향을 재정의했습니다.
-
-## Notes
-
-트러블슈팅, 아키텍처 의사결정, 트레이드오프, 프로젝트 맥락에 대한 더 긴 글은 아래에서 볼 수 있습니다.  
-👉 **[주요 프로젝트 상세 (PROJECTS.ko.md)](./PROJECTS.ko.md)**
+</details>
 
 ## Contact
 

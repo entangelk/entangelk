@@ -13,13 +13,55 @@
 # Hi, I'm entangelk
 
 > **Product Planning × AI-Augmented Engineering**<br />
-> I turn ambiguous business needs into testable plans, then design and build the working systems with AI agents to prove whether those ideas survive real-world constraints.<br />
-> My background is in operations, business planning, and data analysis. While working across those roles, I became increasingly drawn to the gap between ambiguous business needs and technical reality, and started building systems myself to close it.  
-> Today, I focus on turning vague requirements into testable PoCs, structured experiments, and clear Go / Drop decisions grounded in real-world constraints.
+> My background is in operations, business planning, and data analysis. I turn work problems into product flows, build with AI, and use implementation and experiment evidence to decide what to change or stop.
 
-*"Memory is not a log. Memory is compacted meaning."*
+## Selected product decisions
 
-## Intro videos
+### [AI Writer System](https://github.com/entangelk/ai_writte_system) · In development
+
+A writing workspace for long-form creators to find earlier settings and events while drafting. **Consistency tracking is the product hypothesis**, so memory retrieval and review sit alongside generation.
+
+Draft → check the source behind a memory suggestion → approve or reject → retrieve it during later writing. Generated prose arrives in a side pad and changes the manuscript only when adopted. Local end-to-end operation and recorded screens exist; writing-time savings and improved consistency are not established by the public evidence.
+
+[Experience and implementation evidence](https://entangelk.github.io/entangelk/case-studies.html#writer)
+
+### [Long-Form AI Video Production System](https://entangelk.github.io/entangelk/experience.html#video) · Company project, quality under evaluation
+
+Designed an experience where requesters work with **video intent and scenarios instead of generation workflows**. Reference-image review feeds the generation plan; execution recipes stay internal.
+
+Generation and master assembly run locally. Long-form quality and voice consistency remain unresolved, and production-time savings are unverified. Source is private.
+
+### [Assessment Spec Harness](https://github.com/entangelk/assessment_poc) · PoC
+
+Checks **mismatches between public assignment instructions and private scoring criteria**. It reviews the assessment design rather than grading candidates, separating automatic findings from human judgment. CLI and AI agents are callers; the assessment-design team is a user hypothesis to validate.
+
+Deterministic reproducibility was checked on synthetic examples. False positives, review time on real assessments, and live LLM extraction quality remain unverified.
+
+## Decisions in operational work
+
+| Case | Problem and choice | Evidence boundary |
+| --- | --- | --- |
+| [Customer-center staffing](https://entangelk.github.io/entangelk/experience.html#staffing) | Used Q90 and a conservative option to plan for high-load days hidden by averages | Historical back-testing. Post-adoption cost and service-level evidence is under review |
+| [Asset generation and review](https://entangelk.github.io/entangelk/experience.html#assets) | Let reviewers compare, regenerate and review outputs, then continue unfinished work | 22,068 unique items in a local generation index; distinct from final approvals or deployment |
+| [NLP category matching](https://entangelk.github.io/entangelk/experience.html#nlp) | Connected natural language to existing categories and updated embeddings only for changed data | Documented commercial integration and implementation; accuracy and task savings need separate evaluation |
+| [Internal automation](https://entangelk.github.io/entangelk/experience.html#automation) | Connected repetitive reporting and collection to web tasks with human exception handling | Reporting, review and export workflows implemented; time-savings measurement needs confirmation |
+
+## Technical foundations and research
+
+- **[Verified RAG](https://entangelk.github.io/entangelk/experience.html#rag)** — A technical case in statute retrieval and evidence verification. Live-model experiments and a standalone verification Core exist; answer accuracy and user benefit need separate evaluation.
+- **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public)** — Explored shared memory across AI clients. The canonical-record/search-cache separation carries into AI Writer.
+- **[Logo Workbench](https://github.com/entangelk/logo_image)** · **[Harness IR](https://github.com/entangelk/Harness_ir)** — Research into segmentation failures and structured extraction, distinct from validated product outcomes.
+- **Constraint-search research series** — [HW-WFC](https://github.com/entangelk/hw-wfc), [Circle-WFC](https://github.com/entangelk/circle-wfc), [T-WFC](https://github.com/entangelk/T-WFC). Recorded tested successes and failure conditions. Corridor generation remains a follow-up hypothesis for Circle-WFC.
+- **[Q-PSA](https://github.com/entangelk/Q-PSA_Pr)** — A separate perturbation experiment inspired by WFC. Stopped after layer removal raised PPL 3.65× versus 1.05× for the baseline, with scoring roughly 1,300× slower.
+
+## How I work
+
+Start with the problem and existing task, choose the experience and scope, then build with AI and preserve regression evidence. **Working implementation and user benefit require different evidence.** Effects I have not measured remain hypotheses.
+
+[Decisions and technical evidence — PROJECTS.md](https://github.com/entangelk/entangelk/blob/main/PROJECTS.md)
+
+<details>
+<summary>Intro videos</summary>
 
 <table>
 <tr>
@@ -114,71 +156,7 @@ https://github.com/user-attachments/assets/05fddc97-0a09-4347-881d-289cd3fa5aac
 
 </details>
 
-## Why I Build (Learning by Building)
-
-I am not a core AI researcher working on low-level optimization or deriving algorithms from first principles. My strength is **execution, structured experimentation, and product-minded technical thinking.**  
-When I encounter a business bottleneck, I combine existing models, APIs, and algorithms to test whether an idea is actually feasible under real constraints. I build to uncover structural limits, and I use evidence to decide whether to iterate, pivot, scale, or stop.
-
-## Core Philosophy
-
-- **Build to Validate:** I use prototypes and workflows to test whether an idea can survive real business constraints.
-- **Production-Aware Thinking:** I treat AI systems as services that must work with cost, stability, and operational friction in mind.
-- **Data-Driven Decisions:** If a system does not prove its value through measurable results, I document the failure and move on.
-- **Learn from Limits:** Failed experiments, trade-offs, and dead ends are often the most useful inputs for better system design.
-
-## What I Work With
-
-- AI Proof-of-Concepts (PoCs)
-- Automation Workflows
-- LLM Application Prototyping
-- Data Pipelines
-- Technical Feasibility Validation
-- Product-Oriented Experiment Design
-
-## 🏗️ Highlighted Architecture & PoC
-
-- 📖 **[AI Writer System](https://github.com/entangelk/ai_writte_system)** — *flagship personal project*  
-  A "writing operating system" for long-form fiction. What breaks in a long manuscript is not prose quality, it is **consistency** — and a chatbot cannot fix that structurally, because it remembers nothing outside the conversation window.  
-  `Architecture:` MongoDB as the canonical source of truth, hybrid retrieval (ChromaDB/BGE-m3 vector + Elasticsearch nori lexical), and a Writing Gate. **AI output is never canon on arrival** — it lands as a `candidate` and becomes append-only memory only after a gate verdict and human review, with a `source_ref` pointing back to the original text for every claim. Embedding and reranking sit behind **provider-neutral seams**, and an evaluation harness (`recall@k` · `MRR` · `nDCG@k`) was written *before* any swap — with the gold labels deliberately left unfilled.  
-  `Process:` 118 decision briefs written *before* implementation · 315 independent verification records over 73 dated days · a suite of 3,075 passing tests (4,239 subtests) · two-way regression guards checked by mutation · a versioned canonical contract (`v1.8.68`, full change history retained). The verdict split is **216 pass · 94 conditional · 5 outright fail** — **30% do not come back clean**, which is what tells you the review is not a formality.  
-  `Stack:` FastAPI · React/TS · a local Gemma 4 12B endpoint — the whole stack on one `docker compose up`.
-
-- 🧠 **[Agent Memory System](https://github.com/entangelk/agent-memory-system-public)**  
-  MCP-based long-term memory architecture.  
-  `Architecture:` Separated the State of Truth (MongoDB) from the semantic retrieval layer (ChromaDB) to improve consistency and memory compaction.
-
-- 🎯 **[Logo Segmentation Experiment Workbench](https://github.com/entangelk/logo_image)**<br />
-  A comparison workbench for warp correction, anchor generation, Grounding DINO + SAM segmentation, and post-processing.<br />
-  `Focus:` Separated localization, segmentation, and quality experiments so failed assumptions remain inspectable instead of disappearing inside one pipeline.
-
-- 🧪 **[Assessment Spec Harness (PoC)](https://github.com/entangelk/assessment_poc)**  
-  CI for hiring assessments — it doesn't evaluate the candidate, it evaluates the assessment design itself, detecting mismatches between a public `spec.md` and a private `rubric.md` before candidates ever see them.  
-  `Architecture:` A deterministic validation core over an immutable, hash-anchored source snapshot, exposed through an agent-consumable CLI contract. The current multi-run proof uses offline `deterministic_extraction` plus mock semantic verification; live LLM SDK runners remain deferred.
-
-## 📊 R&D, Failed Experiments & Post-Mortems
-
-*I value the lessons learned from failed experiments as much as successful deployments. Below are projects where I tested architectural ideas, examined feasibility, and made data-driven decisions.*
-
-- 🧪 **[Q-PSA (Project Killed)](https://github.com/entangelk/Q-PSA_Pr)**  
-  Tested discrete perturbation for quantized LLMs to estimate layer importance.  
-  `Decision:` Killed the project after experiments showed it was ~1300x slower than the baseline and failed pruning validation.
-
-- 🗺️ **[Circle-WFC (Architectural Pivot)](https://github.com/entangelk/circle-wfc)**  
-  Attempted to replace `A*` pathfinding with a geometry-guided Wave Function Collapse (WFC).  
-  `Insight:` Found the structural limit of local consistency in global pathfinding, then reframed the concept as a candidate corridor generator whose output would still need A* or JPS for the final path.
-
-- ⚡ **[HW-WFC v2.9 (Feasibility Validated)](https://github.com/entangelk/hw-wfc)**  
-  Constraint-driven AI compiler scheduling R&D.  
-  `Result:` Matched Exact DP's optimum, validating algorithmic feasibility, but concluded the research after identifying hardware-backed cost-model calibration as the real production bottleneck.
-
-- 🧩 **[Harness IR (Feasibility Study — Mixed)](https://github.com/entangelk/Harness_ir)**  
-  Tested whether provider-neutral Role IR lowering beats hardcoded prompt templates for structured extraction across multiple LLM backends.  
-  `Insight:` Found no clean IR win on hard distractor sets — `renewal`/`penalty` false positives became a shared failure family across both paths — and reframed the real next-phase lever as self-verification and critic loops rather than the lowering step alone.
-
-## Notes
-
-For longer write-ups on troubleshooting, architectural decisions, trade-offs, and project context:  
-👉 **[Selected Project Details (PROJECTS.md)](./PROJECTS.md)**
+</details>
 
 ## Contact
 
