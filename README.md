@@ -21,7 +21,7 @@
 
 A writing workspace for long-form creators to find earlier settings and events while drafting. **Consistency tracking is the product hypothesis**, so memory retrieval and review sit alongside generation.
 
-Draft → check the source behind a memory suggestion → approve or reject → retrieve it during later writing. Generated prose arrives in a side pad and changes the manuscript only when adopted. Drafting, generation, memory review and retrieval are connected in one local workspace.
+Draft → check the source behind a memory suggestion → approve or reject → retrieve it during later writing. Generated prose arrives in a side pad and changes the manuscript only when adopted. Drafting, generation, memory review and retrieval are connected in one local workspace. I use it for my own writing, dogfooding the product and improving the analysis display and review workflow from issues encountered during use.
 
 [Experience and implementation evidence](https://entangelk.github.io/entangelk/case-studies.html#writer)
 
@@ -29,7 +29,9 @@ Draft → check the source behind a memory suggestion → approve or reject → 
 
 Designed an experience where requesters work with **video intent and scenarios instead of generation workflows**. Reference-image review feeds the generation plan; execution recipes stay internal.
 
-Generation and master assembly run locally. Reference features support long-form continuity and voice consistency to a degree; differences in output quality across models remain the focus of evaluation. Source is private.
+I own service planning, architecture, the full backend and management of a two-person team; frontend development is handled separately.
+
+Generation and master assembly run locally. Custom-node reference features support long-form continuity and voice consistency to a degree; differences in output quality across models remain the focus of evaluation. Source is private.
 
 ### [Assessment Spec Harness](https://github.com/entangelk/assessment_poc) · PoC
 

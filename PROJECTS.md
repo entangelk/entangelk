@@ -30,6 +30,8 @@ Each case starts with the work problem, chosen experience, implemented result an
 
 </details>
 
+**Dogfooding and iteration:** I use it for my own writing, dogfooding the product and improving the analysis display and review workflow from issues encountered during use.
+
 ### Long-Form AI Video Production System · Company project, model quality under evaluation
 
 [Case](https://entangelk.github.io/entangelk/experience.html#video) · Private source
@@ -37,6 +39,8 @@ Each case starts with the work problem, chosen experience, implemented result an
 **Audience and problem:** Let video requesters describe intent without managing complex generation recipes.
 
 **Experience and choice:** Video intent → scenario confirmation → required reference-image review → planning → segment generation and master review. Workflows stay internal; users work with content and intent. Free graph assembly, SNS publishing and performance-based learning are separate from the current experience.
+
+**Ownership:** I own service planning, architecture, the full backend and management of a two-person team. Frontend development is handled separately. Reference functionality was added using custom nodes.
 
 **Result and next decision:** Generation and master assembly run locally. Reference features implement support for long-form continuity and voice consistency to a degree. Current evaluation focuses on differences in output quality across models.
 

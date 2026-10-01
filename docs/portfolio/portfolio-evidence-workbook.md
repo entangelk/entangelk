@@ -12,7 +12,7 @@
 
 | 프로젝트 | 기존 서술과 출처 | 다음 확인 또는 측정 | 현재 상태 |
 | --- | --- | --- | --- |
-| AI Writer | [상세](https://github.com/entangelk/entangelk/blob/main/PROJECTS.ko.md): 로컬 1인 운영, 2026-08-23 dogfood 착수 선언, 테스트·검증 기록. [웹](https://entangelk.github.io/entangelk/case-studies.html#writer): 실제 생성 GIF | 선언 이후 실제 사용 여부, 원고 규모, 승인/거절 이유, 검색 시간, 실패 기록 | 기존 서술 / 제품 효과 미측정 |
+| AI Writer | [상세](https://github.com/entangelk/entangelk/blob/main/PROJECTS.ko.md): 로컬 1인 운영, 2026-08-23 dogfood 착수 선언, 테스트·검증 기록. [웹](https://entangelk.github.io/entangelk/case-studies.html#writer): 실제 생성 GIF | 상세 dogfood 사례는 Writer README 정리 때 Git 이력으로 보강 | 사용자 설명: 직접 집필·dogfood 중, 분석 표시 불편 개선. 세부 성과 수치는 추가하지 않음 |
 | 영상 | VID-01: 광고 요청 주체, 시나리오/이미지 검토 흐름, 구간 수정·나레이션 및 피드백→변경 기록 | 제작 전후 시간, 실제 이용, 최종 품질 승인 | 원본 기록 확인 / 효과 미측정 |
 | Assessment | [상세](https://entangelk.github.io/entangelk/case-studies.html#assessment): 합성 예제 2개×3회, deterministic extraction와 mock semantic verification | 실제 spec/rubric 쌍 접근 가능 여부, 사람의 판단과의 일치, 오탐, 검토 시간 | 기존 서술 / 실제 과제 검증 미확인 |
 | 에셋 | AST-01: 생성 인덱스 22,068개, 검수 완료 고유 16,052개, CSV 중복 47행. 비교·이력·재생성·검수/건너뛰기 UI | 로딩 실측·모델 전환 근거 | 파일 집계 + 사용자 설명: 전체 반영·라이선스 종료, API 비용/연 라이선스 ≈40%. 개발 담당, 제작자 피드백→대량 재생성·DB 직접 수정 반영·카테고리 부족 페이지 |
