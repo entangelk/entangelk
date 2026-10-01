@@ -88,6 +88,8 @@ Each case starts with the work problem, chosen experience, implemented result an
 
 **Operational outcome:** The analysis informed actual seasonal hiring, reducing headcount by three compared with the previous year and saving ₩6 million in labor costs.
 
+**Operational cross-check:** After the staffing adjustment, the call connection rate exceeded the 90% target. During Chuseok 2026, operating with one fewer person than planned produced a connection rate of 88–91%. The observed capacity shortfall also corresponded to one staff member, providing another operational comparison against the staffing and workload estimates.
+
 ### Large-scale asset generation and review
 
 [Case](https://entangelk.github.io/entangelk/experience.html#assets)
