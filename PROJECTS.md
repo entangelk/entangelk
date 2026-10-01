@@ -100,6 +100,10 @@ Each case starts with the work problem, chosen experience, implemented result an
 
 **Evidence:** The local generation index has 22,068 unique items. That is distinct from generation attempts, final approvals and deployed assets.
 
+**Feedback and contribution:** Content-creator feedback led to bulk regeneration, editing tags and other metadata for direct database updates, and a page showing asset shortages by category. I handled development; the creators performed individual content review and approval.
+
+**Operational outcome:** Content creators reviewed the replacement assets, which were all deployed to the service, and the existing license was terminated. Generation API spend was about 40% of the former annual license fee, equivalent to a payback period of roughly 0.4 years on that API-spend basis.
+
 ### NLP category matching
 
 [Case](https://entangelk.github.io/entangelk/experience.html#nlp)

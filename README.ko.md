@@ -42,7 +42,7 @@
 | 사례 | 문제와 선택 | 확인된 범위 |
 | --- | --- | --- |
 | [고객센터 인력 분석](https://entangelk.github.io/entangelk/experience.html#staffing) | 평균에 가려지는 고부하일을 고려해 Q90과 보수안을 채용·증원 기준으로 제시 | 전년 대비 인력 3명·인건비 600만 원 절감, 조정 후 목표 소통률 90% 상회 |
-| [대규모 에셋 생성·검수](https://entangelk.github.io/entangelk/experience.html#assets) | 대량 생성 결과를 사람이 비교·재생성·검수하고 남은 작업을 이어가는 흐름 | 로컬 생성 인덱스에 고유 항목 22,068개. 최종 승인·배포 수와는 구별 |
+| [대규모 에셋 생성·검수](https://entangelk.github.io/entangelk/experience.html#assets) | 대량 생성 결과를 사람이 비교·재생성·검수하고 남은 작업을 이어가는 흐름 | 대상 에셋 전체 서비스 반영·라이선스 종료. 생성 API 비용은 기존 연간 라이선스 비용의 약 40% |
 | [NLP 카테고리 매칭](https://entangelk.github.io/entangelk/experience.html#nlp) | 자연어를 기존 분류 체계와 연결하고, 변경 데이터만 임베딩 갱신 | 이동통신 3사 제공 v비즈링·v프로필의 제작대행사 업무에 적용. 자동제작 전체 담당 |
 | [사내 업무 자동화](https://entangelk.github.io/entangelk/experience.html#automation) | 반복 보고·수집을 웹 작업으로 연결하고 사람이 처리할 예외 경로를 제공 | 4개 서비스 월간보고: 숙련 담당자 기준 2일 작업을 반나절 미만에 생성 |
 
