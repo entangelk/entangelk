@@ -86,6 +86,8 @@ Each case starts with the work problem, chosen experience, implemented result an
 
 **Evidence:** The report records historical back-testing at about 91% accuracy and 96% detection of understaffed days. It connects the analysis to staffing two weeks before the season and adding capacity above the per-person threshold.
 
+**Operational outcome:** The analysis informed actual seasonal hiring, reducing headcount by three compared with the previous year and saving ₩6 million in labor costs.
+
 ### Large-scale asset generation and review
 
 [Case](https://entangelk.github.io/entangelk/experience.html#assets)
@@ -102,6 +104,8 @@ Each case starts with the work problem, chosen experience, implemented result an
 
 **Problem and experience:** Connect natural-language input to existing categories, related image retrieval and content generation. Embedding and reranking feed the existing classification system.
 
+**Users and contribution:** Deployed in the production-agency workflow for v비즈링 and v프로필, services available through all three mobile carriers. I owned the entire automatic-production module, from natural-language category selection to image allocation. Internal use testing by the content specialist produced satisfactory feedback.
+
 **Choice:** Account for common-tag bias and image relevance; update only changed embeddings instead of rebuilding everything. Docker and API documentation connect the module to the existing backend.
 
 **Update paths:** Separate full rebuilds from incremental updates of changed mappings. Documented timings are about 125 seconds for 4,121 mappings and about 2 seconds for 10 mappings, with each workload stated explicitly.
@@ -113,6 +117,8 @@ Each case starts with the work problem, chosen experience, implemented result an
 **Problem and experience:** Connect repetitive collection and monthly reporting to web-based generation, viewing, editing and export. When collection encounters a CAPTCHA, a person can enter it and resume.
 
 **Choice and result:** Connect report generation, editing and export to scheduled execution and status checks. Existing CMS/API reuse in individual workflows and the platform’s datastore and scheduler serve their respective operating scopes.
+
+**User and operational outcome:** Used by the planning/operations specialist preparing monthly reports for four services. Work that previously took an experienced planner two days—from collection through analysis and report production—was generated in under half a day with the tool.
 
 ### Supporting work: internal network utility
 
