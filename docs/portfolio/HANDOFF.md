@@ -41,9 +41,11 @@
 
 구체적인 체크박스는 [NEXT_ACTIONS](https://github.com/entangelk/entangelk/blob/main/docs/portfolio/NEXT_ACTIONS.md)에 둔다.
 
-1. **Writer·Assessment push (사용자):** Writer `e64e884`·`9b25d78`, Assessment `c5b0b7f`는 커밋만 했다. Writer는 사용자가 진행 중인 작업과 함께 올린다.
-2. **확인 (사용자):** Writer PDF 2쪽 QR 스캔, 경력기술서 요약의 "운영 위험 자동 감지" 문구 유지 여부.
-3. **선택:** Agent Memory 공개 저장소·Logo Workbench README(로컬 사본 없음), OWN-01·OPS-03.
+1. **Writer push (사용자):** Writer `e64e884`·`9b25d78`는 커밋만 했다. 사용자가 진행 중인 작업과 함께 올린다.
+2. **확인 (사용자):** 경력기술서 요약의 "운영 위험 자동 감지" 문구 유지 여부. QR 4개는 사용자가 동작을 확인했다.
+3. **OWN-01·OPS-03:** 2026-10-02 사내 세부 수치와 CMS/API 재사용 범위를 사용자에게 질문했다. 답변을 받으면 근거 요약→본문 두 언어·웹→PDF 순으로 반영한다.
+
+공개 저장소 README 보강(Assessment·Agent Memory·Logo Workbench)은 2026-10-02 push까지 마쳤다. 경력기술서 PDF 공개는 사용자 결정이다. PDF는 job_activate(원본)·`docs/portfolio`·개인 홈페이지 `portpolio_main/frontend/static/file` 세 곳에 같은 파일을 둔다.
 
 **회사 저장소 README는 맞추지 않는다** — 비공개 저장소라 필요 없다는 사용자 결정(2026-10-02). 이전의 CO-01~05는 폐기했다.
 
