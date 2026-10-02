@@ -1,6 +1,6 @@
 # 포트폴리오 개편 핸드오프
 
-기준일: 2026-10-02. 포트폴리오 본문 개편·사용자 답변 반영에 이어 Writer README, 두 PDF, 경력기술서 저장소 동기화, 공개 저장소 README 점검까지 완료했다. 남은 것은 사용자 확인과 선택 작업뿐이다(NEXT_ACTIONS).
+기준일: 2026-10-02. 포트폴리오 개편과 후속 동기화(Writer README, 두 PDF, 경력기술서, 공개 저장소 README, 사내 세부 수치)를 모두 마쳤다. 남은 것은 개인 홈페이지 저장소 배포와 주기적 갱신뿐이다(NEXT_ACTIONS).
 
 ## 다음 작업의 출발점
 
@@ -41,9 +41,9 @@
 
 구체적인 체크박스는 [NEXT_ACTIONS](https://github.com/entangelk/entangelk/blob/main/docs/portfolio/NEXT_ACTIONS.md)에 둔다.
 
-1. **Writer push (사용자):** Writer `e64e884`·`9b25d78`는 커밋만 했다. 사용자가 진행 중인 작업과 함께 올린다.
-2. **확인 (사용자):** 경력기술서 요약의 "운영 위험 자동 감지" 문구 유지 여부. QR 4개는 사용자가 동작을 확인했다.
-3. **OWN-01·OPS-03:** 2026-10-02 사내 세부 수치와 CMS/API 재사용 범위를 사용자에게 질문했다. 답변을 받으면 근거 요약→본문 두 언어·웹→PDF 순으로 반영한다.
+1. **개인 홈페이지 저장소 (사용자):** 새 PDF 두 개를 커밋·배포한다. 그 외 저장소(포트폴리오·경력기술서·Writer·Assessment·Agent Memory·Logo)는 모두 push됐다.
+2. **주기적 갱신:** 경력기술서 기준 월, Writer dogfood 사례와 수치 — NEXT_ACTIONS "주기적 갱신" 참고.
+3. **완료:** OWN-01·OPS-03 답변 반영, QR 확인, 경력기술서 요약 문구 교체, 공개 범위 결정(서비스명 공개 가능, 회사명은 본문 제외, 경력기술서 PDF 공개).
 
 공개 저장소 README 보강(Assessment·Agent Memory·Logo Workbench)은 2026-10-02 push까지 마쳤다. 경력기술서 PDF 공개는 사용자 결정이다. PDF는 job_activate(원본)·`docs/portfolio`·개인 홈페이지 `portpolio_main/frontend/static/file` 세 곳에 같은 파일을 둔다.
 
@@ -63,6 +63,7 @@
 
 2026-10-02 사용자 지시로 포트폴리오 저장소 `origin/main`에 PDF 교체·인계 문서를 push한다. 경력기술서 저장소도 사용자 지시로 push했다. Writer·Assessment 저장소는 커밋만 했다.
 
+- 2026-10-02 마지막 수정 뒤 HTML 중복 ID 0, 태그 구조는 수정 전과 동일(기존 불일치 수 변화 없음), README·PROJECTS 로컬 링크 정상, 회사명·내부 도구명 공개 본문 0건을 확인했다.
 - 공개 본문(README·PROJECTS 두 언어, `docs/*.html`)에서 옛 주장(월 10시간·61.5배/155배·22,000+·로딩 5분)이 없음을 검색으로 확인했다. 기여도 85%/90%·인력 3명·600만 원·약 40%·약 0.4년·3사·반나절이 PDF와 일치한다.
 - Writer 저장소의 문서 가드(`test_docs_indexes`·`test_repo_hygiene`·`test_product_name`)를 README·`docs/portfolio.md` 수정 후 통과했다.
 - 이번 작업은 본문·CSS·JS를 수정하지 않았다. 임시 렌더링·스크린샷은 세션 스크래치패드에만 있다.

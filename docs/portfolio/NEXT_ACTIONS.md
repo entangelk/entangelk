@@ -1,12 +1,14 @@
 # 다음 작업 체크리스트
 
-기준일: 2026-10-02. 포트폴리오 본문 개편, Writer README·두 PDF·경력기술서 동기화, 공개 저장소 README 점검까지 마쳤다. 남은 것은 사용자가 직접 할 확인과 선택 작업뿐이다.
+기준일: 2026-10-02. 포트폴리오 본문 개편, Writer README·두 PDF·경력기술서 동기화, 공개 저장소 README 보강, OWN-01·OPS-03 반영까지 마쳤다. 남은 것은 개인 홈페이지 저장소의 PDF 커밋·배포(사용자)와 주기적 갱신뿐이다.
 
 [핸드오프](https://github.com/entangelk/entangelk/blob/main/docs/portfolio/HANDOFF.md) · [확인 기록](https://github.com/entangelk/entangelk/blob/main/docs/portfolio/owner-confirmations.md) · [개편 계획](https://github.com/entangelk/entangelk/blob/main/docs/portfolio/portfolio-revision-plan.md)
 
 ## 사용자가 할 일
 
-- [ ] **Writer 저장소 push:** `e64e884`(README 사용 흐름·dogfood 개선 이력)와 `9b25d78`(평가자 안내 문서의 dogfood 상태)를 진행 중인 작업과 함께 올린다. push 전에는 GitHub에서 README의 dogfood 절이 보이지 않는다.
+- [ ] **개인 홈페이지 저장소:** `portpolio_main/frontend/static/file`의 새 PDF 두 개를 진행 중인 작업과 함께 커밋·배포한다.
+
+- [x] **Writer 저장소 push:** 사용자가 `e64e884`·`9b25d78`를 push했다(2026-10-02 원격 확인).
 
 ## 완료한 일 (2026-10-02)
 
@@ -22,6 +24,16 @@
 ## 하지 않기로 한 일
 
 - **회사 저장소 README(구 CO-01~05):** 비공개 저장소라 포트폴리오와 맞출 필요가 없다는 사용자 결정(2026-10-02). 회사 프로젝트의 공개 서술은 이 포트폴리오와 [비식별 근거 요약](https://github.com/entangelk/entangelk/blob/main/docs/portfolio/company-evidence-snapshot.md)이 정본이다.
+
+## 공개 범위 결정 (2026-10-02)
+
+서비스명(v비즈링·v프로필 등)은 공개 본문에 써도 된다. 회사명은 공개 본문(README·PROJECTS·웹)에 쓰지 않는다. 경력기술서 PDF는 회사명·연락처를 포함한 채 공개한다.
+
+## 주기적 갱신
+
+- 경력기술서 타임라인 기준 월(`NOW`)을 매달 올리고 PDF를 세 곳에 다시 배포한다. 다음은 2026-11(재직 1년 10개월, 총 3년 9개월).
+- Writer는 계속 움직이는 저장소다. dogfood 개선이 쌓이거나 큰 마일스톤이 생기면 Writer README 표 → Writer PDF dogfood 쪽 → 포트폴리오 본문 순으로 갱신한다.
+- 월간보고 건수(약 76건)는 처음부터 4개 서비스였다는 가정의 계산이다. 다르면 고친다.
 
 ## 선택 작업
 
