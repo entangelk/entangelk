@@ -41,7 +41,7 @@
 
 구체적인 체크박스·프로젝트별 산출물은 [NEXT_ACTIONS](https://github.com/entangelk/entangelk/blob/main/docs/portfolio/NEXT_ACTIONS.md)에 둔다.
 
-1. **WR-01:** Writer 프로젝트 README를 정리할 때 직접 사용→화면 불편→개선 사례를 Git 이력으로 확인한다. 로컬 이력에서 2026-09-30 `97e110c`·`600803f`와 9월 2일 검토 UX 보강 기록은 읽었다. 원본 프로젝트 파일은 수정하지 않았다.
+1. **WR-01 (README 완료):** 2026-10-02 Writer README를 사용자 흐름→dogfood 개선 이력(9건, 09-02~10-02)→기술 근거 순으로 고쳐 Writer 저장소 `e64e884`로 커밋했다. 사용자가 그 저장소에서 작업 중이라 push하지 않았다. 직접 사용과 외부 검증을 구분했고 README 링크·숫자 가드 테스트를 통과했다. 선택 후속: Writer `docs/portfolio.md`의 오래된 수치·dogfood 상태 문구.
 2. **CO-01~05:** 영상·에셋·NLP·자동화·RAG 두 저장소의 README를 회사에서 갱신한다. 집에서는 근거 요약으로 문안 작성이 가능하다. 공개 GitHub 주소가 없는 사내 저장소의 링크를 만들지 않는다.
 3. **PDF-01:** [경력기술서 저장소](https://github.com/entangelk/job_activate)의 두 HTML 원본과 인쇄 지침을 확인했다. `경력기술서.html`과 `AI_Writer_포트폴리오.html`을 수정해 Chrome으로 PDF를 재생성한다. 원본 저장소는 읽기만 했고 사용자 미추적 파일을 보존했다.
 4. **CV-01:** 검증한 PDF를 포트폴리오에 반영하고 포트폴리오·경력기술서의 기여도·상태·성과·링크를 대조한다. 경력기술서 저장소의 후속 업데이트는 사용자가 이미 요청했다.
