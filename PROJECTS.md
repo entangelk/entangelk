@@ -28,7 +28,7 @@ Each case starts with the work problem, chosen experience, implemented result an
 
 **Choice:** Exclude reviewed, skipped and already-generated items from new batches and continue unfinished work. `Pass` means skipping, not approval. The current interface uses paginated lists and lazy image loading.
 
-**Evidence:** The local generation index has 22,068 unique items. That is distinct from generation attempts, final approvals and deployed assets.
+**Evidence:** Of 22,068 unique items in the generation record, the 16,052 that content creators finished reviewing were deployed to the live service.
 
 **Feedback and contribution:** Content-creator feedback led to bulk regeneration, editing tags and other metadata for direct database updates, and a page showing asset shortages by category. I handled development; the creators performed individual content review and approval.
 
@@ -40,7 +40,7 @@ Each case starts with the work problem, chosen experience, implemented result an
 
 **Problem and experience:** Connect natural-language input to existing categories, related image retrieval and content generation. Embedding and reranking feed the existing classification system.
 
-**Users and contribution:** Deployed in the production-agency workflow for v비즈링 and v프로필, services available through all three mobile carriers. I owned the entire automatic-production module, from natural-language category selection to image allocation. Internal use testing by the content specialist produced satisfactory feedback.
+**Users and contribution:** Since March 2026, deployed in the production-agency workflow for v비즈링 and v프로필, services available through all three mobile carriers. I owned the entire automatic-production module, from natural-language category selection to image allocation. Internal use testing by the content specialist produced satisfactory feedback.
 
 **Choice:** Account for common-tag bias and image relevance; update only changed embeddings instead of rebuilding everything. Docker and API documentation connect the module to the existing backend.
 
@@ -50,15 +50,17 @@ Each case starts with the work problem, chosen experience, implemented result an
 
 [Case](https://entangelk.github.io/entangelk/experience.html#automation)
 
-**Problem and experience:** Connect repetitive collection and monthly reporting to web-based generation, viewing, editing and export. When collection encounters a CAPTCHA, a person can enter it and resume.
+**Problem and experience:** Gathered the scattered collection, reporting and notification functions that planning/operations staff actually needed into one management page. Monthly reports run from web-based generation through viewing, editing and export; when collection hits a CAPTCHA, a person enters it and collection resumes.
 
-**Choice and result:** Connect report generation, editing and export to scheduled execution and status checks. Existing CMS/API reuse in individual workflows and the platform’s datastore and scheduler serve their respective operating scopes.
+**Choice:** As a non-developer I had no access to the production database, and the goal was zero effort from the development team. Monthly-report collection and notifications therefore reuse endpoints the internal CMS pages already call, plus the existing email and SMS APIs. Authentication was the obstacle; I solved it by obtaining a login session through browser automation and reusing it for the API calls. Report generation, editing and export are connected to scheduled runs and status checks.
 
-**User and operational outcome:** Used by the planning/operations specialist preparing monthly reports for four services. Work that previously took an experienced planner two days—from collection through analysis and report production—was generated in under half a day with the tool.
+**Operational risk alerts:** When production requests or inbound calls pile up, webhooks send internal-messenger and email alerts so the CS team and planning/operations staff can respond. This is still running.
+
+**User and operational outcome:** Used every month since March 2025 by the planning/operations specialist preparing monthly reports for four services (about 76 reports across the four services). Work that previously took an experienced planner two days—from collection through analysis and report production—was generated in under half a day with the tool.
 
 ### Supporting work: internal network utility
 
-Deployed a small Python utility for team work interrupted by VPN connection constraints.
+Managing external access used to require non-technical staff to change IP and gateway values in Windows network settings each time, which was error-prone and slow to switch. I replaced this with a proxy server and a small Python program, still used by six people across three teams.
 
 ## Product decisions
 
@@ -112,6 +114,7 @@ Deployed a small Python utility for team work interrupted by VPN connection cons
 * **The 15-Second Wall — Continuity, Not Editing:** The generation model produces ~15 seconds at a time, so a 15 / 30 / 60 / 180-second request is analyzed once per video and planned into exactly 1 / 2 / 4 / 12 segments. The decision that mattered was refusing to merge two things into one feature: **reference-to-video** (identity, style, motion) is a subject anchor and **frame chaining** (last frame → next first frame) is a time-boundary anchor, verified separately. A manager step that sees the whole video decides per segment which references to use or omit, and a segment left with no reference is explicitly stopped rather than quietly generated from text.
 * **One Prompt IR, a Gate That Only Judges:** Text-, image-, and reference-driven generation were unified behind a single structured prompt IR and renderer — verbatim dialogue with lip-sync and subtitle policy, ambient soundscape kept separate from non-diegetic music, length ceilings, and constraint phrasing now apply identically across all three modes. Multimodal image analysis records what the user *declared* apart from what the *pixels show*. Specialist steps have fixed input/output/write scopes rather than free-form agent chat, and the pre-generation gate returns only `PASS` / `REPAIR` / `BLOCKED` with a target step and reasons — it never edits the prompt; a repair re-runs just the failed step under a call ceiling.
 * **Distinguish experiments from current implementation:** Earlier music-video, ad and drama trials recorded issues with musical boundaries, visual information, on-screen Hangul and voice quality. Reference features now support long-form continuity and voice consistency to a degree; current evaluation concerns model-specific output quality. The existing snapshot includes 10 decision briefs, 26 dated verification records, roughly 490 backend tests and a canonical contract.
+* **A change driven by review feedback:** Revising part of a finished video creates a new revision that preserves the original and re-synthesizes narration only for changed scenes. A reviewer flagged unwanted speech in a revised clip. I traced it to the narration (TTS) mixed into the context video prompting the generation model to speak, and changed the context to carry only picture and background audio. The rerun's replacement clip had zero detected speech segments. That is an observation from this experiment, not a fix for all speech errors.
 
 </details>
 

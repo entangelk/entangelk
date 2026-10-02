@@ -433,8 +433,8 @@
          </span>
 </p>
 <p class="why">
-<span class="en">Earlier music-video, ad and drama trials recorded issues with musical boundaries, visual information, on-screen Hangul and voice quality. Reference features now support long-form continuity and voice consistency to a degree. The current task is evaluating model-specific output quality. The existing engineering snapshot includes 10 decision briefs, 26 dated verification records, roughly 490 backend tests and a canonical contract.</span>
-<span class="ko">기존 뮤직비디오·광고·드라마 실험에서는 음악 경계, 화면 정보량·한글, 목소리 등의 품질 문제를 기록했습니다. 현재는 레퍼런스 기능으로 장편 연속성과 목소리 일관성을 일정 수준 구현했으며, 모델별 결과 품질을 검토합니다. 기존 기술 기록에는 결정 브리프 10건, 날짜별 검증 기록 26건, 약 490개의 백엔드 테스트와 단일 계약 정본이 있습니다.</span>
+<span class="en">Earlier music-video, ad and drama trials recorded issues with musical boundaries, visual information, on-screen Hangul and voice quality. Reference features now support long-form continuity and voice consistency to a degree. The current task is evaluating model-specific output quality. The existing engineering snapshot includes 10 decision briefs, 26 dated verification records, roughly 490 backend tests and a canonical contract. One change came from review feedback: a reviewer flagged unwanted speech in a revised clip; narration mixed into the context video was prompting the model to speak, so the context now carries only picture and background audio, and the rerun's replacement clip had zero detected speech segments. That is one experiment's observation, not a fix for all speech errors.</span>
+<span class="ko">기존 뮤직비디오·광고·드라마 실험에서는 음악 경계, 화면 정보량·한글, 목소리 등의 품질 문제를 기록했습니다. 현재는 레퍼런스 기능으로 장편 연속성과 목소리 일관성을 일정 수준 구현했으며, 모델별 결과 품질을 검토합니다. 기존 기술 기록에는 결정 브리프 10건, 날짜별 검증 기록 26건, 약 490개의 백엔드 테스트와 단일 계약 정본이 있습니다. 검토 피드백으로 바꾼 사례도 있습니다. 검토자가 수정 영상의 원치 않는 발화를 지적했고, 문맥 영상에 섞인 나레이션이 모델의 발화를 유도한 것으로 판단해 화면과 배경음만 문맥으로 넘기도록 바꿨습니다. 재실행한 교체 구간의 음성 탐지는 0건이었습니다. 해당 실험의 관찰이며 발화 오류 전체의 해결은 아닙니다.</span>
 </p>
 <p class="ai">
 <b>
@@ -1039,10 +1039,10 @@
   </div>
   <p class="v">
    <span class="en">
-    The local generation index contains 22,068 unique entries. This is a generation record, not a count of final approved or deployed assets.
+    Of 22,068 unique entries in the generation record, the 16,052 that content creators finished reviewing were deployed to the live service.
    </span>
    <span class="ko">
-    로컬 생성 인덱스에 고유 22,068건이 있습니다. 생성 기록이며 최종 검수 승인·배포 완료 건수와 다릅니다.
+    생성 기록의 고유 22,068건 중 콘텐츠 제작자가 검수를 마친 16,052건을 실제 서비스에 반영했습니다.
    </span>
   </p>
  </div>
@@ -1150,7 +1150,7 @@
    </span>
   </p>
  </div>
- <div class="row"><div class="k"><span class="en">Users &amp; contribution</span><span class="ko">사용자와 직접 기여</span></div><p class="v"><span class="en">Used by production agencies handling customer requests for v비즈링 and v프로필, available through all three mobile carriers. I owned the entire automatic-production module: natural-language category selection through image allocation. Internal use testing by the content specialist received satisfactory feedback.</span><span class="ko">이동통신 3사 제공 v비즈링·v프로필에서 고객 요청을 처리하는 제작대행사가 사용하는 서비스에 적용했습니다. 자연어 카테고리 선택부터 이미지 배분까지 자동제작 부분 전체를 담당했고, 콘텐츠 담당자의 내부 사용 테스트에서 만족스럽다는 평가를 받았습니다.</span></p></div>
+ <div class="row"><div class="k"><span class="en">Users &amp; contribution</span><span class="ko">사용자와 직접 기여</span></div><p class="v"><span class="en">Since March 2026, used by production agencies handling customer requests for v비즈링 and v프로필, available through all three mobile carriers. I owned the entire automatic-production module: natural-language category selection through image allocation. Internal use testing by the content specialist received satisfactory feedback.</span><span class="ko">2026년 3월부터 이동통신 3사 제공 v비즈링·v프로필에서 고객 요청을 처리하는 제작대행사가 사용하는 서비스에 적용했습니다. 자연어 카테고리 선택부터 이미지 배분까지 자동제작 부분 전체를 담당했고, 콘텐츠 담당자의 내부 사용 테스트에서 만족스럽다는 평가를 받았습니다.</span></p></div>
 <details class="evidence-details">
   <summary>
    <span class="en">
@@ -1210,28 +1210,28 @@
   </div>
   <p class="v">
    <span class="en">
-    Report generation and editing, scheduled tasks and status checks are implemented. A CAPTCHA interruption can be handed to a person before collection resumes.
+    Gathered the collection, reporting and notification functions planning/operations staff needed into one management page. Reports support generation, editing, scheduled runs and status checks; a CAPTCHA interruption is handed to a person before collection resumes.
    </span>
    <span class="ko">
-    보고서 생성·편집, 정기 실행과 상태 확인을 구현했습니다. CAPTCHA로 수집이 멈추면 사람의 입력을 받아 재개하는 경로가 있습니다.
+    흩어진 수집·보고·알림 기능 중 기획·운영 담당자에게 필요한 것만 하나의 관리 페이지로 모았습니다. 보고서 생성·편집, 정기 실행과 상태 확인을 제공하고, CAPTCHA로 수집이 멈추면 사람의 입력을 받아 재개합니다.
    </span>
   </p>
  </div>
  <div class="row">
   <div class="k">
    <span class="en">
-    Evidence
+    Choice
    </span>
    <span class="ko">
-    근거의 범위
+    선택
    </span>
   </div>
   <p class="v">
-   <span class="en">Report generation, editing and export are connected to scheduled tasks and status checks in the internal web tool.</span>
-   <span class="ko">사내 웹 도구에서 보고서 생성·편집·출력과 정기 실행·상태 확인을 연결했습니다.</span>
+   <span class="en">Without production-database access and aiming for zero development-team effort, collection and notifications reuse endpoints the internal CMS pages already call plus existing email and SMS APIs. Authentication was solved by obtaining a login session through browser automation. When production requests or inbound calls pile up, webhooks alert the CS team and planning/operations staff by internal messenger and email; this is still running.</span>
+   <span class="ko">운영 DB에 접근할 수 없고 개발팀 공수 없이 만드는 것이 목표여서, 수집과 알림은 사내 CMS 페이지가 이미 쓰는 엔드포인트와 기존 메일·문자 API를 재사용했습니다. 인증은 브라우저 자동화로 로그인 세션을 받아 해결했습니다. 제작 요청이나 인입 콜이 몰리면 웹훅으로 CS팀과 기획·운영 담당자에게 사내 메신저·이메일 알림을 보내며, 지금도 운영 중입니다.</span>
   </p>
  </div>
- <div class="row"><div class="k"><span class="en">Operational outcome</span><span class="ko">적용 성과</span></div><p class="v"><span class="en">Used by the planning/operations specialist preparing monthly reports for four services. Work previously taking an experienced planner two days—from data collection through analysis and report production—was generated in under half a day.</span><span class="ko">4개 서비스의 월간보고서를 작성하는 기획·운영 담당자가 사용했습니다. 숙련된 이전 담당자가 데이터 수집부터 분석·보고서 제작까지 2일에 걸쳐 하던 작업을 반나절 미만에 생성했습니다.</span></p></div>
+ <div class="row"><div class="k"><span class="en">Operational outcome</span><span class="ko">적용 성과</span></div><p class="v"><span class="en">Used every month since March 2025 by the planning/operations specialist preparing monthly reports for four services (about 76 reports). Work previously taking an experienced planner two days—from data collection through analysis and report production—was generated in under half a day.</span><span class="ko">2025년 3월부터 매월 4개 서비스의 월간보고서를 작성하는 기획·운영 담당자가 사용하고 있습니다(약 76건). 숙련된 이전 담당자가 데이터 수집부터 분석·보고서 제작까지 2일에 걸쳐 하던 작업을 반나절 미만에 생성했습니다.</span></p></div>
 <details class="evidence-details">
   <summary>
    <span class="en">
@@ -1256,10 +1256,10 @@
     </div>
     <p class="v">
      <span class="en">
-      Separate specific automations that reuse existing CMS/API resources from the integrated platform, which includes a datastore and scheduler. Deployment and ongoing maintenance have a cost.
+      Report collection and notifications reuse existing CMS endpoints and email/SMS APIs; report storage and scheduled runs use the integrated platform's datastore and scheduler. Deployment and ongoing maintenance have a cost.
      </span>
      <span class="ko">
-      기존 CMS/API를 재사용하는 개별 자동화와 저장소·스케줄러를 포함한 통합 플랫폼을 구분합니다. 배포와 지속적인 유지보수 부담도 있습니다.
+      월간보고 수집·알림은 기존 CMS 엔드포인트와 메일·문자 API를 재사용하고, 보고서 저장과 정기 실행은 통합 플랫폼의 저장소·스케줄러를 씁니다. 배포와 지속적인 유지보수 부담도 있습니다.
      </span>
     </p>
    </div>

@@ -115,9 +115,9 @@ https://github.com/user-attachments/assets/05fddc97-0a09-4347-881d-289cd3fa5aac
 | Case | Problem and choice | Evidence boundary |
 | --- | --- | --- |
 | [Customer-center staffing](https://entangelk.github.io/entangelk/experience.html#staffing) | Used Q90 and a conservative option to plan for high-load days hidden by averages | Three fewer staff than the previous year, saving ₩6 million; post-adjustment connection rate exceeded the 90% target |
-| [Asset generation and review](https://entangelk.github.io/entangelk/experience.html#assets) | Let reviewers compare, regenerate and review outputs, then continue unfinished work | Replacement assets fully deployed and license terminated; generation API spend ≈40% of the former annual license fee |
-| [NLP category matching](https://entangelk.github.io/entangelk/experience.html#nlp) | Connected natural language to existing categories and updated embeddings only for changed data | Used by production agencies for v비즈링 and v프로필 across three mobile carriers; owned the automatic-production module |
-| [Internal automation](https://entangelk.github.io/entangelk/experience.html#automation) | Connected repetitive reporting and collection to web tasks with human exception handling | Monthly reports for four services: two days of work by an experienced planner generated in under half a day |
+| [Asset generation and review](https://entangelk.github.io/entangelk/experience.html#assets) | Let reviewers compare, regenerate and review outputs, then continue unfinished work | 16,052 reviewed assets deployed and license terminated; generation API spend ≈40% of the former annual license fee |
+| [NLP category matching](https://entangelk.github.io/entangelk/experience.html#nlp) | Connected natural language to existing categories and updated embeddings only for changed data | Since March 2026, used by production agencies for v비즈링 and v프로필 across three mobile carriers; owned the automatic-production module |
+| [Internal automation](https://entangelk.github.io/entangelk/experience.html#automation) | Connected repetitive reporting and collection to web tasks with human exception handling | Monthly reports for four services every month since March 2025: two days of work by an experienced planner generated in under half a day |
 
 ## Products in active use and development
 
