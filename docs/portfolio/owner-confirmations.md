@@ -156,6 +156,7 @@
 - **처리:** 직접 사용·dogfood·분석 화면/검토 흐름 개선은 공개 소개에 반영. 세부 사용 기간·성과 수치를 만들어내지 않는다. 프로젝트 자체 README는 이번에 수정하지 않음.
 - **로컬 Git 읽기 확인:** 2026-09-30 `97e110c`(작업공간 검토 그룹·후보 편집 표시), `600803f`(승인 전 그룹 인물명 수정)과 2026-09-02 dogfood review UX 보강 기록을 확인했다. 이는 구현·변경 기록이며 시간 절감이나 외부 사용자 검증이 아님.
 - **후속 근거:** [Writer 저장소](https://github.com/entangelk/ai_writte_system), [검토 UX 보강 기록](https://github.com/entangelk/ai_writte_system/blob/main/docs/verifications/2026-09-02/dogfood_review_ux_fix.md). GitHub 원격 반영 여부는 이번에 확인하지 않음.
+- **2026-10-02 README 정리:** 요청대로 Writer README에 Git 이력 기반 사례 9건(09-02~10-02, 날짜·불편·원인·변경·작업 로그 링크)을 정리했다(Writer `e64e884`, push는 사용자). 사용 기간·시간·원고 규모는 여전히 답변 범위 밖이며 새로 만들지 않았다.
 
 ### ASM-02 — Assessment의 실제 자료와 사용자 가설
 
